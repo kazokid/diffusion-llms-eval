@@ -1,0 +1,85 @@
+{
+  "experiment": "faithfulness_statement_granularity",
+  "evaluator_llm": "gemma-4-26b-a4b-it",
+  "dataset": "/Users/lokovacic/Projects/diplomski/datasets/final_datasets/TEST_SHORT_faithfulness-test.csv",
+  "results": [
+    {
+      "case_id": "F1",
+      "question": "What is LLM-as-a-judge?",
+      "answer": "LLM-as-a-judge uses a large language model to evaluate AI agent outputs as a scalable substitute for human judgment.",
+      "score": 1.0,
+      "statements_provided": false,
+      "statements": [
+        "LLM-as-a-judge uses a large language model to evaluate AI agent outputs.",
+        "LLM-as-a-judge serves as a scalable substitute for human judgment."
+      ],
+      "statement_count": 2,
+      "verdicts": [
+        {
+          "statement": "LLM-as-a-judge uses a large language model to evaluate AI agent outputs.",
+          "reason": "The context explicitly states that 'LLM-as-a-judge uses a large language model (LLM) to evaluate AI agent outputs'.",
+          "verdict": 1
+        },
+        {
+          "statement": "LLM-as-a-judge serves as a scalable substitute for human judgment.",
+          "reason": "The context states that LLM-as-a-judge uses an LLM to evaluate AI agent outputs 'as a scalable substitute for human judgment'.",
+          "verdict": 1
+        }
+      ],
+      "faithful_count": 2,
+      "total_count": 2
+    },
+    {
+      "case_id": "F2",
+      "question": "What is agent observability?",
+      "answer": "Agent observability provides step-by-step visibility into execution, showing which tools were called and what data was retrieved.",
+      "score": 1.0,
+      "statements_provided": false,
+      "statements": [
+        "Agent observability provides step-by-step visibility into execution.",
+        "Agent observability shows which tools were called.",
+        "Agent observability shows what data was retrieved."
+      ],
+      "statement_count": 3,
+      "verdicts": [
+        {
+          "statement": "Agent observability provides step-by-step visibility into execution.",
+          "reason": "The context explicitly states that 'Agent observability provides step-by-step visibility into execution.'",
+          "verdict": 1
+        },
+        {
+          "statement": "Agent observability shows which tools were called.",
+          "reason": "The context explicitly mentions that observability 'shows which tools were called'.",
+          "verdict": 1
+        },
+        {
+          "statement": "Agent observability shows what data was retrieved.",
+          "reason": "The context explicitly mentions that observability shows 'what data was retrieved'.",
+          "verdict": 1
+        }
+      ],
+      "faithful_count": 3,
+      "total_count": 3
+    },
+    {
+      "case_id": "F3",
+      "question": "What is trajectory evaluation?",
+      "answer": "Trajectory evaluation scores the entire execution path an AI agent takes rather than only the final output.",
+      "score": 1.0,
+      "statements_provided": false,
+      "statements": [
+        "Trajectory evaluation scores the entire execution path an AI agent takes rather than only the final output."
+      ],
+      "statement_count": 1,
+      "verdicts": [
+        {
+          "statement": "Trajectory evaluation scores the entire execution path an AI agent takes rather than only the final output.",
+          "reason": "The context explicitly states: 'Trajectory evaluation means scoring the entire execution path an AI agent takes rather than just its final output.'",
+          "verdict": 1
+        }
+      ],
+      "faithful_count": 1,
+      "total_count": 1
+    }
+  ]
+}

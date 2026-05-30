@@ -1,0 +1,1287 @@
+{
+  "input_csv": "partial-relevance-test.csv",
+  "evaluator_llm": "Qwen3.6-35B-A3B-FP8",
+  "embeddings_model": "text-embedding-3-large",
+  "traces": [
+    {
+      "question": "How do I export evaluation datasets from LangSmith?",
+      "answer": "You can export datasets from LangSmith using the SDK or the UI export button.",
+      "answer_relevancy": {
+        "score": 0.8739906464856567,
+        "generated_questions": [
+          "How can you export datasets from LangSmith?"
+        ],
+        "noncommittal_flags": [
+          0
+        ],
+        "cosine_similarities": [
+          0.8739906464856567
+        ],
+        "all_noncommittal": false
+      },
+      "faithfulness": {
+        "score": 0.0,
+        "statements": [
+          "Datasets can be exported from LangSmith using the SDK.",
+          "Datasets can be exported from LangSmith using the UI export button."
+        ],
+        "verdicts": [
+          {
+            "statement": "Datasets can be exported from LangSmith using the SDK.",
+            "reason": "The context discusses creating and organizing datasets but does not mention exporting them via the SDK.",
+            "verdict": 0
+          },
+          {
+            "statement": "Datasets can be exported from LangSmith using the UI export button.",
+            "reason": "The context does not mention exporting datasets or a UI export button.",
+            "verdict": 0
+          }
+        ],
+        "faithful_count": 0,
+        "total_count": 2
+      },
+      "context_relevance": {
+        "score": 0.25,
+        "judge1_rating": 1,
+        "judge2_rating": 0
+      },
+      "context_utilization": {
+        "score": 0.0,
+        "per_context_verdicts": [
+          {
+            "context_index": 0,
+            "reason": "The provided context discusses how to create, version, and tag evaluation datasets in LangSmith, but it does not mention any methods for exporting them, such as using the SDK or the UI export button. Therefore, it does not contain the information needed to answer the question.",
+            "verdict": 0
+          }
+        ]
+      },
+      "response_groundedness": {
+        "score": 0.0,
+        "judge1_rating": 0,
+        "judge2_rating": 0
+      }
+    },
+    {
+      "question": "How do I configure role-based access control in LangSmith?",
+      "answer": "LangSmith supports RBAC with workspace-level roles including Admin, Editor, and Viewer.",
+      "answer_relevancy": {
+        "score": 0.7086748773025056,
+        "generated_questions": [
+          "What workspace-level roles does LangSmith support for RBAC?"
+        ],
+        "noncommittal_flags": [
+          0
+        ],
+        "cosine_similarities": [
+          0.7086748773025056
+        ],
+        "all_noncommittal": false
+      },
+      "faithfulness": {
+        "score": 0.0,
+        "statements": [
+          "LangSmith supports Role-Based Access Control.",
+          "LangSmith provides workspace-level roles.",
+          "The workspace-level roles include Admin.",
+          "The workspace-level roles include Editor.",
+          "The workspace-level roles include Viewer."
+        ],
+        "verdicts": [
+          {
+            "statement": "LangSmith supports Role-Based Access Control.",
+            "reason": "The context does not mention Role-Based Access Control (RBAC) or any access control mechanisms.",
+            "verdict": 0
+          },
+          {
+            "statement": "LangSmith provides workspace-level roles.",
+            "reason": "The context mentions workspaces but does not specify any workspace-level roles.",
+            "verdict": 0
+          },
+          {
+            "statement": "The workspace-level roles include Admin.",
+            "reason": "The context does not list any specific roles such as Admin.",
+            "verdict": 0
+          },
+          {
+            "statement": "The workspace-level roles include Editor.",
+            "reason": "The context does not list any specific roles such as Editor.",
+            "verdict": 0
+          },
+          {
+            "statement": "The workspace-level roles include Viewer.",
+            "reason": "The context does not list any specific roles such as Viewer.",
+            "verdict": 0
+          }
+        ],
+        "faithful_count": 0,
+        "total_count": 5
+      },
+      "context_relevance": {
+        "score": 0.0,
+        "judge1_rating": 0,
+        "judge2_rating": 0
+      },
+      "context_utilization": {
+        "score": 0.0,
+        "per_context_verdicts": [
+          {
+            "context_index": 0,
+            "reason": "The provided context discusses workspaces, organizational plans, and SSO integration, but it does not mention role-based access control (RBAC) or specific roles such as Admin, Editor, or Viewer. Therefore, it does not contain the information needed to arrive at the given answer.",
+            "verdict": 0
+          }
+        ]
+      },
+      "response_groundedness": {
+        "score": 0.0,
+        "judge1_rating": 0,
+        "judge2_rating": 0
+      }
+    },
+    {
+      "question": "How does LangSmith handle prompt versioning and A/B testing?",
+      "answer": "LangSmith supports prompt versioning in the Hub and allows A/B experiments across prompt variants.",
+      "answer_relevancy": {
+        "score": 0.8080587987728147,
+        "generated_questions": [
+          "What prompt versioning and experimentation features does LangSmith support?"
+        ],
+        "noncommittal_flags": [
+          0
+        ],
+        "cosine_similarities": [
+          0.8080587987728147
+        ],
+        "all_noncommittal": false
+      },
+      "faithfulness": {
+        "score": 0.0,
+        "statements": [
+          "LangSmith supports prompt versioning in the Hub.",
+          "LangSmith allows A/B experiments across prompt variants."
+        ],
+        "verdicts": [
+          {
+            "statement": "LangSmith supports prompt versioning in the Hub.",
+            "reason": "The context does not mention prompt versioning or the Hub; it focuses on comparing agent configurations and evaluation datasets.",
+            "verdict": 0
+          },
+          {
+            "statement": "LangSmith allows A/B experiments across prompt variants.",
+            "reason": "The context describes comparing baselines and variants for agent configurations, but does not specifically mention prompts or prompt variants.",
+            "verdict": 0
+          }
+        ],
+        "faithful_count": 0,
+        "total_count": 2
+      },
+      "context_relevance": {
+        "score": 1.0,
+        "judge1_rating": 2,
+        "judge2_rating": 2
+      },
+      "context_utilization": {
+        "score": 0.0,
+        "per_context_verdicts": [
+          {
+            "context_index": 0,
+            "reason": "The provided context discusses LangSmith's experimentation framework for comparing agent configurations and running evaluations, but it does not mention prompt versioning, the Hub, or A/B testing specifically for prompts. The answer introduces specific features not present in the context, indicating the context was not useful in arriving at the given answer.",
+            "verdict": 0
+          }
+        ]
+      },
+      "response_groundedness": {
+        "score": 0.0,
+        "judge1_rating": 0,
+        "judge2_rating": 0
+      }
+    },
+    {
+      "question": "How do I set up webhook notifications in LangSmith for failed evaluations?",
+      "answer": "LangSmith supports webhook integrations that can trigger on evaluation failures or score thresholds.",
+      "answer_relevancy": {
+        "score": 0.6504741395803719,
+        "generated_questions": [
+          "What webhook integrations does LangSmith support?"
+        ],
+        "noncommittal_flags": [
+          0
+        ],
+        "cosine_similarities": [
+          0.6504741395803719
+        ],
+        "all_noncommittal": false
+      },
+      "faithfulness": {
+        "score": 0.0,
+        "statements": [
+          "LangSmith supports webhook integrations.",
+          "Webhook integrations in LangSmith can trigger on evaluation failures.",
+          "Webhook integrations in LangSmith can trigger on score thresholds."
+        ],
+        "verdicts": [
+          {
+            "statement": "LangSmith supports webhook integrations.",
+            "reason": "The context does not mention webhook integrations.",
+            "verdict": 0
+          },
+          {
+            "statement": "Webhook integrations in LangSmith can trigger on evaluation failures.",
+            "reason": "The context does not mention webhook integrations or evaluation failures as triggers.",
+            "verdict": 0
+          },
+          {
+            "statement": "Webhook integrations in LangSmith can trigger on score thresholds.",
+            "reason": "The context mentions evaluator score ranges for automation rules, but does not mention webhook integrations.",
+            "verdict": 0
+          }
+        ],
+        "faithful_count": 0,
+        "total_count": 3
+      },
+      "context_relevance": {
+        "score": 0.0,
+        "judge1_rating": 0,
+        "judge2_rating": 0
+      },
+      "context_utilization": {
+        "score": 0.0,
+        "per_context_verdicts": [
+          {
+            "context_index": 0,
+            "reason": "The provided context discusses LangSmith's automation rules for triggering actions like running evaluators or flagging traces based on specific criteria, but it does not mention webhook integrations or notification setups for failed evaluations. Therefore, the context does not contain the information needed to arrive at the given answer.",
+            "verdict": 0
+          }
+        ]
+      },
+      "response_groundedness": {
+        "score": 0.0,
+        "judge1_rating": 0,
+        "judge2_rating": 0
+      }
+    },
+    {
+      "question": "How do I build a custom LLM-as-a-judge evaluator with specific scoring criteria in Python?",
+      "answer": "You define a Python function that prompts an LLM with your rubric and parses the structured score output.",
+      "answer_relevancy": {
+        "score": 0.6082830983685598,
+        "generated_questions": [
+          "How do you prompt an LLM with a rubric and parse the structured score output?"
+        ],
+        "noncommittal_flags": [
+          0
+        ],
+        "cosine_similarities": [
+          0.6082830983685598
+        ],
+        "all_noncommittal": false
+      },
+      "faithfulness": {
+        "score": 0.0,
+        "statements": [
+          "A Python function is defined to evaluate responses.",
+          "The Python function prompts a large language model with a scoring rubric.",
+          "The Python function parses the structured score output generated by the large language model."
+        ],
+        "verdicts": [
+          {
+            "statement": "A Python function is defined to evaluate responses.",
+            "reason": "The context describes the LLM-as-a-judge approach conceptually and does not mention any specific programming language like Python or the definition of a function.",
+            "verdict": 0
+          },
+          {
+            "statement": "The Python function prompts a large language model with a scoring rubric.",
+            "reason": "The context does not provide implementation details such as prompting an LLM with a rubric or using a Python function.",
+            "verdict": 0
+          },
+          {
+            "statement": "The Python function parses the structured score output generated by the large language model.",
+            "reason": "There is no information in the context regarding parsing structured outputs or using a Python function for this purpose.",
+            "verdict": 0
+          }
+        ],
+        "faithful_count": 0,
+        "total_count": 3
+      },
+      "context_relevance": {
+        "score": 0.25,
+        "judge1_rating": 0,
+        "judge2_rating": 1
+      },
+      "context_utilization": {
+        "score": 0.0,
+        "per_context_verdicts": [
+          {
+            "context_index": 0,
+            "reason": "The provided context explains the concept, benefits, and biases of the LLM-as-a-judge approach but does not contain any technical implementation details, Python instructions, or guidance on defining functions, prompting LLMs with rubrics, or parsing structured outputs. Therefore, it was not useful in arriving at the given answer.",
+            "verdict": 0
+          }
+        ]
+      },
+      "response_groundedness": {
+        "score": 0.0,
+        "judge1_rating": 0,
+        "judge2_rating": 0
+      }
+    },
+    {
+      "question": "What Python code do I need to add trajectory evaluation to my LangGraph agent?",
+      "answer": "You import the trajectory evaluator from LangSmith and pass your agent's run traces to it.",
+      "answer_relevancy": {
+        "score": 0.6413718635675929,
+        "generated_questions": [
+          "How do you use the trajectory evaluator from LangSmith?"
+        ],
+        "noncommittal_flags": [
+          0
+        ],
+        "cosine_similarities": [
+          0.6413718635675929
+        ],
+        "all_noncommittal": false
+      },
+      "faithfulness": {
+        "score": 0.0,
+        "statements": [
+          "Import the trajectory evaluator from LangSmith.",
+          "Pass the agent run traces to the trajectory evaluator."
+        ],
+        "verdicts": [
+          {
+            "statement": "Import the trajectory evaluator from LangSmith.",
+            "reason": "The context does not mention LangSmith or provide any instructions to import a trajectory evaluator.",
+            "verdict": 0
+          },
+          {
+            "statement": "Pass the agent run traces to the trajectory evaluator.",
+            "reason": "The context defines trajectory evaluation conceptually but does not include procedural steps or mention passing agent run traces to an evaluator.",
+            "verdict": 0
+          }
+        ],
+        "faithful_count": 0,
+        "total_count": 2
+      },
+      "context_relevance": {
+        "score": 0.0,
+        "judge1_rating": 0,
+        "judge2_rating": 0
+      },
+      "context_utilization": {
+        "score": 0.0,
+        "per_context_verdicts": [
+          {
+            "context_index": 0,
+            "reason": "The context provides a definition of trajectory evaluation but does not contain any information about LangGraph, LangSmith, or the specific Python code required to implement it, which is what the question asks for.",
+            "verdict": 0
+          }
+        ]
+      },
+      "response_groundedness": {
+        "score": 0.0,
+        "judge1_rating": 0,
+        "judge2_rating": 0
+      }
+    },
+    {
+      "question": "What are the exact steps to configure context precision scoring for my retrieval pipeline?",
+      "answer": "You install the ragas library and call the context_precision metric with your dataset of queries and retrieved chunks.",
+      "answer_relevancy": {
+        "score": 0.5823037456229615,
+        "generated_questions": [
+          "How do I calculate context precision using the ragas library?"
+        ],
+        "noncommittal_flags": [
+          0
+        ],
+        "cosine_similarities": [
+          0.5823037456229615
+        ],
+        "all_noncommittal": false
+      },
+      "faithfulness": {
+        "score": 0.0,
+        "statements": [
+          "The user installs the ragas library.",
+          "The user calls the context_precision metric.",
+          "The user provides the dataset of queries and retrieved chunks to the context_precision metric."
+        ],
+        "verdicts": [
+          {
+            "statement": "The user installs the ragas library.",
+            "reason": "The context discusses LLM evaluation metrics and their categories but does not mention installing the ragas library.",
+            "verdict": 0
+          },
+          {
+            "statement": "The user calls the context_precision metric.",
+            "reason": "The context mentions context precision as a retrieval metric but does not state that the user calls it.",
+            "verdict": 0
+          },
+          {
+            "statement": "The user provides the dataset of queries and retrieved chunks to the context_precision metric.",
+            "reason": "The context describes what context precision assesses but does not mention the user providing a dataset of queries and retrieved chunks to it.",
+            "verdict": 0
+          }
+        ],
+        "faithful_count": 0,
+        "total_count": 3
+      },
+      "context_relevance": {
+        "score": 0.0,
+        "judge1_rating": 0,
+        "judge2_rating": 0
+      },
+      "context_utilization": {
+        "score": 0.0,
+        "per_context_verdicts": [
+          {
+            "context_index": 0,
+            "reason": "The provided context only defines context precision as a retrieval metric and categorizes LLM evaluation metrics. It does not mention the ragas library, installation instructions, or the specific steps required to configure and call the metric. Therefore, it was not useful in arriving at the given answer.",
+            "verdict": 0
+          }
+        ]
+      },
+      "response_groundedness": {
+        "score": 0.0,
+        "judge1_rating": 0,
+        "judge2_rating": 0
+      }
+    },
+    {
+      "question": "How do I implement harness-layer continual learning with automatic prompt updates based on production feedback?",
+      "answer": "You set up a pipeline that collects annotated production traces and uses them to update few-shot examples in your prompt template.",
+      "answer_relevancy": {
+        "score": 0.5626101700046063,
+        "generated_questions": [
+          "How do you update few-shot examples in your prompt template?"
+        ],
+        "noncommittal_flags": [
+          0
+        ],
+        "cosine_similarities": [
+          0.5626101700046063
+        ],
+        "all_noncommittal": false
+      },
+      "faithfulness": {
+        "score": 0.0,
+        "statements": [
+          "The implementation requires setting up a pipeline.",
+          "The pipeline collects annotated production traces.",
+          "The pipeline uses the annotated production traces to update few-shot examples.",
+          "The few-shot examples are located in the prompt template."
+        ],
+        "verdicts": [
+          {
+            "statement": "The implementation requires setting up a pipeline.",
+            "reason": "The context discusses continual learning and AI agents adapting to new data, but does not mention any implementation details or setting up a pipeline.",
+            "verdict": 0
+          },
+          {
+            "statement": "The pipeline collects annotated production traces.",
+            "reason": "The context does not mention a pipeline or the collection of annotated production traces.",
+            "verdict": 0
+          },
+          {
+            "statement": "The pipeline uses the annotated production traces to update few-shot examples.",
+            "reason": "There is no information in the context about using traces to update few-shot examples.",
+            "verdict": 0
+          },
+          {
+            "statement": "The few-shot examples are located in the prompt template.",
+            "reason": "The context does not mention few-shot examples or prompt templates.",
+            "verdict": 0
+          }
+        ],
+        "faithful_count": 0,
+        "total_count": 4
+      },
+      "context_relevance": {
+        "score": 0.25,
+        "judge1_rating": 1,
+        "judge2_rating": 0
+      },
+      "context_utilization": {
+        "score": 0.0,
+        "per_context_verdicts": [
+          {
+            "context_index": 0,
+            "reason": "The provided context only offers a high-level definition and motivation for continual learning in AI agents. It does not contain any specific implementation details, such as setting up pipelines for annotated production traces or updating few-shot examples in prompt templates, which are central to the given answer. Therefore, the context was not useful in arriving at the answer.",
+            "verdict": 0
+          }
+        ]
+      },
+      "response_groundedness": {
+        "score": 0.0,
+        "judge1_rating": 0,
+        "judge2_rating": 0
+      }
+    },
+    {
+      "question": "What programming languages and frameworks does LangChain officially support?",
+      "answer": "LangChain officially supports Python and JavaScript/TypeScript with dedicated packages for each.",
+      "answer_relevancy": {
+        "score": 0.9567014131511153,
+        "generated_questions": [
+          "Which programming languages does LangChain officially support?"
+        ],
+        "noncommittal_flags": [
+          0
+        ],
+        "cosine_similarities": [
+          0.9567014131511153
+        ],
+        "all_noncommittal": false
+      },
+      "faithfulness": {
+        "score": 0.0,
+        "statements": [
+          "LangChain officially supports Python.",
+          "LangChain officially supports JavaScript.",
+          "LangChain officially supports TypeScript.",
+          "LangChain provides dedicated packages for Python, JavaScript, and TypeScript."
+        ],
+        "verdicts": [
+          {
+            "statement": "LangChain officially supports Python.",
+            "reason": "The context does not mention programming languages or official support for Python.",
+            "verdict": 0
+          },
+          {
+            "statement": "LangChain officially supports JavaScript.",
+            "reason": "The context does not mention programming languages or official support for JavaScript.",
+            "verdict": 0
+          },
+          {
+            "statement": "LangChain officially supports TypeScript.",
+            "reason": "The context does not mention programming languages or official support for TypeScript.",
+            "verdict": 0
+          },
+          {
+            "statement": "LangChain provides dedicated packages for Python, JavaScript, and TypeScript.",
+            "reason": "The context mentions separate packages for integrations, but does not state that dedicated packages exist for programming languages.",
+            "verdict": 0
+          }
+        ],
+        "faithful_count": 0,
+        "total_count": 4
+      },
+      "context_relevance": {
+        "score": 0.0,
+        "judge1_rating": 0,
+        "judge2_rating": 0
+      },
+      "context_utilization": {
+        "score": 0.0,
+        "per_context_verdicts": [
+          {
+            "context_index": 0,
+            "reason": "The provided context discusses LangChain's integrations ecosystem with third-party services like LLM providers and vector stores, but it does not mention any programming languages or frameworks that LangChain officially supports. Therefore, it does not contain the information needed to arrive at the given answer.",
+            "verdict": 0
+          }
+        ]
+      },
+      "response_groundedness": {
+        "score": 0.0,
+        "judge1_rating": 0,
+        "judge2_rating": 0
+      }
+    },
+    {
+      "question": "Which LLM providers and models are compatible with LangGraph agents?",
+      "answer": "LangGraph is model-agnostic and works with any LLM provider that has a LangChain integration.",
+      "answer_relevancy": {
+        "score": 0.8016839220660121,
+        "generated_questions": [
+          "What is LangGraph's compatibility with LLM providers?"
+        ],
+        "noncommittal_flags": [
+          0
+        ],
+        "cosine_similarities": [
+          0.8016839220660121
+        ],
+        "all_noncommittal": false
+      },
+      "faithfulness": {
+        "score": 0.0,
+        "statements": [
+          "LangGraph is model-agnostic.",
+          "LangGraph works with any LLM provider.",
+          "The LLM provider must have a LangChain integration."
+        ],
+        "verdicts": [
+          {
+            "statement": "LangGraph is model-agnostic.",
+            "reason": "The context does not mention whether LangGraph is model-agnostic or discuss its compatibility with different models.",
+            "verdict": 0
+          },
+          {
+            "statement": "LangGraph works with any LLM provider.",
+            "reason": "The context focuses on deployment and observability features, with no information regarding LLM provider compatibility.",
+            "verdict": 0
+          },
+          {
+            "statement": "The LLM provider must have a LangChain integration.",
+            "reason": "There is no mention of LangChain integration requirements for LLM providers in the provided context.",
+            "verdict": 0
+          }
+        ],
+        "faithful_count": 0,
+        "total_count": 3
+      },
+      "context_relevance": {
+        "score": 0.0,
+        "judge1_rating": 0,
+        "judge2_rating": 0
+      },
+      "context_utilization": {
+        "score": 0.0,
+        "per_context_verdicts": [
+          {
+            "context_index": 0,
+            "reason": "The provided context discusses deployment features via LangSmith, such as hosting, scaling, and observability, but contains no information about LLM provider compatibility or model-agnostic capabilities. Therefore, it was not useful in arriving at the answer.",
+            "verdict": 0
+          }
+        ]
+      },
+      "response_groundedness": {
+        "score": 0.0,
+        "judge1_rating": 0,
+        "judge2_rating": 0
+      }
+    },
+    {
+      "question": "What is the data retention period for each LangSmith pricing tier?",
+      "answer": "The Developer tier retains data for 14 days, Plus for 90 days, and Enterprise has configurable retention.",
+      "answer_relevancy": {
+        "score": 0.7131674130007025,
+        "generated_questions": [
+          "What are the data retention periods for the Developer, Plus, and Enterprise tiers?"
+        ],
+        "noncommittal_flags": [
+          0
+        ],
+        "cosine_similarities": [
+          0.7131674130007025
+        ],
+        "all_noncommittal": false
+      },
+      "faithfulness": {
+        "score": 0.0,
+        "statements": [
+          "The Developer tier retains data for 14 days.",
+          "The Plus tier retains data for 90 days.",
+          "The Enterprise tier has configurable data retention."
+        ],
+        "verdicts": [
+          {
+            "statement": "The Developer tier retains data for 14 days.",
+            "reason": "The context does not mention any data retention period for the Developer tier.",
+            "verdict": 0
+          },
+          {
+            "statement": "The Plus tier retains data for 90 days.",
+            "reason": "The context does not mention any data retention period for the Plus tier.",
+            "verdict": 0
+          },
+          {
+            "statement": "The Enterprise tier has configurable data retention.",
+            "reason": "The context does not mention data retention policies or configurability for the Enterprise tier.",
+            "verdict": 0
+          }
+        ],
+        "faithful_count": 0,
+        "total_count": 3
+      },
+      "context_relevance": {
+        "score": 0.0,
+        "judge1_rating": 0,
+        "judge2_rating": 0
+      },
+      "context_utilization": {
+        "score": 0.0,
+        "per_context_verdicts": [
+          {
+            "context_index": 0,
+            "reason": "The provided context outlines the pricing tiers and their features but does not mention any data retention periods. Therefore, it was not useful in arriving at the given answer.",
+            "verdict": 0
+          }
+        ]
+      },
+      "response_groundedness": {
+        "score": 0.0,
+        "judge1_rating": 0,
+        "judge2_rating": 0
+      }
+    },
+    {
+      "question": "How many engineers work on the LangSmith platform?",
+      "answer": "The LangSmith team has grown to over 80 engineers across platform and product.",
+      "answer_relevancy": {
+        "score": 0.9247752837358864,
+        "generated_questions": [
+          "How many engineers are on the LangSmith team?"
+        ],
+        "noncommittal_flags": [
+          0
+        ],
+        "cosine_similarities": [
+          0.9247752837358864
+        ],
+        "all_noncommittal": false
+      },
+      "faithfulness": {
+        "score": 0.0,
+        "statements": [
+          "The LangSmith team has grown to over 80 engineers.",
+          "The engineers work across the platform and product areas."
+        ],
+        "verdicts": [
+          {
+            "statement": "The LangSmith team has grown to over 80 engineers.",
+            "reason": "The context mentions the number of enterprise customers served, but does not provide any information about the number of engineers on the LangSmith team.",
+            "verdict": 0
+          },
+          {
+            "statement": "The engineers work across the platform and product areas.",
+            "reason": "The context does not mention engineers or their specific work areas within the company.",
+            "verdict": 0
+          }
+        ],
+        "faithful_count": 0,
+        "total_count": 2
+      },
+      "context_relevance": {
+        "score": 0.0,
+        "judge1_rating": 0,
+        "judge2_rating": 0
+      },
+      "context_utilization": {
+        "score": 0.0,
+        "per_context_verdicts": [
+          {
+            "context_index": 0,
+            "reason": "The provided context discusses the LangSmith platform customer base, industries served, and usage metrics, but it does not contain any information regarding the number of engineers working on the platform. Therefore, it was not useful in arriving at the given answer.",
+            "verdict": 0
+          }
+        ]
+      },
+      "response_groundedness": {
+        "score": 0.0,
+        "judge1_rating": 0,
+        "judge2_rating": 0
+      }
+    },
+    {
+      "question": "How do I configure automation rules to route low-scoring traces to annotation queues in LangSmith?",
+      "answer": "You create an automation rule with a score threshold filter and set the action to add matching traces to a specific annotation queue.",
+      "answer_relevancy": {
+        "score": 0.7844512831254252,
+        "generated_questions": [
+          "How do you create an automation rule with a score threshold filter to add matching traces to an annotation queue?"
+        ],
+        "noncommittal_flags": [
+          0
+        ],
+        "cosine_similarities": [
+          0.7844512831254252
+        ],
+        "all_noncommittal": false
+      },
+      "faithfulness": {
+        "score": 0.0,
+        "statements": [
+          "The user creates an automation rule with a score threshold filter.",
+          "The user sets the action to add matching traces to a specific annotation queue."
+        ],
+        "verdicts": [
+          {
+            "statement": "The user creates an automation rule with a score threshold filter.",
+            "reason": "The context does not mention automation rules or score threshold filters.",
+            "verdict": 0
+          },
+          {
+            "statement": "The user sets the action to add matching traces to a specific annotation queue.",
+            "reason": "The context describes the functionality of annotation queues but does not mention users setting actions or automation rules to add traces to them.",
+            "verdict": 0
+          }
+        ],
+        "faithful_count": 0,
+        "total_count": 2
+      },
+      "context_relevance": {
+        "score": 0.0,
+        "judge1_rating": 0,
+        "judge2_rating": 0
+      },
+      "context_utilization": {
+        "score": 0.0,
+        "per_context_verdicts": [
+          {
+            "context_index": 0,
+            "reason": "The provided context explains the purpose and features of Annotation Queues in LangSmith but does not contain any information about configuring automation rules, setting score threshold filters, or routing traces. Therefore, it was not useful in arriving at the given answer.",
+            "verdict": 0
+          }
+        ]
+      },
+      "response_groundedness": {
+        "score": 0.0,
+        "judge1_rating": 0,
+        "judge2_rating": 0
+      }
+    },
+    {
+      "question": "How do I calibrate my LLM-as-a-judge evaluator against human annotations to reduce scoring bias?",
+      "answer": "You collect a set of human-annotated examples, run your LLM judge on the same inputs, and adjust your prompt or scoring rubric to minimize divergence.",
+      "answer_relevancy": {
+        "score": 0.8593370289108833,
+        "generated_questions": [
+          "How do you calibrate an LLM judge to minimize divergence with human annotations?"
+        ],
+        "noncommittal_flags": [
+          0
+        ],
+        "cosine_similarities": [
+          0.8593370289108833
+        ],
+        "all_noncommittal": false
+      },
+      "faithfulness": {
+        "score": 0.0,
+        "statements": [
+          "Collect a set of human-annotated examples.",
+          "Run the LLM judge on the same inputs.",
+          "Adjust the prompt or scoring rubric to minimize divergence."
+        ],
+        "verdicts": [
+          {
+            "statement": "Collect a set of human-annotated examples.",
+            "reason": "The context discusses biases in the LLM-as-a-judge approach but does not mention collecting human-annotated examples.",
+            "verdict": 0
+          },
+          {
+            "statement": "Run the LLM judge on the same inputs.",
+            "reason": "The context does not mention running the LLM judge on the same inputs.",
+            "verdict": 0
+          },
+          {
+            "statement": "Adjust the prompt or scoring rubric to minimize divergence.",
+            "reason": "The context does not mention adjusting prompts or scoring rubrics to minimize divergence.",
+            "verdict": 0
+          }
+        ],
+        "faithful_count": 0,
+        "total_count": 3
+      },
+      "context_relevance": {
+        "score": 0.25,
+        "judge1_rating": 0,
+        "judge2_rating": 1
+      },
+      "context_utilization": {
+        "score": 0.0,
+        "per_context_verdicts": [
+          {
+            "context_index": 0,
+            "reason": "The provided context only outlines specific biases in LLM-as-a-judge systems but does not provide any steps or methodology for calibrating the evaluator against human annotations or adjusting prompts and scoring rubrics. Therefore, it does not contain the information needed to arrive at the given answer.",
+            "verdict": 0
+          }
+        ]
+      },
+      "response_groundedness": {
+        "score": 0.0,
+        "judge1_rating": 0,
+        "judge2_rating": 0
+      }
+    },
+    {
+      "question": "How do I build an automated CI/CD evaluation pipeline that runs on every pull request?",
+      "answer": "You integrate LangSmith's evaluation SDK into your CI workflow to run your test suite against each PR's code changes.",
+      "answer_relevancy": {
+        "score": 0.5090650394212917,
+        "generated_questions": [
+          "How do you integrate LangSmith's evaluation SDK into your CI workflow?"
+        ],
+        "noncommittal_flags": [
+          0
+        ],
+        "cosine_similarities": [
+          0.5090650394212917
+        ],
+        "all_noncommittal": false
+      },
+      "faithfulness": {
+        "score": 0.0,
+        "statements": [
+          "Integrate LangSmith's evaluation SDK into the continuous integration workflow.",
+          "Run the test suite against the code changes in each pull request.",
+          "The process establishes an automated CI/CD evaluation pipeline."
+        ],
+        "verdicts": [
+          {
+            "statement": "Integrate LangSmith's evaluation SDK into the continuous integration workflow.",
+            "reason": "The context discusses evaluation readiness and general dimensions like test datasets and acceptance criteria, but does not mention LangSmith or integrating an SDK into a CI workflow.",
+            "verdict": 0
+          },
+          {
+            "statement": "Run the test suite against the code changes in each pull request.",
+            "reason": "The context does not mention running test suites against code changes or pull requests.",
+            "verdict": 0
+          },
+          {
+            "statement": "The process establishes an automated CI/CD evaluation pipeline.",
+            "reason": "The context describes evaluation readiness dimensions but does not mention establishing an automated CI/CD evaluation pipeline.",
+            "verdict": 0
+          }
+        ],
+        "faithful_count": 0,
+        "total_count": 3
+      },
+      "context_relevance": {
+        "score": 0.0,
+        "judge1_rating": 0,
+        "judge2_rating": 0
+      },
+      "context_utilization": {
+        "score": 0.0,
+        "per_context_verdicts": [
+          {
+            "context_index": 0,
+            "reason": "The provided context discusses evaluation readiness and its foundational dimensions for AI agents, but it does not contain any information about building automated CI/CD pipelines, running evaluations on pull requests, or integrating specific tools like LangSmith. Therefore, it is not useful for arriving at the given answer.",
+            "verdict": 0
+          }
+        ]
+      },
+      "response_groundedness": {
+        "score": 0.0,
+        "judge1_rating": 0,
+        "judge2_rating": 0
+      }
+    },
+    {
+      "question": "How do I automate the harness hill-climbing loop to continuously improve my agent's evaluation scores?",
+      "answer": "You script a loop that runs evaluations, identifies the lowest-scoring dimension, applies a targeted harness change, and re-evaluates.",
+      "answer_relevancy": {
+        "score": 0.5586476444835251,
+        "generated_questions": [
+          "What steps are involved in scripting a loop for evaluations and harness changes?"
+        ],
+        "noncommittal_flags": [
+          0
+        ],
+        "cosine_similarities": [
+          0.5586476444835251
+        ],
+        "all_noncommittal": false
+      },
+      "faithfulness": {
+        "score": 0.0,
+        "statements": [
+          "The script creates a loop for running evaluations.",
+          "The loop identifies the lowest-scoring dimension.",
+          "The loop applies a targeted harness change.",
+          "The loop re-evaluates the agent."
+        ],
+        "verdicts": [
+          {
+            "statement": "The script creates a loop for running evaluations.",
+            "reason": "The context does not mention any script or a loop for running evaluations.",
+            "verdict": 0
+          },
+          {
+            "statement": "The loop identifies the lowest-scoring dimension.",
+            "reason": "The context does not contain any information about a loop or identifying scoring dimensions.",
+            "verdict": 0
+          },
+          {
+            "statement": "The loop applies a targeted harness change.",
+            "reason": "The context discusses harness changes in general but does not mention a loop applying targeted changes.",
+            "verdict": 0
+          },
+          {
+            "statement": "The loop re-evaluates the agent.",
+            "reason": "The context does not describe any process involving a loop that re-evaluates the agent.",
+            "verdict": 0
+          }
+        ],
+        "faithful_count": 0,
+        "total_count": 4
+      },
+      "context_relevance": {
+        "score": 0.0,
+        "judge1_rating": 0,
+        "judge2_rating": 0
+      },
+      "context_utilization": {
+        "score": 0.0,
+        "per_context_verdicts": [
+          {
+            "context_index": 0,
+            "reason": "The context only defines what an agent harness is and notes that modifying it can improve performance. It does not contain any information about automating a hill-climbing loop, running evaluations, identifying low-scoring dimensions, or the iterative process described in the answer. Therefore, the context was not useful in arriving at the given answer.",
+            "verdict": 0
+          }
+        ]
+      },
+      "response_groundedness": {
+        "score": 0.0,
+        "judge1_rating": 0,
+        "judge2_rating": 0
+      }
+    },
+    {
+      "question": "How does MongoDB Atlas Vector Search handle embedding index updates for real-time RAG applications?",
+      "answer": "MongoDB Atlas Vector Search supports streaming index updates so new documents are searchable within seconds of insertion.",
+      "answer_relevancy": {
+        "score": 0.7562813127403258,
+        "generated_questions": [
+          "What feature does MongoDB Atlas Vector Search support for index updates?"
+        ],
+        "noncommittal_flags": [
+          0
+        ],
+        "cosine_similarities": [
+          0.7562813127403258
+        ],
+        "all_noncommittal": false
+      },
+      "faithfulness": {
+        "score": 0.0,
+        "statements": [
+          "MongoDB Atlas Vector Search supports streaming index updates.",
+          "New documents become searchable within seconds of insertion in MongoDB Atlas Vector Search."
+        ],
+        "verdicts": [
+          {
+            "statement": "MongoDB Atlas Vector Search supports streaming index updates.",
+            "reason": "The context does not mention MongoDB Atlas Vector Search or streaming index updates.",
+            "verdict": 0
+          },
+          {
+            "statement": "New documents become searchable within seconds of insertion in MongoDB Atlas Vector Search.",
+            "reason": "The context does not mention MongoDB Atlas Vector Search or the time it takes for documents to become searchable.",
+            "verdict": 0
+          }
+        ],
+        "faithful_count": 0,
+        "total_count": 2
+      },
+      "context_relevance": {
+        "score": 0.0,
+        "judge1_rating": 0,
+        "judge2_rating": 0
+      },
+      "context_utilization": {
+        "score": 0.0,
+        "per_context_verdicts": [
+          {
+            "context_index": 0,
+            "reason": "The provided context discusses general concepts of RAG, vector databases, and indexing algorithms like HNSW and IVF, but it does not mention MongoDB Atlas Vector Search or its specific streaming index update capabilities. Therefore, it does not contain the information needed to derive the given answer.",
+            "verdict": 0
+          }
+        ]
+      },
+      "response_groundedness": {
+        "score": 0.0,
+        "judge1_rating": 0,
+        "judge2_rating": 0
+      }
+    },
+    {
+      "question": "How do I set up real-time quality monitoring for a customer-facing AI assistant in LangSmith?",
+      "answer": "You configure online evaluation rules in LangSmith to sample and score production traces in near real-time.",
+      "answer_relevancy": {
+        "score": 0.5921624229697089,
+        "generated_questions": [
+          "How do you sample and score production traces in near real-time using LangSmith?"
+        ],
+        "noncommittal_flags": [
+          0
+        ],
+        "cosine_similarities": [
+          0.5921624229697089
+        ],
+        "all_noncommittal": false
+      },
+      "faithfulness": {
+        "score": 0.0,
+        "statements": [
+          "Online evaluation rules are configured in LangSmith.",
+          "LangSmith samples production traces in near real-time.",
+          "LangSmith scores production traces in near real-time."
+        ],
+        "verdicts": [
+          {
+            "statement": "Online evaluation rules are configured in LangSmith.",
+            "reason": "The context mentions LangChain but does not mention LangSmith or any configuration of evaluation rules.",
+            "verdict": 0
+          },
+          {
+            "statement": "LangSmith samples production traces in near real-time.",
+            "reason": "The context does not mention LangSmith or its capabilities regarding sampling production traces.",
+            "verdict": 0
+          },
+          {
+            "statement": "LangSmith scores production traces in near real-time.",
+            "reason": "The context does not mention LangSmith or its capabilities regarding scoring production traces.",
+            "verdict": 0
+          }
+        ],
+        "faithful_count": 0,
+        "total_count": 3
+      },
+      "context_relevance": {
+        "score": 0.0,
+        "judge1_rating": 0,
+        "judge2_rating": 0
+      },
+      "context_utilization": {
+        "score": 0.0,
+        "per_context_verdicts": [
+          {
+            "context_index": 0,
+            "reason": "The provided context discusses a fintech company's AI assistant development process using LangChain and prompt iteration, but it contains no information about LangSmith, real-time quality monitoring, or online evaluation rules. Therefore, it was not useful in arriving at the provided answer.",
+            "verdict": 0
+          }
+        ]
+      },
+      "response_groundedness": {
+        "score": 0.0,
+        "judge1_rating": 0,
+        "judge2_rating": 0
+      }
+    },
+    {
+      "question": "What design patterns should I use for building multi-agent systems in LangGraph?",
+      "answer": "Common patterns include supervisor agents that delegate to specialized sub-agents, parallel fan-out for independent tasks, and sequential pipelines for dependent steps.",
+      "answer_relevancy": {
+        "score": 0.5681525475803408,
+        "generated_questions": [
+          "What are common patterns for AI agent architectures?"
+        ],
+        "noncommittal_flags": [
+          0
+        ],
+        "cosine_similarities": [
+          0.5681525475803408
+        ],
+        "all_noncommittal": false
+      },
+      "faithfulness": {
+        "score": 0.0,
+        "statements": [
+          "Supervisor agents delegate tasks to specialized sub-agents.",
+          "Parallel fan-out handles independent tasks.",
+          "Sequential pipelines manage dependent steps."
+        ],
+        "verdicts": [
+          {
+            "statement": "Supervisor agents delegate tasks to specialized sub-agents.",
+            "reason": "The context mentions specialized agents collaborating, but does not mention supervisor agents or task delegation.",
+            "verdict": 0
+          },
+          {
+            "statement": "Parallel fan-out handles independent tasks.",
+            "reason": "The context does not mention parallel fan-out or independent tasks.",
+            "verdict": 0
+          },
+          {
+            "statement": "Sequential pipelines manage dependent steps.",
+            "reason": "The context mentions LangGraph managing multi-step interactions, but does not mention sequential pipelines or dependent steps.",
+            "verdict": 0
+          }
+        ],
+        "faithful_count": 0,
+        "total_count": 3
+      },
+      "context_relevance": {
+        "score": 0.75,
+        "judge1_rating": 1,
+        "judge2_rating": 2
+      },
+      "context_utilization": {
+        "score": 0.0,
+        "per_context_verdicts": [
+          {
+            "context_index": 0,
+            "reason": "The provided context describes a specific implementation by Cisco using LangGraph for multi-step interactions and specialized agents, but it does not explicitly mention or detail the specific design patterns listed in the answer. Therefore, the context was not directly useful in arriving at the given answer.",
+            "verdict": 0
+          }
+        ]
+      },
+      "response_groundedness": {
+        "score": 0.0,
+        "judge1_rating": 0,
+        "judge2_rating": 0
+      }
+    },
+    {
+      "question": "What specific dashboards and alerts does LangSmith provide for production monitoring?",
+      "answer": "LangSmith offers trace explorer dashboards, latency percentile charts, error rate monitors, and configurable alert rules.",
+      "answer_relevancy": {
+        "score": 0.6025881898159205,
+        "generated_questions": [
+          "What features does LangSmith offer?"
+        ],
+        "noncommittal_flags": [
+          0
+        ],
+        "cosine_similarities": [
+          0.6025881898159205
+        ],
+        "all_noncommittal": false
+      },
+      "faithfulness": {
+        "score": 0.0,
+        "statements": [
+          "LangSmith offers trace explorer dashboards.",
+          "LangSmith offers latency percentile charts.",
+          "LangSmith offers error rate monitors.",
+          "LangSmith offers configurable alert rules."
+        ],
+        "verdicts": [
+          {
+            "statement": "LangSmith offers trace explorer dashboards.",
+            "reason": "The context does not mention trace explorer dashboards or any specific dashboard features of LangSmith.",
+            "verdict": 0
+          },
+          {
+            "statement": "LangSmith offers latency percentile charts.",
+            "reason": "The context mentions latency as a standard metric for AI observability but does not specify that LangSmith provides latency percentile charts.",
+            "verdict": 0
+          },
+          {
+            "statement": "LangSmith offers error rate monitors.",
+            "reason": "The context mentions error rates as a standard metric but does not state that LangSmith specifically offers error rate monitors.",
+            "verdict": 0
+          },
+          {
+            "statement": "LangSmith offers configurable alert rules.",
+            "reason": "There is no information in the context regarding configurable alert rules or LangSmith's alerting capabilities.",
+            "verdict": 0
+          }
+        ],
+        "faithful_count": 0,
+        "total_count": 4
+      },
+      "context_relevance": {
+        "score": 0.25,
+        "judge1_rating": 1,
+        "judge2_rating": 0
+      },
+      "context_utilization": {
+        "score": 0.0,
+        "per_context_verdicts": [
+          {
+            "context_index": 0,
+            "reason": "The provided context offers a general overview of AI observability and mentions that LangSmith implements these patterns, but it does not list the specific dashboards and alerts (such as trace explorer, latency percentile charts, etc.) that are detailed in the answer. Therefore, the context was not useful in arriving at the given answer.",
+            "verdict": 0
+          }
+        ]
+      },
+      "response_groundedness": {
+        "score": 0.0,
+        "judge1_rating": 0,
+        "judge2_rating": 0
+      }
+    }
+  ]
+}

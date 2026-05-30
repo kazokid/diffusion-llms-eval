@@ -1,0 +1,21 @@
+question
+What is LangChain and when was it founded?
+How does LangSmith compare to Langfuse in terms of features and capabilities?
+What is the LLM-as-a-judge approach and what are its known biases?
+What are the three observability primitives used in agent evaluation (runs traces and threads) and how do they differ?
+How did Credit Genie use the LangSmith Insights Agent to improve their financial assistant?
+What is trajectory evaluation and when should I use it instead of evaluating only final outputs?
+What is the agent evaluation readiness checklist and what should I do before building evals?
+How does autonomous context compression work in Deep Agents?
+What is agentic engineering and how does it differ from traditional software engineering?
+How did Kensho build their multi-agent framework for financial data retrieval using LangGraph?
+What are the seven layers of AI observability?
+What is the difference between offline evaluation and online evaluation?
+How does the LangChain and MongoDB partnership work and what integrations does it offer?
+What are Annotation Queues in LangSmith and how do they involve domain experts?
+What is Arcade.dev and how do its tools differ from traditional API wrappers for agents?
+What is continual learning for AI agents and at which layers can it happen?
+What is the harness hill-climbing recipe and how do evals drive harness optimization?
+What LLM evaluation metrics should I use for RAG applications?
+How does agent observability differ from traditional software observability?
+What are LangSmith Fleet Assistants and Claws and how do they differ?

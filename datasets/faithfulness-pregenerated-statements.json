@@ -1,0 +1,97 @@
+{
+  "G1": [
+    "LangSmith is LangChain's commercial platform.",
+    "LangSmith is used for AI observability.",
+    "LangSmith is used for evaluation.",
+    "LangSmith is used for deployment."
+  ],
+  "G2": [
+    "LangGraph is a cloud storage solution.",
+    "LangGraph is used for backing up files.",
+    "LangGraph is used for syncing documents across devices."
+  ],
+  "G3": [
+    "LLM-as-a-judge is completely free of bias.",
+    "LLM-as-a-judge requires no mitigation techniques."
+  ],
+  "G4": [
+    "Trajectory evaluation scores the entire execution path of an agent.",
+    "Trajectory evaluation was introduced by OpenAI in 2023."
+  ],
+  "G5": [
+    "LangSmith provides end-to-end tracing of LLM calls.",
+    "LangSmith supports deployment to AWS.",
+    "LangSmith supports deployment to GCP.",
+    "LangSmith supports deployment to Azure."
+  ],
+  "G6": [
+    "LangChain supports Python.",
+    "LangChain supports Rust.",
+    "LangChain has dedicated packages for Python.",
+    "LangChain has dedicated packages for Rust."
+  ],
+  "G7": [
+    "LLM-as-a-judge introduces verbosity bias.",
+    "LLM-as-a-judge introduces position bias.",
+    "LLM-as-a-judge requires a minimum calibration dataset of at least 500 human-annotated examples to work reliably."
+  ],
+  "G8": [
+    "LangGraph is a graph-based agent runtime.",
+    "LangGraph supports persistent state.",
+    "LangGraph is used exclusively by Fortune 500 companies."
+  ],
+  "G9": [
+    "LangSmith provides over 30 built-in evaluator templates.",
+    "LangSmith charges $5 per evaluator run."
+  ],
+  "G10": [
+    "Continual learning for AI agents refers to improving performance over time.",
+    "Continual learning is required by law for all medical AI applications."
+  ],
+  "G11": [
+    "LangGraph uses a graph-based model.",
+    "LangGraph supports persistent state.",
+    "LangGraph supports cycles.",
+    "Graph models are faster than sequential pipelines."
+  ],
+  "G12": [
+    "The LangSmith Developer tier is free.",
+    "The LangSmith Developer tier includes unlimited traces per month."
+  ],
+  "G13": [
+    "Trajectory evaluation is useful for complex multi-step agents.",
+    "Trajectory evaluation should be run after every single LLM call in production."
+  ],
+  "G14": [
+    "The harness hill-climbing recipe is an iterative process for improving AI agent performance.",
+    "The harness hill-climbing recipe typically achieves a 40 percent score improvement per cycle."
+  ],
+  "G15": [
+    "LangSmith has over 300 enterprise customers.",
+    "Each enterprise customer pays a flat $10,000 annual fee."
+  ],
+  "G16": [
+    "Context-layer continual learning involves updating instructions.",
+    "Context-layer continual learning involves updating few-shot examples.",
+    "Context-layer continual learning is the recommended starting point for teams with fewer than 10 production agents."
+  ],
+  "G17": [
+    "Cisco built an agentic engineering framework using LangGraph.",
+    "The framework reduced root-cause analysis time by 93 percent.",
+    "The framework reduced costs by 50 percent."
+  ],
+  "G18": [
+    "Offline evaluation uses curated datasets run in batch.",
+    "Offline evaluation is only available to LangSmith teams on the Enterprise tier."
+  ],
+  "G19": [
+    "LLM-as-a-judge introduces verbosity bias.",
+    "LLM-as-a-judge introduces position bias.",
+    "LLM-as-a-judge introduces self-enhancement bias."
+  ],
+  "G20": [
+    "Continual learning can happen at the model layer.",
+    "Continual learning can happen at the harness layer.",
+    "Continual learning can happen at the context layer."
+  ]
+}

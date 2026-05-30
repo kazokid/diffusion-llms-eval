@@ -1,0 +1,403 @@
+{
+  "input_csv": "baby-langchain-easy-questions-answered-test.csv",
+  "evaluator_llm": "o3-2025-04-16",
+  "embeddings_model": "text-embedding-3-large",
+  "traces": [
+    {
+      "question": "What is LangChain and when was it founded?",
+      "answer": "LangChain is an agent engineering platform that provides open-source frameworks and commercial tools for building, testing, observing, and deploying reliable AI agents. It powers top engineering teams from AI startups to global enterprises and includes products like LangChain, LangGraph, Deep Agents, and LangSmith. LangChain started as a side project by Harrison Chase in late 2022 and was founded as a company in early 2023 by Harrison Chase and co-founder Ankush Gola.",
+      "answer_relevancy": {
+        "score": 0.8352914880903096,
+        "generated_questions": [
+          "What is LangChain and what products does it include?"
+        ],
+        "noncommittal_flags": [
+          0
+        ],
+        "cosine_similarities": [
+          0.8352914880903096
+        ],
+        "all_noncommittal": false
+      },
+      "faithfulness": {
+        "score": 1.0,
+        "statements_provided": false,
+        "statements": [
+          "LangChain is an agent engineering platform.",
+          "LangChain provides open-source frameworks and commercial tools for building, testing, observing, and deploying reliable AI agents.",
+          "LangChain powers top engineering teams from AI startups to global enterprises.",
+          "LangChain includes products such as LangChain, LangGraph, Deep Agents, and LangSmith.",
+          "LangChain started as a side project by Harrison Chase in late 2022.",
+          "LangChain was founded as a company in early 2023 by Harrison Chase and co-founder Ankush Gola."
+        ],
+        "statement_count": 6,
+        "verdicts": [
+          {
+            "statement": "LangChain is an agent engineering platform.",
+            "reason": "The context explicitly states that \"LangChain is the agent engineering platform powering top engineering teams.\"",
+            "verdict": 1
+          },
+          {
+            "statement": "LangChain provides open-source frameworks and commercial tools for building, testing, observing, and deploying reliable AI agents.",
+            "reason": "The context mentions open-source frameworks (LangChain, LangGraph, Deep Agents) as well as the commercial platform LangSmith for observability, evaluation, and deployment, indicating that LangChain offers both open-source and commercial tooling for the full agent lifecycle.",
+            "verdict": 1
+          },
+          {
+            "statement": "LangChain powers top engineering teams from AI startups to global enterprises.",
+            "reason": "The context says LangChain is \"powering top engineering teams, from AI startups to global enterprises,\" directly supporting the claim.",
+            "verdict": 1
+          },
+          {
+            "statement": "LangChain includes products such as LangChain, LangGraph, Deep Agents, and LangSmith.",
+            "reason": "The context lists these exact offerings: the open-source frameworks LangChain, LangGraph, Deep Agents, and the commercial platform LangSmith.",
+            "verdict": 1
+          },
+          {
+            "statement": "LangChain started as a side project by Harrison Chase in late 2022.",
+            "reason": "The context states \"LangChain started as Harrison Chase's side project in late 2022.\"",
+            "verdict": 1
+          },
+          {
+            "statement": "LangChain was founded as a company in early 2023 by Harrison Chase and co-founder Ankush Gola.",
+            "reason": "The context notes that Harrison Chase teamed up with co-founder Ankush Gola to start LangChain as a company in early 2023.",
+            "verdict": 1
+          }
+        ],
+        "faithful_count": 6,
+        "total_count": 6
+      },
+      "context_relevance": {
+        "score": 1.0,
+        "judge1_rating": 2,
+        "judge2_rating": 2
+      },
+      "context_utilization": {
+        "score": 0.9999999999,
+        "per_context_verdicts": [
+          {
+            "context_index": 0,
+            "reason": "The context explains what LangChain is—including its role as an open-source framework and commercial agent-engineering platform—and states that it began as a side project in late 2022 and became a company in early 2023. These details directly support the answer, which describes LangChain and specifies its founding timeframe.",
+            "verdict": 1
+          },
+          {
+            "context_index": 1,
+            "reason": "The context explains what LangChain is but does not mention when it was founded. Since the answer includes founding details (late 2022 / early 2023) absent from the context, the context was insufficient for fully arriving at the given answer.",
+            "verdict": 0
+          },
+          {
+            "context_index": 2,
+            "reason": "The context contains only article headlines and metadata without any substantive information about what LangChain is or its founding date. Therefore, the answer could not have been derived from the given context.",
+            "verdict": 0
+          }
+        ]
+      },
+      "response_groundedness": {
+        "score": 1.0,
+        "judge1_rating": 2,
+        "judge2_rating": 2
+      }
+    },
+    {
+      "question": "How does LangSmith compare to Langfuse in terms of features and capabilities?",
+      "answer": "LangSmith offers a more comprehensive set of features compared to Langfuse, covering the full agent engineering lifecycle. While Langfuse focuses on tracing and prompt management, which is useful for early-stage LLM applications, LangSmith adds advanced capabilities such as production evaluation automation rules, production alerting, and managed deployment for long-running agents.\n\nLangSmith also includes a library of over 30 evaluator templates for trajectory evaluations, safety checks, and multimodal outputs—features that Langfuse does not address. It supports OpenTelemetry ingestion, making it easy to migrate existing instrumentation, and provides a smooth dataset migration process with support included in its Plus and Enterprise tiers.\n\nOverall, LangSmith creates a closed feedback loop that connects every stage of agent engineering, turning production traces into regression tests, using an Insights Agent to analyze failure modes, and enabling systematic quality improvements driven by production data rather than guesswork. This makes LangSmith better suited for teams working on complex AI agents and production-scale deployments.",
+      "answer_relevancy": {
+        "score": 0.8486486246219347,
+        "generated_questions": [
+          "How does LangSmith compare to Langfuse in terms of features and suitability for production-scale AI agents?"
+        ],
+        "noncommittal_flags": [
+          0
+        ],
+        "cosine_similarities": [
+          0.8486486246219347
+        ],
+        "all_noncommittal": false
+      },
+      "faithfulness": {
+        "score": 1.0,
+        "statements_provided": false,
+        "statements": [
+          "LangSmith offers a more comprehensive set of features than Langfuse.",
+          "LangSmith covers the full agent engineering lifecycle.",
+          "Langfuse focuses on tracing and prompt management.",
+          "Tracing and prompt management are useful for early-stage large language model applications.",
+          "LangSmith adds advanced capabilities such as production evaluation automation rules, production alerting, and managed deployment for long-running agents.",
+          "LangSmith includes a library of over 30 evaluator templates for trajectory evaluations, safety checks, and multimodal outputs.",
+          "Langfuse does not address evaluator templates for trajectory evaluations, safety checks, and multimodal outputs.",
+          "LangSmith supports OpenTelemetry ingestion, enabling easy migration of existing instrumentation.",
+          "LangSmith provides a smooth dataset migration process.",
+          "The Plus and Enterprise tiers of LangSmith include support for dataset migration.",
+          "LangSmith creates a closed feedback loop connecting every stage of agent engineering.",
+          "LangSmith turns production traces into regression tests.",
+          "LangSmith uses an Insights Agent to analyze failure modes.",
+          "LangSmith enables systematic quality improvements driven by production data rather than guesswork.",
+          "The combined capabilities make LangSmith better suited for teams working on complex artificial intelligence agents and production-scale deployments."
+        ],
+        "statement_count": 15,
+        "verdicts": [
+          {
+            "statement": "LangSmith offers a more comprehensive set of features than Langfuse.",
+            "reason": "The context states that LangSmith covers the full agent engineering lifecycle and ships capabilities that are missing or only on the roadmap for Langfuse, indicating broader feature coverage.",
+            "verdict": 1
+          },
+          {
+            "statement": "LangSmith covers the full agent engineering lifecycle.",
+            "reason": "The text explicitly says \"LangSmith covers the full agent engineering lifecycle.\"",
+            "verdict": 1
+          },
+          {
+            "statement": "Langfuse focuses on tracing and prompt management.",
+            "reason": "The context notes that \"Langfuse handles tracing and prompt management, useful for early-stage LLM apps.\"",
+            "verdict": 1
+          },
+          {
+            "statement": "Tracing and prompt management are useful for early-stage large language model applications.",
+            "reason": "The context explicitly states that tracing and prompt management are useful for early-stage LLM applications.",
+            "verdict": 1
+          },
+          {
+            "statement": "LangSmith adds advanced capabilities such as production evaluation automation rules, production alerting, and managed deployment for long-running agents.",
+            "reason": "The context lists these exact capabilities as additions provided by LangSmith.",
+            "verdict": 1
+          },
+          {
+            "statement": "LangSmith includes a library of over 30 evaluator templates for trajectory evaluations, safety checks, and multimodal outputs.",
+            "reason": "The context states LangSmith \"adds a 30+ evaluator template library that covers trajectory evals, safety checks, and multimodal outputs.\"",
+            "verdict": 1
+          },
+          {
+            "statement": "Langfuse does not address evaluator templates for trajectory evaluations, safety checks, and multimodal outputs.",
+            "reason": "The context says the 30+ evaluator template library in LangSmith \"covers trajectory evals, safety checks, and multimodal outputs that Langfuse doesn't address.\"",
+            "verdict": 1
+          },
+          {
+            "statement": "LangSmith supports OpenTelemetry ingestion, enabling easy migration of existing instrumentation.",
+            "reason": "The context explicitly mentions \"LangSmith supports OpenTelemetry ingestion, so existing instrumentation carries over without modification.\"",
+            "verdict": 1
+          },
+          {
+            "statement": "LangSmith provides a smooth dataset migration process.",
+            "reason": "The text notes that \"Dataset migration is a direct export/import\" and that support is included, implying an easy (\"smooth\") process.",
+            "verdict": 1
+          },
+          {
+            "statement": "The Plus and Enterprise tiers of LangSmith include support for dataset migration.",
+            "reason": "The context says \"LangSmith's Plus and Enterprise tiers include support throughout the [dataset migration] process.\"",
+            "verdict": 1
+          },
+          {
+            "statement": "LangSmith creates a closed feedback loop connecting every stage of agent engineering.",
+            "reason": "The section states \"The platform creates a closed feedback loop connecting every stage of the agent engineering lifecycle.\"",
+            "verdict": 1
+          },
+          {
+            "statement": "LangSmith turns production traces into regression tests.",
+            "reason": "The context says \"Production traces automatically feed into datasets through one-click conversion, turning real-world failures into regression tests.\"",
+            "verdict": 1
+          },
+          {
+            "statement": "LangSmith uses an Insights Agent to analyze failure modes.",
+            "reason": "The text states \"The Insights Agent analyzes production traces to discover usage patterns and failure modes.\"",
+            "verdict": 1
+          },
+          {
+            "statement": "LangSmith enables systematic quality improvements driven by production data rather than guesswork.",
+            "reason": "The context explains that the integrated approach leads to \"metric-driven engineering, where production data drives systematic agent improvements rather than guesswork.\"",
+            "verdict": 1
+          },
+          {
+            "statement": "The combined capabilities make LangSmith better suited for teams working on complex artificial intelligence agents and production-scale deployments.",
+            "reason": "The context notes that Langfuse suits early-stage apps, while LangSmith covers full lifecycle and addresses gaps that appear as agents become more complex, implying suitability for complex, production-scale needs.",
+            "verdict": 1
+          }
+        ],
+        "faithful_count": 15,
+        "total_count": 15
+      },
+      "context_relevance": {
+        "score": 1.0,
+        "judge1_rating": 2,
+        "judge2_rating": 2
+      },
+      "context_utilization": {
+        "score": 0.9999999999666667,
+        "per_context_verdicts": [
+          {
+            "context_index": 0,
+            "reason": "The answer directly paraphrases the information given in the context — noting that LangSmith covers the full agent engineering lifecycle, adds production evaluation automation, alerting, managed deployment, and a library of evaluator templates, while Langfuse focuses on tracing and prompt management. It also references OpenTelemetry ingestion and migration ease, all of which are explicitly stated in the context, so the context was clearly used to generate the answer.",
+            "verdict": 1
+          },
+          {
+            "context_index": 1,
+            "reason": "The answer draws multiple points directly from the context, such as LangSmith’s closed feedback loop, automatic conversion of production traces into regression tests, the Insights Agent for analyzing failure modes, and systematic quality improvements. These context details are explicitly reflected in the comparison provided in the answer, demonstrating that the context was useful for forming the response.",
+            "verdict": 1
+          },
+          {
+            "context_index": 2,
+            "reason": "The context explicitly contrasts Langfuse and LangSmith, noting that Langfuse focuses on tracing and prompt management while LangSmith provides full lifecycle coverage and is framework-agnostic. These points are directly reflected in the answer, indicating the context was instrumental in formulating the comparison, even if the answer adds extra details not present in the excerpt.",
+            "verdict": 1
+          }
+        ]
+      },
+      "response_groundedness": {
+        "score": 1.0,
+        "judge1_rating": 2,
+        "judge2_rating": 2
+      }
+    },
+    {
+      "question": "What is the LLM-as-a-judge approach and what are its known biases?",
+      "answer": "The LLM-as-a-judge approach uses a large language model (LLM) to evaluate AI agent outputs as a scalable alternative to human judgment. Instead of relying on traditional NLP metrics that measure surface-level text similarity, an LLM judge assesses qualities that matter to users, such as helpfulness, accuracy, and tone. The process involves giving the LLM a prompt that describes what \"good\" looks like along with the output to evaluate, and the model returns a score or judgment. This approach is effective because it frames evaluation as a focused classification task rather than open-ended generation.\n\nKnown biases of LLM-as-a-judge include:\n\n- **Position bias:** Judges tend to favor responses that appear first or last in their context window, causing the same response to receive different scores depending on position.\n- **Verbosity bias:** Judges often rate longer responses higher, even when concise answers would be more appropriate.\n- **Inconsistency:** The same judge with the same prompt can score the same response differently across runs, leading to noisy evaluation results.\n- **Self-enhancement bias:** Models may score their own outputs higher than those from other models.\n- **Provenance/recency bias:** Judges may favor stylistic patterns or phrasing associated with recent training data.\n\nThese biases can undermine evaluation reliability, so calibration against human judgment and mitigation strategies are important to improve trustworthiness.",
+      "answer_relevancy": {
+        "score": 0.9331353491843637,
+        "generated_questions": [
+          "What is the LLM-as-a-judge approach and what biases can affect its evaluations?"
+        ],
+        "noncommittal_flags": [
+          0
+        ],
+        "cosine_similarities": [
+          0.9331353491843637
+        ],
+        "all_noncommittal": false
+      },
+      "faithfulness": {
+        "score": 1.0,
+        "statements_provided": false,
+        "statements": [
+          "The LLM-as-a-judge approach employs a large language model to evaluate AI agent outputs as a scalable alternative to human judgment.",
+          "Traditional NLP metrics measure surface-level text similarity.",
+          "An LLM judge assesses user-relevant qualities such as helpfulness, accuracy, and tone instead of relying on traditional surface-level metrics.",
+          "Evaluators provide the large language model with a prompt that describes desirable output qualities along with the text to evaluate.",
+          "The large language model returns a score or judgment after receiving the prompt and output.",
+          "The LLM-as-a-judge approach is considered effective because the approach frames evaluation as a focused classification task rather than an open-ended generation task.",
+          "Known biases of the LLM-as-a-judge approach include position bias, verbosity bias, inconsistency, self-enhancement bias, and provenance or recency bias.",
+          "Position bias occurs when an LLM judge favors responses that appear first or last in the judge's context window.",
+          "Position bias can cause the same response to receive different scores depending on response position.",
+          "Verbosity bias occurs when an LLM judge rates longer responses higher even when concise answers would be more appropriate.",
+          "Inconsistency occurs when the same LLM judge with the same prompt assigns different scores to the same response across evaluation runs.",
+          "Inconsistency leads to noisy evaluation results.",
+          "Self-enhancement bias occurs when an LLM judge scores outputs generated by the same model higher than outputs generated by different models.",
+          "Provenance or recency bias occurs when an LLM judge favors stylistic patterns or phrasing associated with recent training data.",
+          "The identified biases can undermine the reliability of LLM-as-a-judge evaluations.",
+          "Calibration against human judgment and the adoption of bias mitigation strategies are important to improve the trustworthiness of LLM-as-a-judge evaluations."
+        ],
+        "statement_count": 16,
+        "verdicts": [
+          {
+            "statement": "The LLM-as-a-judge approach employs a large language model to evaluate AI agent outputs as a scalable alternative to human judgment.",
+            "reason": "The context explicitly states that \"LLM-as-a-judge uses a large language model (LLM) to evaluate AI agent outputs as a scalable substitute for human judgment.\"",
+            "verdict": 1
+          },
+          {
+            "statement": "Traditional NLP metrics measure surface-level text similarity.",
+            "reason": "The context says \"Traditional NLP metrics measure surface-level text similarity.\"",
+            "verdict": 1
+          },
+          {
+            "statement": "An LLM judge assesses user-relevant qualities such as helpfulness, accuracy, and tone instead of relying on traditional surface-level metrics.",
+            "reason": "The context notes that an LLM judge \"assesses qualities that actually matter to your users, like helpfulness, accuracy, and tone,\" contrasting these with surface-level metrics.",
+            "verdict": 1
+          },
+          {
+            "statement": "Evaluators provide the large language model with a prompt that describes desirable output qualities along with the text to evaluate.",
+            "reason": "The context says \"You give an LLM a prompt describing what 'good' looks like alongside the output you want to evaluate.\"",
+            "verdict": 1
+          },
+          {
+            "statement": "The large language model returns a score or judgment after receiving the prompt and output.",
+            "reason": "The context states \"The model returns a score or judgment.\"",
+            "verdict": 1
+          },
+          {
+            "statement": "The LLM-as-a-judge approach is considered effective because the approach frames evaluation as a focused classification task rather than an open-ended generation task.",
+            "reason": "The context explains that LLMs \"handle evaluating text well ... because it's a focused classification task, not an open-ended generation problem,\" implying this framing drives effectiveness.",
+            "verdict": 1
+          },
+          {
+            "statement": "Known biases of the LLM-as-a-judge approach include position bias, verbosity bias, inconsistency, self-enhancement bias, and provenance or recency bias.",
+            "reason": "The context lists these exact biases: position, verbosity, inconsistency, self-enhancement, and provenance/recency bias.",
+            "verdict": 1
+          },
+          {
+            "statement": "Position bias occurs when an LLM judge favors responses that appear first or last in the judge's context window.",
+            "reason": "The context defines position bias as favoring responses that appear first or last in the context window.",
+            "verdict": 1
+          },
+          {
+            "statement": "Position bias can cause the same response to receive different scores depending on response position.",
+            "reason": "The context says \"The same response can receive different scores depending on where it appears,\" due to position bias.",
+            "verdict": 1
+          },
+          {
+            "statement": "Verbosity bias occurs when an LLM judge rates longer responses higher even when concise answers would be more appropriate.",
+            "reason": "The context describes verbosity bias as judges rating longer responses higher, even when concise answers are preferable.",
+            "verdict": 1
+          },
+          {
+            "statement": "Inconsistency occurs when the same LLM judge with the same prompt assigns different scores to the same response across evaluation runs.",
+            "reason": "The context states \"The same judge with the same prompt can score the same response differently across runs,\" defining inconsistency.",
+            "verdict": 1
+          },
+          {
+            "statement": "Inconsistency leads to noisy evaluation results.",
+            "reason": "The context explains that variability from inconsistency \"makes evaluation results noisy if you do not average them over multiple runs.\"",
+            "verdict": 1
+          },
+          {
+            "statement": "Self-enhancement bias occurs when an LLM judge scores outputs generated by the same model higher than outputs generated by different models.",
+            "reason": "The context table defines self-enhancement bias as \"Models score their own outputs higher than outputs from other models.\"",
+            "verdict": 1
+          },
+          {
+            "statement": "Provenance or recency bias occurs when an LLM judge favors stylistic patterns or phrasing associated with recent training data.",
+            "reason": "The context table says provenance/recency bias is when judges favor stylistic patterns or phrasing linked to recent training data.",
+            "verdict": 1
+          },
+          {
+            "statement": "The identified biases can undermine the reliability of LLM-as-a-judge evaluations.",
+            "reason": "The context notes that these biases \"can undermine evaluation reliability\" when using automated assessment.",
+            "verdict": 1
+          },
+          {
+            "statement": "Calibration against human judgment and the adoption of bias mitigation strategies are important to improve the trustworthiness of LLM-as-a-judge evaluations.",
+            "reason": "The context stresses the importance of \"Calibration against human labels\" and other mitigations to \"build evaluators you can trust,\" indicating their necessity for trustworthiness.",
+            "verdict": 1
+          }
+        ],
+        "faithful_count": 16,
+        "total_count": 16
+      },
+      "context_relevance": {
+        "score": 1.0,
+        "judge1_rating": 2,
+        "judge2_rating": 2
+      },
+      "context_utilization": {
+        "score": 0.99999999995,
+        "per_context_verdicts": [
+          {
+            "context_index": 0,
+            "reason": "The context explicitly defines the LLM-as-a-judge approach (using a language model to score outputs based on a rubric) and lists its known biases (position bias, verbosity bias, inconsistency). The answer mirrors this information and adds a couple of extra biases, but the core content clearly derives from the provided context, making the context useful for forming the answer.",
+            "verdict": 1
+          },
+          {
+            "context_index": 1,
+            "reason": "The context explains what an LLM judge is (an evaluator using a language model) and lists specific biases such as position bias, verbosity bias, self-enhancement bias, provenance/recency bias, and score inconsistency. The answer mirrors this information, defining the LLM-as-a-judge approach and enumerating the same biases. Therefore, the context was directly useful in producing the answer.",
+            "verdict": 1
+          },
+          {
+            "context_index": 2,
+            "reason": "The context explains what the LLM-as-a-judge approach is, which supports the first part of the answer. However, the context does not mention any of the specific biases (position bias, verbosity bias, inconsistency, self-enhancement bias, provenance/recency bias) that the answer lists. Therefore, the answer cannot be fully derived from the provided context alone.",
+            "verdict": 0
+          }
+        ]
+      },
+      "response_groundedness": {
+        "score": 1.0,
+        "judge1_rating": 2,
+        "judge2_rating": 2
+      }
+    }
+  ]
+}

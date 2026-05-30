@@ -1,0 +1,4 @@
+case_id,question,answer,answer_relevancy,faithfulness,context_relevance,context_utilization,response_groundedness,evaluator_llm,embeddings_model,input_csv
+CR10,What are the three layers of continual learning for AI agents?,"Model layer, harness layer, and context layer.",,0.6666666666666666,1.0,0.499999999975,0.5,LLaDA2.1-mini,text-embedding-3-large,test.csv
+CR11,What biases affect LLM judges and how can they be mitigated?,"Position bias, verbosity bias, and self-enhancement bias.",,1.0,1.0,0.499999999975,0.0,LLaDA2.1-mini,text-embedding-3-large,test.csv
+CR12,How does LangSmith support evaluation workflows from offline to production?,"Through offline datasets, online evaluation, and production monitoring.",,1.0,1.0,0.999999999975,0.0,LLaDA2.1-mini,text-embedding-3-large,test.csv

@@ -1,0 +1,1881 @@
+example_idx,question,metric_name,call_index,prompt,response_model,response,latency_s,timestamp,model
+0,How do I export evaluation datasets from LangSmith?,context_relevance,0,"You are a world class expert designed to evaluate the relevance score of a Context in order to answer the Question.
+Your task is to determine if the Context contains proper information to answer the Question.
+Do not rely on your previous knowledge about the Question.
+Use only what is written in the Context and in the Question.
+Follow the instructions below:
+0. If the context does not contains any relevant information to answer the question, say 0.
+1. If the context partially contains relevant information to answer the question, say 1.
+2. If the context contains any relevant information to answer the question, say 2.
+You must provide the relevance score of 0, 1, or 2, nothing else.
+Do not explain.
+Return your response as JSON in this format: {""rating"": X} where X is 0, 1, or 2.
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for context relevance evaluation."", ""properties"": {""rating"": {""description"": ""Relevance rating (0, 1, or 2)"", ""title"": ""Rating"", ""type"": ""integer""}}, ""required"": [""rating""], ""title"": ""ContextRelevanceOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""user_input"": ""When was Albert Einstein born?"",
+    ""context"": ""Albert Einstein was born March 14, 1879.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 2
+Input: {
+    ""user_input"": ""What is photosynthesis?"",
+    ""context"": ""Photosynthesis is the process by which plants convert sunlight into energy.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 3
+Input: {
+    ""user_input"": ""How do computers work?"",
+    ""context"": ""Albert Einstein was a theoretical physicist.""
+}
+Output: {
+    ""rating"": 0
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""user_input"": ""How do I export evaluation datasets from LangSmith?"",
+    ""context"": ""Annotation Queues in LangSmith allow teams to route production traces to domain experts for structured review. Queues can be filtered by metadata such as user segment, error type, or confidence score to ensure experts review the most impactful cases. Reviewed annotations feed directly into evaluation datasets, creating a feedback loop between production experience and offline testing.""
+}
+Output: ",ContextRelevanceOutput,rating=2,0.6964,2026-05-19T13:04:53.931907+00:00,gpt-4.1-mini
+0,How do I export evaluation datasets from LangSmith?,context_relevance,1,"As a specially designed expert to assess the relevance score of a given Context in relation to a Question, my task is to determine the extent to which the Context provides information necessary to answer the Question. I will rely solely on the information provided in the Context and Question, and not on any prior knowledge.
+
+Here are the instructions I will follow:
+* If the Context does not contain any relevant information to answer the Question, I will respond with a relevance score of 0.
+* If the Context partially contains relevant information to answer the Question, I will respond with a relevance score of 1.
+* If the Context contains any relevant information to answer the Question, I will respond with a relevance score of 2.
+Return your response as JSON in this format: {""rating"": X} where X is 0, 1, or 2.
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for context relevance evaluation."", ""properties"": {""rating"": {""description"": ""Relevance rating (0, 1, or 2)"", ""title"": ""Rating"", ""type"": ""integer""}}, ""required"": [""rating""], ""title"": ""ContextRelevanceOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""user_input"": ""When was Albert Einstein born?"",
+    ""context"": ""Albert Einstein was born March 14, 1879.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 2
+Input: {
+    ""user_input"": ""What is photosynthesis?"",
+    ""context"": ""Photosynthesis is the process by which plants convert sunlight into energy.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 3
+Input: {
+    ""user_input"": ""How do computers work?"",
+    ""context"": ""The weather today is sunny.""
+}
+Output: {
+    ""rating"": 0
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""user_input"": ""How do I export evaluation datasets from LangSmith?"",
+    ""context"": ""Annotation Queues in LangSmith allow teams to route production traces to domain experts for structured review. Queues can be filtered by metadata such as user segment, error type, or confidence score to ensure experts review the most impactful cases. Reviewed annotations feed directly into evaluation datasets, creating a feedback loop between production experience and offline testing.""
+}
+Output: ",ContextRelevanceOutput,rating=2,0.6529,2026-05-19T13:04:54.585574+00:00,gpt-4.1-mini
+1,How do I configure role-based access control in LangSmith?,context_relevance,0,"You are a world class expert designed to evaluate the relevance score of a Context in order to answer the Question.
+Your task is to determine if the Context contains proper information to answer the Question.
+Do not rely on your previous knowledge about the Question.
+Use only what is written in the Context and in the Question.
+Follow the instructions below:
+0. If the context does not contains any relevant information to answer the question, say 0.
+1. If the context partially contains relevant information to answer the question, say 1.
+2. If the context contains any relevant information to answer the question, say 2.
+You must provide the relevance score of 0, 1, or 2, nothing else.
+Do not explain.
+Return your response as JSON in this format: {""rating"": X} where X is 0, 1, or 2.
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for context relevance evaluation."", ""properties"": {""rating"": {""description"": ""Relevance rating (0, 1, or 2)"", ""title"": ""Rating"", ""type"": ""integer""}}, ""required"": [""rating""], ""title"": ""ContextRelevanceOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""user_input"": ""When was Albert Einstein born?"",
+    ""context"": ""Albert Einstein was born March 14, 1879.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 2
+Input: {
+    ""user_input"": ""What is photosynthesis?"",
+    ""context"": ""Photosynthesis is the process by which plants convert sunlight into energy.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 3
+Input: {
+    ""user_input"": ""How do computers work?"",
+    ""context"": ""Albert Einstein was a theoretical physicist.""
+}
+Output: {
+    ""rating"": 0
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""user_input"": ""How do I configure role-based access control in LangSmith?"",
+    ""context"": ""LangSmith Deployments provides a managed runtime for serving LangGraph agents in production. It handles horizontal scaling, task queues, and blue-green deployments out of the box. Teams can deploy directly from GitHub repositories with automatic CI/CD integration, and the platform monitors resource utilization and latency for each deployed agent version.""
+}
+Output: ",ContextRelevanceOutput,rating=0,0.4436,2026-05-19T13:04:55.030483+00:00,gpt-4.1-mini
+1,How do I configure role-based access control in LangSmith?,context_relevance,1,"As a specially designed expert to assess the relevance score of a given Context in relation to a Question, my task is to determine the extent to which the Context provides information necessary to answer the Question. I will rely solely on the information provided in the Context and Question, and not on any prior knowledge.
+
+Here are the instructions I will follow:
+* If the Context does not contain any relevant information to answer the Question, I will respond with a relevance score of 0.
+* If the Context partially contains relevant information to answer the Question, I will respond with a relevance score of 1.
+* If the Context contains any relevant information to answer the Question, I will respond with a relevance score of 2.
+Return your response as JSON in this format: {""rating"": X} where X is 0, 1, or 2.
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for context relevance evaluation."", ""properties"": {""rating"": {""description"": ""Relevance rating (0, 1, or 2)"", ""title"": ""Rating"", ""type"": ""integer""}}, ""required"": [""rating""], ""title"": ""ContextRelevanceOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""user_input"": ""When was Albert Einstein born?"",
+    ""context"": ""Albert Einstein was born March 14, 1879.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 2
+Input: {
+    ""user_input"": ""What is photosynthesis?"",
+    ""context"": ""Photosynthesis is the process by which plants convert sunlight into energy.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 3
+Input: {
+    ""user_input"": ""How do computers work?"",
+    ""context"": ""The weather today is sunny.""
+}
+Output: {
+    ""rating"": 0
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""user_input"": ""How do I configure role-based access control in LangSmith?"",
+    ""context"": ""LangSmith Deployments provides a managed runtime for serving LangGraph agents in production. It handles horizontal scaling, task queues, and blue-green deployments out of the box. Teams can deploy directly from GitHub repositories with automatic CI/CD integration, and the platform monitors resource utilization and latency for each deployed agent version.""
+}
+Output: ",ContextRelevanceOutput,rating=0,0.4449,2026-05-19T13:04:55.475882+00:00,gpt-4.1-mini
+2,How does LangSmith handle prompt versioning and A/B testing?,context_relevance,0,"You are a world class expert designed to evaluate the relevance score of a Context in order to answer the Question.
+Your task is to determine if the Context contains proper information to answer the Question.
+Do not rely on your previous knowledge about the Question.
+Use only what is written in the Context and in the Question.
+Follow the instructions below:
+0. If the context does not contains any relevant information to answer the question, say 0.
+1. If the context partially contains relevant information to answer the question, say 1.
+2. If the context contains any relevant information to answer the question, say 2.
+You must provide the relevance score of 0, 1, or 2, nothing else.
+Do not explain.
+Return your response as JSON in this format: {""rating"": X} where X is 0, 1, or 2.
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for context relevance evaluation."", ""properties"": {""rating"": {""description"": ""Relevance rating (0, 1, or 2)"", ""title"": ""Rating"", ""type"": ""integer""}}, ""required"": [""rating""], ""title"": ""ContextRelevanceOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""user_input"": ""When was Albert Einstein born?"",
+    ""context"": ""Albert Einstein was born March 14, 1879.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 2
+Input: {
+    ""user_input"": ""What is photosynthesis?"",
+    ""context"": ""Photosynthesis is the process by which plants convert sunlight into energy.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 3
+Input: {
+    ""user_input"": ""How do computers work?"",
+    ""context"": ""Albert Einstein was a theoretical physicist.""
+}
+Output: {
+    ""rating"": 0
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""user_input"": ""How does LangSmith handle prompt versioning and A/B testing?"",
+    ""context"": ""LangSmith provides end-to-end tracing of LLM calls and agent runs, allowing developers to inspect every input, output, and intermediate step in their application. Traces are organized hierarchically, with parent spans representing top-level requests and child spans capturing individual LLM calls, tool invocations, and retrieval steps. Each trace includes token counts, latency measurements, and metadata tags for filtering.""
+}
+Output: ",ContextRelevanceOutput,rating=0,0.4137,2026-05-19T13:04:55.890567+00:00,gpt-4.1-mini
+2,How does LangSmith handle prompt versioning and A/B testing?,context_relevance,1,"As a specially designed expert to assess the relevance score of a given Context in relation to a Question, my task is to determine the extent to which the Context provides information necessary to answer the Question. I will rely solely on the information provided in the Context and Question, and not on any prior knowledge.
+
+Here are the instructions I will follow:
+* If the Context does not contain any relevant information to answer the Question, I will respond with a relevance score of 0.
+* If the Context partially contains relevant information to answer the Question, I will respond with a relevance score of 1.
+* If the Context contains any relevant information to answer the Question, I will respond with a relevance score of 2.
+Return your response as JSON in this format: {""rating"": X} where X is 0, 1, or 2.
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for context relevance evaluation."", ""properties"": {""rating"": {""description"": ""Relevance rating (0, 1, or 2)"", ""title"": ""Rating"", ""type"": ""integer""}}, ""required"": [""rating""], ""title"": ""ContextRelevanceOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""user_input"": ""When was Albert Einstein born?"",
+    ""context"": ""Albert Einstein was born March 14, 1879.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 2
+Input: {
+    ""user_input"": ""What is photosynthesis?"",
+    ""context"": ""Photosynthesis is the process by which plants convert sunlight into energy.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 3
+Input: {
+    ""user_input"": ""How do computers work?"",
+    ""context"": ""The weather today is sunny.""
+}
+Output: {
+    ""rating"": 0
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""user_input"": ""How does LangSmith handle prompt versioning and A/B testing?"",
+    ""context"": ""LangSmith provides end-to-end tracing of LLM calls and agent runs, allowing developers to inspect every input, output, and intermediate step in their application. Traces are organized hierarchically, with parent spans representing top-level requests and child spans capturing individual LLM calls, tool invocations, and retrieval steps. Each trace includes token counts, latency measurements, and metadata tags for filtering.""
+}
+Output: ",ContextRelevanceOutput,rating=1,0.5231,2026-05-19T13:04:56.414231+00:00,gpt-4.1-mini
+3,How do I set up webhook notifications in LangSmith for failed evaluations?,context_relevance,0,"You are a world class expert designed to evaluate the relevance score of a Context in order to answer the Question.
+Your task is to determine if the Context contains proper information to answer the Question.
+Do not rely on your previous knowledge about the Question.
+Use only what is written in the Context and in the Question.
+Follow the instructions below:
+0. If the context does not contains any relevant information to answer the question, say 0.
+1. If the context partially contains relevant information to answer the question, say 1.
+2. If the context contains any relevant information to answer the question, say 2.
+You must provide the relevance score of 0, 1, or 2, nothing else.
+Do not explain.
+Return your response as JSON in this format: {""rating"": X} where X is 0, 1, or 2.
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for context relevance evaluation."", ""properties"": {""rating"": {""description"": ""Relevance rating (0, 1, or 2)"", ""title"": ""Rating"", ""type"": ""integer""}}, ""required"": [""rating""], ""title"": ""ContextRelevanceOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""user_input"": ""When was Albert Einstein born?"",
+    ""context"": ""Albert Einstein was born March 14, 1879.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 2
+Input: {
+    ""user_input"": ""What is photosynthesis?"",
+    ""context"": ""Photosynthesis is the process by which plants convert sunlight into energy.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 3
+Input: {
+    ""user_input"": ""How do computers work?"",
+    ""context"": ""Albert Einstein was a theoretical physicist.""
+}
+Output: {
+    ""rating"": 0
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""user_input"": ""How do I set up webhook notifications in LangSmith for failed evaluations?"",
+    ""context"": ""LangSmith provides a library of over 30 built-in evaluator templates covering faithfulness, relevance, safety, and tool-use correctness. Each template can be configured with custom scoring rubrics and thresholds to match your application's requirements. Templates are versioned and can be shared across projects within an organization.""
+}
+Output: ",ContextRelevanceOutput,rating=0,0.3997,2026-05-19T13:04:56.815214+00:00,gpt-4.1-mini
+3,How do I set up webhook notifications in LangSmith for failed evaluations?,context_relevance,1,"As a specially designed expert to assess the relevance score of a given Context in relation to a Question, my task is to determine the extent to which the Context provides information necessary to answer the Question. I will rely solely on the information provided in the Context and Question, and not on any prior knowledge.
+
+Here are the instructions I will follow:
+* If the Context does not contain any relevant information to answer the Question, I will respond with a relevance score of 0.
+* If the Context partially contains relevant information to answer the Question, I will respond with a relevance score of 1.
+* If the Context contains any relevant information to answer the Question, I will respond with a relevance score of 2.
+Return your response as JSON in this format: {""rating"": X} where X is 0, 1, or 2.
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for context relevance evaluation."", ""properties"": {""rating"": {""description"": ""Relevance rating (0, 1, or 2)"", ""title"": ""Rating"", ""type"": ""integer""}}, ""required"": [""rating""], ""title"": ""ContextRelevanceOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""user_input"": ""When was Albert Einstein born?"",
+    ""context"": ""Albert Einstein was born March 14, 1879.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 2
+Input: {
+    ""user_input"": ""What is photosynthesis?"",
+    ""context"": ""Photosynthesis is the process by which plants convert sunlight into energy.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 3
+Input: {
+    ""user_input"": ""How do computers work?"",
+    ""context"": ""The weather today is sunny.""
+}
+Output: {
+    ""rating"": 0
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""user_input"": ""How do I set up webhook notifications in LangSmith for failed evaluations?"",
+    ""context"": ""LangSmith provides a library of over 30 built-in evaluator templates covering faithfulness, relevance, safety, and tool-use correctness. Each template can be configured with custom scoring rubrics and thresholds to match your application's requirements. Templates are versioned and can be shared across projects within an organization.""
+}
+Output: ",ContextRelevanceOutput,rating=0,0.4314,2026-05-19T13:04:57.247031+00:00,gpt-4.1-mini
+4,How do I build a custom LLM-as-a-judge evaluator with specific scoring criteria in Python?,context_relevance,0,"You are a world class expert designed to evaluate the relevance score of a Context in order to answer the Question.
+Your task is to determine if the Context contains proper information to answer the Question.
+Do not rely on your previous knowledge about the Question.
+Use only what is written in the Context and in the Question.
+Follow the instructions below:
+0. If the context does not contains any relevant information to answer the question, say 0.
+1. If the context partially contains relevant information to answer the question, say 1.
+2. If the context contains any relevant information to answer the question, say 2.
+You must provide the relevance score of 0, 1, or 2, nothing else.
+Do not explain.
+Return your response as JSON in this format: {""rating"": X} where X is 0, 1, or 2.
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for context relevance evaluation."", ""properties"": {""rating"": {""description"": ""Relevance rating (0, 1, or 2)"", ""title"": ""Rating"", ""type"": ""integer""}}, ""required"": [""rating""], ""title"": ""ContextRelevanceOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""user_input"": ""When was Albert Einstein born?"",
+    ""context"": ""Albert Einstein was born March 14, 1879.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 2
+Input: {
+    ""user_input"": ""What is photosynthesis?"",
+    ""context"": ""Photosynthesis is the process by which plants convert sunlight into energy.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 3
+Input: {
+    ""user_input"": ""How do computers work?"",
+    ""context"": ""Albert Einstein was a theoretical physicist.""
+}
+Output: {
+    ""rating"": 0
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""user_input"": ""How do I build a custom LLM-as-a-judge evaluator with specific scoring criteria in Python?"",
+    ""context"": ""The LLM-as-a-judge approach uses a large language model to evaluate the outputs of another LLM or AI system. Instead of relying on human reviewers for every evaluation, an LLM serves as an automated judge that scores responses on criteria like relevance, faithfulness, or safety. This approach scales evaluation beyond what manual review can handle but introduces its own biases including verbosity bias, position bias, and self-enhancement bias.""
+}
+Output: ",ContextRelevanceOutput,rating=1,0.432,2026-05-19T13:04:57.679994+00:00,gpt-4.1-mini
+4,How do I build a custom LLM-as-a-judge evaluator with specific scoring criteria in Python?,context_relevance,1,"As a specially designed expert to assess the relevance score of a given Context in relation to a Question, my task is to determine the extent to which the Context provides information necessary to answer the Question. I will rely solely on the information provided in the Context and Question, and not on any prior knowledge.
+
+Here are the instructions I will follow:
+* If the Context does not contain any relevant information to answer the Question, I will respond with a relevance score of 0.
+* If the Context partially contains relevant information to answer the Question, I will respond with a relevance score of 1.
+* If the Context contains any relevant information to answer the Question, I will respond with a relevance score of 2.
+Return your response as JSON in this format: {""rating"": X} where X is 0, 1, or 2.
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for context relevance evaluation."", ""properties"": {""rating"": {""description"": ""Relevance rating (0, 1, or 2)"", ""title"": ""Rating"", ""type"": ""integer""}}, ""required"": [""rating""], ""title"": ""ContextRelevanceOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""user_input"": ""When was Albert Einstein born?"",
+    ""context"": ""Albert Einstein was born March 14, 1879.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 2
+Input: {
+    ""user_input"": ""What is photosynthesis?"",
+    ""context"": ""Photosynthesis is the process by which plants convert sunlight into energy.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 3
+Input: {
+    ""user_input"": ""How do computers work?"",
+    ""context"": ""The weather today is sunny.""
+}
+Output: {
+    ""rating"": 0
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""user_input"": ""How do I build a custom LLM-as-a-judge evaluator with specific scoring criteria in Python?"",
+    ""context"": ""The LLM-as-a-judge approach uses a large language model to evaluate the outputs of another LLM or AI system. Instead of relying on human reviewers for every evaluation, an LLM serves as an automated judge that scores responses on criteria like relevance, faithfulness, or safety. This approach scales evaluation beyond what manual review can handle but introduces its own biases including verbosity bias, position bias, and self-enhancement bias.""
+}
+Output: ",ContextRelevanceOutput,rating=1,0.6434,2026-05-19T13:04:58.323707+00:00,gpt-4.1-mini
+5,What Python code do I need to add trajectory evaluation to my LangGraph agent?,context_relevance,0,"You are a world class expert designed to evaluate the relevance score of a Context in order to answer the Question.
+Your task is to determine if the Context contains proper information to answer the Question.
+Do not rely on your previous knowledge about the Question.
+Use only what is written in the Context and in the Question.
+Follow the instructions below:
+0. If the context does not contains any relevant information to answer the question, say 0.
+1. If the context partially contains relevant information to answer the question, say 1.
+2. If the context contains any relevant information to answer the question, say 2.
+You must provide the relevance score of 0, 1, or 2, nothing else.
+Do not explain.
+Return your response as JSON in this format: {""rating"": X} where X is 0, 1, or 2.
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for context relevance evaluation."", ""properties"": {""rating"": {""description"": ""Relevance rating (0, 1, or 2)"", ""title"": ""Rating"", ""type"": ""integer""}}, ""required"": [""rating""], ""title"": ""ContextRelevanceOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""user_input"": ""When was Albert Einstein born?"",
+    ""context"": ""Albert Einstein was born March 14, 1879.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 2
+Input: {
+    ""user_input"": ""What is photosynthesis?"",
+    ""context"": ""Photosynthesis is the process by which plants convert sunlight into energy.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 3
+Input: {
+    ""user_input"": ""How do computers work?"",
+    ""context"": ""Albert Einstein was a theoretical physicist.""
+}
+Output: {
+    ""rating"": 0
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""user_input"": ""What Python code do I need to add trajectory evaluation to my LangGraph agent?"",
+    ""context"": ""Trajectory evaluation is the process of scoring the entire execution path an AI agent takes, including every tool call, intermediate reasoning step, and decision point, rather than only evaluating the final output. This provides visibility into whether the agent chose the right tools, called them in the right order, and handled errors appropriately along the way.""
+}
+Output: ",ContextRelevanceOutput,rating=1,0.6975,2026-05-19T13:04:59.022738+00:00,gpt-4.1-mini
+5,What Python code do I need to add trajectory evaluation to my LangGraph agent?,context_relevance,1,"As a specially designed expert to assess the relevance score of a given Context in relation to a Question, my task is to determine the extent to which the Context provides information necessary to answer the Question. I will rely solely on the information provided in the Context and Question, and not on any prior knowledge.
+
+Here are the instructions I will follow:
+* If the Context does not contain any relevant information to answer the Question, I will respond with a relevance score of 0.
+* If the Context partially contains relevant information to answer the Question, I will respond with a relevance score of 1.
+* If the Context contains any relevant information to answer the Question, I will respond with a relevance score of 2.
+Return your response as JSON in this format: {""rating"": X} where X is 0, 1, or 2.
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for context relevance evaluation."", ""properties"": {""rating"": {""description"": ""Relevance rating (0, 1, or 2)"", ""title"": ""Rating"", ""type"": ""integer""}}, ""required"": [""rating""], ""title"": ""ContextRelevanceOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""user_input"": ""When was Albert Einstein born?"",
+    ""context"": ""Albert Einstein was born March 14, 1879.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 2
+Input: {
+    ""user_input"": ""What is photosynthesis?"",
+    ""context"": ""Photosynthesis is the process by which plants convert sunlight into energy.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 3
+Input: {
+    ""user_input"": ""How do computers work?"",
+    ""context"": ""The weather today is sunny.""
+}
+Output: {
+    ""rating"": 0
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""user_input"": ""What Python code do I need to add trajectory evaluation to my LangGraph agent?"",
+    ""context"": ""Trajectory evaluation is the process of scoring the entire execution path an AI agent takes, including every tool call, intermediate reasoning step, and decision point, rather than only evaluating the final output. This provides visibility into whether the agent chose the right tools, called them in the right order, and handled errors appropriately along the way.""
+}
+Output: ",ContextRelevanceOutput,rating=1,0.4743,2026-05-19T13:04:59.498280+00:00,gpt-4.1-mini
+6,What are the exact steps to configure context precision scoring for my retrieval pipeline?,context_relevance,0,"You are a world class expert designed to evaluate the relevance score of a Context in order to answer the Question.
+Your task is to determine if the Context contains proper information to answer the Question.
+Do not rely on your previous knowledge about the Question.
+Use only what is written in the Context and in the Question.
+Follow the instructions below:
+0. If the context does not contains any relevant information to answer the question, say 0.
+1. If the context partially contains relevant information to answer the question, say 1.
+2. If the context contains any relevant information to answer the question, say 2.
+You must provide the relevance score of 0, 1, or 2, nothing else.
+Do not explain.
+Return your response as JSON in this format: {""rating"": X} where X is 0, 1, or 2.
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for context relevance evaluation."", ""properties"": {""rating"": {""description"": ""Relevance rating (0, 1, or 2)"", ""title"": ""Rating"", ""type"": ""integer""}}, ""required"": [""rating""], ""title"": ""ContextRelevanceOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""user_input"": ""When was Albert Einstein born?"",
+    ""context"": ""Albert Einstein was born March 14, 1879.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 2
+Input: {
+    ""user_input"": ""What is photosynthesis?"",
+    ""context"": ""Photosynthesis is the process by which plants convert sunlight into energy.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 3
+Input: {
+    ""user_input"": ""How do computers work?"",
+    ""context"": ""Albert Einstein was a theoretical physicist.""
+}
+Output: {
+    ""rating"": 0
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""user_input"": ""What are the exact steps to configure context precision scoring for my retrieval pipeline?"",
+    ""context"": ""LLM evaluation metrics fall into several categories depending on what aspect of your system you want to measure. Retrieval metrics like context precision and context recall assess whether the right documents were retrieved. Generation metrics like faithfulness and answer relevance evaluate the quality of the generated response. End-to-end metrics combine both retrieval and generation quality into a single score.""
+}
+Output: ",ContextRelevanceOutput,rating=1,0.5227,2026-05-19T13:05:00.021804+00:00,gpt-4.1-mini
+6,What are the exact steps to configure context precision scoring for my retrieval pipeline?,context_relevance,1,"As a specially designed expert to assess the relevance score of a given Context in relation to a Question, my task is to determine the extent to which the Context provides information necessary to answer the Question. I will rely solely on the information provided in the Context and Question, and not on any prior knowledge.
+
+Here are the instructions I will follow:
+* If the Context does not contain any relevant information to answer the Question, I will respond with a relevance score of 0.
+* If the Context partially contains relevant information to answer the Question, I will respond with a relevance score of 1.
+* If the Context contains any relevant information to answer the Question, I will respond with a relevance score of 2.
+Return your response as JSON in this format: {""rating"": X} where X is 0, 1, or 2.
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for context relevance evaluation."", ""properties"": {""rating"": {""description"": ""Relevance rating (0, 1, or 2)"", ""title"": ""Rating"", ""type"": ""integer""}}, ""required"": [""rating""], ""title"": ""ContextRelevanceOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""user_input"": ""When was Albert Einstein born?"",
+    ""context"": ""Albert Einstein was born March 14, 1879.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 2
+Input: {
+    ""user_input"": ""What is photosynthesis?"",
+    ""context"": ""Photosynthesis is the process by which plants convert sunlight into energy.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 3
+Input: {
+    ""user_input"": ""How do computers work?"",
+    ""context"": ""The weather today is sunny.""
+}
+Output: {
+    ""rating"": 0
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""user_input"": ""What are the exact steps to configure context precision scoring for my retrieval pipeline?"",
+    ""context"": ""LLM evaluation metrics fall into several categories depending on what aspect of your system you want to measure. Retrieval metrics like context precision and context recall assess whether the right documents were retrieved. Generation metrics like faithfulness and answer relevance evaluate the quality of the generated response. End-to-end metrics combine both retrieval and generation quality into a single score.""
+}
+Output: ",ContextRelevanceOutput,rating=1,0.4279,2026-05-19T13:05:00.450195+00:00,gpt-4.1-mini
+7,How do I implement harness-layer continual learning with automatic prompt updates based on production feedback?,context_relevance,0,"You are a world class expert designed to evaluate the relevance score of a Context in order to answer the Question.
+Your task is to determine if the Context contains proper information to answer the Question.
+Do not rely on your previous knowledge about the Question.
+Use only what is written in the Context and in the Question.
+Follow the instructions below:
+0. If the context does not contains any relevant information to answer the question, say 0.
+1. If the context partially contains relevant information to answer the question, say 1.
+2. If the context contains any relevant information to answer the question, say 2.
+You must provide the relevance score of 0, 1, or 2, nothing else.
+Do not explain.
+Return your response as JSON in this format: {""rating"": X} where X is 0, 1, or 2.
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for context relevance evaluation."", ""properties"": {""rating"": {""description"": ""Relevance rating (0, 1, or 2)"", ""title"": ""Rating"", ""type"": ""integer""}}, ""required"": [""rating""], ""title"": ""ContextRelevanceOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""user_input"": ""When was Albert Einstein born?"",
+    ""context"": ""Albert Einstein was born March 14, 1879.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 2
+Input: {
+    ""user_input"": ""What is photosynthesis?"",
+    ""context"": ""Photosynthesis is the process by which plants convert sunlight into energy.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 3
+Input: {
+    ""user_input"": ""How do computers work?"",
+    ""context"": ""Albert Einstein was a theoretical physicist.""
+}
+Output: {
+    ""rating"": 0
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""user_input"": ""How do I implement harness-layer continual learning with automatic prompt updates based on production feedback?"",
+    ""context"": ""Continual learning for AI agents refers to the ability of an agent system to improve its performance over time based on new data, feedback, and experience. Unlike traditional software that remains static after deployment, AI agents can adapt their behavior through multiple mechanisms. This is critical because production environments constantly surface new edge cases, user patterns, and domain shifts that the original training data did not cover.""
+}
+Output: ",ContextRelevanceOutput,rating=1,0.6149,2026-05-19T13:05:01.066485+00:00,gpt-4.1-mini
+7,How do I implement harness-layer continual learning with automatic prompt updates based on production feedback?,context_relevance,1,"As a specially designed expert to assess the relevance score of a given Context in relation to a Question, my task is to determine the extent to which the Context provides information necessary to answer the Question. I will rely solely on the information provided in the Context and Question, and not on any prior knowledge.
+
+Here are the instructions I will follow:
+* If the Context does not contain any relevant information to answer the Question, I will respond with a relevance score of 0.
+* If the Context partially contains relevant information to answer the Question, I will respond with a relevance score of 1.
+* If the Context contains any relevant information to answer the Question, I will respond with a relevance score of 2.
+Return your response as JSON in this format: {""rating"": X} where X is 0, 1, or 2.
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for context relevance evaluation."", ""properties"": {""rating"": {""description"": ""Relevance rating (0, 1, or 2)"", ""title"": ""Rating"", ""type"": ""integer""}}, ""required"": [""rating""], ""title"": ""ContextRelevanceOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""user_input"": ""When was Albert Einstein born?"",
+    ""context"": ""Albert Einstein was born March 14, 1879.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 2
+Input: {
+    ""user_input"": ""What is photosynthesis?"",
+    ""context"": ""Photosynthesis is the process by which plants convert sunlight into energy.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 3
+Input: {
+    ""user_input"": ""How do computers work?"",
+    ""context"": ""The weather today is sunny.""
+}
+Output: {
+    ""rating"": 0
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""user_input"": ""How do I implement harness-layer continual learning with automatic prompt updates based on production feedback?"",
+    ""context"": ""Continual learning for AI agents refers to the ability of an agent system to improve its performance over time based on new data, feedback, and experience. Unlike traditional software that remains static after deployment, AI agents can adapt their behavior through multiple mechanisms. This is critical because production environments constantly surface new edge cases, user patterns, and domain shifts that the original training data did not cover.""
+}
+Output: ",ContextRelevanceOutput,rating=1,0.5178,2026-05-19T13:05:01.585015+00:00,gpt-4.1-mini
+8,What programming languages and frameworks does LangChain officially support?,context_relevance,0,"You are a world class expert designed to evaluate the relevance score of a Context in order to answer the Question.
+Your task is to determine if the Context contains proper information to answer the Question.
+Do not rely on your previous knowledge about the Question.
+Use only what is written in the Context and in the Question.
+Follow the instructions below:
+0. If the context does not contains any relevant information to answer the question, say 0.
+1. If the context partially contains relevant information to answer the question, say 1.
+2. If the context contains any relevant information to answer the question, say 2.
+You must provide the relevance score of 0, 1, or 2, nothing else.
+Do not explain.
+Return your response as JSON in this format: {""rating"": X} where X is 0, 1, or 2.
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for context relevance evaluation."", ""properties"": {""rating"": {""description"": ""Relevance rating (0, 1, or 2)"", ""title"": ""Rating"", ""type"": ""integer""}}, ""required"": [""rating""], ""title"": ""ContextRelevanceOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""user_input"": ""When was Albert Einstein born?"",
+    ""context"": ""Albert Einstein was born March 14, 1879.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 2
+Input: {
+    ""user_input"": ""What is photosynthesis?"",
+    ""context"": ""Photosynthesis is the process by which plants convert sunlight into energy.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 3
+Input: {
+    ""user_input"": ""How do computers work?"",
+    ""context"": ""Albert Einstein was a theoretical physicist.""
+}
+Output: {
+    ""rating"": 0
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""user_input"": ""What programming languages and frameworks does LangChain officially support?"",
+    ""context"": ""LangChain is backed by Sequoia Capital, Benchmark, and IVP. The company reached a $1.25 billion valuation in its latest funding round announced in October 2025. LangChain has offices in San Francisco, New York, Boston, and Amsterdam, and works with 35 percent of the Fortune 500 companies on their AI initiatives.""
+}
+Output: ",ContextRelevanceOutput,rating=0,0.8616,2026-05-19T13:05:02.447391+00:00,gpt-4.1-mini
+8,What programming languages and frameworks does LangChain officially support?,context_relevance,1,"As a specially designed expert to assess the relevance score of a given Context in relation to a Question, my task is to determine the extent to which the Context provides information necessary to answer the Question. I will rely solely on the information provided in the Context and Question, and not on any prior knowledge.
+
+Here are the instructions I will follow:
+* If the Context does not contain any relevant information to answer the Question, I will respond with a relevance score of 0.
+* If the Context partially contains relevant information to answer the Question, I will respond with a relevance score of 1.
+* If the Context contains any relevant information to answer the Question, I will respond with a relevance score of 2.
+Return your response as JSON in this format: {""rating"": X} where X is 0, 1, or 2.
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for context relevance evaluation."", ""properties"": {""rating"": {""description"": ""Relevance rating (0, 1, or 2)"", ""title"": ""Rating"", ""type"": ""integer""}}, ""required"": [""rating""], ""title"": ""ContextRelevanceOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""user_input"": ""When was Albert Einstein born?"",
+    ""context"": ""Albert Einstein was born March 14, 1879.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 2
+Input: {
+    ""user_input"": ""What is photosynthesis?"",
+    ""context"": ""Photosynthesis is the process by which plants convert sunlight into energy.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 3
+Input: {
+    ""user_input"": ""How do computers work?"",
+    ""context"": ""The weather today is sunny.""
+}
+Output: {
+    ""rating"": 0
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""user_input"": ""What programming languages and frameworks does LangChain officially support?"",
+    ""context"": ""LangChain is backed by Sequoia Capital, Benchmark, and IVP. The company reached a $1.25 billion valuation in its latest funding round announced in October 2025. LangChain has offices in San Francisco, New York, Boston, and Amsterdam, and works with 35 percent of the Fortune 500 companies on their AI initiatives.""
+}
+Output: ",ContextRelevanceOutput,rating=0,0.4411,2026-05-19T13:05:02.888981+00:00,gpt-4.1-mini
+9,Which LLM providers and models are compatible with LangGraph agents?,context_relevance,0,"You are a world class expert designed to evaluate the relevance score of a Context in order to answer the Question.
+Your task is to determine if the Context contains proper information to answer the Question.
+Do not rely on your previous knowledge about the Question.
+Use only what is written in the Context and in the Question.
+Follow the instructions below:
+0. If the context does not contains any relevant information to answer the question, say 0.
+1. If the context partially contains relevant information to answer the question, say 1.
+2. If the context contains any relevant information to answer the question, say 2.
+You must provide the relevance score of 0, 1, or 2, nothing else.
+Do not explain.
+Return your response as JSON in this format: {""rating"": X} where X is 0, 1, or 2.
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for context relevance evaluation."", ""properties"": {""rating"": {""description"": ""Relevance rating (0, 1, or 2)"", ""title"": ""Rating"", ""type"": ""integer""}}, ""required"": [""rating""], ""title"": ""ContextRelevanceOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""user_input"": ""When was Albert Einstein born?"",
+    ""context"": ""Albert Einstein was born March 14, 1879.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 2
+Input: {
+    ""user_input"": ""What is photosynthesis?"",
+    ""context"": ""Photosynthesis is the process by which plants convert sunlight into energy.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 3
+Input: {
+    ""user_input"": ""How do computers work?"",
+    ""context"": ""Albert Einstein was a theoretical physicist.""
+}
+Output: {
+    ""rating"": 0
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""user_input"": ""Which LLM providers and models are compatible with LangGraph agents?"",
+    ""context"": ""LangGraph was developed to give developers fine-grained control over complex agent systems. After shipping LangChain as the original framework for LLM-powered applications, the team recognized that multi-step agent workflows required a dedicated runtime with features like persistent state, branching execution paths, and built-in support for cycles and loops. LangGraph provides these capabilities through a graph-based programming model where developers define nodes for processing steps and edges for control flow.""
+}
+Output: ",ContextRelevanceOutput,rating=0,0.5292,2026-05-19T13:05:03.419046+00:00,gpt-4.1-mini
+9,Which LLM providers and models are compatible with LangGraph agents?,context_relevance,1,"As a specially designed expert to assess the relevance score of a given Context in relation to a Question, my task is to determine the extent to which the Context provides information necessary to answer the Question. I will rely solely on the information provided in the Context and Question, and not on any prior knowledge.
+
+Here are the instructions I will follow:
+* If the Context does not contain any relevant information to answer the Question, I will respond with a relevance score of 0.
+* If the Context partially contains relevant information to answer the Question, I will respond with a relevance score of 1.
+* If the Context contains any relevant information to answer the Question, I will respond with a relevance score of 2.
+Return your response as JSON in this format: {""rating"": X} where X is 0, 1, or 2.
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for context relevance evaluation."", ""properties"": {""rating"": {""description"": ""Relevance rating (0, 1, or 2)"", ""title"": ""Rating"", ""type"": ""integer""}}, ""required"": [""rating""], ""title"": ""ContextRelevanceOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""user_input"": ""When was Albert Einstein born?"",
+    ""context"": ""Albert Einstein was born March 14, 1879.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 2
+Input: {
+    ""user_input"": ""What is photosynthesis?"",
+    ""context"": ""Photosynthesis is the process by which plants convert sunlight into energy.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 3
+Input: {
+    ""user_input"": ""How do computers work?"",
+    ""context"": ""The weather today is sunny.""
+}
+Output: {
+    ""rating"": 0
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""user_input"": ""Which LLM providers and models are compatible with LangGraph agents?"",
+    ""context"": ""LangGraph was developed to give developers fine-grained control over complex agent systems. After shipping LangChain as the original framework for LLM-powered applications, the team recognized that multi-step agent workflows required a dedicated runtime with features like persistent state, branching execution paths, and built-in support for cycles and loops. LangGraph provides these capabilities through a graph-based programming model where developers define nodes for processing steps and edges for control flow.""
+}
+Output: ",ContextRelevanceOutput,rating=0,0.4564,2026-05-19T13:05:03.875783+00:00,gpt-4.1-mini
+10,What is the data retention period for each LangSmith pricing tier?,context_relevance,0,"You are a world class expert designed to evaluate the relevance score of a Context in order to answer the Question.
+Your task is to determine if the Context contains proper information to answer the Question.
+Do not rely on your previous knowledge about the Question.
+Use only what is written in the Context and in the Question.
+Follow the instructions below:
+0. If the context does not contains any relevant information to answer the question, say 0.
+1. If the context partially contains relevant information to answer the question, say 1.
+2. If the context contains any relevant information to answer the question, say 2.
+You must provide the relevance score of 0, 1, or 2, nothing else.
+Do not explain.
+Return your response as JSON in this format: {""rating"": X} where X is 0, 1, or 2.
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for context relevance evaluation."", ""properties"": {""rating"": {""description"": ""Relevance rating (0, 1, or 2)"", ""title"": ""Rating"", ""type"": ""integer""}}, ""required"": [""rating""], ""title"": ""ContextRelevanceOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""user_input"": ""When was Albert Einstein born?"",
+    ""context"": ""Albert Einstein was born March 14, 1879.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 2
+Input: {
+    ""user_input"": ""What is photosynthesis?"",
+    ""context"": ""Photosynthesis is the process by which plants convert sunlight into energy.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 3
+Input: {
+    ""user_input"": ""How do computers work?"",
+    ""context"": ""Albert Einstein was a theoretical physicist.""
+}
+Output: {
+    ""rating"": 0
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""user_input"": ""What is the data retention period for each LangSmith pricing tier?"",
+    ""context"": ""LangSmith is LangChain's commercial platform for AI observability, evaluation, and deployment. It provides end-to-end tracing of LLM calls and agent runs, allowing developers to inspect every input, output, and intermediate step in their application. LangSmith also includes tools for building evaluation datasets, running automated evaluators, and deploying agents to production with built-in monitoring. Over 300 enterprise customers use LangSmith to test and ship AI agents faster.""
+}
+Output: ",ContextRelevanceOutput,rating=0,0.5143,2026-05-19T13:05:04.390848+00:00,gpt-4.1-mini
+10,What is the data retention period for each LangSmith pricing tier?,context_relevance,1,"As a specially designed expert to assess the relevance score of a given Context in relation to a Question, my task is to determine the extent to which the Context provides information necessary to answer the Question. I will rely solely on the information provided in the Context and Question, and not on any prior knowledge.
+
+Here are the instructions I will follow:
+* If the Context does not contain any relevant information to answer the Question, I will respond with a relevance score of 0.
+* If the Context partially contains relevant information to answer the Question, I will respond with a relevance score of 1.
+* If the Context contains any relevant information to answer the Question, I will respond with a relevance score of 2.
+Return your response as JSON in this format: {""rating"": X} where X is 0, 1, or 2.
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for context relevance evaluation."", ""properties"": {""rating"": {""description"": ""Relevance rating (0, 1, or 2)"", ""title"": ""Rating"", ""type"": ""integer""}}, ""required"": [""rating""], ""title"": ""ContextRelevanceOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""user_input"": ""When was Albert Einstein born?"",
+    ""context"": ""Albert Einstein was born March 14, 1879.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 2
+Input: {
+    ""user_input"": ""What is photosynthesis?"",
+    ""context"": ""Photosynthesis is the process by which plants convert sunlight into energy.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 3
+Input: {
+    ""user_input"": ""How do computers work?"",
+    ""context"": ""The weather today is sunny.""
+}
+Output: {
+    ""rating"": 0
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""user_input"": ""What is the data retention period for each LangSmith pricing tier?"",
+    ""context"": ""LangSmith is LangChain's commercial platform for AI observability, evaluation, and deployment. It provides end-to-end tracing of LLM calls and agent runs, allowing developers to inspect every input, output, and intermediate step in their application. LangSmith also includes tools for building evaluation datasets, running automated evaluators, and deploying agents to production with built-in monitoring. Over 300 enterprise customers use LangSmith to test and ship AI agents faster.""
+}
+Output: ",ContextRelevanceOutput,rating=0,0.5136,2026-05-19T13:05:04.904920+00:00,gpt-4.1-mini
+11,How many engineers work on the LangSmith platform?,context_relevance,0,"You are a world class expert designed to evaluate the relevance score of a Context in order to answer the Question.
+Your task is to determine if the Context contains proper information to answer the Question.
+Do not rely on your previous knowledge about the Question.
+Use only what is written in the Context and in the Question.
+Follow the instructions below:
+0. If the context does not contains any relevant information to answer the question, say 0.
+1. If the context partially contains relevant information to answer the question, say 1.
+2. If the context contains any relevant information to answer the question, say 2.
+You must provide the relevance score of 0, 1, or 2, nothing else.
+Do not explain.
+Return your response as JSON in this format: {""rating"": X} where X is 0, 1, or 2.
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for context relevance evaluation."", ""properties"": {""rating"": {""description"": ""Relevance rating (0, 1, or 2)"", ""title"": ""Rating"", ""type"": ""integer""}}, ""required"": [""rating""], ""title"": ""ContextRelevanceOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""user_input"": ""When was Albert Einstein born?"",
+    ""context"": ""Albert Einstein was born March 14, 1879.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 2
+Input: {
+    ""user_input"": ""What is photosynthesis?"",
+    ""context"": ""Photosynthesis is the process by which plants convert sunlight into energy.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 3
+Input: {
+    ""user_input"": ""How do computers work?"",
+    ""context"": ""Albert Einstein was a theoretical physicist.""
+}
+Output: {
+    ""rating"": 0
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""user_input"": ""How many engineers work on the LangSmith platform?"",
+    ""context"": ""LangSmith supports both offline and online evaluation workflows. In offline evaluation, developers curate datasets of input-output pairs and run evaluators in batch to test changes before deployment. In online evaluation, production traces are sampled and scored by evaluators in near real-time to detect regressions. LangSmith provides a library of over 30 built-in evaluator templates covering faithfulness, relevance, safety, and tool-use correctness.""
+}
+Output: ",ContextRelevanceOutput,rating=0,0.8779,2026-05-19T13:05:05.783565+00:00,gpt-4.1-mini
+11,How many engineers work on the LangSmith platform?,context_relevance,1,"As a specially designed expert to assess the relevance score of a given Context in relation to a Question, my task is to determine the extent to which the Context provides information necessary to answer the Question. I will rely solely on the information provided in the Context and Question, and not on any prior knowledge.
+
+Here are the instructions I will follow:
+* If the Context does not contain any relevant information to answer the Question, I will respond with a relevance score of 0.
+* If the Context partially contains relevant information to answer the Question, I will respond with a relevance score of 1.
+* If the Context contains any relevant information to answer the Question, I will respond with a relevance score of 2.
+Return your response as JSON in this format: {""rating"": X} where X is 0, 1, or 2.
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for context relevance evaluation."", ""properties"": {""rating"": {""description"": ""Relevance rating (0, 1, or 2)"", ""title"": ""Rating"", ""type"": ""integer""}}, ""required"": [""rating""], ""title"": ""ContextRelevanceOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""user_input"": ""When was Albert Einstein born?"",
+    ""context"": ""Albert Einstein was born March 14, 1879.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 2
+Input: {
+    ""user_input"": ""What is photosynthesis?"",
+    ""context"": ""Photosynthesis is the process by which plants convert sunlight into energy.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 3
+Input: {
+    ""user_input"": ""How do computers work?"",
+    ""context"": ""The weather today is sunny.""
+}
+Output: {
+    ""rating"": 0
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""user_input"": ""How many engineers work on the LangSmith platform?"",
+    ""context"": ""LangSmith supports both offline and online evaluation workflows. In offline evaluation, developers curate datasets of input-output pairs and run evaluators in batch to test changes before deployment. In online evaluation, production traces are sampled and scored by evaluators in near real-time to detect regressions. LangSmith provides a library of over 30 built-in evaluator templates covering faithfulness, relevance, safety, and tool-use correctness.""
+}
+Output: ",ContextRelevanceOutput,rating=0,0.6798,2026-05-19T13:05:06.463639+00:00,gpt-4.1-mini
+12,How do I configure automation rules to route low-scoring traces to annotation queues in LangSmith?,context_relevance,0,"You are a world class expert designed to evaluate the relevance score of a Context in order to answer the Question.
+Your task is to determine if the Context contains proper information to answer the Question.
+Do not rely on your previous knowledge about the Question.
+Use only what is written in the Context and in the Question.
+Follow the instructions below:
+0. If the context does not contains any relevant information to answer the question, say 0.
+1. If the context partially contains relevant information to answer the question, say 1.
+2. If the context contains any relevant information to answer the question, say 2.
+You must provide the relevance score of 0, 1, or 2, nothing else.
+Do not explain.
+Return your response as JSON in this format: {""rating"": X} where X is 0, 1, or 2.
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for context relevance evaluation."", ""properties"": {""rating"": {""description"": ""Relevance rating (0, 1, or 2)"", ""title"": ""Rating"", ""type"": ""integer""}}, ""required"": [""rating""], ""title"": ""ContextRelevanceOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""user_input"": ""When was Albert Einstein born?"",
+    ""context"": ""Albert Einstein was born March 14, 1879.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 2
+Input: {
+    ""user_input"": ""What is photosynthesis?"",
+    ""context"": ""Photosynthesis is the process by which plants convert sunlight into energy.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 3
+Input: {
+    ""user_input"": ""How do computers work?"",
+    ""context"": ""Albert Einstein was a theoretical physicist.""
+}
+Output: {
+    ""rating"": 0
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""user_input"": ""How do I configure automation rules to route low-scoring traces to annotation queues in LangSmith?"",
+    ""context"": ""Annotation Queues in LangSmith allow teams to route production traces to domain experts for review. Experts receive notifications when traces are queued and can rate outputs, leave comments, and flag issues without needing to understand the underlying code. Reviewed annotations can be converted into evaluation datasets to improve the system over time.""
+}
+Output: ",ContextRelevanceOutput,rating=1,0.528,2026-05-19T13:05:06.992946+00:00,gpt-4.1-mini
+12,How do I configure automation rules to route low-scoring traces to annotation queues in LangSmith?,context_relevance,1,"As a specially designed expert to assess the relevance score of a given Context in relation to a Question, my task is to determine the extent to which the Context provides information necessary to answer the Question. I will rely solely on the information provided in the Context and Question, and not on any prior knowledge.
+
+Here are the instructions I will follow:
+* If the Context does not contain any relevant information to answer the Question, I will respond with a relevance score of 0.
+* If the Context partially contains relevant information to answer the Question, I will respond with a relevance score of 1.
+* If the Context contains any relevant information to answer the Question, I will respond with a relevance score of 2.
+Return your response as JSON in this format: {""rating"": X} where X is 0, 1, or 2.
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for context relevance evaluation."", ""properties"": {""rating"": {""description"": ""Relevance rating (0, 1, or 2)"", ""title"": ""Rating"", ""type"": ""integer""}}, ""required"": [""rating""], ""title"": ""ContextRelevanceOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""user_input"": ""When was Albert Einstein born?"",
+    ""context"": ""Albert Einstein was born March 14, 1879.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 2
+Input: {
+    ""user_input"": ""What is photosynthesis?"",
+    ""context"": ""Photosynthesis is the process by which plants convert sunlight into energy.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 3
+Input: {
+    ""user_input"": ""How do computers work?"",
+    ""context"": ""The weather today is sunny.""
+}
+Output: {
+    ""rating"": 0
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""user_input"": ""How do I configure automation rules to route low-scoring traces to annotation queues in LangSmith?"",
+    ""context"": ""Annotation Queues in LangSmith allow teams to route production traces to domain experts for review. Experts receive notifications when traces are queued and can rate outputs, leave comments, and flag issues without needing to understand the underlying code. Reviewed annotations can be converted into evaluation datasets to improve the system over time.""
+}
+Output: ",ContextRelevanceOutput,rating=1,0.7996,2026-05-19T13:05:07.792940+00:00,gpt-4.1-mini
+13,How do I calibrate my LLM-as-a-judge evaluator against human annotations to reduce scoring bias?,context_relevance,0,"You are a world class expert designed to evaluate the relevance score of a Context in order to answer the Question.
+Your task is to determine if the Context contains proper information to answer the Question.
+Do not rely on your previous knowledge about the Question.
+Use only what is written in the Context and in the Question.
+Follow the instructions below:
+0. If the context does not contains any relevant information to answer the question, say 0.
+1. If the context partially contains relevant information to answer the question, say 1.
+2. If the context contains any relevant information to answer the question, say 2.
+You must provide the relevance score of 0, 1, or 2, nothing else.
+Do not explain.
+Return your response as JSON in this format: {""rating"": X} where X is 0, 1, or 2.
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for context relevance evaluation."", ""properties"": {""rating"": {""description"": ""Relevance rating (0, 1, or 2)"", ""title"": ""Rating"", ""type"": ""integer""}}, ""required"": [""rating""], ""title"": ""ContextRelevanceOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""user_input"": ""When was Albert Einstein born?"",
+    ""context"": ""Albert Einstein was born March 14, 1879.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 2
+Input: {
+    ""user_input"": ""What is photosynthesis?"",
+    ""context"": ""Photosynthesis is the process by which plants convert sunlight into energy.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 3
+Input: {
+    ""user_input"": ""How do computers work?"",
+    ""context"": ""Albert Einstein was a theoretical physicist.""
+}
+Output: {
+    ""rating"": 0
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""user_input"": ""How do I calibrate my LLM-as-a-judge evaluator against human annotations to reduce scoring bias?"",
+    ""context"": ""The LLM-as-a-judge approach introduces several known biases that evaluator designers must account for. Verbosity bias causes judges to prefer longer responses even when shorter ones are more accurate. Position bias leads judges to favor responses presented first in a comparison. Self-enhancement bias occurs when an LLM rates its own outputs higher than those from other models. Mitigating these biases requires techniques like randomizing response order, using multiple judge models, and calibrating against human annotations.""
+}
+Output: ",ContextRelevanceOutput,rating=2,0.4651,2026-05-19T13:05:08.258568+00:00,gpt-4.1-mini
+13,How do I calibrate my LLM-as-a-judge evaluator against human annotations to reduce scoring bias?,context_relevance,1,"As a specially designed expert to assess the relevance score of a given Context in relation to a Question, my task is to determine the extent to which the Context provides information necessary to answer the Question. I will rely solely on the information provided in the Context and Question, and not on any prior knowledge.
+
+Here are the instructions I will follow:
+* If the Context does not contain any relevant information to answer the Question, I will respond with a relevance score of 0.
+* If the Context partially contains relevant information to answer the Question, I will respond with a relevance score of 1.
+* If the Context contains any relevant information to answer the Question, I will respond with a relevance score of 2.
+Return your response as JSON in this format: {""rating"": X} where X is 0, 1, or 2.
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for context relevance evaluation."", ""properties"": {""rating"": {""description"": ""Relevance rating (0, 1, or 2)"", ""title"": ""Rating"", ""type"": ""integer""}}, ""required"": [""rating""], ""title"": ""ContextRelevanceOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""user_input"": ""When was Albert Einstein born?"",
+    ""context"": ""Albert Einstein was born March 14, 1879.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 2
+Input: {
+    ""user_input"": ""What is photosynthesis?"",
+    ""context"": ""Photosynthesis is the process by which plants convert sunlight into energy.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 3
+Input: {
+    ""user_input"": ""How do computers work?"",
+    ""context"": ""The weather today is sunny.""
+}
+Output: {
+    ""rating"": 0
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""user_input"": ""How do I calibrate my LLM-as-a-judge evaluator against human annotations to reduce scoring bias?"",
+    ""context"": ""The LLM-as-a-judge approach introduces several known biases that evaluator designers must account for. Verbosity bias causes judges to prefer longer responses even when shorter ones are more accurate. Position bias leads judges to favor responses presented first in a comparison. Self-enhancement bias occurs when an LLM rates its own outputs higher than those from other models. Mitigating these biases requires techniques like randomizing response order, using multiple judge models, and calibrating against human annotations.""
+}
+Output: ",ContextRelevanceOutput,rating=2,0.4956,2026-05-19T13:05:08.754695+00:00,gpt-4.1-mini
+14,How do I build an automated CI/CD evaluation pipeline that runs on every pull request?,context_relevance,0,"You are a world class expert designed to evaluate the relevance score of a Context in order to answer the Question.
+Your task is to determine if the Context contains proper information to answer the Question.
+Do not rely on your previous knowledge about the Question.
+Use only what is written in the Context and in the Question.
+Follow the instructions below:
+0. If the context does not contains any relevant information to answer the question, say 0.
+1. If the context partially contains relevant information to answer the question, say 1.
+2. If the context contains any relevant information to answer the question, say 2.
+You must provide the relevance score of 0, 1, or 2, nothing else.
+Do not explain.
+Return your response as JSON in this format: {""rating"": X} where X is 0, 1, or 2.
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for context relevance evaluation."", ""properties"": {""rating"": {""description"": ""Relevance rating (0, 1, or 2)"", ""title"": ""Rating"", ""type"": ""integer""}}, ""required"": [""rating""], ""title"": ""ContextRelevanceOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""user_input"": ""When was Albert Einstein born?"",
+    ""context"": ""Albert Einstein was born March 14, 1879.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 2
+Input: {
+    ""user_input"": ""What is photosynthesis?"",
+    ""context"": ""Photosynthesis is the process by which plants convert sunlight into energy.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 3
+Input: {
+    ""user_input"": ""How do computers work?"",
+    ""context"": ""Albert Einstein was a theoretical physicist.""
+}
+Output: {
+    ""rating"": 0
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""user_input"": ""How do I build an automated CI/CD evaluation pipeline that runs on every pull request?"",
+    ""context"": ""The agent evaluation readiness checklist recommends establishing baseline metrics before deploying to production. Teams should define acceptance criteria for key quality dimensions, set up automated evaluation pipelines that run on each code change, and configure monitoring for production drift. Without these foundations, teams often discover quality issues only after they impact end users.""
+}
+Output: ",ContextRelevanceOutput,rating=2,0.5473,2026-05-19T13:05:09.302544+00:00,gpt-4.1-mini
+14,How do I build an automated CI/CD evaluation pipeline that runs on every pull request?,context_relevance,1,"As a specially designed expert to assess the relevance score of a given Context in relation to a Question, my task is to determine the extent to which the Context provides information necessary to answer the Question. I will rely solely on the information provided in the Context and Question, and not on any prior knowledge.
+
+Here are the instructions I will follow:
+* If the Context does not contain any relevant information to answer the Question, I will respond with a relevance score of 0.
+* If the Context partially contains relevant information to answer the Question, I will respond with a relevance score of 1.
+* If the Context contains any relevant information to answer the Question, I will respond with a relevance score of 2.
+Return your response as JSON in this format: {""rating"": X} where X is 0, 1, or 2.
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for context relevance evaluation."", ""properties"": {""rating"": {""description"": ""Relevance rating (0, 1, or 2)"", ""title"": ""Rating"", ""type"": ""integer""}}, ""required"": [""rating""], ""title"": ""ContextRelevanceOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""user_input"": ""When was Albert Einstein born?"",
+    ""context"": ""Albert Einstein was born March 14, 1879.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 2
+Input: {
+    ""user_input"": ""What is photosynthesis?"",
+    ""context"": ""Photosynthesis is the process by which plants convert sunlight into energy.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 3
+Input: {
+    ""user_input"": ""How do computers work?"",
+    ""context"": ""The weather today is sunny.""
+}
+Output: {
+    ""rating"": 0
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""user_input"": ""How do I build an automated CI/CD evaluation pipeline that runs on every pull request?"",
+    ""context"": ""The agent evaluation readiness checklist recommends establishing baseline metrics before deploying to production. Teams should define acceptance criteria for key quality dimensions, set up automated evaluation pipelines that run on each code change, and configure monitoring for production drift. Without these foundations, teams often discover quality issues only after they impact end users.""
+}
+Output: ",ContextRelevanceOutput,rating=2,0.8128,2026-05-19T13:05:10.115691+00:00,gpt-4.1-mini
+15,How do I automate the harness hill-climbing loop to continuously improve my agent's evaluation scores?,context_relevance,0,"You are a world class expert designed to evaluate the relevance score of a Context in order to answer the Question.
+Your task is to determine if the Context contains proper information to answer the Question.
+Do not rely on your previous knowledge about the Question.
+Use only what is written in the Context and in the Question.
+Follow the instructions below:
+0. If the context does not contains any relevant information to answer the question, say 0.
+1. If the context partially contains relevant information to answer the question, say 1.
+2. If the context contains any relevant information to answer the question, say 2.
+You must provide the relevance score of 0, 1, or 2, nothing else.
+Do not explain.
+Return your response as JSON in this format: {""rating"": X} where X is 0, 1, or 2.
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for context relevance evaluation."", ""properties"": {""rating"": {""description"": ""Relevance rating (0, 1, or 2)"", ""title"": ""Rating"", ""type"": ""integer""}}, ""required"": [""rating""], ""title"": ""ContextRelevanceOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""user_input"": ""When was Albert Einstein born?"",
+    ""context"": ""Albert Einstein was born March 14, 1879.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 2
+Input: {
+    ""user_input"": ""What is photosynthesis?"",
+    ""context"": ""Photosynthesis is the process by which plants convert sunlight into energy.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 3
+Input: {
+    ""user_input"": ""How do computers work?"",
+    ""context"": ""Albert Einstein was a theoretical physicist.""
+}
+Output: {
+    ""rating"": 0
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""user_input"": ""How do I automate the harness hill-climbing loop to continuously improve my agent's evaluation scores?"",
+    ""context"": ""The harness hill-climbing recipe is an iterative process for improving AI agent performance. Start with a baseline agent harness configuration, run your evaluation suite to measure performance, identify the lowest-scoring dimensions, make targeted changes to the harness such as adjusting prompts or tool configurations, then re-evaluate to confirm improvement. Repeat this cycle until performance meets your acceptance criteria across all evaluation dimensions.""
+}
+Output: ",ContextRelevanceOutput,rating=2,0.4756,2026-05-19T13:05:10.591750+00:00,gpt-4.1-mini
+15,How do I automate the harness hill-climbing loop to continuously improve my agent's evaluation scores?,context_relevance,1,"As a specially designed expert to assess the relevance score of a given Context in relation to a Question, my task is to determine the extent to which the Context provides information necessary to answer the Question. I will rely solely on the information provided in the Context and Question, and not on any prior knowledge.
+
+Here are the instructions I will follow:
+* If the Context does not contain any relevant information to answer the Question, I will respond with a relevance score of 0.
+* If the Context partially contains relevant information to answer the Question, I will respond with a relevance score of 1.
+* If the Context contains any relevant information to answer the Question, I will respond with a relevance score of 2.
+Return your response as JSON in this format: {""rating"": X} where X is 0, 1, or 2.
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for context relevance evaluation."", ""properties"": {""rating"": {""description"": ""Relevance rating (0, 1, or 2)"", ""title"": ""Rating"", ""type"": ""integer""}}, ""required"": [""rating""], ""title"": ""ContextRelevanceOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""user_input"": ""When was Albert Einstein born?"",
+    ""context"": ""Albert Einstein was born March 14, 1879.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 2
+Input: {
+    ""user_input"": ""What is photosynthesis?"",
+    ""context"": ""Photosynthesis is the process by which plants convert sunlight into energy.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 3
+Input: {
+    ""user_input"": ""How do computers work?"",
+    ""context"": ""The weather today is sunny.""
+}
+Output: {
+    ""rating"": 0
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""user_input"": ""How do I automate the harness hill-climbing loop to continuously improve my agent's evaluation scores?"",
+    ""context"": ""The harness hill-climbing recipe is an iterative process for improving AI agent performance. Start with a baseline agent harness configuration, run your evaluation suite to measure performance, identify the lowest-scoring dimensions, make targeted changes to the harness such as adjusting prompts or tool configurations, then re-evaluate to confirm improvement. Repeat this cycle until performance meets your acceptance criteria across all evaluation dimensions.""
+}
+Output: ",ContextRelevanceOutput,rating=2,0.4278,2026-05-19T13:05:11.019803+00:00,gpt-4.1-mini
+16,How does MongoDB Atlas Vector Search handle embedding index updates for real-time RAG applications?,context_relevance,0,"You are a world class expert designed to evaluate the relevance score of a Context in order to answer the Question.
+Your task is to determine if the Context contains proper information to answer the Question.
+Do not rely on your previous knowledge about the Question.
+Use only what is written in the Context and in the Question.
+Follow the instructions below:
+0. If the context does not contains any relevant information to answer the question, say 0.
+1. If the context partially contains relevant information to answer the question, say 1.
+2. If the context contains any relevant information to answer the question, say 2.
+You must provide the relevance score of 0, 1, or 2, nothing else.
+Do not explain.
+Return your response as JSON in this format: {""rating"": X} where X is 0, 1, or 2.
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for context relevance evaluation."", ""properties"": {""rating"": {""description"": ""Relevance rating (0, 1, or 2)"", ""title"": ""Rating"", ""type"": ""integer""}}, ""required"": [""rating""], ""title"": ""ContextRelevanceOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""user_input"": ""When was Albert Einstein born?"",
+    ""context"": ""Albert Einstein was born March 14, 1879.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 2
+Input: {
+    ""user_input"": ""What is photosynthesis?"",
+    ""context"": ""Photosynthesis is the process by which plants convert sunlight into energy.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 3
+Input: {
+    ""user_input"": ""How do computers work?"",
+    ""context"": ""Albert Einstein was a theoretical physicist.""
+}
+Output: {
+    ""rating"": 0
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""user_input"": ""How does MongoDB Atlas Vector Search handle embedding index updates for real-time RAG applications?"",
+    ""context"": ""AI observability is the practice of monitoring, tracing, and understanding the behavior of AI systems in production. It extends traditional application observability concepts like metrics, logs, and traces to cover the unique characteristics of LLM-based applications, including prompt-response pairs, token usage, latency distributions, and retrieval quality. Effective AI observability requires instrumenting every layer of the stack from the model call up through the agent orchestration layer.""
+}
+Output: ",ContextRelevanceOutput,rating=0,0.4367,2026-05-19T13:05:11.456970+00:00,gpt-4.1-mini
+16,How does MongoDB Atlas Vector Search handle embedding index updates for real-time RAG applications?,context_relevance,1,"As a specially designed expert to assess the relevance score of a given Context in relation to a Question, my task is to determine the extent to which the Context provides information necessary to answer the Question. I will rely solely on the information provided in the Context and Question, and not on any prior knowledge.
+
+Here are the instructions I will follow:
+* If the Context does not contain any relevant information to answer the Question, I will respond with a relevance score of 0.
+* If the Context partially contains relevant information to answer the Question, I will respond with a relevance score of 1.
+* If the Context contains any relevant information to answer the Question, I will respond with a relevance score of 2.
+Return your response as JSON in this format: {""rating"": X} where X is 0, 1, or 2.
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for context relevance evaluation."", ""properties"": {""rating"": {""description"": ""Relevance rating (0, 1, or 2)"", ""title"": ""Rating"", ""type"": ""integer""}}, ""required"": [""rating""], ""title"": ""ContextRelevanceOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""user_input"": ""When was Albert Einstein born?"",
+    ""context"": ""Albert Einstein was born March 14, 1879.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 2
+Input: {
+    ""user_input"": ""What is photosynthesis?"",
+    ""context"": ""Photosynthesis is the process by which plants convert sunlight into energy.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 3
+Input: {
+    ""user_input"": ""How do computers work?"",
+    ""context"": ""The weather today is sunny.""
+}
+Output: {
+    ""rating"": 0
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""user_input"": ""How does MongoDB Atlas Vector Search handle embedding index updates for real-time RAG applications?"",
+    ""context"": ""AI observability is the practice of monitoring, tracing, and understanding the behavior of AI systems in production. It extends traditional application observability concepts like metrics, logs, and traces to cover the unique characteristics of LLM-based applications, including prompt-response pairs, token usage, latency distributions, and retrieval quality. Effective AI observability requires instrumenting every layer of the stack from the model call up through the agent orchestration layer.""
+}
+Output: ",ContextRelevanceOutput,rating=0,0.4197,2026-05-19T13:05:11.877078+00:00,gpt-4.1-mini
+17,How do I set up real-time quality monitoring for a customer-facing AI assistant in LangSmith?,context_relevance,0,"You are a world class expert designed to evaluate the relevance score of a Context in order to answer the Question.
+Your task is to determine if the Context contains proper information to answer the Question.
+Do not rely on your previous knowledge about the Question.
+Use only what is written in the Context and in the Question.
+Follow the instructions below:
+0. If the context does not contains any relevant information to answer the question, say 0.
+1. If the context partially contains relevant information to answer the question, say 1.
+2. If the context contains any relevant information to answer the question, say 2.
+You must provide the relevance score of 0, 1, or 2, nothing else.
+Do not explain.
+Return your response as JSON in this format: {""rating"": X} where X is 0, 1, or 2.
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for context relevance evaluation."", ""properties"": {""rating"": {""description"": ""Relevance rating (0, 1, or 2)"", ""title"": ""Rating"", ""type"": ""integer""}}, ""required"": [""rating""], ""title"": ""ContextRelevanceOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""user_input"": ""When was Albert Einstein born?"",
+    ""context"": ""Albert Einstein was born March 14, 1879.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 2
+Input: {
+    ""user_input"": ""What is photosynthesis?"",
+    ""context"": ""Photosynthesis is the process by which plants convert sunlight into energy.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 3
+Input: {
+    ""user_input"": ""How do computers work?"",
+    ""context"": ""Albert Einstein was a theoretical physicist.""
+}
+Output: {
+    ""rating"": 0
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""user_input"": ""How do I set up real-time quality monitoring for a customer-facing AI assistant in LangSmith?"",
+    ""context"": ""Credit Genie is a fintech company that uses AI to help consumers understand and improve their credit scores. Their AI financial assistant answers user questions about credit reports, payment strategies, and score factors. The team built their assistant using LangChain and deployed it with real-time monitoring through LangSmith to ensure response quality for sensitive financial guidance.""
+}
+Output: ",ContextRelevanceOutput,rating=2,0.4398,2026-05-19T13:05:12.317490+00:00,gpt-4.1-mini
+17,How do I set up real-time quality monitoring for a customer-facing AI assistant in LangSmith?,context_relevance,1,"As a specially designed expert to assess the relevance score of a given Context in relation to a Question, my task is to determine the extent to which the Context provides information necessary to answer the Question. I will rely solely on the information provided in the Context and Question, and not on any prior knowledge.
+
+Here are the instructions I will follow:
+* If the Context does not contain any relevant information to answer the Question, I will respond with a relevance score of 0.
+* If the Context partially contains relevant information to answer the Question, I will respond with a relevance score of 1.
+* If the Context contains any relevant information to answer the Question, I will respond with a relevance score of 2.
+Return your response as JSON in this format: {""rating"": X} where X is 0, 1, or 2.
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for context relevance evaluation."", ""properties"": {""rating"": {""description"": ""Relevance rating (0, 1, or 2)"", ""title"": ""Rating"", ""type"": ""integer""}}, ""required"": [""rating""], ""title"": ""ContextRelevanceOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""user_input"": ""When was Albert Einstein born?"",
+    ""context"": ""Albert Einstein was born March 14, 1879.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 2
+Input: {
+    ""user_input"": ""What is photosynthesis?"",
+    ""context"": ""Photosynthesis is the process by which plants convert sunlight into energy.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 3
+Input: {
+    ""user_input"": ""How do computers work?"",
+    ""context"": ""The weather today is sunny.""
+}
+Output: {
+    ""rating"": 0
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""user_input"": ""How do I set up real-time quality monitoring for a customer-facing AI assistant in LangSmith?"",
+    ""context"": ""Credit Genie is a fintech company that uses AI to help consumers understand and improve their credit scores. Their AI financial assistant answers user questions about credit reports, payment strategies, and score factors. The team built their assistant using LangChain and deployed it with real-time monitoring through LangSmith to ensure response quality for sensitive financial guidance.""
+}
+Output: ",ContextRelevanceOutput,rating=1,0.4269,2026-05-19T13:05:12.744580+00:00,gpt-4.1-mini
+18,What design patterns should I use for building multi-agent systems in LangGraph?,context_relevance,0,"You are a world class expert designed to evaluate the relevance score of a Context in order to answer the Question.
+Your task is to determine if the Context contains proper information to answer the Question.
+Do not rely on your previous knowledge about the Question.
+Use only what is written in the Context and in the Question.
+Follow the instructions below:
+0. If the context does not contains any relevant information to answer the question, say 0.
+1. If the context partially contains relevant information to answer the question, say 1.
+2. If the context contains any relevant information to answer the question, say 2.
+You must provide the relevance score of 0, 1, or 2, nothing else.
+Do not explain.
+Return your response as JSON in this format: {""rating"": X} where X is 0, 1, or 2.
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for context relevance evaluation."", ""properties"": {""rating"": {""description"": ""Relevance rating (0, 1, or 2)"", ""title"": ""Rating"", ""type"": ""integer""}}, ""required"": [""rating""], ""title"": ""ContextRelevanceOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""user_input"": ""When was Albert Einstein born?"",
+    ""context"": ""Albert Einstein was born March 14, 1879.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 2
+Input: {
+    ""user_input"": ""What is photosynthesis?"",
+    ""context"": ""Photosynthesis is the process by which plants convert sunlight into energy.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 3
+Input: {
+    ""user_input"": ""How do computers work?"",
+    ""context"": ""Albert Einstein was a theoretical physicist.""
+}
+Output: {
+    ""rating"": 0
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""user_input"": ""What design patterns should I use for building multi-agent systems in LangGraph?"",
+    ""context"": ""Cisco built an agentic engineering framework that reduced root-cause analysis time by 93 percent. The framework uses multiple specialized agents that collaborate on network diagnostics, each responsible for a different aspect of the troubleshooting workflow. The system was implemented using LangChain for orchestration and LangSmith for monitoring, with LangGraph managing the multi-step agent interactions and state transitions.""
+}
+Output: ",ContextRelevanceOutput,rating=1,0.4471,2026-05-19T13:05:13.192433+00:00,gpt-4.1-mini
+18,What design patterns should I use for building multi-agent systems in LangGraph?,context_relevance,1,"As a specially designed expert to assess the relevance score of a given Context in relation to a Question, my task is to determine the extent to which the Context provides information necessary to answer the Question. I will rely solely on the information provided in the Context and Question, and not on any prior knowledge.
+
+Here are the instructions I will follow:
+* If the Context does not contain any relevant information to answer the Question, I will respond with a relevance score of 0.
+* If the Context partially contains relevant information to answer the Question, I will respond with a relevance score of 1.
+* If the Context contains any relevant information to answer the Question, I will respond with a relevance score of 2.
+Return your response as JSON in this format: {""rating"": X} where X is 0, 1, or 2.
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for context relevance evaluation."", ""properties"": {""rating"": {""description"": ""Relevance rating (0, 1, or 2)"", ""title"": ""Rating"", ""type"": ""integer""}}, ""required"": [""rating""], ""title"": ""ContextRelevanceOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""user_input"": ""When was Albert Einstein born?"",
+    ""context"": ""Albert Einstein was born March 14, 1879.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 2
+Input: {
+    ""user_input"": ""What is photosynthesis?"",
+    ""context"": ""Photosynthesis is the process by which plants convert sunlight into energy.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 3
+Input: {
+    ""user_input"": ""How do computers work?"",
+    ""context"": ""The weather today is sunny.""
+}
+Output: {
+    ""rating"": 0
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""user_input"": ""What design patterns should I use for building multi-agent systems in LangGraph?"",
+    ""context"": ""Cisco built an agentic engineering framework that reduced root-cause analysis time by 93 percent. The framework uses multiple specialized agents that collaborate on network diagnostics, each responsible for a different aspect of the troubleshooting workflow. The system was implemented using LangChain for orchestration and LangSmith for monitoring, with LangGraph managing the multi-step agent interactions and state transitions.""
+}
+Output: ",ContextRelevanceOutput,rating=1,0.4512,2026-05-19T13:05:13.644131+00:00,gpt-4.1-mini
+19,What specific dashboards and alerts does LangSmith provide for production monitoring?,context_relevance,0,"You are a world class expert designed to evaluate the relevance score of a Context in order to answer the Question.
+Your task is to determine if the Context contains proper information to answer the Question.
+Do not rely on your previous knowledge about the Question.
+Use only what is written in the Context and in the Question.
+Follow the instructions below:
+0. If the context does not contains any relevant information to answer the question, say 0.
+1. If the context partially contains relevant information to answer the question, say 1.
+2. If the context contains any relevant information to answer the question, say 2.
+You must provide the relevance score of 0, 1, or 2, nothing else.
+Do not explain.
+Return your response as JSON in this format: {""rating"": X} where X is 0, 1, or 2.
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for context relevance evaluation."", ""properties"": {""rating"": {""description"": ""Relevance rating (0, 1, or 2)"", ""title"": ""Rating"", ""type"": ""integer""}}, ""required"": [""rating""], ""title"": ""ContextRelevanceOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""user_input"": ""When was Albert Einstein born?"",
+    ""context"": ""Albert Einstein was born March 14, 1879.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 2
+Input: {
+    ""user_input"": ""What is photosynthesis?"",
+    ""context"": ""Photosynthesis is the process by which plants convert sunlight into energy.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 3
+Input: {
+    ""user_input"": ""How do computers work?"",
+    ""context"": ""Albert Einstein was a theoretical physicist.""
+}
+Output: {
+    ""rating"": 0
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""user_input"": ""What specific dashboards and alerts does LangSmith provide for production monitoring?"",
+    ""context"": ""The three pillars of observability -- metrics, logs, and traces -- were established for traditional software systems. Metrics aggregate quantitative measurements like request rates and error percentages. Logs capture discrete events with structured or unstructured text. Traces follow a single request through distributed services. These pillars have proven invaluable for monitoring web applications and microservices for over a decade.""
+}
+Output: ",ContextRelevanceOutput,rating=0,0.4915,2026-05-19T13:05:14.136345+00:00,gpt-4.1-mini
+19,What specific dashboards and alerts does LangSmith provide for production monitoring?,context_relevance,1,"As a specially designed expert to assess the relevance score of a given Context in relation to a Question, my task is to determine the extent to which the Context provides information necessary to answer the Question. I will rely solely on the information provided in the Context and Question, and not on any prior knowledge.
+
+Here are the instructions I will follow:
+* If the Context does not contain any relevant information to answer the Question, I will respond with a relevance score of 0.
+* If the Context partially contains relevant information to answer the Question, I will respond with a relevance score of 1.
+* If the Context contains any relevant information to answer the Question, I will respond with a relevance score of 2.
+Return your response as JSON in this format: {""rating"": X} where X is 0, 1, or 2.
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for context relevance evaluation."", ""properties"": {""rating"": {""description"": ""Relevance rating (0, 1, or 2)"", ""title"": ""Rating"", ""type"": ""integer""}}, ""required"": [""rating""], ""title"": ""ContextRelevanceOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""user_input"": ""When was Albert Einstein born?"",
+    ""context"": ""Albert Einstein was born March 14, 1879.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 2
+Input: {
+    ""user_input"": ""What is photosynthesis?"",
+    ""context"": ""Photosynthesis is the process by which plants convert sunlight into energy.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 3
+Input: {
+    ""user_input"": ""How do computers work?"",
+    ""context"": ""The weather today is sunny.""
+}
+Output: {
+    ""rating"": 0
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""user_input"": ""What specific dashboards and alerts does LangSmith provide for production monitoring?"",
+    ""context"": ""The three pillars of observability -- metrics, logs, and traces -- were established for traditional software systems. Metrics aggregate quantitative measurements like request rates and error percentages. Logs capture discrete events with structured or unstructured text. Traces follow a single request through distributed services. These pillars have proven invaluable for monitoring web applications and microservices for over a decade.""
+}
+Output: ",ContextRelevanceOutput,rating=0,0.6617,2026-05-19T13:05:14.798665+00:00,gpt-4.1-mini

@@ -1,0 +1,955 @@
+{
+  "input_csv": "context-relevance-test.csv",
+  "evaluator_llm": "LLaDA2.1-mini",
+  "embeddings_model": "text-embedding-3-large",
+  "traces": [
+    {
+      "question": "How does LangGraph implement human-in-the-loop workflows?",
+      "answer": "LangGraph supports human-in-the-loop through interrupt nodes and approval steps in the graph.",
+      "answer_relevancy": {
+        "score": 0.9154037761018133,
+        "generated_questions": [
+          "How does LangGraph support human-in-the-loop functionality?"
+        ],
+        "noncommittal_flags": [
+          0
+        ],
+        "cosine_similarities": [
+          0.9154037761018133
+        ],
+        "all_noncommittal": false
+      },
+      "faithfulness": {
+        "score": 0.0,
+        "statements": [
+          "LangGraph implements human-in-the-loop workflows using interrupt nodes.",
+          "LangGraph supports human-in-the-loop workflows through approval steps in the graph."
+        ],
+        "verdicts": [
+          {
+            "statement": "LangGraph implements human-in-the-loop workflows using interrupt nodes.",
+            "reason": "The context does not mention LangGraph or any information about human-in-the-loop workflows.",
+            "verdict": 0
+          },
+          {
+            "statement": "LangGraph supports human-in-the-loop workflows through approval steps in the graph.",
+            "reason": "The context does not mention LangGraph or any information about human-in-the-loop workflows or approval steps.",
+            "verdict": 0
+          }
+        ],
+        "faithful_count": 0,
+        "total_count": 2
+      },
+      "context_relevance": {
+        "score": 0.0,
+        "judge1_rating": 0,
+        "judge2_rating": 0
+      },
+      "context_utilization": {
+        "score": 0.0,
+        "per_context_verdicts": [
+          {
+            "context_index": 0,
+            "reason": "The provided context does not address how LangGraph implements human-in-the-loop workflows. Instead, it discusses LangSmith pricing tiers, which is unrelated to the question.",
+            "verdict": 0
+          }
+        ]
+      },
+      "response_groundedness": {
+        "score": 0.0,
+        "judge1_rating": 0,
+        "judge2_rating": 0
+      }
+    },
+    {
+      "question": "What is LangSmith and what is it used for?",
+      "answer": "LangSmith is an observability, evaluation, and deployment platform for AI applications.",
+      "answer_relevancy": {
+        "score": 0.9295956324600129,
+        "generated_questions": [
+          "What is LangSmith?"
+        ],
+        "noncommittal_flags": [
+          0
+        ],
+        "cosine_similarities": [
+          0.9295956324600129
+        ],
+        "all_noncommittal": false
+      },
+      "faithfulness": {
+        "score": 1.0,
+        "statements": [
+          "LangSmith is a platform designed for AI applications.",
+          "LangSmith provides observability features for AI systems.",
+          "LangSmith is used for evaluating and deploying AI applications."
+        ],
+        "verdicts": [
+          {
+            "statement": "LangSmith is a platform designed for AI applications.",
+            "reason": "LangSmith is described as a platform for AI observability, evaluation, and deployment, which implies it is designed for AI applications.",
+            "verdict": 1
+          },
+          {
+            "statement": "LangSmith provides observability features for AI systems.",
+            "reason": "The context states that LangSmith provides end-to-end tracing of LLM calls and agent runs, which includes observability features.",
+            "verdict": 1
+          },
+          {
+            "statement": "LangSmith is used for evaluating and deploying AI applications.",
+            "reason": "The context mentions that LangSmith includes tools for building evaluation datasets and deploying agents to production with built-in monitoring.",
+            "verdict": 1
+          }
+        ],
+        "faithful_count": 3,
+        "total_count": 3
+      },
+      "context_relevance": {
+        "score": 1.0,
+        "judge1_rating": 2,
+        "judge2_rating": 2
+      },
+      "context_utilization": {
+        "score": 0.9999999999,
+        "per_context_verdicts": [
+          {
+            "context_index": 0,
+            "reason": "The provided context directly describes LangSmith as LangChain's commercial platform for AI observability, evaluation, and deployment, which aligns with the given answer.",
+            "verdict": 1
+          }
+        ]
+      },
+      "response_groundedness": {
+        "score": 1.0,
+        "judge1_rating": 2,
+        "judge2_rating": 2
+      }
+    },
+    {
+      "question": "How do I set up automated evaluation rules in LangSmith?",
+      "answer": "You can configure automation rules in LangSmith to trigger evaluators on incoming traces.",
+      "answer_relevancy": {
+        "score": 0.7295022715914703,
+        "generated_questions": [
+          "How can I configure automation in LangSmith to trigger evaluators on incoming traces?"
+        ],
+        "noncommittal_flags": [
+          0
+        ],
+        "cosine_similarities": [
+          0.7295022715914703
+        ],
+        "all_noncommittal": false
+      },
+      "faithfulness": {
+        "score": 0.0,
+        "statements": [
+          "LangSmith allows users to configure automation rules.",
+          "These automation rules are used to trigger evaluators on incoming traces.",
+          "Setting up such rules involves defining conditions under which evaluations are activated."
+        ],
+        "verdicts": [
+          {
+            "statement": "LangSmith allows users to configure automation rules.",
+            "reason": "The context does not mention anything about allowing users to configure automation rules.",
+            "verdict": 0
+          },
+          {
+            "statement": "These automation rules are used to trigger evaluators on incoming traces.",
+            "reason": "The context mentions that in online evaluation, production traces are sampled and scored by evaluators in near real-time, but does not specify that automation rules are used to trigger evaluators.",
+            "verdict": 0
+          },
+          {
+            "statement": "Setting up such rules involves defining conditions under which evaluations are activated.",
+            "reason": "While the context discusses evaluation workflows, it does not explicitly mention that setting up rules involves defining conditions for activation.",
+            "verdict": 0
+          }
+        ],
+        "faithful_count": 0,
+        "total_count": 3
+      },
+      "context_relevance": {
+        "score": 1.0,
+        "judge1_rating": 2,
+        "judge2_rating": 2
+      },
+      "context_utilization": {
+        "score": 0.9999999999,
+        "per_context_verdicts": [
+          {
+            "context_index": 0,
+            "reason": "The provided context provides detailed information about setting up automated evaluation rules in LangSmith, including offline and online evaluation workflows, built-in evaluator templates, and custom evaluator options. This directly supports the accuracy of the given answer.",
+            "verdict": 1
+          }
+        ]
+      },
+      "response_groundedness": {
+        "score": 0.75,
+        "judge1_rating": 1,
+        "judge2_rating": 2
+      }
+    },
+    {
+      "question": "What is continual learning for AI agents and at which layers can it happen?",
+      "answer": "Continual learning is the process by which AI agents improve over time, and it can happen at the model layer, the harness layer, and the context layer.",
+      "answer_relevancy": {
+        "score": 0.8203252528276394,
+        "generated_questions": [
+          "What is continual learning in AI agents?"
+        ],
+        "noncommittal_flags": [
+          0
+        ],
+        "cosine_similarities": [
+          0.8203252528276394
+        ],
+        "all_noncommittal": false
+      },
+      "faithfulness": {
+        "score": 1.0,
+        "statements": [
+          "Continual learning for AI agents refers to the process by which AI agents improve their performance over time.",
+          "Continual learning enables AI agents to adapt and learn from new information without forgetting previously acquired knowledge.",
+          "Continual learning can occur at the model layer, meaning the model itself is updated during training.",
+          "Continual learning can also occur at the harness layer, which involves modifying the learning infrastructure to support ongoing learning.",
+          "Continual learning can take place at the context layer, where the environment or context in which the AI operates is adjusted to accommodate new learning."
+        ],
+        "verdicts": [
+          {
+            "statement": "Continual learning for AI agents refers to the process by which AI agents improve their performance over time.",
+            "reason": "The context defines continual learning as improving performance over time based on new data, feedback, and experience.",
+            "verdict": 1
+          },
+          {
+            "statement": "Continual learning enables AI agents to adapt and learn from new information without forgetting previously acquired knowledge.",
+            "reason": "The context mentions that AI agents can adapt their behavior using new data, feedback, and experience, but does not explicitly address 'forgetting' knowledge. However, the core idea of adapting without retraining is implied.",
+            "verdict": 1
+          },
+          {
+            "statement": "Continual learning can occur at the model layer, meaning the model itself is updated during training.",
+            "reason": "The context explicitly states that continual learning at the model layer involves updating model weights through techniques like fine-tuning, RLHF, or DPO.",
+            "verdict": 1
+          },
+          {
+            "statement": "Continual learning can also occur at the harness layer, which involves modifying the learning infrastructure to support ongoing learning.",
+            "reason": "The context describes continual learning at the harness layer as modifying orchestration logic, tool selection, or routing rules.",
+            "verdict": 1
+          },
+          {
+            "statement": "Continual learning can take place at the context layer, where the environment or context in which the AI operates is adjusted to accommodate new learning.",
+            "reason": "The context states continual learning at the context layer involves updating instructions, few-shot examples, or retrieval knowledge without changing the model or harness.",
+            "verdict": 1
+          }
+        ],
+        "faithful_count": 5,
+        "total_count": 5
+      },
+      "context_relevance": {
+        "score": 1.0,
+        "judge1_rating": 2,
+        "judge2_rating": 2
+      },
+      "context_utilization": {
+        "score": 0.9999999999666667,
+        "per_context_verdicts": [
+          {
+            "context_index": 0,
+            "reason": "The context provides a clear explanation of continual learning for AI agents and explicitly mentions that it can occur at the model layer, the harness layer, and the context layer, which aligns with the given answer.",
+            "verdict": 1
+          },
+          {
+            "context_index": 1,
+            "reason": "The provided context discusses continual learning at the model layer and mentions that it can happen at the model layer, the harness layer, and the context layer, which aligns with the given answer.",
+            "verdict": 1
+          },
+          {
+            "context_index": 2,
+            "reason": "The provided context directly discusses continual learning for AI agents and the three layers: the model layer, the harness layer, and the context layer, which aligns with the given answer.",
+            "verdict": 1
+          }
+        ]
+      },
+      "response_groundedness": {
+        "score": 1.0,
+        "judge1_rating": 2,
+        "judge2_rating": 2
+      }
+    },
+    {
+      "question": "How do I deploy a LangGraph agent to production using LangSmith?",
+      "answer": "LangSmith provides managed deployment options for LangGraph agents.",
+      "answer_relevancy": {
+        "score": 0.6955520345932753,
+        "generated_questions": [
+          "What services does LangSmith offer for LangGraph agents?"
+        ],
+        "noncommittal_flags": [
+          0
+        ],
+        "cosine_similarities": [
+          0.6955520345932753
+        ],
+        "all_noncommittal": false
+      },
+      "faithfulness": {
+        "score": 0.0,
+        "statements": [
+          "LangGraph agents can be deployed to production using LangSmith.",
+          "LangSmith offers managed deployment options specifically for LangGraph agents."
+        ],
+        "verdicts": [
+          {
+            "statement": "LangGraph agents can be deployed to production using LangSmith.",
+            "reason": "The context does not explicitly mention the deployment of LangGraph agents using LangSmith, although it discusses Annotation Queues and production traces in LangSmith.",
+            "verdict": 0
+          },
+          {
+            "statement": "LangSmith offers managed deployment options specifically for LangGraph agents.",
+            "reason": "The context mentions that LangSmith has Annotation Queues for production traces, but it does not specify managed deployment options specifically for LangGraph agents.",
+            "verdict": 0
+          }
+        ],
+        "faithful_count": 0,
+        "total_count": 2
+      },
+      "context_relevance": {
+        "score": 0.5,
+        "judge1_rating": 0,
+        "judge2_rating": 2
+      },
+      "context_utilization": {
+        "score": 0.0,
+        "per_context_verdicts": [
+          {
+            "context_index": 0,
+            "reason": "The provided context does not contain any information about deploying a LangGraph agent to production using LangSmith. The context instead discusses LangChain's funding, offices, and clients among Fortune 500 companies, which is unrelated to the specific question.",
+            "verdict": 0
+          },
+          {
+            "context_index": 1,
+            "reason": "The provided context does not directly address the process of deploying a LangGraph agent to production using LangSmith. Instead, it discusses the LLM-as-a-judge approach and its evaluation biases, which are unrelated to the deployment process.",
+            "verdict": 0
+          },
+          {
+            "context_index": 2,
+            "reason": "The provided context discusses Annotation Queues and their role in LangSmith, which is related to deploying LangGraph agents, but it does not directly explain how to deploy a LangGraph agent to production using LangSmith. The answer is too vague and lacks specific details about the deployment process.",
+            "verdict": 0
+          }
+        ]
+      },
+      "response_groundedness": {
+        "score": 0.5,
+        "judge1_rating": 0,
+        "judge2_rating": 2
+      }
+    },
+    {
+      "question": "What is Arcade.dev and how does it integrate with LangSmith?",
+      "answer": "Arcade.dev provides production-ready MCP tools that integrate with LangSmith Fleet.",
+      "answer_relevancy": {
+        "score": 0.7265248445027711,
+        "generated_questions": [
+          "What does Arcade.dev provide for production MCP tools that integrate with LangSmith Fleet?"
+        ],
+        "noncommittal_flags": [
+          0
+        ],
+        "cosine_similarities": [
+          0.7265248445027711
+        ],
+        "all_noncommittal": false
+      },
+      "faithfulness": {
+        "score": 1.0,
+        "statements": [
+          "Arcade.dev is a platform that provides production-ready model development tools.",
+          "These MCP tools are designed to integrate with LangSmith Fleet.",
+          "The integration enables developers to streamline model development workflows using LangSmith."
+        ],
+        "verdicts": [
+          {
+            "statement": "Arcade.dev is a platform that provides production-ready model development tools.",
+            "reason": "The context mentions that Arcade.dev brings a library of tools to LangSmith Fleet and that these tools are suitable for production agents, implying they are production-ready model development tools.",
+            "verdict": 1
+          },
+          {
+            "statement": "These MCP tools are designed to integrate with LangSmith Fleet.",
+            "reason": "The context explicitly states that the integration brings Arcade.dev's MCP tools to LangSmith Fleet.",
+            "verdict": 1
+          },
+          {
+            "statement": "The integration enables developers to streamline model development workflows using LangSmith.",
+            "reason": "The context discusses the integration of tools to LangSmith Fleet and mentions that one of the benefits is to streamline model development workflows, implying the use of LangSmith.",
+            "verdict": 1
+          }
+        ],
+        "faithful_count": 3,
+        "total_count": 3
+      },
+      "context_relevance": {
+        "score": 1.0,
+        "judge1_rating": 2,
+        "judge2_rating": 2
+      },
+      "context_utilization": {
+        "score": 0.9999999999,
+        "per_context_verdicts": [
+          {
+            "context_index": 0,
+            "reason": "The provided context explains that Arcade.dev is the MCP runtime for production agents and highlights its integration with LangSmith Fleet, giving access to a collection of tools and features like authentication and governance, which aligns with the given answer.",
+            "verdict": 1
+          },
+          {
+            "context_index": 1,
+            "reason": "The provided context does not mention Arcade.dev or its integration with LangSmith. The context discusses AI observability, which is unrelated to the specific tools or integration between Arcade.dev and LangSmith.",
+            "verdict": 0
+          },
+          {
+            "context_index": 2,
+            "reason": "The provided context does not mention Arcade.dev or LangSmith integration. The text discusses continual learning and model updates, which is unrelated to the question asked.",
+            "verdict": 0
+          }
+        ]
+      },
+      "response_groundedness": {
+        "score": 0.5,
+        "judge1_rating": 0,
+        "judge2_rating": 2
+      }
+    },
+    {
+      "question": "How does LangSmith handle tracing for multi-agent systems?",
+      "answer": "LangSmith provides hierarchical tracing that captures parent-child relationships across agent calls.",
+      "answer_relevancy": {
+        "score": 0.7460056470852592,
+        "generated_questions": [
+          "What does LangSmith provide in terms of hierarchical tracing?"
+        ],
+        "noncommittal_flags": [
+          0
+        ],
+        "cosine_similarities": [
+          0.7460056470852592
+        ],
+        "all_noncommittal": false
+      },
+      "faithfulness": {
+        "score": 0.0,
+        "statements": [
+          "LangSmith implements hierarchical tracing.",
+          "Hierarchical tracing captures parent-child relationships.",
+          "These relationships occur across agent calls in the system."
+        ],
+        "verdicts": [
+          {
+            "statement": "LangSmith implements hierarchical tracing.",
+            "reason": "The context states that LangSmith focuses primarily on the application and model layers and provides detailed trace views, but does not explicitly mention hierarchical tracing.",
+            "verdict": 0
+          },
+          {
+            "statement": "Hierarchical tracing captures parent-child relationships.",
+            "reason": "The context does not mention that hierarchical tracing captures parent-child relationships.",
+            "verdict": 0
+          },
+          {
+            "statement": "These relationships occur across agent calls in the system.",
+            "reason": "The context does not mention anything about relationships occurring across agent calls.",
+            "verdict": 0
+          }
+        ],
+        "faithful_count": 0,
+        "total_count": 3
+      },
+      "context_relevance": {
+        "score": 1.0,
+        "judge1_rating": 2,
+        "judge2_rating": 2
+      },
+      "context_utilization": {
+        "score": 0.9999999999,
+        "per_context_verdicts": [
+          {
+            "context_index": 0,
+            "reason": "The context was useful in explaining how LangSmith handles tracing for multi-agent systems, specifically mentioning its focus on hierarchical tracing and capturing parent-child relationships across agent calls.",
+            "verdict": 1
+          },
+          {
+            "context_index": 1,
+            "reason": "The context mentions that LangSmith is used for real-time monitoring of the AI financial assistant built with LangChain, which implies that LangSmith supports tracing capabilities. However, the answer specifically states that LangSmith handles tracing for multi-agent systems, which is not directly mentioned in the context. The context does not discuss multi-agent systems or Lang in's architecture. Therefore, the context is not directly relevant to the answer.",
+            "verdict": 0
+          },
+          {
+            "context_index": 2,
+            "reason": "The provided context does not address how LangSmith handles tracing for multi-agent systems. Instead, it discusses a harness hill-climbing recipe for improving AI agent performance, which is unrelated to the specific tracing capabilities in LangSmith.",
+            "verdict": 0
+          }
+        ]
+      },
+      "response_groundedness": {
+        "score": 1.0,
+        "judge1_rating": 2,
+        "judge2_rating": 2
+      }
+    },
+    {
+      "question": "How do I create custom evaluators in LangSmith using Python?",
+      "answer": "You can write Python functions that take inputs/outputs and return scores, then register them as custom evaluators.",
+      "answer_relevancy": {
+        "score": 0.8161427765131065,
+        "generated_questions": [
+          "How can I create custom evaluators in Python?"
+        ],
+        "noncommittal_flags": [
+          0
+        ],
+        "cosine_similarities": [
+          0.8161427765131065
+        ],
+        "all_noncommittal": false
+      },
+      "faithfulness": {
+        "score": 0.0,
+        "statements": [
+          "Custom evaluators in LangSmith can be created using Python functions.",
+          "These functions are designed to take inputs and outputs and return a score for evaluation.",
+          "The functions can then be registered as custom evaluators in LangSmith."
+        ],
+        "verdicts": [
+          {
+            "statement": "Custom evaluators in LangSmith can be created using Python functions.",
+            "reason": "The context mentions that LangSmith provides various evaluator templates and custom scoring, but does not specify that custom evaluators are created using Python functions.",
+            "verdict": 0
+          },
+          {
+            "statement": "These functions are designed to take inputs and outputs and return a score for evaluation.",
+            "reason": "The context describes the evaluator templates and their scoring, but not the specific design of functions taking inputs and outputs.",
+            "verdict": 0
+          },
+          {
+            "statement": "The functions can then be registered as custom evaluators in LangSmith.",
+            "reason": "The context mentions that templates can be configured with custom scoring, but does not state that functions can be registered as custom evaluators directly.",
+            "verdict": 0
+          }
+        ],
+        "faithful_count": 0,
+        "total_count": 3
+      },
+      "context_relevance": {
+        "score": 1.0,
+        "judge1_rating": 2,
+        "judge2_rating": 2
+      },
+      "context_utilization": {
+        "score": 0.9999999999,
+        "per_context_verdicts": [
+          {
+            "context_index": 0,
+            "reason": "The provided context provides information about LangSmith's built-in evaluator templates and how they can be configured, which directly supports the process of creating custom evaluators in LangSmith using Python.",
+            "verdict": 1
+          }
+        ]
+      },
+      "response_groundedness": {
+        "score": 1.0,
+        "judge1_rating": 2,
+        "judge2_rating": 2
+      }
+    },
+    {
+      "question": "What programming languages does LangChain support?",
+      "answer": "LangChain supports Python and JavaScript/TypeScript.",
+      "answer_relevancy": {
+        "score": 0.9999995431750941,
+        "generated_questions": [
+          "What programming languages does LangChain support?"
+        ],
+        "noncommittal_flags": [
+          0
+        ],
+        "cosine_similarities": [
+          0.9999995431750941
+        ],
+        "all_noncommittal": false
+      },
+      "faithfulness": {
+        "score": 0.6666666666666666,
+        "statements": [
+          "LangChain supports the programming language Python.",
+          "LangChain supports the programming language JavaScript.",
+          "LangChain supports the programming language TypeScript."
+        ],
+        "verdicts": [
+          {
+            "statement": "LangChain supports the programming language Python.",
+            "reason": "The context mentions that LangChain has GitHub repositories for Python and JavaScript packages, which implies that LangChain supports Python.",
+            "verdict": 1
+          },
+          {
+            "statement": "LangChain supports the programming language JavaScript.",
+            "reason": "The context mentions that LangChain has GitHub repositories for Python and JavaScript packages, which implies that LangChain supports JavaScript.",
+            "verdict": 1
+          },
+          {
+            "statement": "LangChain supports the programming language TypeScript.",
+            "reason": "The context does not mention TypeScript or any support for it.",
+            "verdict": 0
+          }
+        ],
+        "faithful_count": 2,
+        "total_count": 3
+      },
+      "context_relevance": {
+        "score": 0.0,
+        "judge1_rating": 0,
+        "judge2_rating": 0
+      },
+      "context_utilization": {
+        "score": 0.9999999999,
+        "per_context_verdicts": [
+          {
+            "context_index": 0,
+            "reason": "The provided context mentions that LangChain has Python and JavaScript packages, which implies support for both programming languages. The answer correctly reflects this information.",
+            "verdict": 1
+          },
+          {
+            "context_index": 1,
+            "reason": "The provided context does not mention LangChain or any programming languages it supports. The context discusses biases in LLM-as-a-judge approaches, which is unrelated to the question.",
+            "verdict": 0
+          },
+          {
+            "context_index": 2,
+            "reason": "The provided context discusses Annotation Queues and evaluation datasets in LangSmith, which are related to LangChain's functionality, but does not mention any programming languages supported by LangChain.",
+            "verdict": 0
+          }
+        ]
+      },
+      "response_groundedness": {
+        "score": 0.5,
+        "judge1_rating": 0,
+        "judge2_rating": 2
+      }
+    },
+    {
+      "question": "What is trajectory evaluation and when should I use it?",
+      "answer": "Trajectory evaluation scores the entire execution path of an agent, and you should use it for complex multi-step agents.",
+      "answer_relevancy": {
+        "score": 0.8137747431050659,
+        "generated_questions": [
+          "What is trajectory evaluation and for which type of agents?"
+        ],
+        "noncommittal_flags": [
+          0
+        ],
+        "cosine_similarities": [
+          0.8137747431050659
+        ],
+        "all_noncommittal": false
+      },
+      "faithfulness": {
+        "score": 0.5,
+        "statements": [
+          "Trajectory evaluation involves scoring the entire execution path of an agent.",
+          "Trajectory evaluation is recommended when dealing with complex multi-step agents."
+        ],
+        "verdicts": [
+          {
+            "statement": "Trajectory evaluation involves scoring the entire execution path of an agent.",
+            "reason": "The context defines that trajectory evaluation as the process of scoring the entire execution path an AI agent takes.",
+            "verdict": 1
+          },
+          {
+            "statement": "Trajectory evaluation is recommended when dealing with complex multi-step agents.",
+            "reason": "The context does not explicitly state that trajectory evaluation is recommended for complex multi-step agents.",
+            "verdict": 0
+          }
+        ],
+        "faithful_count": 1,
+        "total_count": 2
+      },
+      "context_relevance": {
+        "score": 1.0,
+        "judge1_rating": 2,
+        "judge2_rating": 2
+      },
+      "context_utilization": {
+        "score": 0.9999999999,
+        "per_context_verdicts": [
+          {
+            "context_index": 0,
+            "reason": "The provided context gives a clear explanation of trajectory evaluation and its purpose, which directly supports the answer about what it is and when it should be used.",
+            "verdict": 1
+          },
+          {
+            "context_index": 1,
+            "reason": "The provided context does not mention 'trajectory evaluation' or any related concept, nor does it discuss when such evaluation should be used. Therefore, the answer cannot be derived from the context.",
+            "verdict": 0
+          },
+          {
+            "context_index": 2,
+            "reason": "The provided context does not mention trajectory evaluation or its usage, so it is not useful in arriving at the given answer.",
+            "verdict": 0
+          }
+        ]
+      },
+      "response_groundedness": {
+        "score": 1.0,
+        "judge1_rating": 2,
+        "judge2_rating": 2
+      }
+    },
+    {
+      "question": "How do I configure alert rules for production agents in LangSmith?",
+      "answer": "LangSmith allows you to set up alerting rules based on trace metadata and evaluator scores.",
+      "answer_relevancy": {
+        "score": 0.7560563756229558,
+        "generated_questions": [
+          "What types of alerting rules can LangSmith set up?"
+        ],
+        "noncommittal_flags": [
+          0
+        ],
+        "cosine_similarities": [
+          0.7560563756229558
+        ],
+        "all_noncommittal": false
+      },
+      "faithfulness": {
+        "score": 0.6666666666666666,
+        "statements": [
+          "LangSmith provides the capability to configure alerting rules.",
+          "Alerting rules in LangSmith can be established based on trace metadata.",
+          "Alerting rules in LangSmith can also be configured using evaluator scores."
+        ],
+        "verdicts": [
+          {
+            "statement": "LangSmith provides the capability to configure alerting rules.",
+            "reason": "The context mentions that automation rules can be configured to trigger specific evaluators when traces match certain criteria, which implies the ability to configure alerting rules.",
+            "verdict": 1
+          },
+          {
+            "statement": "Alerting rules in LangSmith can be established based on trace metadata.",
+            "reason": "The context states that automation rules can be configured to trigger evaluators when traces match certain criteria such as metadata tags.",
+            "verdict": 1
+          },
+          {
+            "statement": "Alerting rules in LangSmith can also be configured using evaluator scores.",
+            "reason": "The context does not mention configuring alerting rules based on evaluator scores.",
+            "verdict": 0
+          }
+        ],
+        "faithful_count": 2,
+        "total_count": 3
+      },
+      "context_relevance": {
+        "score": 1.0,
+        "judge1_rating": 2,
+        "judge2_rating": 2
+      },
+      "context_utilization": {
+        "score": 0.9999999999666667,
+        "per_context_verdicts": [
+          {
+            "context_index": 0,
+            "reason": "The provided context provides relevant information about configuring alert rules for production agents in LangSmith, mentioning automation rules can be criteria based on metadata tags, user segments, or latency thresholds, which directly supports the answer.",
+            "verdict": 1
+          },
+          {
+            "context_index": 1,
+            "reason": "The provided context was useful in arriving at the given answer. The context discusses LangSmith's trace-level views and aggregate metrics for monitoring production agent behavior, which directly supports the claim that alert rules can be configured based on trace metadata and evaluator scores.",
+            "verdict": 1
+          },
+          {
+            "context_index": 2,
+            "reason": "The provided context discusses best practices for agent evaluation and monitoring in LangSmith, which includes setting up automated pipelines and monitoring for production drift. This supports the idea that configuring alert rules for production agents is feasible using LangSmith's features, making the answer relevant.",
+            "verdict": 1
+          }
+        ]
+      },
+      "response_groundedness": {
+        "score": 1.0,
+        "judge1_rating": 2,
+        "judge2_rating": 2
+      }
+    },
+    {
+      "question": "What machine learning models does LangGraph support for agent decision-making?",
+      "answer": "LangGraph is model-agnostic and supports any LLM provider through LangChain's integrations.",
+      "answer_relevancy": {
+        "score": 0.6943540238957401,
+        "generated_questions": [
+          "What does LangGraph support in terms of LLM providers and model integration?"
+        ],
+        "noncommittal_flags": [
+          0
+        ],
+        "cosine_similarities": [
+          0.6943540238957401
+        ],
+        "all_noncommittal": false
+      },
+      "faithfulness": {
+        "score": 0.0,
+        "statements": [
+          "LangGraph supports machine learning models for agent decision-making.",
+          "LangGraph is designed to be model-agnostic.",
+          "LangGraph supports any large language model provider.",
+          "LangGraph enables the use of any LLM provider through LangChain's integrations."
+        ],
+        "verdicts": [
+          {
+            "statement": "LangGraph supports machine learning models for agent decision-making.",
+            "reason": "The context does not mention machine learning models or their role in agent decision-making.",
+            "verdict": 0
+          },
+          {
+            "statement": "LangGraph is designed to be model-agnostic.",
+            "reason": "The context does not explicitly state that LangGraph is model-agnostic, although it emphasizes flexibility and control, which may imply model-agnosticism, but this is not directly stated.",
+            "verdict": 0
+          },
+          {
+            "statement": "LangGraph supports any large language model provider.",
+            "reason": "The context mentions LangChain as the original framework for LLM-powered applications and that LangGraph provides a dedicated runtime, but does not explicitly support for any large language model provider.",
+            "verdict": 0
+          },
+          {
+            "statement": "LangGraph enables the use of any LLM provider through LangChain's integrations.",
+            "reason": "The context discusses LangChain's role in LLM-powered applications and LangGraph's runtime, but does not mention LangChain's integrations for different LLM providers.",
+            "verdict": 0
+          }
+        ],
+        "faithful_count": 0,
+        "total_count": 4
+      },
+      "context_relevance": {
+        "score": 0.5,
+        "judge1_rating": 0,
+        "judge2_rating": 2
+      },
+      "context_utilization": {
+        "score": 0.0,
+        "per_context_verdicts": [
+          {
+            "context_index": 0,
+            "reason": "The provided context discusses LangGraph's development purpose and its graph-based programming model, but it does not mention which machine learning models it supports for agent decision-making. The answer refers to LangChain's integrations, which is outside the context's scope.",
+            "verdict": 0
+          }
+        ]
+      },
+      "response_groundedness": {
+        "score": 1.0,
+        "judge1_rating": 2,
+        "judge2_rating": 2
+      }
+    },
+    {
+      "question": "What are the three pillars of AI observability and why are they insufficient?",
+      "answer": "The three pillars are metrics, logs, and traces, but AI systems need additional primitives like evaluation, annotation, and experimentation.",
+      "answer_relevancy": {
+        "score": 0.6323613042120357,
+        "generated_questions": [
+          "What are the three pillars of AI systems mentioned?"
+        ],
+        "noncommittal_flags": [
+          0
+        ],
+        "cosine_similarities": [
+          0.6323613042120357
+        ],
+        "all_noncommittal": false
+      },
+      "faithfulness": {
+        "score": 0.8888888888888888,
+        "statements": [
+          "The three pillars of AI observability are metrics, logs, and traces.",
+          "AI observability relies on metrics to measure system performance indicators.",
+          "AI observability depends on logs to record system events and errors.",
+          "AI observability depends on traces to track the flow of requests across system components.",
+          "The three pillars provide metrics, logs, and traces for AI observability.",
+          "AI systems require additional primitives beyond metrics, logs, and traces.",
+          "Evaluation is necessary to assess the performance of AI models.",
+          "Annotation is required to label data for training and analysis.",
+          "Experimentation is needed to test hypotheses and improve AI systems."
+        ],
+        "verdicts": [
+          {
+            "statement": "The three pillars of AI observability are metrics, logs, and traces.",
+            "reason": "The context states that the three traditional pillars are metrics, logs, and traces, but it clarifies that AI observability requires extending beyond these pillars.",
+            "verdict": 0
+          },
+          {
+            "statement": "AI observability relies on metrics to measure system performance indicators.",
+            "reason": "The context mentions that metrics are one of the three pillars and that AI observability depends on them, which aligns with the statement provided.",
+            "verdict": 1
+          },
+          {
+            "statement": "AI observability depends on logs to record system events and errors.",
+            "reason": "The context confirms that logs are one of the three pillars and that AI observability relies on them, which matches the statement.",
+            "verdict": 1
+          },
+          {
+            "statement": "AI observability depends on traces to track the flow of requests across system components.",
+            "reason": "The context confirms that traces are one of the three pillars and that AI observability depends on them, which aligns with the statement.",
+            "verdict": 1
+          },
+          {
+            "statement": "The three pillars provide metrics, logs, and traces for AI observability.",
+            "reason": "The context explicitly states that the three pillars are metrics, logs, and traces and that they are foundational for observability, including AI observability.",
+            "verdict": 1
+          },
+          {
+            "statement": "AI systems require additional primitives beyond metrics, logs, and traces.",
+            "reason": "The context clearly states that the three pillars are necessary but insufficient for AI systems, requiring additional components like evaluation scoring, human annotation, and experimentation.",
+            "verdict": 1
+          },
+          {
+            "statement": "Evaluation is necessary to assess the performance of AI models.",
+            "reason": "The context mentions that AI observability must include evaluation to capture semantic quality dimensions, which implies that evaluation is necessary.",
+            "verdict": 1
+          },
+          {
+            "statement": "Annotation is required to label data for training and analysis.",
+            "reason": "The context includes human annotation workflows as part of the extension for AI observability, indicating that annotation is required.",
+            "verdict": 1
+          },
+          {
+            "statement": "Experimentation is needed to test hypotheses and improve AI systems.",
+            "reason": "The context lists systematic experimentation as a necessary component for AI observability.",
+            "verdict": 1
+          }
+        ],
+        "faithful_count": 8,
+        "total_count": 9
+      },
+      "context_relevance": {
+        "score": 1.0,
+        "judge1_rating": 2,
+        "judge2_rating": 2
+      },
+      "context_utilization": {
+        "score": 0.99999999995,
+        "per_context_verdicts": [
+          {
+            "context_index": 0,
+            "reason": "The context discusses the three pillars of AI observability -- metrics, logs, and traces -- and explains their role in traditional software systems. The answer correctly identifies these pillars and adds that AI systems need additional primitives like evaluation, annotation, and experimentation, which aligns with what the context implies about their insufficiency. Therefore, the context was useful in arriving at the answer.",
+            "verdict": 1
+          },
+          {
+            "context_index": 1,
+            "reason": "The provided context discusses the three pillars of AI observability (metrics, logs, and traces) and explains that they are insufficient for LLM-based applications due to inability to detect semantic issues like hallucinations or safety. This aligns directly with the given answer which mentions the same pillars and their insufficiency for additional primitives.",
+            "verdict": 1
+          },
+          {
+            "context_index": 2,
+            "reason": "The context does not mention the three pillars of AI observability (metrics, logs, and traces) nor does it discuss why they are insufficient. Instead, it talks about MongoDB Atlas Vector Search and LangChain integration, which is unrelated to the topic of AI observability. Therefore, the context does not support the answer.",
+            "verdict": 0
+          }
+        ]
+      },
+      "response_groundedness": {
+        "score": 1.0,
+        "judge1_rating": 2,
+        "judge2_rating": 2
+      }
+    }
+  ]
+}

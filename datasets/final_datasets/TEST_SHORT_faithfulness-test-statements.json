@@ -1,0 +1,16 @@
+{
+  "F1": [
+    "LLM-as-a-judge uses a large language model.",
+    "LLM-as-a-judge evaluates AI agent outputs.",
+    "LLM-as-a-judge serves as a scalable substitute for human judgment."
+  ],
+  "F2": [
+    "Agent observability provides step-by-step visibility into execution.",
+    "Agent observability shows which tools were called.",
+    "Agent observability shows what data was retrieved."
+  ],
+  "F3": [
+    "Trajectory evaluation scores the entire execution path of an AI agent.",
+    "Trajectory evaluation evaluates more than just the final output."
+  ]
+}

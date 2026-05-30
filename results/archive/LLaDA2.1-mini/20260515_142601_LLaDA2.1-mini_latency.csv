@@ -1,0 +1,32 @@
+example_idx,question,metric_name,call_index,response_model,latency_s,timestamp,model
+0,What is LangChain and when was it founded?,answer_relevancy,0,AnswerRelevanceOutput,1.2106,2026-05-15T12:26:03.114960+00:00,LLaDA2.1-mini
+0,What is LangChain and when was it founded?,faithfulness,0,StatementGeneratorOutput,1.2545,2026-05-15T12:26:05.764837+00:00,LLaDA2.1-mini
+0,What is LangChain and when was it founded?,faithfulness,1,NLIStatementOutput,1.5158,2026-05-15T12:26:07.282208+00:00,LLaDA2.1-mini
+0,What is LangChain and when was it founded?,context_relevance,0,ContextRelevanceOutput,1.0548,2026-05-15T12:26:08.338785+00:00,LLaDA2.1-mini
+0,What is LangChain and when was it founded?,context_relevance,1,ContextRelevanceOutput,1.0479,2026-05-15T12:26:09.388368+00:00,LLaDA2.1-mini
+0,What is LangChain and when was it founded?,context_utilization,0,ContextPrecisionOutput,1.1681,2026-05-15T12:26:10.558303+00:00,LLaDA2.1-mini
+0,What is LangChain and when was it founded?,context_utilization,1,ContextPrecisionOutput,1.2635,2026-05-15T12:26:11.824723+00:00,LLaDA2.1-mini
+0,What is LangChain and when was it founded?,context_utilization,2,ContextPrecisionOutput,1.2099,2026-05-15T12:26:13.036171+00:00,LLaDA2.1-mini
+0,What is LangChain and when was it founded?,response_groundedness,0,ResponseGroundednessOutput,1.0489,2026-05-15T12:26:14.086319+00:00,LLaDA2.1-mini
+0,What is LangChain and when was it founded?,response_groundedness,1,ResponseGroundednessOutput,1.0599,2026-05-15T12:26:15.147683+00:00,LLaDA2.1-mini
+1,How does LangSmith compare to Langfuse in terms of features and capabilities?,answer_relevancy,0,AnswerRelevanceOutput,1.0849,2026-05-15T12:26:16.235299+00:00,LLaDA2.1-mini
+1,How does LangSmith compare to Langfuse in terms of features and capabilities?,faithfulness,0,StatementGeneratorOutput,1.5146,2026-05-15T12:26:19.152985+00:00,LLaDA2.1-mini
+1,How does LangSmith compare to Langfuse in terms of features and capabilities?,faithfulness,1,NLIStatementOutput,2.1611,2026-05-15T12:26:21.314458+00:00,LLaDA2.1-mini
+1,How does LangSmith compare to Langfuse in terms of features and capabilities?,context_relevance,0,ContextRelevanceOutput,1.0499,2026-05-15T12:26:22.365990+00:00,LLaDA2.1-mini
+1,How does LangSmith compare to Langfuse in terms of features and capabilities?,context_relevance,1,ContextRelevanceOutput,1.1705,2026-05-15T12:26:23.538007+00:00,LLaDA2.1-mini
+1,How does LangSmith compare to Langfuse in terms of features and capabilities?,context_utilization,0,ContextPrecisionOutput,1.2608,2026-05-15T12:26:24.800208+00:00,LLaDA2.1-mini
+1,How does LangSmith compare to Langfuse in terms of features and capabilities?,context_utilization,1,ContextPrecisionOutput,1.214,2026-05-15T12:26:26.015398+00:00,LLaDA2.1-mini
+1,How does LangSmith compare to Langfuse in terms of features and capabilities?,context_utilization,2,ContextPrecisionOutput,1.1612,2026-05-15T12:26:27.178166+00:00,LLaDA2.1-mini
+1,How does LangSmith compare to Langfuse in terms of features and capabilities?,response_groundedness,0,ResponseGroundednessOutput,1.0422,2026-05-15T12:26:28.222012+00:00,LLaDA2.1-mini
+1,How does LangSmith compare to Langfuse in terms of features and capabilities?,response_groundedness,1,ResponseGroundednessOutput,1.0435,2026-05-15T12:26:29.268496+00:00,LLaDA2.1-mini
+2,What is the LLM-as-a-judge approach and what are its known biases?,answer_relevancy,0,AnswerRelevanceOutput,1.0597,2026-05-15T12:26:30.330295+00:00,LLaDA2.1-mini
+2,What is the LLM-as-a-judge approach and what are its known biases?,faithfulness,0,StatementGeneratorOutput,1.7473,2026-05-15T12:26:33.453245+00:00,LLaDA2.1-mini
+2,What is the LLM-as-a-judge approach and what are its known biases?,faithfulness,1,NLIStatementOutput,2.4108,2026-05-15T12:26:35.866046+00:00,LLaDA2.1-mini
+2,What is the LLM-as-a-judge approach and what are its known biases?,context_relevance,0,ContextRelevanceOutput,1.0508,2026-05-15T12:26:36.918419+00:00,LLaDA2.1-mini
+2,What is the LLM-as-a-judge approach and what are its known biases?,context_relevance,1,ContextRelevanceOutput,1.3827,2026-05-15T12:26:38.302508+00:00,LLaDA2.1-mini
+2,What is the LLM-as-a-judge approach and what are its known biases?,context_relevance,2,ContextRelevanceOutput,1.3247,2026-05-15T12:26:39.628557+00:00,LLaDA2.1-mini
+2,What is the LLM-as-a-judge approach and what are its known biases?,context_utilization,0,ContextPrecisionOutput,1.2362,2026-05-15T12:26:40.866559+00:00,LLaDA2.1-mini
+2,What is the LLM-as-a-judge approach and what are its known biases?,context_utilization,1,ContextPrecisionOutput,10.1533,2026-05-15T12:26:51.021344+00:00,LLaDA2.1-mini
+2,What is the LLM-as-a-judge approach and what are its known biases?,context_utilization,2,ContextPrecisionOutput,0.1774,2026-05-15T12:26:51.199770+00:00,LLaDA2.1-mini
+2,What is the LLM-as-a-judge approach and what are its known biases?,response_groundedness,0,ResponseGroundednessOutput,0.0574,2026-05-15T12:26:51.258028+00:00,LLaDA2.1-mini
+2,What is the LLM-as-a-judge approach and what are its known biases?,response_groundedness,1,ResponseGroundednessOutput,0.0398,2026-05-15T12:26:51.298461+00:00,LLaDA2.1-mini
