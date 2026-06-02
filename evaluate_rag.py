@@ -10,6 +10,7 @@ from config import (
     EMBEDDINGS_MODEL,
     INPUT_CSV,
     OUTPUT_DIR,
+    ANNOTATED_CSV,
 )
 from latency_tracker import LatencyTrackingLLM
 from ragas.llms import llm_factory
@@ -26,6 +27,7 @@ from custom_embeddings import CustomEmbeddings
 
 # evaluator_llm = llm_factory(model=LLM_MODEL, client=client)
 evaluator_llm = llm_factory(model=LLM_MODEL, client=no_ssl_client, max_tokens=8096)
+# evaluator_llm = llm_factory(model=LLM_MODEL, client=no_ssl_client, max_completion_tokens=8096)
 tracked_evaluator_llm = LatencyTrackingLLM(evaluator_llm)
 
 embeddings = CustomEmbeddings(
@@ -45,6 +47,14 @@ METRIC_KWARGS = {
     "answer_relevancy": lambda row: {
         "user_input": row["question"],
         "response": row["answer"],
+        **(
+            {
+                "pre_generated_questions": [row["annotated_question"]],
+                "pre_noncommittal_flags": [int(row["uncommittal"])],
+            }
+            if pd.notna(row.get("annotated_question"))
+            else {}
+        ),
     },
     "faithfulness": lambda row: {
         "user_input": row["question"],
@@ -111,6 +121,13 @@ Examples of how you should respond in a conversation:
 print(f"Loading dataset from {INPUT_CSV}")
 df = pd.read_csv(INPUT_CSV, encoding="utf-8")
 print(f"  Rows: {len(df)}")
+
+if ANNOTATED_CSV is not None and ANNOTATED_CSV.exists():
+    print(f"Loading annotated questions from {ANNOTATED_CSV}")
+    annotated_df = pd.read_csv(ANNOTATED_CSV, encoding="utf-8")[["case_id", "question", "uncommittal"]]
+    annotated_df = annotated_df.rename(columns={"question": "annotated_question"})
+    df = df.merge(annotated_df, on="case_id", how="left")
+    print(f"  Annotated rows merged: {df['annotated_question'].notna().sum()}")
 
 
 def parse_contexts(ctx_json: str) -> list[str]:

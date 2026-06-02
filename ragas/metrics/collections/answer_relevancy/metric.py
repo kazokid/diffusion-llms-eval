@@ -90,7 +90,13 @@ class AnswerRelevancy(BaseMetric):
         # Call super() for validation
         super().__init__(name=name, **kwargs)
 
-    async def ascore(self, user_input: str, response: str) -> MetricResult:
+    async def ascore(
+        self,
+        user_input: str,
+        response: str,
+        pre_generated_questions: "list[str] | None" = None,
+        pre_noncommittal_flags: "list[int] | None" = None,
+    ) -> MetricResult:
         """
         Calculate answer relevancy score asynchronously.
 
@@ -99,6 +105,8 @@ class AnswerRelevancy(BaseMetric):
         Args:
             user_input: The original question
             response: The response to evaluate
+            pre_generated_questions: Pre-annotated questions (skips LLM generation when provided)
+            pre_noncommittal_flags: Noncommittal flags matching pre_generated_questions
 
         Returns:
             MetricResult with relevancy score (0.0-1.0, higher is better)
@@ -109,19 +117,23 @@ class AnswerRelevancy(BaseMetric):
         if not response:
             raise ValueError("response cannot be empty")
 
-        # Generate multiple questions from response
-        generated_questions = []
-        noncommittal_flags = []
+        if pre_generated_questions is not None:
+            generated_questions = list(pre_generated_questions)
+            noncommittal_flags = list(pre_noncommittal_flags) if pre_noncommittal_flags is not None else [0] * len(generated_questions)
+        else:
+            # Generate multiple questions from response
+            generated_questions = []
+            noncommittal_flags = []
 
-        for _ in range(self.strictness):
-            # Create input data and generate prompt
-            input_data = AnswerRelevanceInput(response=response)
-            prompt_string = self.prompt.to_string(input_data)
-            result = await self.llm.agenerate(prompt_string, AnswerRelevanceOutput)
+            for _ in range(self.strictness):
+                # Create input data and generate prompt
+                input_data = AnswerRelevanceInput(response=response)
+                prompt_string = self.prompt.to_string(input_data)
+                result = await self.llm.agenerate(prompt_string, AnswerRelevanceOutput)
 
-            if result.question:
-                generated_questions.append(result.question)
-                noncommittal_flags.append(result.noncommittal)
+                if result.question:
+                    generated_questions.append(result.question)
+                    noncommittal_flags.append(result.noncommittal)
 
         if not generated_questions:
             return MetricResult(value=0.0)
@@ -155,23 +167,35 @@ class AnswerRelevancy(BaseMetric):
 
         return MetricResult(value=float(score))
 
-    async def ascore_trace(self, user_input: str, response: str) -> tuple[MetricResult, dict]:
+    async def ascore_trace(
+        self,
+        user_input: str,
+        response: str,
+        pre_generated_questions: "list[str] | None" = None,
+        pre_noncommittal_flags: "list[int] | None" = None,
+    ) -> tuple[MetricResult, dict]:
         if not user_input:
             raise ValueError("user_input cannot be empty")
         if not response:
             raise ValueError("response cannot be empty")
 
-        generated_questions = []
-        noncommittal_flags = []
+        annotated = pre_generated_questions is not None
 
-        for _ in range(self.strictness):
-            input_data = AnswerRelevanceInput(response=response)
-            prompt_string = self.prompt.to_string(input_data)
-            result = await self.llm.agenerate(prompt_string, AnswerRelevanceOutput)
+        if annotated:
+            generated_questions = list(pre_generated_questions)
+            noncommittal_flags = list(pre_noncommittal_flags) if pre_noncommittal_flags is not None else [0] * len(generated_questions)
+        else:
+            generated_questions = []
+            noncommittal_flags = []
 
-            if result.question:
-                generated_questions.append(result.question)
-                noncommittal_flags.append(result.noncommittal)
+            for _ in range(self.strictness):
+                input_data = AnswerRelevanceInput(response=response)
+                prompt_string = self.prompt.to_string(input_data)
+                result = await self.llm.agenerate(prompt_string, AnswerRelevanceOutput)
+
+                if result.question:
+                    generated_questions.append(result.question)
+                    noncommittal_flags.append(result.noncommittal)
 
         if not generated_questions:
             trace = {
@@ -179,6 +203,7 @@ class AnswerRelevancy(BaseMetric):
                 "noncommittal_flags": [],
                 "cosine_similarities": [],
                 "all_noncommittal": False,
+                "annotated": annotated,
             }
             return MetricResult(value=0.0), trace
 
@@ -206,5 +231,6 @@ class AnswerRelevancy(BaseMetric):
             "noncommittal_flags": noncommittal_flags,
             "cosine_similarities": cosine_sim.tolist(),
             "all_noncommittal": all_noncommittal,
+            "annotated": annotated,
         }
         return MetricResult(value=float(score)), trace

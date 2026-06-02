@@ -14,5 +14,7 @@ EMBEDDINGS_URL_BASE = os.environ["EMBEDDINGS_URL_BASE"]
 EMBEDDINGS_API_KEY = os.environ.get("EMBEDDINGS_API_KEY", "no-api-key")
 
 # INPUT_CSV = Path(__file__).parent / "datasets/baby-langchain-easy-questions-answered-test.csv"
-INPUT_CSV = Path(__file__).parent / "datasets/final_datasets/test.csv"
+INPUT_CSV = Path(__file__).parent / "datasets/final_datasets/answer-relevancy-test.csv"
 OUTPUT_DIR = Path(__file__).parent / "results"
+
+ANNOTATED_CSV = Path(__file__).parent / "datasets/final_datasets/answer_relevancy-test-annotated.csv"

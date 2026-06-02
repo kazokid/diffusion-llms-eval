@@ -18,10 +18,10 @@ AR16,How does trajectory evaluation work?,0
 AR17,What are the main approaches for LLM judges?,0
 AR18,What does continual learning involve at the model layer?,0
 AR19,What is AI observability?,0
-AR20,What are annotation queses used for?,1
-AR21,What is LangSmith's maximum trace throughput per second,0
-AR22,How do I setup Okta SSO on LangSmith?,1
-AR23,How does pricing for LangSmith's Enterprise evaluator features look like?,0
+AR20,What are annotation queues used for?,0
+AR21,What is LangSmith's maximum trace throughput per second?,1
+AR22,How do I set up Okta SSO on LangSmith?,1
+AR23,What does pricing for LangSmith's Enterprise evaluator features look like?,0
 AR24,Does LangSmith integrate with Azure Active Directory?,1
 AR25,What is the error code LS-5023? ,1
 AR26,Is LLM as a judge better than human evaluation?,1

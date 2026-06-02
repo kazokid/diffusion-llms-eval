@@ -33,7 +33,7 @@ Use only what is written in the Context and in the Question.
 Follow the instructions below:
 0. If the context does not contains any relevant information to answer the question, say 0.
 1. If the context partially contains relevant information to answer the question, say 1.
-2. If the context contains any relevant information to answer the question, say 2.
+2. If the context contains all relevant information to answer the question, say 2.
 You must provide the relevance score of 0, 1, or 2, nothing else.
 Do not explain.
 Return your response as JSON in this format: {"rating": X} where X is 0, 1, or 2."""
