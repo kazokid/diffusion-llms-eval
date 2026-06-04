@@ -76,7 +76,7 @@ class ContextRelevanceJudge2Prompt(
 Here are the instructions I will follow:
 * If the Context does not contain any relevant information to answer the Question, I will respond with a relevance score of 0.
 * If the Context partially contains relevant information to answer the Question, I will respond with a relevance score of 1.
-* If the Context contains any relevant information to answer the Question, I will respond with a relevance score of 2.
+* If the Context contains all relevant information to answer the Question, I will respond with a relevance score of 2.
 Return your response as JSON in this format: {"rating": X} where X is 0, 1, or 2."""
 
     examples = [
