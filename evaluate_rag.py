@@ -10,6 +10,7 @@ from config import (
     EMBEDDINGS_MODEL,
     INPUT_CSV,
     OUTPUT_DIR,
+    METRIC,
     ANNOTATED_CSV,
 )
 from latency_tracker import LatencyTrackingLLM
@@ -18,16 +19,13 @@ from ragas.metrics.collections import (
     AnswerRelevancy,
     ContextRelevance,
     ContextUtilization,
-    Faithfulness,
     ResponseGroundedness,
 )
 
 from custom_embeddings import CustomEmbeddings
 
 
-# evaluator_llm = llm_factory(model=LLM_MODEL, client=client)
 evaluator_llm = llm_factory(model=LLM_MODEL, client=no_ssl_client, max_tokens=8096)
-# evaluator_llm = llm_factory(model=LLM_MODEL, client=no_ssl_client, max_completion_tokens=8096)
 tracked_evaluator_llm = LatencyTrackingLLM(evaluator_llm)
 
 embeddings = CustomEmbeddings(
@@ -35,13 +33,17 @@ embeddings = CustomEmbeddings(
         model=EMBEDDINGS_MODEL,
     )
 
-metrics = [
-    AnswerRelevancy(llm=tracked_evaluator_llm, embeddings=embeddings, strictness=1),
-    Faithfulness(llm=tracked_evaluator_llm),
-    ContextRelevance(llm=tracked_evaluator_llm),
-    ContextUtilization(llm=tracked_evaluator_llm),
-    ResponseGroundedness(llm=tracked_evaluator_llm),
-]
+METRIC_REGISTRY = {
+    "answer_relevancy": lambda: AnswerRelevancy(llm=tracked_evaluator_llm, embeddings=embeddings, strictness=1),
+    "context_relevance": lambda: ContextRelevance(llm=tracked_evaluator_llm),
+    "context_utilization": lambda: ContextUtilization(llm=tracked_evaluator_llm),
+    "response_groundedness": lambda: ResponseGroundedness(llm=tracked_evaluator_llm),
+}
+
+if METRIC not in METRIC_REGISTRY:
+    raise ValueError(f"Unknown metric '{METRIC}'. Choose from: {list(METRIC_REGISTRY.keys())}")
+
+metric = METRIC_REGISTRY[METRIC]()
 
 METRIC_KWARGS = {
     "answer_relevancy": lambda row: {
@@ -55,11 +57,6 @@ METRIC_KWARGS = {
             if pd.notna(row.get("annotated_question"))
             else {}
         ),
-    },
-    "faithfulness": lambda row: {
-        "user_input": row["question"],
-        "response": row["answer"],
-        "retrieved_contexts": row["retrieved_contexts"],
     },
     "context_relevance": lambda row: {
         "user_input": row["question"],
@@ -140,30 +137,39 @@ df["is_rejection"] = df["case_description"].str.contains("rejection", case=False
 
 
 async def run_evaluation():
-    results = {m.name: [] for m in metrics}
+    scores = []
     traces = []
     total = len(df)
+    build_kwargs = METRIC_KWARGS[METRIC]
 
     for i, (_, row) in enumerate(df.iterrows(), 1):
         print(f"  [{i}/{total}] {row['question'][:60]}...")
         case_id = str(row.get("case_id", i - 1))
-        row_traces = {"case_id": case_id, "question": row["question"], "answer": row["answer"]}
+        tracked_evaluator_llm.set_context(metric.name, i - 1, row["question"], case_id)
+        kwargs = build_kwargs(row)
 
-        for metric in metrics:
-            tracked_evaluator_llm.set_context(metric.name, i - 1, row["question"], case_id)
-            kwargs = METRIC_KWARGS[metric.name](row)
-            try:
-                result, trace = await metric.ascore_trace(**kwargs)
-                results[metric.name].append(result.value)
-                row_traces[metric.name] = {"score": result.value, **trace}
-            except Exception as e:
-                print(f"    WARNING: {metric.name} failed: {e}")
-                results[metric.name].append(None)
-                row_traces[metric.name] = {"score": None, "error": str(e)}
+        try:
+            result, trace = await metric.ascore_trace(**kwargs)
+            scores.append(result.value)
+            traces.append({
+                "case_id": case_id,
+                "question": row["question"],
+                "answer": row["answer"],
+                "score": result.value,
+                **trace,
+            })
+        except Exception as e:
+            print(f"    WARNING: {metric.name} failed: {e}")
+            scores.append(None)
+            traces.append({
+                "case_id": case_id,
+                "question": row["question"],
+                "answer": row["answer"],
+                "score": None,
+                "error": str(e),
+            })
 
-        traces.append(row_traces)
-
-    return results, traces
+    return scores, traces
 
 
 timestamp = pd.Timestamp.now().strftime("%Y%m%d_%H%M%S")
@@ -176,44 +182,40 @@ traces_path = model_dir / f"{timestamp}_{model_name}_{input_csv_stem}_details.js
 
 print("\nRunning evaluation...")
 print(f"  LLM model: {LLM_MODEL}")
-print(f"  Embeddings model: {EMBEDDINGS_MODEL}\n")
+print(f"  Embeddings model: {EMBEDDINGS_MODEL}")
+print(f"  Metric: {METRIC}\n")
 
-results, traces = asyncio.run(run_evaluation())
+scores, traces = asyncio.run(run_evaluation())
 
 print("\n" + "=" * 60)
 print("EVALUATION RESULTS")
 print("=" * 60)
 
-for metric_name, scores in results.items():
-    valid = [s for s in scores if s is not None]
-    if valid:
-        avg = sum(valid) / len(valid)
-        print(f"  {metric_name}: {avg:.4f} ({len(valid)}/{len(scores)} successful)")
+valid = [s for s in scores if s is not None]
+if valid:
+    avg = sum(valid) / len(valid)
+    print(f"  {metric.name}: {avg:.4f} ({len(valid)}/{len(scores)} successful)")
 
-results_df = pd.DataFrame(results)
-results_df["evaluator_llm"] = LLM_MODEL
-results_df["embeddings_model"] = EMBEDDINGS_MODEL
-results_df["input_csv"] = INPUT_CSV.name
 base_cols = ["question", "answer"]
 if "topic" in df.columns:
     base_cols.append("topic")
 if "case_id" in df.columns:
     base_cols.insert(0, "case_id")
-final_df = pd.concat(
-    [
-        df[base_cols].reset_index(drop=True),
-        results_df.reset_index(drop=True),
-    ],
-    axis=1,
-)
 
-final_df.to_csv(output_path, index=False)
+results_df = df[base_cols].reset_index(drop=True).copy()
+results_df[metric.name] = scores
+results_df["evaluator_llm"] = LLM_MODEL
+results_df["embeddings_model"] = EMBEDDINGS_MODEL
+results_df["input_csv"] = INPUT_CSV.name
+
+results_df.to_csv(output_path, index=False)
 print(f"\nPer-row results saved to: {output_path}")
 
 traces_output = {
     "input_csv": INPUT_CSV.name,
     "evaluator_llm": LLM_MODEL,
     "embeddings_model": EMBEDDINGS_MODEL,
+    "metric": METRIC,
     "traces": traces,
 }
 with open(traces_path, "w", encoding="utf-8") as f:
