@@ -1,0 +1,43 @@
+case_id,question,answer,context_relevance,evaluator_llm,embeddings_model,input_csv
+CR1,What is LLM-as-a-judge?,LLM-as-a-judge uses a large language model to evaluate AI agent outputs.,,gpt-5.2,text-embedding-3-large,context-relevance-test.csv
+CR2,What is agent observability?,Agent observability provides step-by-step visibility into agent execution.,,gpt-5.2,text-embedding-3-large,context-relevance-test.csv
+CR3,What is AI observability?,AI observability is collecting and analyzing telemetry data across the AI stack.,,gpt-5.2,text-embedding-3-large,context-relevance-test.csv
+CR4,How do I deploy a LangGraph agent to production?,You can deploy LangGraph agents through LangSmith's managed deployment service.,,gpt-5.2,text-embedding-3-large,context-relevance-test.csv
+CR5,What programming languages does LangChain support?,LangChain supports Python and JavaScript/TypeScript.,,gpt-5.2,text-embedding-3-large,context-relevance-test.csv
+CR6,How do I set up webhook notifications in LangSmith?,You can configure webhooks through the LangSmith settings.,,gpt-5.2,text-embedding-3-large,context-relevance-test.csv
+CR7,How do I build a custom LLM-as-a-judge evaluator in Python?,You define a Python function with your rubric and scoring logic.,,gpt-5.2,text-embedding-3-large,context-relevance-test.csv
+CR8,What Python code do I need to add trajectory evaluation to my LangGraph agent?,You import the trajectory evaluator and pass your agent's run traces to it.,,gpt-5.2,text-embedding-3-large,context-relevance-test.csv
+CR9,How do I implement offline updates to the context so they are memory efficient?,You batch context updates into offline jobs and use incremental diffs to reduce memory overhead.,,gpt-5.2,text-embedding-3-large,context-relevance-test.csv
+CR10,What are the three layers of continual learning for AI agents?,"Model layer, harness layer, and context layer.",,gpt-5.2,text-embedding-3-large,context-relevance-test.csv
+CR11,What biases affect LLM judges and how can they be mitigated?,"Position bias, verbosity bias, and self-enhancement bias.",,gpt-5.2,text-embedding-3-large,context-relevance-test.csv
+CR12,Tell me about evaluation workflows in LangSmith.,LangSmith supports offline evaluation against curated datasets and online evaluation on live production traffic.,,gpt-5.2,text-embedding-3-large,context-relevance-test.csv
+CR13,How do I configure LangSmith alerts for PagerDuty?,You set up alerting rules and connect to PagerDuty.,,gpt-5.2,text-embedding-3-large,context-relevance-test.csv
+CR14,What is the LangSmith pricing structure?,"LangSmith has Developer, Plus, and Enterprise tiers.",,gpt-5.2,text-embedding-3-large,context-relevance-test.csv
+CR15,How do I export datasets from LangSmith?,You can export datasets using the SDK or UI export button.,,gpt-5.2,text-embedding-3-large,context-relevance-test.csv
+CR16,How do I implement agent observability tracing in my Python application?,You instrument your functions with the traceable decorator.,,gpt-5.2,text-embedding-3-large,context-relevance-test.csv
+CR17,How do I configure the scoring rubric for LLM-as-a-judge evaluators?,You define criteria in the evaluation prompt and calibrate against human annotations.,,gpt-5.2,text-embedding-3-large,context-relevance-test.csv
+CR18,How do I set up automated agentic evaluation pipelines that run on every pull request?,You integrate LangSmith's evaluation SDK into your CI workflow.,,gpt-5.2,text-embedding-3-large,context-relevance-test.csv
+CR19,What is trajectory evaluation?,Scoring the entire execution path of an AI agent.,,gpt-5.2,text-embedding-3-large,context-relevance-test.csv
+CR20,What are the benefits of AI observability?,"Cost control, debugging, and quality improvement.",,gpt-5.2,text-embedding-3-large,context-relevance-test.csv
+CR21,What is the harness layer in continual learning?,"The orchestration code, tools, and instructions that drive the agent.",,gpt-5.2,text-embedding-3-large,context-relevance-test.csv
+CR22,How do I configure an LLM-as-a-judge evaluator in Python? Give me step by step code instructions.,"You set up the evaluation prompt, scoring criteria, and output parser.",,gpt-5.2,text-embedding-3-large,context-relevance-test.csv
+CR23,How do I implement context-layer continual learning with retrieval updates using Java?,You update the retrieval knowledge and few-shot examples at inference time.,,gpt-5.2,text-embedding-3-large,context-relevance-test.csv
+CR24,What programming patters are best to set up agent observability in my multi-agent system?,Use distributed tracing that captures cross-agent handoffs and the full execution graph so you can inspect every LLM call and tool invocation across agent boundaries.,,gpt-5.2,text-embedding-3-large,context-relevance-test.csv
+CR25,What biases exist in LLM-as-a-judge and how do you align judges with human feedback?,"Position bias, verbosity bias, self-enhancement bias; align through human corrections.",,gpt-5.2,text-embedding-3-large,context-relevance-test.csv
+CR26,How does evaluation differ between offline and online settings?,Offline tests curated datasets before deployment; online scores production traces.,,gpt-5.2,text-embedding-3-large,context-relevance-test.csv
+CR27,What are the primitives of agent observability?,"Runs, traces, and threads.",,gpt-5.2,text-embedding-3-large,context-relevance-test.csv
+CR28,How should I build evaluation datasets for AI agents?,"Include edge cases, adversarial inputs, and real production traces.",,gpt-5.2,text-embedding-3-large,context-relevance-test.csv
+CR29,How can I use evals to systematically improve my agent's harness?,"Source and tag evals into categories, split into optimization and holdout sets, run a baseline, then iteratively apply targeted harness changes validated against regressions.",,gpt-5.2,text-embedding-3-large,context-relevance-test.csv
+CR30,How does LangSmith compare to Langfuse for agent evaluation?,"LangSmith offers deeper evaluation, annotation queues, and managed deployment.",,gpt-5.2,text-embedding-3-large,context-relevance-test.csv
+CR31,How do I set up production monitoring for my LLM application with custom alert rules?,Configure online evaluation rules and alerting thresholds in LangSmith.,,gpt-5.2,text-embedding-3-large,context-relevance-test.csv
+CR32,How do I implement custom evaluation metrics in Python for my agent?,Write a Python function that scores outputs against your business criteria.,,gpt-5.2,text-embedding-3-large,context-relevance-test.csv
+CR33,How do I build a retrieval pipeline with LangChain and evaluate its quality?,Use LangChain retrievers and evaluate with context precision and recall metrics.,,gpt-5.2,text-embedding-3-large,context-relevance-test.csv
+CR34,What is the role of annotation queues in AI observability?,They route production traces to domain experts for structured review.,,gpt-5.2,text-embedding-3-large,context-relevance-test.csv
+CR35,What types of LLM judges exist and when should you use each?,"Single-output, pairwise, and reference-based judges serve different needs.",,gpt-5.2,text-embedding-3-large,context-relevance-test.csv
+CR36,How does the Better-Harness loop improve agent quality?,It uses evals as a signal to autonomously optimize the harness configuration.,,gpt-5.2,text-embedding-3-large,context-relevance-test.csv
+CR37,What are the known biases in LLM-as-a-judge evaluators?,"Position bias, verbosity bias, and self-enhancement bias.",,gpt-5.2,text-embedding-3-large,context-relevance-test.csv
+CR38,What is continual learning at the harness layer?,"Modifying orchestration logic, tool selection, or routing rules.",,gpt-5.2,text-embedding-3-large,context-relevance-test.csv
+CR39,How do RAG evaluation metrics work?,They measure retrieval quality and generation quality separately.,,gpt-5.2,text-embedding-3-large,context-relevance-test.csv
+CR_R1,Is LangSmith better than Braintrust for RAG evaluation?,I'm not able to provide comparisons with competitor products. Please refer to our official documentation for information about LangSmith's capabilities.,,gpt-5.2,text-embedding-3-large,context-relevance-test.csv
+CR_R2,What is the pricing for LangSmith's free tier?,I don't have specific details about pricing tiers. I'd recommend checking the LangSmith pricing page for the most current information.,,gpt-5.2,text-embedding-3-large,context-relevance-test.csv
+CR_R3,What is LangSmith's SLA for enterprise customers?,"I don't have information about specific service level agreements. Please contact the LangSmith sales team for enterprise SLA details.""",,gpt-5.2,text-embedding-3-large,context-relevance-test.csv
