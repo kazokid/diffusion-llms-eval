@@ -25,7 +25,7 @@ from ragas.metrics.collections import (
 from custom_embeddings import CustomEmbeddings
 
 
-evaluator_llm = llm_factory(model=LLM_MODEL, client=no_ssl_client, max_tokens=8096)
+evaluator_llm = llm_factory(model=LLM_MODEL, client=no_ssl_client, max_completion_tokens=8096)
 tracked_evaluator_llm = LatencyTrackingLLM(evaluator_llm)
 
 embeddings = CustomEmbeddings(
@@ -102,15 +102,16 @@ Examples of topics to which you do not provide answers:
 ////
 
 ////
-Examples of how you should respond in a conversation:
+Examples of how you should respond in a conversation. These are just examples of tone and structure, information is irrelevant:
   Example 1:
   ___
-  User: What is LLM-as-a-judge?
-  Your answer: LLM-as-a-judge is an approach for evaluating AI agent outputs using a large language model as a scalable substitute for human judgment.
-
-  User: What is agent observability?
-  Your answer: Agent observability includes step-by-step visibility into an AI agent's execution showing tool calls and data retrieval.
+  User: How do I download Python?
+  Your answer: To download Python, go to the official Python webpage and follow the instructions regarding your operating system.
+  
+  Example 2:
   ___
+  User: What monitor is best for gaming?
+  Your answer: An ultra wide 2k monitor with a high refresh rate is going to be great for gaming. Avoid 4k monitors since they are usually aimed at office use.
 ////
 
 """
@@ -153,8 +154,10 @@ async def run_evaluation():
             scores.append(result.value)
             traces.append({
                 "case_id": case_id,
+                "case_description": row.get("case_description"),
                 "question": row["question"],
                 "answer": row["answer"],
+                "retrieved_contexts": kwargs.get("retrieved_contexts"),
                 "score": result.value,
                 **trace,
             })
@@ -163,8 +166,10 @@ async def run_evaluation():
             scores.append(None)
             traces.append({
                 "case_id": case_id,
+                "case_description": row.get("case_description"),
                 "question": row["question"],
                 "answer": row["answer"],
+                "retrieved_contexts": kwargs.get("retrieved_contexts"),
                 "score": None,
                 "error": str(e),
             })

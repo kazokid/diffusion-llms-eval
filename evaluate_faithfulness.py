@@ -73,8 +73,10 @@ async def run_experiment_1():
             )
             results.append({
                 "case_id": row.get("case_id", i),
+                "case_description": row.get("case_description"),
                 "question": row["question"],
                 "answer": row["answer"],
+                "retrieved_contexts": row["retrieved_contexts"],
                 "score": result.value,
                 **trace,
             })
@@ -82,8 +84,10 @@ async def run_experiment_1():
             print(f"    WARNING: failed: {e}")
             results.append({
                 "case_id": row.get("case_id", i),
+                "case_description": row.get("case_description"),
                 "question": row["question"],
                 "answer": row["answer"],
+                "retrieved_contexts": row["retrieved_contexts"],
                 "score": None,
                 "error": str(e),
             })
@@ -128,8 +132,10 @@ async def run_experiment_2():
             )
             results.append({
                 "case_id": case_id,
+                "case_description": row.get("case_description"),
                 "question": row["question"],
                 "answer": row["answer"],
+                "retrieved_contexts": row["retrieved_contexts"],
                 "score": result.value,
                 **trace,
             })
@@ -137,8 +143,10 @@ async def run_experiment_2():
             print(f"    WARNING: failed: {e}")
             results.append({
                 "case_id": case_id,
+                "case_description": row.get("case_description"),
                 "question": row["question"],
                 "answer": row["answer"],
+                "retrieved_contexts": row["retrieved_contexts"],
                 "score": None,
                 "error": str(e),
             })
