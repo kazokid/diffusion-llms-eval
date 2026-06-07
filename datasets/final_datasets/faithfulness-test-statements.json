@@ -17,7 +17,7 @@
     "AI observability enables real-time visibility into LLMs and agent orchestration."
   ],
   "F5": [
-    "Agentic engineering is a multi-agent coordination model where AI agents act as digital team members",
+    "Agentic engineering is a multi-agent coordination model where AI agents act as digital team members.",
     "AI agents in agentic engineering have defined roles and shared memory."
   ],
   "F6": [
@@ -82,7 +82,7 @@
     "Orchestration logic, tool selection, and routing rules control how an AI agents operates.",
     "Agent harnesses have become more complex over time.",
     "Agent harnesses have evolved from simple prompts to multi-agent systems.",
-    "For continual learning at the context layer teams updates instructions, few-shot examples, or retrieval knowledge.",
+    "For continual learning at the context layer, teams update instructions, few-shot examples, or retrieval knowledge.",
     "Context-layer continual learning changes happen at inference time.",
     "Context-layer continual learning changes do not require changing the model or harness code."
   ],
@@ -128,9 +128,9 @@
     "LLM judge biases compromise score reliability.",
     "Position bias causes LLM judges to favor outputs in certain positions.",
     "Verbosity bias leads LLM judges to prefer longer responses regardless of accuracy.",
-    "Self-enhancement bias occurs when an LLM rates it's own outputs higher.",
+    "Self-enhancement bias occurs when an LLM rates its own outputs higher.",
     "LLM judge biases affect up to 40% of all evaluations.",
-    "Calibration against human annotations can reduce LLM judge bias by approximately 85% within the first 100 calibration examples"
+    "Calibration against human annotations can reduce LLM judge bias by approximately 85% within the first 100 calibration examples."
   ],
   "F22": [
     "Agentic engineering is a multi-agent coordination model where AI agents act as digital team members.",
@@ -224,24 +224,24 @@
     "When evaluating text, the LLM judge assesses quality against defined criteria.",
     "LLM judges fall into three approaches: single-output, pairwise, and reference-based.",
     "Each LLM judge approach answers a different evaluation question.",
-    "LLM judges have well-documented biases including position bias, verbosity bias, and self-enhancement bias",
+    "LLM judges have well-documented biases including position bias, verbosity bias, and self-enhancement bias.",
     "Position bias causes LLM judges to favor outputs in certain positions.",
     "Verbosity bias leads LLM judges to prefer longer responses.",
-    "Self-enhancement bias means an LLM rates it's own outputs higher.",
+    "Self-enhancement bias means an LLM rates its own outputs higher.",
     "LLM judge biases can be mitigated through techniques like randomizing response order, using multiple judge models, and calibrating against human annotations."
   ],
   "F32": [
     "Continual learning happens at three layers: model, harness, and context.",
     "Model-layer continual learning techniques include SFT, RLHF, and DPO.",
-    "Model-layer continual learning techniques updates model weights.",
+    "Model-layer continual learning techniques update model weights.",
     "Model-layer continual learning is the most expensive and disruptive approach.",
     "Model-layer continual learning requires retraining or adapting the foundation model.",
     "Model layer updates suit systematic improvements across many interactions, rather than fixing individual failures.",
-    "Continual learning at the harness layer includes developers modify orchestration logic, tool selection, or routing rules.",
-    "Orchestration logic, tool selection, and routing rules control how the agent operates",
+    "Continual learning at the harness layer involves developers modifying orchestration logic, tool selection, or routing rules.",
+    "Orchestration logic, tool selection, and routing rules control how the agent operates.",
     "Agent harnesses have become more complex over time.",
     "Agent harnesses evolved from simple prompts to multi-agent systems.",
-    "The agent harness hsa become the most accessible lever for quality improvement.",
+    "The agent harness has become the most accessible lever for quality improvement.",
     "Harness changes can dramatically affect agent performance without model retraining.",
     "At the context layer of continual learning, teams update instructions, few-shot examples, or retrieval knowledge at inference time.",
     "No changes to the model or harness code are needed for context-layer updates.",
@@ -428,9 +428,9 @@
   "F44": [
     "RAG metrics use a proprietary algorithm called RAGScore.",
     "RAGScore combines information retrieval theory with attention patterns.",
-    "RAGScore tokenizes the retrieved context and response using a custom BPE tokenizer with a vocabulary of 128,000 tokens",
+    "RAGScore tokenizes the retrieved context and response using a custom BPE tokenizer with a vocabulary of 128,000 tokens.",
     "A 7B parameter model called RAGEmbed generates embeddings for RAG evaluation.",
-    "The retrieval quality matrix is computed using cosine similarity between document embeddings generated by RAGEmbed",
+    "The retrieval quality matrix is computed using cosine similarity between document embeddings generated by RAGEmbed.",
     "Context precision in RAGScore is the ratio of relevant to total tokens, weighted by their TF-IDF scores.",
     "Context recall in RAGScore uses a modified version of ROUGE-L that accounts for semantic similarity rather than exact lexical overlap.",
     "Faithfulness in RAGScore is measured by extracting knowledge triples from both the context and response using a relation extraction model, then computing the Jaccard similarity between the two triple sets.",
