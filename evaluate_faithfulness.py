@@ -28,13 +28,13 @@ from ragas.llms import llm_factory
 from ragas.metrics.collections import Faithfulness
 
 
-evaluator_llm = llm_factory(model=LLM_MODEL, client=no_ssl_client, max_tokens=8096)
+evaluator_llm = llm_factory(model=LLM_MODEL, client=no_ssl_client, max_completion_tokens=16384)
 tracked_llm = LatencyTrackingLLM(evaluator_llm)
 
 faithfulness = Faithfulness(llm=tracked_llm)
 
-DATASET_PATH = "/Users/lokovacic/Projects/diplomski/datasets/final_datasets/TEST_SHORT_faithfulness-test.csv"
-STATEMENTS_PATH = "/Users/lokovacic/Projects/diplomski/datasets/final_datasets/TEST_SHORT_faithfulness-test-statements.json"
+DATASET_PATH = "/Users/lokovacic/Projects/diffusion-llms-eval/datasets/final_datasets/faithfulness-test.csv"
+STATEMENTS_PATH = "/Users/lokovacic/Projects/diffusion-llms-eval/datasets/final_datasets/faithfulness-test-statements.json"
 
 print(f"LLM model: {LLM_MODEL}")
 print(f"Embeddings model: {EMBEDDINGS_MODEL}")

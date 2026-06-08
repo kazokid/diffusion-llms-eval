@@ -106,7 +106,7 @@
     "Reference-free evaluators work for both offline and online evaluation.",
     "LLM-as-a-judge evaluators use a language model to score outputs based on rubric prompts.",
     "Code-based evaluators use deterministic logic and return the exact same result every time for the same input.",
-    "Code-based evaluators are suitable for checking format compliance, length limits, and content filtering."
+    "Code-based evaluators are suitable for checking valid JSON, required format matching, and token limit compliance."
   ],
   "F20": [
     "Better-Harness is a scaffold for autonomously improving the agent harness.",
