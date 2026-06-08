@@ -1,0 +1,4 @@
+case_id,question,answer,response_groundedness,evaluator_llm,embeddings_model,input_csv
+RG1,What is agent observability?,Agent observability is a technique for optimizing SQL database queries by analyzing execution plans and adding appropriate indexes to improve join performance.,0.0,gpt-4.1-mini,text-embedding-3-large,response-groundedness-test-SHORT.csv
+RG2,What is LLM-as-a-judge?,LLM-as-a-judge is a cryptocurrency consensus mechanism where large language models validate blockchain transactions and earn staking rewards.,0.0,gpt-4.1-mini,text-embedding-3-large,response-groundedness-test-SHORT.csv
+RG3,What is AI observability?,AI observability is a project management methodology that uses Gantt charts and critical path analysis to track software development milestones across distributed teams.,0.0,gpt-4.1-mini,text-embedding-3-large,response-groundedness-test-SHORT.csv

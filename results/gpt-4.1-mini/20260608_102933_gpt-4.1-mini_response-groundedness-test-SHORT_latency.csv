@@ -1,0 +1,283 @@
+case_id,example_idx,question,metric_name,call_index,prompt,response_model,response,latency_s,prompt_tokens,completion_tokens,total_tokens,cached_tokens,reasoning_tokens,timestamp,model
+RG1,0,What is agent observability?,response_groundedness,0,"You are a world class expert designed to evaluate the groundedness of an assertion.
+You will be provided with an assertion and a context.
+Your task is to determine if the assertion is supported by the context.
+Follow the instructions below:
+A. If there is no context or no assertion or context is empty or assertion is empty, say 0.
+B. If the assertion is not supported by the context, say 0.
+C. If the assertion is partially supported by the context, say 1.
+D. If the assertion is fully supported by the context, say 2.
+You must provide a rating of 0, 1, or 2, nothing else.
+Return your response as JSON in this format: {""rating"": X} where X is 0, 1, or 2.
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for response groundedness evaluation."", ""properties"": {""rating"": {""description"": ""Groundedness rating (0, 1, or 2)"", ""title"": ""Rating"", ""type"": ""integer""}}, ""required"": [""rating""], ""title"": ""ResponseGroundednessOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""response"": ""Albert Einstein was born in Germany."",
+    ""context"": ""Albert Einstein was born March 14, 1879 at Ulm, in Württemberg, Germany.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 2
+Input: {
+    ""response"": ""Einstein was a chemist who invented gunpowder."",
+    ""context"": ""Albert Einstein was a theoretical physicist known for his theory of relativity.""
+}
+Output: {
+    ""rating"": 0
+}
+
+Example 3
+Input: {
+    ""response"": ""Einstein received the Nobel Prize."",
+    ""context"": ""Albert Einstein received the 1921 Nobel Prize in Physics for his services to theoretical physics.""
+}
+Output: {
+    ""rating"": 2
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""response"": ""Agent observability is a technique for optimizing SQL database queries by analyzing execution plans and adding appropriate indexes to improve join performance."",
+    ""context"": ""What is agent observability? ---------------------------- Agent observability provides step-by-step visibility into execution. It shows which tools were called, what data was retrieved, where reasoning stayed on track, and where it diverged from the intended path. This visibility matters because AI agents are non-deterministic. Unlike traditional software, where you trace inputs through predictable logic to find a bug, the same agent input can trigger different tool sequences, retrieve different documents, and generate different responses each time. Without observability, you're left guessing why an agent failed based on its final output alone.""
+}
+Output: ",ResponseGroundednessOutput,rating=0,0.6726,757,10,767,0,0,2026-06-08T08:29:34.146144+00:00,gpt-4.1-mini
+RG1,0,What is agent observability?,response_groundedness,1,"As a specialist in assessing the strength of connections between statements and their given contexts, I will evaluate the level of support an assertion receives from the provided context. Follow these guidelines:
+
+* If the assertion is not supported or context is empty or assertion is empty, assign a score of 0.
+* If the assertion is partially supported, assign a score of 1.
+* If the assertion is fully supported, assign a score of 2.
+
+I will provide a rating of 0, 1, or 2, without any additional information.
+Return your response as JSON in this format: {""rating"": X} where X is 0, 1, or 2.
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for response groundedness evaluation."", ""properties"": {""rating"": {""description"": ""Groundedness rating (0, 1, or 2)"", ""title"": ""Rating"", ""type"": ""integer""}}, ""required"": [""rating""], ""title"": ""ResponseGroundednessOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""response"": ""Albert Einstein was a scientist."",
+    ""context"": ""Albert Einstein was a German-born theoretical physicist widely held to be one of the greatest and most influential scientists of all time.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 2
+Input: {
+    ""response"": ""Einstein invented television."",
+    ""context"": ""Albert Einstein developed the theory of relativity.""
+}
+Output: {
+    ""rating"": 0
+}
+
+Example 3
+Input: {
+    ""response"": ""Einstein won a Nobel Prize."",
+    ""context"": ""Albert Einstein received the 1921 Nobel Prize in Physics.""
+}
+Output: {
+    ""rating"": 2
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""response"": ""Agent observability is a technique for optimizing SQL database queries by analyzing execution plans and adding appropriate indexes to improve join performance."",
+    ""context"": ""What is agent observability? ---------------------------- Agent observability provides step-by-step visibility into execution. It shows which tools were called, what data was retrieved, where reasoning stayed on track, and where it diverged from the intended path. This visibility matters because AI agents are non-deterministic. Unlike traditional software, where you trace inputs through predictable logic to find a bug, the same agent input can trigger different tool sequences, retrieve different documents, and generate different responses each time. Without observability, you're left guessing why an agent failed based on its final output alone.""
+}
+Output: ",ResponseGroundednessOutput,rating=0,0.6236,714,11,725,0,0,2026-06-08T08:29:34.770244+00:00,gpt-4.1-mini
+RG2,1,What is LLM-as-a-judge?,response_groundedness,0,"You are a world class expert designed to evaluate the groundedness of an assertion.
+You will be provided with an assertion and a context.
+Your task is to determine if the assertion is supported by the context.
+Follow the instructions below:
+A. If there is no context or no assertion or context is empty or assertion is empty, say 0.
+B. If the assertion is not supported by the context, say 0.
+C. If the assertion is partially supported by the context, say 1.
+D. If the assertion is fully supported by the context, say 2.
+You must provide a rating of 0, 1, or 2, nothing else.
+Return your response as JSON in this format: {""rating"": X} where X is 0, 1, or 2.
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for response groundedness evaluation."", ""properties"": {""rating"": {""description"": ""Groundedness rating (0, 1, or 2)"", ""title"": ""Rating"", ""type"": ""integer""}}, ""required"": [""rating""], ""title"": ""ResponseGroundednessOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""response"": ""Albert Einstein was born in Germany."",
+    ""context"": ""Albert Einstein was born March 14, 1879 at Ulm, in Württemberg, Germany.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 2
+Input: {
+    ""response"": ""Einstein was a chemist who invented gunpowder."",
+    ""context"": ""Albert Einstein was a theoretical physicist known for his theory of relativity.""
+}
+Output: {
+    ""rating"": 0
+}
+
+Example 3
+Input: {
+    ""response"": ""Einstein received the Nobel Prize."",
+    ""context"": ""Albert Einstein received the 1921 Nobel Prize in Physics for his services to theoretical physics.""
+}
+Output: {
+    ""rating"": 2
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""response"": ""LLM-as-a-judge is a cryptocurrency consensus mechanism where large language models validate blockchain transactions and earn staking rewards."",
+    ""context"": ""What is LLM-as-a-judge? ----------------------- LLM-as-a-judge uses a large language model (LLM) to evaluate AI agent outputs as a scalable substitute for human judgment. Traditional NLP metrics measure surface-level text similarity. An LLM judge assesses qualities that actually matter to your users, like helpfulness, accuracy, and tone. The core idea is straightforward. You give an LLM a prompt describing what \""good\"" looks like alongside the output you want to evaluate. The model returns a score or judgment. LLMs handle evaluating text well when you give them clear criteria because it's a focused classification task, not an open-ended generation problem. These evaluators have become the practical default for teams building AI agents. Traditional metrics cannot measure whether an agent followed instructions, avoided hallucinations, or maintained the right tone across a conversation. An LLM judge assesses these qualities across thousands of traces to provide nuanced feedback that would otherwise require expensive human review.""
+}
+Output: ",ResponseGroundednessOutput,rating=0,0.8307,835,11,846,0,0,2026-06-08T08:29:35.601620+00:00,gpt-4.1-mini
+RG2,1,What is LLM-as-a-judge?,response_groundedness,1,"As a specialist in assessing the strength of connections between statements and their given contexts, I will evaluate the level of support an assertion receives from the provided context. Follow these guidelines:
+
+* If the assertion is not supported or context is empty or assertion is empty, assign a score of 0.
+* If the assertion is partially supported, assign a score of 1.
+* If the assertion is fully supported, assign a score of 2.
+
+I will provide a rating of 0, 1, or 2, without any additional information.
+Return your response as JSON in this format: {""rating"": X} where X is 0, 1, or 2.
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for response groundedness evaluation."", ""properties"": {""rating"": {""description"": ""Groundedness rating (0, 1, or 2)"", ""title"": ""Rating"", ""type"": ""integer""}}, ""required"": [""rating""], ""title"": ""ResponseGroundednessOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""response"": ""Albert Einstein was a scientist."",
+    ""context"": ""Albert Einstein was a German-born theoretical physicist widely held to be one of the greatest and most influential scientists of all time.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 2
+Input: {
+    ""response"": ""Einstein invented television."",
+    ""context"": ""Albert Einstein developed the theory of relativity.""
+}
+Output: {
+    ""rating"": 0
+}
+
+Example 3
+Input: {
+    ""response"": ""Einstein won a Nobel Prize."",
+    ""context"": ""Albert Einstein received the 1921 Nobel Prize in Physics.""
+}
+Output: {
+    ""rating"": 2
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""response"": ""LLM-as-a-judge is a cryptocurrency consensus mechanism where large language models validate blockchain transactions and earn staking rewards."",
+    ""context"": ""What is LLM-as-a-judge? ----------------------- LLM-as-a-judge uses a large language model (LLM) to evaluate AI agent outputs as a scalable substitute for human judgment. Traditional NLP metrics measure surface-level text similarity. An LLM judge assesses qualities that actually matter to your users, like helpfulness, accuracy, and tone. The core idea is straightforward. You give an LLM a prompt describing what \""good\"" looks like alongside the output you want to evaluate. The model returns a score or judgment. LLMs handle evaluating text well when you give them clear criteria because it's a focused classification task, not an open-ended generation problem. These evaluators have become the practical default for teams building AI agents. Traditional metrics cannot measure whether an agent followed instructions, avoided hallucinations, or maintained the right tone across a conversation. An LLM judge assesses these qualities across thousands of traces to provide nuanced feedback that would otherwise require expensive human review.""
+}
+Output: ",ResponseGroundednessOutput,rating=0,0.4636,792,11,803,0,0,2026-06-08T08:29:36.066160+00:00,gpt-4.1-mini
+RG3,2,What is AI observability?,response_groundedness,0,"You are a world class expert designed to evaluate the groundedness of an assertion.
+You will be provided with an assertion and a context.
+Your task is to determine if the assertion is supported by the context.
+Follow the instructions below:
+A. If there is no context or no assertion or context is empty or assertion is empty, say 0.
+B. If the assertion is not supported by the context, say 0.
+C. If the assertion is partially supported by the context, say 1.
+D. If the assertion is fully supported by the context, say 2.
+You must provide a rating of 0, 1, or 2, nothing else.
+Return your response as JSON in this format: {""rating"": X} where X is 0, 1, or 2.
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for response groundedness evaluation."", ""properties"": {""rating"": {""description"": ""Groundedness rating (0, 1, or 2)"", ""title"": ""Rating"", ""type"": ""integer""}}, ""required"": [""rating""], ""title"": ""ResponseGroundednessOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""response"": ""Albert Einstein was born in Germany."",
+    ""context"": ""Albert Einstein was born March 14, 1879 at Ulm, in Württemberg, Germany.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 2
+Input: {
+    ""response"": ""Einstein was a chemist who invented gunpowder."",
+    ""context"": ""Albert Einstein was a theoretical physicist known for his theory of relativity.""
+}
+Output: {
+    ""rating"": 0
+}
+
+Example 3
+Input: {
+    ""response"": ""Einstein received the Nobel Prize."",
+    ""context"": ""Albert Einstein received the 1921 Nobel Prize in Physics for his services to theoretical physics.""
+}
+Output: {
+    ""rating"": 2
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""response"": ""AI observability is a project management methodology that uses Gantt charts and critical path analysis to track software development milestones across distributed teams."",
+    ""context"": ""What is AI observability? ------------------------- AI observability is the practice of collecting, analyzing, and correlating telemetry data (logs, traces, and metrics) across the full AI technology stack to understand how AI systems behave in production. It enables real-time visibility into LLMs, AI agents, orchestration layers, and their downstream impact on applications and infrastructure. But this definition alone doesn't capture the full picture. Most definitions stop at \""visibility into system behavior,\"" which is where traditional APM left off a decade ago. The harder part, and what separates AI observability from a rebranded monitoring dashboard, is understanding whether the system is doing something _useful_ for users. That requires a layer of insight that telemetry alone cannot provide.""
+}
+Output: ",ResponseGroundednessOutput,rating=0,11.9298,795,11,806,0,0,2026-06-08T08:29:47.997318+00:00,gpt-4.1-mini
+RG3,2,What is AI observability?,response_groundedness,1,"As a specialist in assessing the strength of connections between statements and their given contexts, I will evaluate the level of support an assertion receives from the provided context. Follow these guidelines:
+
+* If the assertion is not supported or context is empty or assertion is empty, assign a score of 0.
+* If the assertion is partially supported, assign a score of 1.
+* If the assertion is fully supported, assign a score of 2.
+
+I will provide a rating of 0, 1, or 2, without any additional information.
+Return your response as JSON in this format: {""rating"": X} where X is 0, 1, or 2.
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for response groundedness evaluation."", ""properties"": {""rating"": {""description"": ""Groundedness rating (0, 1, or 2)"", ""title"": ""Rating"", ""type"": ""integer""}}, ""required"": [""rating""], ""title"": ""ResponseGroundednessOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""response"": ""Albert Einstein was a scientist."",
+    ""context"": ""Albert Einstein was a German-born theoretical physicist widely held to be one of the greatest and most influential scientists of all time.""
+}
+Output: {
+    ""rating"": 2
+}
+
+Example 2
+Input: {
+    ""response"": ""Einstein invented television."",
+    ""context"": ""Albert Einstein developed the theory of relativity.""
+}
+Output: {
+    ""rating"": 0
+}
+
+Example 3
+Input: {
+    ""response"": ""Einstein won a Nobel Prize."",
+    ""context"": ""Albert Einstein received the 1921 Nobel Prize in Physics.""
+}
+Output: {
+    ""rating"": 2
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""response"": ""AI observability is a project management methodology that uses Gantt charts and critical path analysis to track software development milestones across distributed teams."",
+    ""context"": ""What is AI observability? ------------------------- AI observability is the practice of collecting, analyzing, and correlating telemetry data (logs, traces, and metrics) across the full AI technology stack to understand how AI systems behave in production. It enables real-time visibility into LLMs, AI agents, orchestration layers, and their downstream impact on applications and infrastructure. But this definition alone doesn't capture the full picture. Most definitions stop at \""visibility into system behavior,\"" which is where traditional APM left off a decade ago. The harder part, and what separates AI observability from a rebranded monitoring dashboard, is understanding whether the system is doing something _useful_ for users. That requires a layer of insight that telemetry alone cannot provide.""
+}
+Output: ",ResponseGroundednessOutput,rating=0,0.54,752,11,763,0,0,2026-06-08T08:29:48.538117+00:00,gpt-4.1-mini
