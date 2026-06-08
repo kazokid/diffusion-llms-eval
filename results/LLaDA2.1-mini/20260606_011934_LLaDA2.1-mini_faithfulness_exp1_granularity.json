@@ -1,0 +1,97 @@
+{
+  "experiment": "faithfulness_statement_granularity",
+  "evaluator_llm": "LLaDA2.1-mini",
+  "dataset": "/Users/lokovacic/Projects/diplomski/datasets/final_datasets/TEST_SHORT_faithfulness-test.csv",
+  "results": [
+    {
+      "case_id": "F1",
+      "question": "What is LLM-as-a-judge?",
+      "answer": "LLM-as-a-judge uses a large language model to evaluate AI agent outputs as a scalable substitute for human judgment.",
+      "score": 1.0,
+      "statements_provided": false,
+      "statements": [
+        "LLM-as-a-judge is a system that utilizes a large language model.",
+        "The system is model to evaluate the outputs of AI agents.",
+        "The evaluation is performed as a scalable alternative for human judgment."
+      ],
+      "statement_count": 3,
+      "verdicts": [
+        {
+          "statement": "LLM-as-a-judge is a system that utilizes a large language model.",
+          "reason": "The context states that 'LLM-as-a-judge uses a large language model (LLM) to evaluate AI agent outputs', which aligns with the statement.",
+          "verdict": 1
+        },
+        {
+          "statement": "The system is used to evaluate the outputs of AI agents.",
+          "reason": "The context explicitly mentions that 'LLM-as-a-judge uses a large language model (LLM) to evaluate AI agent outputs', which supports the statement.",
+          "verdict": 1
+        },
+        {
+          "statement": "The evaluation is performed as a scalable alternative for human judgment.",
+          "reason": "The context calls it 'a scalable substitute for human judgment', which directly indicates a scalable alternative for the evaluation.",
+          "verdict": 1
+        }
+      ],
+      "faithful_count": 3,
+      "total_count": 3
+    },
+    {
+      "case_id": "F2",
+      "question": "What is agent observability?",
+      "answer": "Agent observability provides step-by-step visibility into execution, showing which tools were called and what data was retrieved.",
+      "score": 1.0,
+      "statements_provided": false,
+      "statements": [
+        "Agent observability refers to step-by-step visibility into the execution of an agent.",
+        "This visibility includes which tools were invoked during the execution.",
+        "It also covers the data that was retrieved by the invoked tools."
+      ],
+      "statement_count": 3,
+      "verdicts": [
+        {
+          "statement": "Agent observability refers to step-by-step visibility into the execution of an agent.",
+          "reason": "The context states that agent observability provides step-by-step visibility into execution, which aligns with this statement.",
+          "verdict": 1
+        },
+        {
+          "statement": "This visibility includes which tools were invoked during the execution.",
+          "reason": "The context mentions that agent observability shows which tools were called, which is consistent with this statement.",
+          "verdict": 1
+        },
+        {
+          "statement": "It also covers the data that was retrieved by the invoked tools.",
+          "reason": "The context specifies that agent observability shows what data was retrieved, which directly supports this statement.",
+          "verdict": 1
+        }
+      ],
+      "faithful_count": 3,
+      "total_count": 3
+    },
+    {
+      "case_id": "F3",
+      "question": "What is trajectory evaluation?",
+      "answer": "Trajectory evaluation scores the entire execution path an AI agent takes rather than only the final output.",
+      "score": 1.0,
+      "statements_provided": false,
+      "statements": [
+        "Trajectory evaluation is a method used to assess the entire execution path an AI agent follows.",
+        "This type of evaluation considers not only the final output produced but also the steps taken to reach it."
+      ],
+      "statement_count": 2,
+      "verdicts": [
+        {
+          "statement": "Trajectory evaluation is a method used to assess the entire execution path an AI agent follows.",
+          "reason": "The context explicitly states that trajectory evaluation means scoring the entire execution path an AI agent takes rather than just its final output.",
+          "verdict": 1
+        },
+        {
+          "statement": "This type of evaluation considers not only the final output produced but also the steps taken to reach it.",
+          "reason": "The context indicates that trajectory evaluation includes every tool call, every intermediate reasoning step, and every turn in a multi-turn conversation.",
+          "verdict": 1
+        }
+      ],
+      "faithful_count": 2,
+      "total_count": 2
+    }
+  ]
+}
