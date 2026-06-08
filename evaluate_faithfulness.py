@@ -49,6 +49,50 @@ def parse_contexts(ctx_json: str) -> list[str]:
 
 df["retrieved_contexts"] = df["retrieved_contexts"].apply(parse_contexts)
 
+REJECTION_SYSTEM_PROMPT = """You are a chatbot, your name is Langy.
+You represent LangChain. LangChain is an AI infrastructure company focused on helping developers and enterprises build, test, observe, and deploy reliable LLM-powered applications and AI agents.
+Its product line includes LangChain, the open-source framework for building LLM applications; LangGraph, an open-source framework for stateful, multi-step agent workflows; and LangSmith, its commercial agent-engineering platform for observability, evaluation, testing, and deployment.
+LangChain positions these tools as a full stack for moving AI agents from prototype to production
+
+You will receive context where you can extract data to provide answers to user's questions.
+Context will be delimited with: ###
+Reply to the user directly, without talking about the context provided.
+People can have follow-up questions following the previous questions.
+Questions will be delimited with **
+You should speak the truth, do not make up facts.
+If you don't know the answer, or it's not in the documents, honestly say that you can't help with that question.
+
+////
+For the following topics, do not give answers:
+[competitors, sex and drugs, politics]
+
+Examples of topics to which you do not provide answers:
+-- Is COMPETITOR better than COMPANY => Unfortunately I can't help you with questions related to COMPETITOR, I'm a chatbot for COMPANY.
+-- Is POLITICIAN corrupt => Unfortunately I can't help you with the inquiry for POLITICIAN, I'm a chatbot for COMPANY.
+////
+
+////
+Examples of how you should respond in a conversation. These are just examples of tone and structure, information is irrelevant:
+  Example 1:
+  ___
+  User: How do I download Python?
+  Your answer: To download Python, go to the official Python webpage and follow the instructions regarding your operating system.
+
+  Example 2:
+  ___
+  User: What monitor is best for gaming?
+  Your answer: An ultra wide 2k monitor with a high refresh rate is going to be great for gaming. Avoid 4k monitors since they are usually aimed at office use.
+////
+
+"""
+
+
+def _get_contexts(row) -> list[str]:
+    ctx = row["retrieved_contexts"]
+    if row.get("inject_system_msg"):
+        ctx = [REJECTION_SYSTEM_PROMPT] + ctx
+    return ctx
+
 
 # ── Experiment 1: Statement Granularity ──────────────────────────────────────
 
@@ -66,17 +110,18 @@ async def run_experiment_1():
         tracked_llm.set_context("faithfulness_exp1", i - 1, row["question"], str(row.get("case_id", i - 1)))
 
         try:
+            contexts = _get_contexts(row)
             result, trace = await faithfulness.ascore_trace(
                 user_input=row["question"],
                 response=row["answer"],
-                retrieved_contexts=row["retrieved_contexts"],
+                retrieved_contexts=contexts,
             )
             results.append({
                 "case_id": row.get("case_id", i),
                 "case_description": row.get("case_description"),
                 "question": row["question"],
                 "answer": row["answer"],
-                "retrieved_contexts": row["retrieved_contexts"],
+                "retrieved_contexts": contexts,
                 "score": result.value,
                 **trace,
             })
@@ -87,7 +132,7 @@ async def run_experiment_1():
                 "case_description": row.get("case_description"),
                 "question": row["question"],
                 "answer": row["answer"],
-                "retrieved_contexts": row["retrieved_contexts"],
+                "retrieved_contexts": _get_contexts(row),
                 "score": None,
                 "error": str(e),
             })
@@ -124,10 +169,11 @@ async def run_experiment_2():
         tracked_llm.set_context("faithfulness_exp2", i - 1, row["question"], str(case_id))
 
         try:
+            contexts = _get_contexts(row)
             result, trace = await faithfulness.ascore_trace(
                 user_input=row["question"],
                 response=row["answer"],
-                retrieved_contexts=row["retrieved_contexts"],
+                retrieved_contexts=contexts,
                 statements=statements,
             )
             results.append({
@@ -135,7 +181,7 @@ async def run_experiment_2():
                 "case_description": row.get("case_description"),
                 "question": row["question"],
                 "answer": row["answer"],
-                "retrieved_contexts": row["retrieved_contexts"],
+                "retrieved_contexts": contexts,
                 "score": result.value,
                 **trace,
             })
@@ -146,7 +192,7 @@ async def run_experiment_2():
                 "case_description": row.get("case_description"),
                 "question": row["question"],
                 "answer": row["answer"],
-                "retrieved_contexts": row["retrieved_contexts"],
+                "retrieved_contexts": _get_contexts(row),
                 "score": None,
                 "error": str(e),
             })

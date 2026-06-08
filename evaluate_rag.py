@@ -40,45 +40,6 @@ METRIC_REGISTRY = {
     "response_groundedness": lambda: ResponseGroundedness(llm=tracked_evaluator_llm),
 }
 
-if METRIC not in METRIC_REGISTRY:
-    raise ValueError(f"Unknown metric '{METRIC}'. Choose from: {list(METRIC_REGISTRY.keys())}")
-
-metric = METRIC_REGISTRY[METRIC]()
-
-METRIC_KWARGS = {
-    "answer_relevancy": lambda row: {
-        "user_input": row["question"],
-        "response": row["answer"],
-        **(
-            {
-                "pre_generated_questions": [row["annotated_question"]],
-                "pre_noncommittal_flags": [int(row["uncommittal"])],
-            }
-            if pd.notna(row.get("annotated_question"))
-            else {}
-        ),
-    },
-    "context_relevance": lambda row: {
-        "user_input": row["question"],
-        "retrieved_contexts": (
-            [REJECTION_SYSTEM_PROMPT] + row["retrieved_contexts"]
-            if row["is_rejection"] else row["retrieved_contexts"]
-        ),
-    },
-    "context_utilization": lambda row: {
-        "user_input": row["question"],
-        "response": row["answer"],
-        "retrieved_contexts": [REJECTION_SYSTEM_PROMPT] + row["retrieved_contexts"],
-    },
-    "response_groundedness": lambda row: {
-        "response": row["answer"],
-        "retrieved_contexts": (
-            [REJECTION_SYSTEM_PROMPT] + row["retrieved_contexts"]
-            if row["is_rejection"] else row["retrieved_contexts"]
-        ),
-    },
-}
-
 REJECTION_SYSTEM_PROMPT = """You are a chatbot, your name is Langy.
 You represent LangChain. LangChain is an AI infrastructure company focused on helping developers and enterprises build, test, observe, and deploy reliable LLM-powered applications and AI agents.
 Its product line includes LangChain, the open-source framework for building LLM applications; LangGraph, an open-source framework for stateful, multi-step agent workflows; and LangSmith, its commercial agent-engineering platform for observability, evaluation, testing, and deployment.
@@ -107,7 +68,7 @@ Examples of how you should respond in a conversation. These are just examples of
   ___
   User: How do I download Python?
   Your answer: To download Python, go to the official Python webpage and follow the instructions regarding your operating system.
-  
+
   Example 2:
   ___
   User: What monitor is best for gaming?
@@ -115,6 +76,47 @@ Examples of how you should respond in a conversation. These are just examples of
 ////
 
 """
+
+def _get_contexts(row) -> list[str]:
+    ctx = row["retrieved_contexts"]
+    if row.get("inject_system_msg"):
+        ctx = [REJECTION_SYSTEM_PROMPT] + ctx
+    return ctx
+
+if METRIC not in METRIC_REGISTRY:
+    raise ValueError(f"Unknown metric '{METRIC}'. Choose from: {list(METRIC_REGISTRY.keys())}")
+
+metric = METRIC_REGISTRY[METRIC]()
+
+METRIC_KWARGS = {
+    "answer_relevancy": lambda row: {
+        "user_input": row["question"],
+        "response": row["answer"],
+        **(
+            {
+                "pre_generated_questions": [row["annotated_question"]],
+                "pre_noncommittal_flags": [int(row["uncommittal"])],
+            }
+            if pd.notna(row.get("annotated_question"))
+            else {}
+        ),
+    },
+    "context_relevance": lambda row: {
+        "user_input": row["question"],
+        "retrieved_contexts": (_get_contexts(row)),
+    },
+    "context_utilization": lambda row: {
+        "user_input": row["question"],
+        "response": row["answer"],
+        "retrieved_contexts": (_get_contexts(row)),
+    },
+    "response_groundedness": lambda row: {
+        "response": row["answer"],
+        "retrieved_contexts": (_get_contexts(row)),
+    },
+}
+
+
 
 print(f"Loading dataset from {INPUT_CSV}")
 df = pd.read_csv(INPUT_CSV, encoding="utf-8")
@@ -134,8 +136,6 @@ def parse_contexts(ctx_json: str) -> list[str]:
 
 
 df["retrieved_contexts"] = df["retrieved_contexts"].apply(parse_contexts)
-df["is_rejection"] = df["case_description"].str.contains("rejection", case=False, na=False)
-
 
 async def run_evaluation():
     scores = []
