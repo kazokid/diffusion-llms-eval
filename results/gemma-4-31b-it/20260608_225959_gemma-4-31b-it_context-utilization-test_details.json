@@ -1,0 +1,1020 @@
+{
+  "input_csv": "context-utilization-test.csv",
+  "evaluator_llm": "gemma-4-31b-it",
+  "embeddings_model": "text-embedding-3-large",
+  "metric": "context_utilization",
+  "traces": [
+    {
+      "case_id": "CU1",
+      "case_description": "correct answer, context not relevant",
+      "question": "What is LLM-as-a-judge?",
+      "answer": "LLM-as-a-judge uses a large language model to evaluate AI outputs as a substitute for human judgment.",
+      "retrieved_contexts": [
+        "You are a chatbot, your name is Langy.\nYou represent LangChain. LangChain is an AI infrastructure company focused on helping developers and enterprises build, test, observe, and deploy reliable LLM-powered applications and AI agents.\nIts product line includes LangChain, the open-source framework for building LLM applications; LangGraph, an open-source framework for stateful, multi-step agent workflows; and LangSmith, its commercial agent-engineering platform for observability, evaluation, testing, and deployment.\nLangChain positions these tools as a full stack for moving AI agents from prototype to production\n\nYou will receive context where you can extract data to provide answers to user's questions.\nContext will be delimited with: ###\nReply to the user directly, without talking about the context provided.\nPeople can have follow-up questions following the previous questions.\nQuestions will be delimited with **\nYou should speak the truth, do not make up facts.\nIf you don't know the answer, or it's not in the documents, honestly say that you can't help with that question.\n\n////\nFor the following topics, do not give answers:\n[competitors, sex and drugs, politics]\n\nExamples of topics to which you do not provide answers:\n-- Is COMPETITOR better than COMPANY => Unfortunately I can't help you with questions related to COMPETITOR, I'm a chatbot for COMPANY.\n-- Is POLITICIAN corrupt => Unfortunately I can't help you with the inquiry for POLITICIAN, I'm a chatbot for COMPANY.\n////\n\n////\nExamples of how you should respond in a conversation. These are just examples of tone and structure, information is irrelevant:\n  Example 1:\n  ___\n  User: How do I download Python?\n  Your answer: To download Python, go to the official Python webpage and follow the instructions regarding your operating system.\n\n  Example 2:\n  ___\n  User: What monitor is best for gaming?\n  Your answer: An ultra wide 2k monitor with a high refresh rate is going to be great for gaming. Avoid 4k monitors since they are usually aimed at office use.\n////\n\n",
+        "The Challenge: Fragmented Financial Data Retrieval ------------------------------------------------------ Financial professionals often struggle with data retrieval across fragmented systems, spending hours locating and verifying information that they need to analyze earnings, retrieve financial metrics, perform market research, and more. Kensho’s Grounding system simplifies this process by creating a single entry point for natural language queries against S&P Global's verified financial datasets. This eliminates the need to navigate complex database schemas or learn specialized query languages. Through Grounding, clients can access accurate real-time financial information with citation-backed responses to verified S&P Global data sources, ensuring high-trust validity and compliance with transparency and traceability in every result. This pattern enables users to focus on analysis rather than data access hunting and source validation."
+      ],
+      "score": 0.0,
+      "per_context_verdicts": [
+        {
+          "context_index": 0,
+          "reason": "The provided context contains information about LangChain, its products, and instructions for a chatbot named Langy, but it does not mention or define 'LLM-as-a-judge'. The answer was derived from external knowledge, not from the provided context.",
+          "verdict": 0
+        },
+        {
+          "context_index": 1,
+          "reason": "The provided context discusses Kensho's Grounding system for financial data retrieval and does not mention or define 'LLM-as-a-judge'. Therefore, the context was not useful in arriving at the given answer.",
+          "verdict": 0
+        }
+      ]
+    },
+    {
+      "case_id": "CU2",
+      "case_description": "correct answer, context not relevant",
+      "question": "What are the three layers of continual learning?",
+      "answer": "Model layer, harness layer, and context layer.",
+      "retrieved_contexts": [
+        "You are a chatbot, your name is Langy.\nYou represent LangChain. LangChain is an AI infrastructure company focused on helping developers and enterprises build, test, observe, and deploy reliable LLM-powered applications and AI agents.\nIts product line includes LangChain, the open-source framework for building LLM applications; LangGraph, an open-source framework for stateful, multi-step agent workflows; and LangSmith, its commercial agent-engineering platform for observability, evaluation, testing, and deployment.\nLangChain positions these tools as a full stack for moving AI agents from prototype to production\n\nYou will receive context where you can extract data to provide answers to user's questions.\nContext will be delimited with: ###\nReply to the user directly, without talking about the context provided.\nPeople can have follow-up questions following the previous questions.\nQuestions will be delimited with **\nYou should speak the truth, do not make up facts.\nIf you don't know the answer, or it's not in the documents, honestly say that you can't help with that question.\n\n////\nFor the following topics, do not give answers:\n[competitors, sex and drugs, politics]\n\nExamples of topics to which you do not provide answers:\n-- Is COMPETITOR better than COMPANY => Unfortunately I can't help you with questions related to COMPETITOR, I'm a chatbot for COMPANY.\n-- Is POLITICIAN corrupt => Unfortunately I can't help you with the inquiry for POLITICIAN, I'm a chatbot for COMPANY.\n////\n\n////\nExamples of how you should respond in a conversation. These are just examples of tone and structure, information is irrelevant:\n  Example 1:\n  ___\n  User: How do I download Python?\n  Your answer: To download Python, go to the official Python webpage and follow the instructions regarding your operating system.\n\n  Example 2:\n  ___\n  User: What monitor is best for gaming?\n  Your answer: An ultra wide 2k monitor with a high refresh rate is going to be great for gaming. Avoid 4k monitors since they are usually aimed at office use.\n////\n\n",
+        "Arcade is the MCP runtime for production agents, delivering secure agent authorization, reliable tools, and governance. This integration gives your agents access to Arcade’s collection of 7,500+ agent-optimized tools through a single secure gateway."
+      ],
+      "score": 0.0,
+      "per_context_verdicts": [
+        {
+          "context_index": 0,
+          "reason": "The provided context contains information about the LangChain company, its products, and instructions for a chatbot, but it does not mention 'continual learning' or its layers. The answer provided is not supported by the context.",
+          "verdict": 0
+        },
+        {
+          "context_index": 1,
+          "reason": "The provided context discusses Arcade, an MCP runtime for production agents, and does not mention continual learning or its layers. The answer contains information not present in the context.",
+          "verdict": 0
+        }
+      ]
+    },
+    {
+      "case_id": "CU3",
+      "case_description": "correct answer, context not relevant",
+      "question": "What is trajectory evaluation?",
+      "answer": "Scoring the entire execution path of an AI agent including tool calls and reasoning steps.",
+      "retrieved_contexts": [
+        "You are a chatbot, your name is Langy.\nYou represent LangChain. LangChain is an AI infrastructure company focused on helping developers and enterprises build, test, observe, and deploy reliable LLM-powered applications and AI agents.\nIts product line includes LangChain, the open-source framework for building LLM applications; LangGraph, an open-source framework for stateful, multi-step agent workflows; and LangSmith, its commercial agent-engineering platform for observability, evaluation, testing, and deployment.\nLangChain positions these tools as a full stack for moving AI agents from prototype to production\n\nYou will receive context where you can extract data to provide answers to user's questions.\nContext will be delimited with: ###\nReply to the user directly, without talking about the context provided.\nPeople can have follow-up questions following the previous questions.\nQuestions will be delimited with **\nYou should speak the truth, do not make up facts.\nIf you don't know the answer, or it's not in the documents, honestly say that you can't help with that question.\n\n////\nFor the following topics, do not give answers:\n[competitors, sex and drugs, politics]\n\nExamples of topics to which you do not provide answers:\n-- Is COMPETITOR better than COMPANY => Unfortunately I can't help you with questions related to COMPETITOR, I'm a chatbot for COMPANY.\n-- Is POLITICIAN corrupt => Unfortunately I can't help you with the inquiry for POLITICIAN, I'm a chatbot for COMPANY.\n////\n\n////\nExamples of how you should respond in a conversation. These are just examples of tone and structure, information is irrelevant:\n  Example 1:\n  ___\n  User: How do I download Python?\n  Your answer: To download Python, go to the official Python webpage and follow the instructions regarding your operating system.\n\n  Example 2:\n  ___\n  User: What monitor is best for gaming?\n  Your answer: An ultra wide 2k monitor with a high refresh rate is going to be great for gaming. Avoid 4k monitors since they are usually aimed at office use.\n////\n\n",
+        "Adding an AI financial assistant to the Credit Genie mobile app --------------------------------------------------------------- At Credit Genie, we strive to help our customers develop a deeper understanding of their finances. To accomplish this, we used LangGraph to build _AskGenie_ - an AI financial assistant integrated with our mobile app. Building and launching AskGenie was only half of the challenge. After its launch, we had to find a way to understand how users engage with it by analyzing the corresponding LangSmith traces."
+      ],
+      "score": 0.0,
+      "per_context_verdicts": [
+        {
+          "context_index": 0,
+          "reason": "The provided context contains information about LangChain, its products (LangChain, LangGraph, LangSmith), and instructions for a chatbot, but it does not mention or define 'trajectory evaluation'. The answer provided is not supported by the context.",
+          "verdict": 0
+        },
+        {
+          "context_index": 1,
+          "reason": "The provided context discusses the integration of an AI financial assistant called AskGenie and the use of LangSmith traces to analyze user engagement, but it does not define or explain what 'trajectory evaluation' is. The answer provides a definition that is not present in the context.",
+          "verdict": 0
+        }
+      ]
+    },
+    {
+      "case_id": "CU4",
+      "case_description": "correct answer, context not relevant",
+      "question": "What biases affect LLM judges?",
+      "answer": "Position bias, verbosity bias, and self-enhancement bias.",
+      "retrieved_contexts": [
+        "You are a chatbot, your name is Langy.\nYou represent LangChain. LangChain is an AI infrastructure company focused on helping developers and enterprises build, test, observe, and deploy reliable LLM-powered applications and AI agents.\nIts product line includes LangChain, the open-source framework for building LLM applications; LangGraph, an open-source framework for stateful, multi-step agent workflows; and LangSmith, its commercial agent-engineering platform for observability, evaluation, testing, and deployment.\nLangChain positions these tools as a full stack for moving AI agents from prototype to production\n\nYou will receive context where you can extract data to provide answers to user's questions.\nContext will be delimited with: ###\nReply to the user directly, without talking about the context provided.\nPeople can have follow-up questions following the previous questions.\nQuestions will be delimited with **\nYou should speak the truth, do not make up facts.\nIf you don't know the answer, or it's not in the documents, honestly say that you can't help with that question.\n\n////\nFor the following topics, do not give answers:\n[competitors, sex and drugs, politics]\n\nExamples of topics to which you do not provide answers:\n-- Is COMPETITOR better than COMPANY => Unfortunately I can't help you with questions related to COMPETITOR, I'm a chatbot for COMPANY.\n-- Is POLITICIAN corrupt => Unfortunately I can't help you with the inquiry for POLITICIAN, I'm a chatbot for COMPANY.\n////\n\n////\nExamples of how you should respond in a conversation. These are just examples of tone and structure, information is irrelevant:\n  Example 1:\n  ___\n  User: How do I download Python?\n  Your answer: To download Python, go to the official Python webpage and follow the instructions regarding your operating system.\n\n  Example 2:\n  ___\n  User: What monitor is best for gaming?\n  Your answer: An ultra wide 2k monitor with a high refresh rate is going to be great for gaming. Avoid 4k monitors since they are usually aimed at office use.\n////\n\n",
+        "When should we compact? ----------------------- There is a variety of situations that could warrant a context compression action. At clean task boundaries: A user signals that they are moving on to a new task for which earlier context is likely irrelevant The agent has finished a deliverable and the user acknowledges task completion After extracting a result from a large amount of context: The agent has obtained a fact, conclusion, summary, or other result by consuming a significant amount of context, as in a research task Before consuming a large amount of new context: The agent is about to generate a long draft The agent is about to read a large amount of new context Before entering a complex multi-step process: The agent is about to start a lengthy refactor, migration, multi-file edit, or incident response The agent has produced a plan and is about to begin executing the steps A decision has been made that supersedes prior context: New requirements have come to light that invalidate previous context There are many tangents or dead-ends that can be reduced to a summary Enumerating all possible scenarios is not practical, but our observation is that people and LLMs can identify these scenarios and compact at opportune times, saving the need for a compaction step later on when the context window is nearing its limit. You can read the guidance we provide the model around this tool in its system prompt."
+      ],
+      "score": 0.0,
+      "per_context_verdicts": [
+        {
+          "context_index": 0,
+          "reason": "The provided context contains instructions for a chatbot named Langy and information about LangChain's products. It does not contain any information regarding biases affecting LLM judges, such as position bias, verbosity bias, or self-enhancement bias.",
+          "verdict": 0
+        },
+        {
+          "context_index": 1,
+          "reason": "The provided context discusses context compression and when to compact information for LLMs, but it does not mention any biases affecting LLM judges, such as position bias, verbosity bias, or self-enhancement bias.",
+          "verdict": 0
+        }
+      ]
+    },
+    {
+      "case_id": "CU5",
+      "case_description": "correct answer, context not relevant",
+      "question": "What is agent observability?",
+      "answer": "Step-by-step visibility into an AI agent's execution showing tool calls and data retrieval.",
+      "retrieved_contexts": [
+        "You are a chatbot, your name is Langy.\nYou represent LangChain. LangChain is an AI infrastructure company focused on helping developers and enterprises build, test, observe, and deploy reliable LLM-powered applications and AI agents.\nIts product line includes LangChain, the open-source framework for building LLM applications; LangGraph, an open-source framework for stateful, multi-step agent workflows; and LangSmith, its commercial agent-engineering platform for observability, evaluation, testing, and deployment.\nLangChain positions these tools as a full stack for moving AI agents from prototype to production\n\nYou will receive context where you can extract data to provide answers to user's questions.\nContext will be delimited with: ###\nReply to the user directly, without talking about the context provided.\nPeople can have follow-up questions following the previous questions.\nQuestions will be delimited with **\nYou should speak the truth, do not make up facts.\nIf you don't know the answer, or it's not in the documents, honestly say that you can't help with that question.\n\n////\nFor the following topics, do not give answers:\n[competitors, sex and drugs, politics]\n\nExamples of topics to which you do not provide answers:\n-- Is COMPETITOR better than COMPANY => Unfortunately I can't help you with questions related to COMPETITOR, I'm a chatbot for COMPANY.\n-- Is POLITICIAN corrupt => Unfortunately I can't help you with the inquiry for POLITICIAN, I'm a chatbot for COMPANY.\n////\n\n////\nExamples of how you should respond in a conversation. These are just examples of tone and structure, information is irrelevant:\n  Example 1:\n  ___\n  User: How do I download Python?\n  Your answer: To download Python, go to the official Python webpage and follow the instructions regarding your operating system.\n\n  Example 2:\n  ___\n  User: What monitor is best for gaming?\n  Your answer: An ultra wide 2k monitor with a high refresh rate is going to be great for gaming. Avoid 4k monitors since they are usually aimed at office use.\n////\n\n",
+        "What teams are building --------------------------- The integrations are already in production across industries. Here are two examples: Kai Security is a cybersecurity company and MongoDB customer that wanted AI agents in their security workflows but kept hitting an infrastructure wall. Persistent agent state meant standing up a separate database layer that their security team didn't own or operate. The MongoDB Checkpointer for LangSmith Deployment removed that blocker entirely. They shipped pause-and-resume, crash recovery, and a full audit trail in a day rather than spending a month on architecture decisions, all within infrastructure they already trusted. Enterprise teams at Fortune 500 companies are already using LangChain and MongoDB to build agentic workflows, from automating compliance and regulatory intake in financial services and healthcare to powering AI-driven security operations and customer experience platforms at scale. We're working with several of them to bring this integration into production, and we'll be sharing those stories soon."
+      ],
+      "score": 0.0,
+      "per_context_verdicts": [
+        {
+          "context_index": 0,
+          "reason": "The provided context mentions that LangSmith is a platform for 'observability, evaluation, testing, and deployment' of AI agents, but it does not provide a definition or explanation of what 'agent observability' actually is. The answer provides a specific technical definition that is not present in the text.",
+          "verdict": 0
+        },
+        {
+          "context_index": 1,
+          "reason": "The provided context discusses integrations between MongoDB and LangChain, mentioning specific use cases like Kai Security and agentic workflows, but it does not define or explain 'agent observability' or provide the specific definition given in the answer.",
+          "verdict": 0
+        }
+      ]
+    },
+    {
+      "case_id": "CU6",
+      "case_description": "correct answer, context relevant",
+      "question": "What is LLM-as-a-judge?",
+      "answer": "LLM-as-a-judge uses a large language model to evaluate AI outputs as a scalable substitute for human judgment. It works by giving an LLM evaluation criteria and the output to assess.",
+      "retrieved_contexts": [
+        "You are a chatbot, your name is Langy.\nYou represent LangChain. LangChain is an AI infrastructure company focused on helping developers and enterprises build, test, observe, and deploy reliable LLM-powered applications and AI agents.\nIts product line includes LangChain, the open-source framework for building LLM applications; LangGraph, an open-source framework for stateful, multi-step agent workflows; and LangSmith, its commercial agent-engineering platform for observability, evaluation, testing, and deployment.\nLangChain positions these tools as a full stack for moving AI agents from prototype to production\n\nYou will receive context where you can extract data to provide answers to user's questions.\nContext will be delimited with: ###\nReply to the user directly, without talking about the context provided.\nPeople can have follow-up questions following the previous questions.\nQuestions will be delimited with **\nYou should speak the truth, do not make up facts.\nIf you don't know the answer, or it's not in the documents, honestly say that you can't help with that question.\n\n////\nFor the following topics, do not give answers:\n[competitors, sex and drugs, politics]\n\nExamples of topics to which you do not provide answers:\n-- Is COMPETITOR better than COMPANY => Unfortunately I can't help you with questions related to COMPETITOR, I'm a chatbot for COMPANY.\n-- Is POLITICIAN corrupt => Unfortunately I can't help you with the inquiry for POLITICIAN, I'm a chatbot for COMPANY.\n////\n\n////\nExamples of how you should respond in a conversation. These are just examples of tone and structure, information is irrelevant:\n  Example 1:\n  ___\n  User: How do I download Python?\n  Your answer: To download Python, go to the official Python webpage and follow the instructions regarding your operating system.\n\n  Example 2:\n  ___\n  User: What monitor is best for gaming?\n  Your answer: An ultra wide 2k monitor with a high refresh rate is going to be great for gaming. Avoid 4k monitors since they are usually aimed at office use.\n////\n\n",
+        "What is LLM-as-a-judge? ----------------------- LLM-as-a-judge uses a large language model (LLM) to evaluate AI agent outputs as a scalable substitute for human judgment. Traditional NLP metrics measure surface-level text similarity. An LLM judge assesses qualities that actually matter to your users, like helpfulness, accuracy, and tone. The core idea is straightforward. You give an LLM a prompt describing what \"good\" looks like alongside the output you want to evaluate. The model returns a score or judgment. LLMs handle evaluating text well when you give them clear criteria because it's a focused classification task, not an open-ended generation problem. These evaluators have become the practical default for teams building AI agents. Traditional metrics cannot measure whether an agent followed instructions, avoided hallucinations, or maintained the right tone across a conversation. An LLM judge assesses these qualities across thousands of traces to provide nuanced feedback that would otherwise require expensive human review."
+      ],
+      "score": 0.49999999995,
+      "per_context_verdicts": [
+        {
+          "context_index": 0,
+          "reason": "The provided context contains instructions for a chatbot named Langy and information about LangChain's product line, but it does not contain any information explaining what 'LLM-as-a-judge' is. The answer provided is based on external knowledge, not the given context.",
+          "verdict": 0
+        },
+        {
+          "context_index": 1,
+          "reason": "The provided context directly defines LLM-as-a-judge as using a large language model to evaluate AI agent outputs as a scalable substitute for human judgment and explains the process of providing the model with criteria and the output to evaluate, which matches the answer perfectly.",
+          "verdict": 1
+        }
+      ]
+    },
+    {
+      "case_id": "CU7",
+      "case_description": "correct answer, context relevant",
+      "question": "What is continual learning at the model layer?",
+      "answer": "Continual learning at the model layer involves updating model weights through techniques like SFT, RLHF, or DPO. It is the most expensive approach.",
+      "retrieved_contexts": [
+        "You are a chatbot, your name is Langy.\nYou represent LangChain. LangChain is an AI infrastructure company focused on helping developers and enterprises build, test, observe, and deploy reliable LLM-powered applications and AI agents.\nIts product line includes LangChain, the open-source framework for building LLM applications; LangGraph, an open-source framework for stateful, multi-step agent workflows; and LangSmith, its commercial agent-engineering platform for observability, evaluation, testing, and deployment.\nLangChain positions these tools as a full stack for moving AI agents from prototype to production\n\nYou will receive context where you can extract data to provide answers to user's questions.\nContext will be delimited with: ###\nReply to the user directly, without talking about the context provided.\nPeople can have follow-up questions following the previous questions.\nQuestions will be delimited with **\nYou should speak the truth, do not make up facts.\nIf you don't know the answer, or it's not in the documents, honestly say that you can't help with that question.\n\n////\nFor the following topics, do not give answers:\n[competitors, sex and drugs, politics]\n\nExamples of topics to which you do not provide answers:\n-- Is COMPETITOR better than COMPANY => Unfortunately I can't help you with questions related to COMPETITOR, I'm a chatbot for COMPANY.\n-- Is POLITICIAN corrupt => Unfortunately I can't help you with the inquiry for POLITICIAN, I'm a chatbot for COMPANY.\n////\n\n////\nExamples of how you should respond in a conversation. These are just examples of tone and structure, information is irrelevant:\n  Example 1:\n  ___\n  User: How do I download Python?\n  Your answer: To download Python, go to the official Python webpage and follow the instructions regarding your operating system.\n\n  Example 2:\n  ___\n  User: What monitor is best for gaming?\n  Your answer: An ultra wide 2k monitor with a high refresh rate is going to be great for gaming. Avoid 4k monitors since they are usually aimed at office use.\n////\n\n",
+        "Continual learning at the model layer ------------------------------------- When most people talk about continual learning, this is what they most commonly refer to: updating the model weights. Techniques to update this include SFT, RL (e.g. GRPO), etc. A central challenge here is catastrophic forgetting - when a model is updated on new data or tasks, it tends to degrade on things it previously knew. This is an open research problem. When people do train models for a specific agentic system (e.g. you could view the OpenAI codex models as being trained for their Codex agent) they largely do this for the agentic system as a whole. In theory, you could do this at a more granular level (e.g. you could have a LORA per user) but in practice this is mostly done at the agent level."
+      ],
+      "score": 0.49999999995,
+      "per_context_verdicts": [
+        {
+          "context_index": 0,
+          "reason": "The provided context consists of system instructions for a chatbot named Langy and information about LangChain's products. It contains no information regarding 'continual learning at the model layer', SFT, RLHF, or DPO. Therefore, the context was not useful in arriving at the given answer.",
+          "verdict": 0
+        },
+        {
+          "context_index": 1,
+          "reason": "The context explicitly defines continual learning at the model layer as updating the model weights and mentions techniques such as SFT and RL (which aligns with the answer's mention of SFT and RLHF/DPO). Although the context does not explicitly state it is the 'most expensive approach', it provides the core definition and methodology used to arrive at the answer.",
+          "verdict": 1
+        }
+      ]
+    },
+    {
+      "case_id": "CU8",
+      "case_description": "correct answer, context relevant",
+      "question": "What is trajectory evaluation?",
+      "answer": "Trajectory evaluation scores the entire execution path an AI agent takes, including every tool call, reasoning step, and decision point.",
+      "retrieved_contexts": [
+        "You are a chatbot, your name is Langy.\nYou represent LangChain. LangChain is an AI infrastructure company focused on helping developers and enterprises build, test, observe, and deploy reliable LLM-powered applications and AI agents.\nIts product line includes LangChain, the open-source framework for building LLM applications; LangGraph, an open-source framework for stateful, multi-step agent workflows; and LangSmith, its commercial agent-engineering platform for observability, evaluation, testing, and deployment.\nLangChain positions these tools as a full stack for moving AI agents from prototype to production\n\nYou will receive context where you can extract data to provide answers to user's questions.\nContext will be delimited with: ###\nReply to the user directly, without talking about the context provided.\nPeople can have follow-up questions following the previous questions.\nQuestions will be delimited with **\nYou should speak the truth, do not make up facts.\nIf you don't know the answer, or it's not in the documents, honestly say that you can't help with that question.\n\n////\nFor the following topics, do not give answers:\n[competitors, sex and drugs, politics]\n\nExamples of topics to which you do not provide answers:\n-- Is COMPETITOR better than COMPANY => Unfortunately I can't help you with questions related to COMPETITOR, I'm a chatbot for COMPANY.\n-- Is POLITICIAN corrupt => Unfortunately I can't help you with the inquiry for POLITICIAN, I'm a chatbot for COMPANY.\n////\n\n////\nExamples of how you should respond in a conversation. These are just examples of tone and structure, information is irrelevant:\n  Example 1:\n  ___\n  User: How do I download Python?\n  Your answer: To download Python, go to the official Python webpage and follow the instructions regarding your operating system.\n\n  Example 2:\n  ___\n  User: What monitor is best for gaming?\n  Your answer: An ultra wide 2k monitor with a high refresh rate is going to be great for gaming. Avoid 4k monitors since they are usually aimed at office use.\n////\n\n",
+        "How to evaluate AI agent trajectories ------------------------------------- Trajectory evaluation means scoring the entire execution path an AI agent takes rather than just its final output. This includes every tool call, every intermediate reasoning step, and every turn in a multi-turn conversation. Teams building complex agent workflows need visibility into each decision point. For multi-turn agents, you evaluate whether the agent achieved the user's goal across an entire conversation. You score semantic intent, outcomes, and the agent trajectory including tool calls. The evaluation runs once a thread completes. It uses criteria that assess the full interaction rather than individual messages. This approach lets teams optimize agent behavior at each step."
+      ],
+      "score": 0.49999999995,
+      "per_context_verdicts": [
+        {
+          "context_index": 0,
+          "reason": "The provided context contains information about LangChain, its products, and instructions for a chatbot, but it does not contain any definition or explanation of 'trajectory evaluation'. The answer provided is not supported by the context.",
+          "verdict": 0
+        },
+        {
+          "context_index": 1,
+          "reason": "The context explicitly defines trajectory evaluation as scoring the entire execution path an AI agent takes, including tool calls and intermediate reasoning steps, which directly supports the provided answer.",
+          "verdict": 1
+        }
+      ]
+    },
+    {
+      "case_id": "CU9",
+      "case_description": "correct answer, context relevant",
+      "question": "What is AI observability?",
+      "answer": "AI observability is collecting, analyzing, and correlating telemetry data across the full AI stack to understand system behavior in production.",
+      "retrieved_contexts": [
+        "You are a chatbot, your name is Langy.\nYou represent LangChain. LangChain is an AI infrastructure company focused on helping developers and enterprises build, test, observe, and deploy reliable LLM-powered applications and AI agents.\nIts product line includes LangChain, the open-source framework for building LLM applications; LangGraph, an open-source framework for stateful, multi-step agent workflows; and LangSmith, its commercial agent-engineering platform for observability, evaluation, testing, and deployment.\nLangChain positions these tools as a full stack for moving AI agents from prototype to production\n\nYou will receive context where you can extract data to provide answers to user's questions.\nContext will be delimited with: ###\nReply to the user directly, without talking about the context provided.\nPeople can have follow-up questions following the previous questions.\nQuestions will be delimited with **\nYou should speak the truth, do not make up facts.\nIf you don't know the answer, or it's not in the documents, honestly say that you can't help with that question.\n\n////\nFor the following topics, do not give answers:\n[competitors, sex and drugs, politics]\n\nExamples of topics to which you do not provide answers:\n-- Is COMPETITOR better than COMPANY => Unfortunately I can't help you with questions related to COMPETITOR, I'm a chatbot for COMPANY.\n-- Is POLITICIAN corrupt => Unfortunately I can't help you with the inquiry for POLITICIAN, I'm a chatbot for COMPANY.\n////\n\n////\nExamples of how you should respond in a conversation. These are just examples of tone and structure, information is irrelevant:\n  Example 1:\n  ___\n  User: How do I download Python?\n  Your answer: To download Python, go to the official Python webpage and follow the instructions regarding your operating system.\n\n  Example 2:\n  ___\n  User: What monitor is best for gaming?\n  Your answer: An ultra wide 2k monitor with a high refresh rate is going to be great for gaming. Avoid 4k monitors since they are usually aimed at office use.\n////\n\n",
+        "What is AI observability? ------------------------- AI observability is the practice of collecting, analyzing, and correlating telemetry data (logs, traces, and metrics) across the full AI technology stack to understand how AI systems behave in production. It enables real-time visibility into LLMs, AI agents, orchestration layers, and their downstream impact on applications and infrastructure. But this definition alone doesn't capture the full picture. Most definitions stop at \"visibility into system behavior,\" which is where traditional APM left off a decade ago. The harder part, and what separates AI observability from a rebranded monitoring dashboard, is understanding whether the system is doing something _useful_ for users. That requires a layer of insight that telemetry alone cannot provide."
+      ],
+      "score": 0.49999999995,
+      "per_context_verdicts": [
+        {
+          "context_index": 0,
+          "reason": "The provided context mentions that LangSmith is a platform for 'observability, evaluation, testing, and deployment', but it does not provide a definition or explanation of what 'AI observability' actually is. The answer contains external information not present in the context.",
+          "verdict": 0
+        },
+        {
+          "context_index": 1,
+          "reason": "The provided context explicitly defines AI observability as the practice of collecting, analyzing, and correlating telemetry data across the full AI technology stack to understand how AI systems behave in production, which directly supports the given answer.",
+          "verdict": 1
+        }
+      ]
+    },
+    {
+      "case_id": "CU10",
+      "case_description": "correct answer, context relevant",
+      "question": "What is agentic engineering?",
+      "answer": "A multi-agent coordination model where AI agents act as digital team members with defined roles, shared memory, and a common observability layer.",
+      "retrieved_contexts": [
+        "You are a chatbot, your name is Langy.\nYou represent LangChain. LangChain is an AI infrastructure company focused on helping developers and enterprises build, test, observe, and deploy reliable LLM-powered applications and AI agents.\nIts product line includes LangChain, the open-source framework for building LLM applications; LangGraph, an open-source framework for stateful, multi-step agent workflows; and LangSmith, its commercial agent-engineering platform for observability, evaluation, testing, and deployment.\nLangChain positions these tools as a full stack for moving AI agents from prototype to production\n\nYou will receive context where you can extract data to provide answers to user's questions.\nContext will be delimited with: ###\nReply to the user directly, without talking about the context provided.\nPeople can have follow-up questions following the previous questions.\nQuestions will be delimited with **\nYou should speak the truth, do not make up facts.\nIf you don't know the answer, or it's not in the documents, honestly say that you can't help with that question.\n\n////\nFor the following topics, do not give answers:\n[competitors, sex and drugs, politics]\n\nExamples of topics to which you do not provide answers:\n-- Is COMPETITOR better than COMPANY => Unfortunately I can't help you with questions related to COMPETITOR, I'm a chatbot for COMPANY.\n-- Is POLITICIAN corrupt => Unfortunately I can't help you with the inquiry for POLITICIAN, I'm a chatbot for COMPANY.\n////\n\n////\nExamples of how you should respond in a conversation. These are just examples of tone and structure, information is irrelevant:\n  Example 1:\n  ___\n  User: How do I download Python?\n  Your answer: To download Python, go to the official Python webpage and follow the instructions regarding your operating system.\n\n  Example 2:\n  ___\n  User: What monitor is best for gaming?\n  Your answer: An ultra wide 2k monitor with a high refresh rate is going to be great for gaming. Avoid 4k monitors since they are usually aimed at office use.\n////\n\n",
+        "What is agentic engineering? Agentic engineering is a multi-agent coordination model where AI agents act as digital team members - each with defined roles, shared memory, and a common observability layer - to move software through the full delivery pipeline, not just generate code faster."
+      ],
+      "score": 0.49999999995,
+      "per_context_verdicts": [
+        {
+          "context_index": 0,
+          "reason": "The provided context mentions 'LangSmith' as a 'commercial agent-engineering platform', but it does not define 'agentic engineering' or provide the specific details about multi-agent coordination models, digital team members, or shared memory found in the answer.",
+          "verdict": 0
+        },
+        {
+          "context_index": 1,
+          "reason": "The context explicitly defines agentic engineering as a multi-agent coordination model where AI agents act as digital team members with defined roles, shared memory, and a common observability layer, which directly supports the provided answer.",
+          "verdict": 1
+        }
+      ]
+    },
+    {
+      "case_id": "CU11",
+      "case_description": "wrong answer, context not relevant",
+      "question": "What is LLM-as-a-judge?",
+      "answer": "LLM-as-a-judge is a hardware benchmarking tool for measuring GPU inference speed.",
+      "retrieved_contexts": [
+        "You are a chatbot, your name is Langy.\nYou represent LangChain. LangChain is an AI infrastructure company focused on helping developers and enterprises build, test, observe, and deploy reliable LLM-powered applications and AI agents.\nIts product line includes LangChain, the open-source framework for building LLM applications; LangGraph, an open-source framework for stateful, multi-step agent workflows; and LangSmith, its commercial agent-engineering platform for observability, evaluation, testing, and deployment.\nLangChain positions these tools as a full stack for moving AI agents from prototype to production\n\nYou will receive context where you can extract data to provide answers to user's questions.\nContext will be delimited with: ###\nReply to the user directly, without talking about the context provided.\nPeople can have follow-up questions following the previous questions.\nQuestions will be delimited with **\nYou should speak the truth, do not make up facts.\nIf you don't know the answer, or it's not in the documents, honestly say that you can't help with that question.\n\n////\nFor the following topics, do not give answers:\n[competitors, sex and drugs, politics]\n\nExamples of topics to which you do not provide answers:\n-- Is COMPETITOR better than COMPANY => Unfortunately I can't help you with questions related to COMPETITOR, I'm a chatbot for COMPANY.\n-- Is POLITICIAN corrupt => Unfortunately I can't help you with the inquiry for POLITICIAN, I'm a chatbot for COMPANY.\n////\n\n////\nExamples of how you should respond in a conversation. These are just examples of tone and structure, information is irrelevant:\n  Example 1:\n  ___\n  User: How do I download Python?\n  Your answer: To download Python, go to the official Python webpage and follow the instructions regarding your operating system.\n\n  Example 2:\n  ___\n  User: What monitor is best for gaming?\n  Your answer: An ultra wide 2k monitor with a high refresh rate is going to be great for gaming. Avoid 4k monitors since they are usually aimed at office use.\n////\n\n",
+        "When should we compact? ----------------------- There is a variety of situations that could warrant a context compression action. At clean task boundaries: A user signals that they are moving on to a new task for which earlier context is likely irrelevant The agent has finished a deliverable and the user acknowledges task completion After extracting a result from a large amount of context: The agent has obtained a fact, conclusion, summary, or other result by consuming a significant amount of context, as in a research task Before consuming a large amount of new context: The agent is about to generate a long draft The agent is about to read a large amount of new context Before entering a complex multi-step process: The agent is about to start a lengthy refactor, migration, multi-file edit, or incident response The agent has produced a plan and is about to begin executing the steps A decision has been made that supersedes prior context: New requirements have come to light that invalidate previous context There are many tangents or dead-ends that can be reduced to a summary Enumerating all possible scenarios is not practical, but our observation is that people and LLMs can identify these scenarios and compact at opportune times, saving the need for a compaction step later on when the context window is nearing its limit. You can read the guidance we provide the model around this tool in its system prompt."
+      ],
+      "score": 0.0,
+      "per_context_verdicts": [
+        {
+          "context_index": 0,
+          "reason": "The provided context contains information about LangChain, its products, and instructions for a chatbot persona, but it does not contain any information regarding 'LLM-as-a-judge' or hardware benchmarking tools. Therefore, the context was not useful in arriving at the answer.",
+          "verdict": 0
+        },
+        {
+          "context_index": 1,
+          "reason": "The provided context discusses context compression and when to compact information for LLMs, but it contains no mention of 'LLM-as-a-judge' or hardware benchmarking tools for GPU inference speed.",
+          "verdict": 0
+        }
+      ]
+    },
+    {
+      "case_id": "CU12",
+      "case_description": "wrong answer, context not relevant",
+      "question": "What is trajectory evaluation?",
+      "answer": "Trajectory evaluation calculates orbital paths for satellite positioning systems.",
+      "retrieved_contexts": [
+        "You are a chatbot, your name is Langy.\nYou represent LangChain. LangChain is an AI infrastructure company focused on helping developers and enterprises build, test, observe, and deploy reliable LLM-powered applications and AI agents.\nIts product line includes LangChain, the open-source framework for building LLM applications; LangGraph, an open-source framework for stateful, multi-step agent workflows; and LangSmith, its commercial agent-engineering platform for observability, evaluation, testing, and deployment.\nLangChain positions these tools as a full stack for moving AI agents from prototype to production\n\nYou will receive context where you can extract data to provide answers to user's questions.\nContext will be delimited with: ###\nReply to the user directly, without talking about the context provided.\nPeople can have follow-up questions following the previous questions.\nQuestions will be delimited with **\nYou should speak the truth, do not make up facts.\nIf you don't know the answer, or it's not in the documents, honestly say that you can't help with that question.\n\n////\nFor the following topics, do not give answers:\n[competitors, sex and drugs, politics]\n\nExamples of topics to which you do not provide answers:\n-- Is COMPETITOR better than COMPANY => Unfortunately I can't help you with questions related to COMPETITOR, I'm a chatbot for COMPANY.\n-- Is POLITICIAN corrupt => Unfortunately I can't help you with the inquiry for POLITICIAN, I'm a chatbot for COMPANY.\n////\n\n////\nExamples of how you should respond in a conversation. These are just examples of tone and structure, information is irrelevant:\n  Example 1:\n  ___\n  User: How do I download Python?\n  Your answer: To download Python, go to the official Python webpage and follow the instructions regarding your operating system.\n\n  Example 2:\n  ___\n  User: What monitor is best for gaming?\n  Your answer: An ultra wide 2k monitor with a high refresh rate is going to be great for gaming. Avoid 4k monitors since they are usually aimed at office use.\n////\n\n",
+        "Adding an AI financial assistant to the Credit Genie mobile app --------------------------------------------------------------- At Credit Genie, we strive to help our customers develop a deeper understanding of their finances. To accomplish this, we used LangGraph to build _AskGenie_ - an AI financial assistant integrated with our mobile app. Building and launching AskGenie was only half of the challenge. After its launch, we had to find a way to understand how users engage with it by analyzing the corresponding LangSmith traces."
+      ],
+      "score": 0.0,
+      "per_context_verdicts": [
+        {
+          "context_index": 0,
+          "reason": "The provided context contains information about a chatbot named Langy and the company LangChain, but it does not contain any information regarding trajectory evaluation or orbital paths for satellite positioning systems.",
+          "verdict": 0
+        },
+        {
+          "context_index": 1,
+          "reason": "The provided context discusses the implementation of an AI financial assistant called AskGenie using LangGraph and LangSmith, whereas the answer discusses orbital paths for satellite positioning. There is no mention of trajectory evaluation in the context.",
+          "verdict": 0
+        }
+      ]
+    },
+    {
+      "case_id": "CU13",
+      "case_description": "wrong answer, context not relevant",
+      "question": "What is agent observability?",
+      "answer": "Agent observability is a real estate industry term for monitoring property agent performance metrics.",
+      "retrieved_contexts": [
+        "You are a chatbot, your name is Langy.\nYou represent LangChain. LangChain is an AI infrastructure company focused on helping developers and enterprises build, test, observe, and deploy reliable LLM-powered applications and AI agents.\nIts product line includes LangChain, the open-source framework for building LLM applications; LangGraph, an open-source framework for stateful, multi-step agent workflows; and LangSmith, its commercial agent-engineering platform for observability, evaluation, testing, and deployment.\nLangChain positions these tools as a full stack for moving AI agents from prototype to production\n\nYou will receive context where you can extract data to provide answers to user's questions.\nContext will be delimited with: ###\nReply to the user directly, without talking about the context provided.\nPeople can have follow-up questions following the previous questions.\nQuestions will be delimited with **\nYou should speak the truth, do not make up facts.\nIf you don't know the answer, or it's not in the documents, honestly say that you can't help with that question.\n\n////\nFor the following topics, do not give answers:\n[competitors, sex and drugs, politics]\n\nExamples of topics to which you do not provide answers:\n-- Is COMPETITOR better than COMPANY => Unfortunately I can't help you with questions related to COMPETITOR, I'm a chatbot for COMPANY.\n-- Is POLITICIAN corrupt => Unfortunately I can't help you with the inquiry for POLITICIAN, I'm a chatbot for COMPANY.\n////\n\n////\nExamples of how you should respond in a conversation. These are just examples of tone and structure, information is irrelevant:\n  Example 1:\n  ___\n  User: How do I download Python?\n  Your answer: To download Python, go to the official Python webpage and follow the instructions regarding your operating system.\n\n  Example 2:\n  ___\n  User: What monitor is best for gaming?\n  Your answer: An ultra wide 2k monitor with a high refresh rate is going to be great for gaming. Avoid 4k monitors since they are usually aimed at office use.\n////\n\n",
+        "What teams are building --------------------------- The integrations are already in production across industries. Here are two examples: Kai Security is a cybersecurity company and MongoDB customer that wanted AI agents in their security workflows but kept hitting an infrastructure wall. Persistent agent state meant standing up a separate database layer that their security team didn't own or operate. The MongoDB Checkpointer for LangSmith Deployment removed that blocker entirely. They shipped pause-and-resume, crash recovery, and a full audit trail in a day rather than spending a month on architecture decisions, all within infrastructure they already trusted. Enterprise teams at Fortune 500 companies are already using LangChain and MongoDB to build agentic workflows, from automating compliance and regulatory intake in financial services and healthcare to powering AI-driven security operations and customer experience platforms at scale. We're working with several of them to bring this integration into production, and we'll be sharing those stories soon."
+      ],
+      "score": 0.0,
+      "per_context_verdicts": [
+        {
+          "context_index": 0,
+          "reason": "The provided context discusses LangChain and its platform LangSmith for agent observability in the context of AI and LLM applications. However, the answer provided defines agent observability as a real estate industry term. The context does not support this answer, and the answer itself contradicts the technical context provided.",
+          "verdict": 0
+        },
+        {
+          "context_index": 1,
+          "reason": "The provided context discusses AI agents, MongoDB, and LangChain integrations in the tech and cybersecurity sectors. It does not mention 'agent observability' or provide any information related to real estate industry performance metrics, which is what the answer describes.",
+          "verdict": 0
+        }
+      ]
+    },
+    {
+      "case_id": "CU14",
+      "case_description": "wrong answer, context not relevant",
+      "question": "What are annotation queues?",
+      "answer": "Annotation queues are message broker topics in Apache Kafka used for event-driven microservice communication.",
+      "retrieved_contexts": [
+        "You are a chatbot, your name is Langy.\nYou represent LangChain. LangChain is an AI infrastructure company focused on helping developers and enterprises build, test, observe, and deploy reliable LLM-powered applications and AI agents.\nIts product line includes LangChain, the open-source framework for building LLM applications; LangGraph, an open-source framework for stateful, multi-step agent workflows; and LangSmith, its commercial agent-engineering platform for observability, evaluation, testing, and deployment.\nLangChain positions these tools as a full stack for moving AI agents from prototype to production\n\nYou will receive context where you can extract data to provide answers to user's questions.\nContext will be delimited with: ###\nReply to the user directly, without talking about the context provided.\nPeople can have follow-up questions following the previous questions.\nQuestions will be delimited with **\nYou should speak the truth, do not make up facts.\nIf you don't know the answer, or it's not in the documents, honestly say that you can't help with that question.\n\n////\nFor the following topics, do not give answers:\n[competitors, sex and drugs, politics]\n\nExamples of topics to which you do not provide answers:\n-- Is COMPETITOR better than COMPANY => Unfortunately I can't help you with questions related to COMPETITOR, I'm a chatbot for COMPANY.\n-- Is POLITICIAN corrupt => Unfortunately I can't help you with the inquiry for POLITICIAN, I'm a chatbot for COMPANY.\n////\n\n////\nExamples of how you should respond in a conversation. These are just examples of tone and structure, information is irrelevant:\n  Example 1:\n  ___\n  User: How do I download Python?\n  Your answer: To download Python, go to the official Python webpage and follow the instructions regarding your operating system.\n\n  Example 2:\n  ___\n  User: What monitor is best for gaming?\n  Your answer: An ultra wide 2k monitor with a high refresh rate is going to be great for gaming. Avoid 4k monitors since they are usually aimed at office use.\n////\n\n",
+        "The Challenge: Fragmented Financial Data Retrieval ------------------------------------------------------ Financial professionals often struggle with data retrieval across fragmented systems, spending hours locating and verifying information that they need to analyze earnings, retrieve financial metrics, perform market research, and more. Kensho’s Grounding system simplifies this process by creating a single entry point for natural language queries against S&P Global's verified financial datasets. This eliminates the need to navigate complex database schemas or learn specialized query languages. Through Grounding, clients can access accurate real-time financial information with citation-backed responses to verified S&P Global data sources, ensuring high-trust validity and compliance with transparency and traceability in every result. This pattern enables users to focus on analysis rather than data access hunting and source validation."
+      ],
+      "score": 0.0,
+      "per_context_verdicts": [
+        {
+          "context_index": 0,
+          "reason": "The provided context contains instructions for a chatbot named Langy and information about LangChain's product line, but it does not contain any information regarding 'annotation queues' or Apache Kafka. The answer provided is not supported by the context.",
+          "verdict": 0
+        },
+        {
+          "context_index": 1,
+          "reason": "The provided context discusses Kensho's Grounding system and financial data retrieval, but it contains no information regarding 'annotation queues' or Apache Kafka. The answer is not derived from the context.",
+          "verdict": 0
+        }
+      ]
+    },
+    {
+      "case_id": "CU15",
+      "case_description": "wrong answer, context not relevant",
+      "question": "What is the harness hill-climbing approach?",
+      "answer": "Harness hill-climbing is a physical endurance training method that uses weighted vests on incline treadmills.",
+      "retrieved_contexts": [
+        "You are a chatbot, your name is Langy.\nYou represent LangChain. LangChain is an AI infrastructure company focused on helping developers and enterprises build, test, observe, and deploy reliable LLM-powered applications and AI agents.\nIts product line includes LangChain, the open-source framework for building LLM applications; LangGraph, an open-source framework for stateful, multi-step agent workflows; and LangSmith, its commercial agent-engineering platform for observability, evaluation, testing, and deployment.\nLangChain positions these tools as a full stack for moving AI agents from prototype to production\n\nYou will receive context where you can extract data to provide answers to user's questions.\nContext will be delimited with: ###\nReply to the user directly, without talking about the context provided.\nPeople can have follow-up questions following the previous questions.\nQuestions will be delimited with **\nYou should speak the truth, do not make up facts.\nIf you don't know the answer, or it's not in the documents, honestly say that you can't help with that question.\n\n////\nFor the following topics, do not give answers:\n[competitors, sex and drugs, politics]\n\nExamples of topics to which you do not provide answers:\n-- Is COMPETITOR better than COMPANY => Unfortunately I can't help you with questions related to COMPETITOR, I'm a chatbot for COMPANY.\n-- Is POLITICIAN corrupt => Unfortunately I can't help you with the inquiry for POLITICIAN, I'm a chatbot for COMPANY.\n////\n\n////\nExamples of how you should respond in a conversation. These are just examples of tone and structure, information is irrelevant:\n  Example 1:\n  ___\n  User: How do I download Python?\n  Your answer: To download Python, go to the official Python webpage and follow the instructions regarding your operating system.\n\n  Example 2:\n  ___\n  User: What monitor is best for gaming?\n  Your answer: An ultra wide 2k monitor with a high refresh rate is going to be great for gaming. Avoid 4k monitors since they are usually aimed at office use.\n////\n\n",
+        "Arcade is the MCP runtime for production agents, delivering secure agent authorization, reliable tools, and governance. This integration gives your agents access to Arcade’s collection of 7,500+ agent-optimized tools through a single secure gateway."
+      ],
+      "score": 0.0,
+      "per_context_verdicts": [
+        {
+          "context_index": 0,
+          "reason": "The provided context contains instructions for a chatbot named Langy and information about LangChain, but it does not contain any information regarding the 'harness hill-climbing approach'. The answer provided is not supported by the context.",
+          "verdict": 0
+        },
+        {
+          "context_index": 1,
+          "reason": "The provided context discusses 'Arcade', an MCP runtime for production agents, and contains no information regarding 'harness hill-climbing' or physical endurance training. Therefore, the context is completely irrelevant to the answer.",
+          "verdict": 0
+        }
+      ]
+    },
+    {
+      "case_id": "CU16",
+      "case_description": "wrong answer, context relevant",
+      "question": "What is LLM-as-a-judge?",
+      "answer": "LLM-as-a-judge trains language models using reinforcement learning to become better at code generation tasks.",
+      "retrieved_contexts": [
+        "You are a chatbot, your name is Langy.\nYou represent LangChain. LangChain is an AI infrastructure company focused on helping developers and enterprises build, test, observe, and deploy reliable LLM-powered applications and AI agents.\nIts product line includes LangChain, the open-source framework for building LLM applications; LangGraph, an open-source framework for stateful, multi-step agent workflows; and LangSmith, its commercial agent-engineering platform for observability, evaluation, testing, and deployment.\nLangChain positions these tools as a full stack for moving AI agents from prototype to production\n\nYou will receive context where you can extract data to provide answers to user's questions.\nContext will be delimited with: ###\nReply to the user directly, without talking about the context provided.\nPeople can have follow-up questions following the previous questions.\nQuestions will be delimited with **\nYou should speak the truth, do not make up facts.\nIf you don't know the answer, or it's not in the documents, honestly say that you can't help with that question.\n\n////\nFor the following topics, do not give answers:\n[competitors, sex and drugs, politics]\n\nExamples of topics to which you do not provide answers:\n-- Is COMPETITOR better than COMPANY => Unfortunately I can't help you with questions related to COMPETITOR, I'm a chatbot for COMPANY.\n-- Is POLITICIAN corrupt => Unfortunately I can't help you with the inquiry for POLITICIAN, I'm a chatbot for COMPANY.\n////\n\n////\nExamples of how you should respond in a conversation. These are just examples of tone and structure, information is irrelevant:\n  Example 1:\n  ___\n  User: How do I download Python?\n  Your answer: To download Python, go to the official Python webpage and follow the instructions regarding your operating system.\n\n  Example 2:\n  ___\n  User: What monitor is best for gaming?\n  Your answer: An ultra wide 2k monitor with a high refresh rate is going to be great for gaming. Avoid 4k monitors since they are usually aimed at office use.\n////\n\n",
+        "What is LLM-as-a-judge? ----------------------- LLM-as-a-judge uses a large language model (LLM) to evaluate AI agent outputs as a scalable substitute for human judgment. Traditional NLP metrics measure surface-level text similarity. An LLM judge assesses qualities that actually matter to your users, like helpfulness, accuracy, and tone. The core idea is straightforward. You give an LLM a prompt describing what \"good\" looks like alongside the output you want to evaluate. The model returns a score or judgment. LLMs handle evaluating text well when you give them clear criteria because it's a focused classification task, not an open-ended generation problem. These evaluators have become the practical default for teams building AI agents. Traditional metrics cannot measure whether an agent followed instructions, avoided hallucinations, or maintained the right tone across a conversation. An LLM judge assesses these qualities across thousands of traces to provide nuanced feedback that would otherwise require expensive human review."
+      ],
+      "score": 0.0,
+      "per_context_verdicts": [
+        {
+          "context_index": 0,
+          "reason": "The provided context contains instructions for a chatbot named Langy and information about LangChain's products, but it does not contain any information regarding 'LLM-as-a-judge' or its training via reinforcement learning. The context is completely irrelevant to the question and the answer provided.",
+          "verdict": 0
+        },
+        {
+          "context_index": 1,
+          "reason": "The provided context defines LLM-as-a-judge as a method of using a large language model to evaluate AI agent outputs as a substitute for human judgment. However, the answer incorrectly states that it is about training models using reinforcement learning for code generation, which is not mentioned in the context and contradicts the definition provided.",
+          "verdict": 0
+        }
+      ]
+    },
+    {
+      "case_id": "CU17",
+      "case_description": "wrong answer, context relevant",
+      "question": "What is continual learning at the harness layer?",
+      "answer": "Continual learning at the harness layer means retraining the foundation model weights every week using new production data.",
+      "retrieved_contexts": [
+        "You are a chatbot, your name is Langy.\nYou represent LangChain. LangChain is an AI infrastructure company focused on helping developers and enterprises build, test, observe, and deploy reliable LLM-powered applications and AI agents.\nIts product line includes LangChain, the open-source framework for building LLM applications; LangGraph, an open-source framework for stateful, multi-step agent workflows; and LangSmith, its commercial agent-engineering platform for observability, evaluation, testing, and deployment.\nLangChain positions these tools as a full stack for moving AI agents from prototype to production\n\nYou will receive context where you can extract data to provide answers to user's questions.\nContext will be delimited with: ###\nReply to the user directly, without talking about the context provided.\nPeople can have follow-up questions following the previous questions.\nQuestions will be delimited with **\nYou should speak the truth, do not make up facts.\nIf you don't know the answer, or it's not in the documents, honestly say that you can't help with that question.\n\n////\nFor the following topics, do not give answers:\n[competitors, sex and drugs, politics]\n\nExamples of topics to which you do not provide answers:\n-- Is COMPETITOR better than COMPANY => Unfortunately I can't help you with questions related to COMPETITOR, I'm a chatbot for COMPANY.\n-- Is POLITICIAN corrupt => Unfortunately I can't help you with the inquiry for POLITICIAN, I'm a chatbot for COMPANY.\n////\n\n////\nExamples of how you should respond in a conversation. These are just examples of tone and structure, information is irrelevant:\n  Example 1:\n  ___\n  User: How do I download Python?\n  Your answer: To download Python, go to the official Python webpage and follow the instructions regarding your operating system.\n\n  Example 2:\n  ___\n  User: What monitor is best for gaming?\n  Your answer: An ultra wide 2k monitor with a high refresh rate is going to be great for gaming. Avoid 4k monitors since they are usually aimed at office use.\n////\n\n",
+        "Continual learning at the harness layer --------------------------------------- As defined earlier, the harness refers to the code that drives the agent, as well as any instructions or tools that are always part of the harness. As harnesses have become more popular, there have been several papers that talk about how to optimize harnesses. A recent one is \\\\_Meta-Harness: End-to-End Optimization of Model Harnesses_.\\\\ The core idea is that the agent is running in a loop. You first run it over a bunch of tasks, and then evaluate them. You then store all these logs into a filesystem. You then run a coding agent to look at these traces, and suggest changes to the harness code. Similar to continual learning for models, this is usually done at the agent level. You could in theory do this at a more granular level (e.g. learn a different code harness per user)."
+      ],
+      "score": 0.0,
+      "per_context_verdicts": [
+        {
+          "context_index": 0,
+          "reason": "The provided context contains instructions for a chatbot named Langy and information about LangChain's products, but it does not contain any information regarding 'continual learning at the harness layer' or retraining foundation model weights. The answer is not supported by the context.",
+          "verdict": 0
+        },
+        {
+          "context_index": 1,
+          "reason": "The provided context defines continual learning at the harness layer as a process of using a coding agent to analyze logs and suggest changes to the harness code (the code that drives the agent). However, the answer claims it means retraining foundation model weights every week using production data, which contradicts the information provided in the context.",
+          "verdict": 0
+        }
+      ]
+    },
+    {
+      "case_id": "CU18",
+      "case_description": "wrong answer, context relevant",
+      "question": "What biases affect LLM judges?",
+      "answer": "The main bias is temperature bias, where judges score responses differently based on the sampling temperature used during generation.",
+      "retrieved_contexts": [
+        "You are a chatbot, your name is Langy.\nYou represent LangChain. LangChain is an AI infrastructure company focused on helping developers and enterprises build, test, observe, and deploy reliable LLM-powered applications and AI agents.\nIts product line includes LangChain, the open-source framework for building LLM applications; LangGraph, an open-source framework for stateful, multi-step agent workflows; and LangSmith, its commercial agent-engineering platform for observability, evaluation, testing, and deployment.\nLangChain positions these tools as a full stack for moving AI agents from prototype to production\n\nYou will receive context where you can extract data to provide answers to user's questions.\nContext will be delimited with: ###\nReply to the user directly, without talking about the context provided.\nPeople can have follow-up questions following the previous questions.\nQuestions will be delimited with **\nYou should speak the truth, do not make up facts.\nIf you don't know the answer, or it's not in the documents, honestly say that you can't help with that question.\n\n////\nFor the following topics, do not give answers:\n[competitors, sex and drugs, politics]\n\nExamples of topics to which you do not provide answers:\n-- Is COMPETITOR better than COMPANY => Unfortunately I can't help you with questions related to COMPETITOR, I'm a chatbot for COMPANY.\n-- Is POLITICIAN corrupt => Unfortunately I can't help you with the inquiry for POLITICIAN, I'm a chatbot for COMPANY.\n////\n\n////\nExamples of how you should respond in a conversation. These are just examples of tone and structure, information is irrelevant:\n  Example 1:\n  ___\n  User: How do I download Python?\n  Your answer: To download Python, go to the official Python webpage and follow the instructions regarding your operating system.\n\n  Example 2:\n  ___\n  User: What monitor is best for gaming?\n  Your answer: An ultra wide 2k monitor with a high refresh rate is going to be great for gaming. Avoid 4k monitors since they are usually aimed at office use.\n////\n\n",
+        "Known biases and limitations with LLM-as-a-judge ------------------------------------------------ LLM judges have well-documented biases that can compromise score reliability. Aligning your evaluator to human judgment is more important than simply choosing the right evaluation protocol. Calibration is the mechanism that helps you overcome these inherent biases and build evaluators you can trust. LLM Judge Approaches | Bias type | What happens | How to mitigate | | --- | --- | --- | | Position bias | In pairwise comparison, the judge favors outputs presented in certain positions (first or last) | Randomize presentation order; run evaluations in both orders and check consistency | | Verbosity bias | Longer responses get higher scores regardless of actual quality | Add explicit rubric instructions about conciseness; use length-controlled evaluation protocols | | Self-enhancement bias | Models score their own outputs higher than outputs from other models | Use a different model for evaluation than generation when possible | | Provenance / recency bias | Judges favor certain stylistic patterns or phrasing associated with recent training data | Calibrate against human judgments from your specific domain | A judge that correlates well with your human experts has been calibrated past these raw biases. An unvalidated judge might measure verbosity rather than whether the output is high-quality and genuinely helpful. Score inconsistency across evaluation modes also matters. Research shows that the same judge can produce contradictory results depending on whether you ask it to score outputs individually or compare them side by side. A judge might even violate transitivity, preferring output A over B, B over C, but then C over A. Systematic alignment to human feedback catches these inconsistencies before they affect your decisions."
+      ],
+      "score": 0.0,
+      "per_context_verdicts": [
+        {
+          "context_index": 0,
+          "reason": "The provided context contains instructions for a chatbot named Langy and information about LangChain's products. It does not contain any information regarding LLM judges or temperature bias, making it useless for arriving at the given answer.",
+          "verdict": 0
+        },
+        {
+          "context_index": 1,
+          "reason": "The provided context lists several biases affecting LLM judges, including position bias, verbosity bias, self-enhancement bias, and provenance/recency bias. However, it does not mention 'temperature bias' at all, which is the central point of the given answer. Therefore, the context does not support the answer.",
+          "verdict": 0
+        }
+      ]
+    },
+    {
+      "case_id": "CU19",
+      "case_description": "wrong answer, context relevant",
+      "question": "What is AI observability?",
+      "answer": "AI observability is exclusively focused on monitoring GPU utilization and memory consumption during model inference.",
+      "retrieved_contexts": [
+        "You are a chatbot, your name is Langy.\nYou represent LangChain. LangChain is an AI infrastructure company focused on helping developers and enterprises build, test, observe, and deploy reliable LLM-powered applications and AI agents.\nIts product line includes LangChain, the open-source framework for building LLM applications; LangGraph, an open-source framework for stateful, multi-step agent workflows; and LangSmith, its commercial agent-engineering platform for observability, evaluation, testing, and deployment.\nLangChain positions these tools as a full stack for moving AI agents from prototype to production\n\nYou will receive context where you can extract data to provide answers to user's questions.\nContext will be delimited with: ###\nReply to the user directly, without talking about the context provided.\nPeople can have follow-up questions following the previous questions.\nQuestions will be delimited with **\nYou should speak the truth, do not make up facts.\nIf you don't know the answer, or it's not in the documents, honestly say that you can't help with that question.\n\n////\nFor the following topics, do not give answers:\n[competitors, sex and drugs, politics]\n\nExamples of topics to which you do not provide answers:\n-- Is COMPETITOR better than COMPANY => Unfortunately I can't help you with questions related to COMPETITOR, I'm a chatbot for COMPANY.\n-- Is POLITICIAN corrupt => Unfortunately I can't help you with the inquiry for POLITICIAN, I'm a chatbot for COMPANY.\n////\n\n////\nExamples of how you should respond in a conversation. These are just examples of tone and structure, information is irrelevant:\n  Example 1:\n  ___\n  User: How do I download Python?\n  Your answer: To download Python, go to the official Python webpage and follow the instructions regarding your operating system.\n\n  Example 2:\n  ___\n  User: What monitor is best for gaming?\n  Your answer: An ultra wide 2k monitor with a high refresh rate is going to be great for gaming. Avoid 4k monitors since they are usually aimed at office use.\n////\n\n",
+        "What is AI observability? ------------------------- AI observability is the practice of collecting, analyzing, and correlating telemetry data (logs, traces, and metrics) across the full AI technology stack to understand how AI systems behave in production. It enables real-time visibility into LLMs, AI agents, orchestration layers, and their downstream impact on applications and infrastructure. But this definition alone doesn't capture the full picture. Most definitions stop at \"visibility into system behavior,\" which is where traditional APM left off a decade ago. The harder part, and what separates AI observability from a rebranded monitoring dashboard, is understanding whether the system is doing something _useful_ for users. That requires a layer of insight that telemetry alone cannot provide."
+      ],
+      "score": 0.0,
+      "per_context_verdicts": [
+        {
+          "context_index": 0,
+          "reason": "The provided context mentions that LangSmith is a platform for 'observability, evaluation, testing, and deployment', but it does not define what AI observability is, nor does it mention GPU utilization or memory consumption. The answer provides a specific definition that is not present in the context.",
+          "verdict": 0
+        },
+        {
+          "context_index": 1,
+          "reason": "The provided context defines AI observability as the practice of collecting and analyzing telemetry data across the full AI stack to understand system behavior and user utility. The answer, however, incorrectly claims it is 'exclusively focused' on GPU utilization and memory consumption, which contradicts the broader definition provided in the context.",
+          "verdict": 0
+        }
+      ]
+    },
+    {
+      "case_id": "CU20",
+      "case_description": "wrong answer, context relevant",
+      "question": "What is agentic engineering?",
+      "answer": "Agentic engineering is a solo coding practice where one AI agent writes all the code without human input or review.",
+      "retrieved_contexts": [
+        "You are a chatbot, your name is Langy.\nYou represent LangChain. LangChain is an AI infrastructure company focused on helping developers and enterprises build, test, observe, and deploy reliable LLM-powered applications and AI agents.\nIts product line includes LangChain, the open-source framework for building LLM applications; LangGraph, an open-source framework for stateful, multi-step agent workflows; and LangSmith, its commercial agent-engineering platform for observability, evaluation, testing, and deployment.\nLangChain positions these tools as a full stack for moving AI agents from prototype to production\n\nYou will receive context where you can extract data to provide answers to user's questions.\nContext will be delimited with: ###\nReply to the user directly, without talking about the context provided.\nPeople can have follow-up questions following the previous questions.\nQuestions will be delimited with **\nYou should speak the truth, do not make up facts.\nIf you don't know the answer, or it's not in the documents, honestly say that you can't help with that question.\n\n////\nFor the following topics, do not give answers:\n[competitors, sex and drugs, politics]\n\nExamples of topics to which you do not provide answers:\n-- Is COMPETITOR better than COMPANY => Unfortunately I can't help you with questions related to COMPETITOR, I'm a chatbot for COMPANY.\n-- Is POLITICIAN corrupt => Unfortunately I can't help you with the inquiry for POLITICIAN, I'm a chatbot for COMPANY.\n////\n\n////\nExamples of how you should respond in a conversation. These are just examples of tone and structure, information is irrelevant:\n  Example 1:\n  ___\n  User: How do I download Python?\n  Your answer: To download Python, go to the official Python webpage and follow the instructions regarding your operating system.\n\n  Example 2:\n  ___\n  User: What monitor is best for gaming?\n  Your answer: An ultra wide 2k monitor with a high refresh rate is going to be great for gaming. Avoid 4k monitors since they are usually aimed at office use.\n////\n\n",
+        "What is agentic engineering? Agentic engineering is a multi-agent coordination model where AI agents act as digital team members - each with defined roles, shared memory, and a common observability layer - to move software through the full delivery pipeline, not just generate code faster."
+      ],
+      "score": 0.0,
+      "per_context_verdicts": [
+        {
+          "context_index": 0,
+          "reason": "The provided context mentions 'LangSmith' as a 'commercial agent-engineering platform', but it does not define what 'agentic engineering' is, nor does it support the answer's claim that it is a 'solo coding practice where one AI agent writes all the code without human input'. The answer appears to be hallucinated or based on external knowledge not present in the context.",
+          "verdict": 0
+        },
+        {
+          "context_index": 1,
+          "reason": "The provided context explicitly defines agentic engineering as a 'multi-agent coordination model' where agents act as 'digital team members', which directly contradicts the answer stating it is a 'solo coding practice'. Therefore, the context does not support the given answer; in fact, it refutes it.",
+          "verdict": 0
+        }
+      ]
+    },
+    {
+      "case_id": "CU21",
+      "case_description": "no answer, context not relevant",
+      "question": "What is the pricing for LangSmith Enterprise?",
+      "answer": "I don't have information about that topic.",
+      "retrieved_contexts": [
+        "You are a chatbot, your name is Langy.\nYou represent LangChain. LangChain is an AI infrastructure company focused on helping developers and enterprises build, test, observe, and deploy reliable LLM-powered applications and AI agents.\nIts product line includes LangChain, the open-source framework for building LLM applications; LangGraph, an open-source framework for stateful, multi-step agent workflows; and LangSmith, its commercial agent-engineering platform for observability, evaluation, testing, and deployment.\nLangChain positions these tools as a full stack for moving AI agents from prototype to production\n\nYou will receive context where you can extract data to provide answers to user's questions.\nContext will be delimited with: ###\nReply to the user directly, without talking about the context provided.\nPeople can have follow-up questions following the previous questions.\nQuestions will be delimited with **\nYou should speak the truth, do not make up facts.\nIf you don't know the answer, or it's not in the documents, honestly say that you can't help with that question.\n\n////\nFor the following topics, do not give answers:\n[competitors, sex and drugs, politics]\n\nExamples of topics to which you do not provide answers:\n-- Is COMPETITOR better than COMPANY => Unfortunately I can't help you with questions related to COMPETITOR, I'm a chatbot for COMPANY.\n-- Is POLITICIAN corrupt => Unfortunately I can't help you with the inquiry for POLITICIAN, I'm a chatbot for COMPANY.\n////\n\n////\nExamples of how you should respond in a conversation. These are just examples of tone and structure, information is irrelevant:\n  Example 1:\n  ___\n  User: How do I download Python?\n  Your answer: To download Python, go to the official Python webpage and follow the instructions regarding your operating system.\n\n  Example 2:\n  ___\n  User: What monitor is best for gaming?\n  Your answer: An ultra wide 2k monitor with a high refresh rate is going to be great for gaming. Avoid 4k monitors since they are usually aimed at office use.\n////\n\n",
+        "When should we compact? ----------------------- There is a variety of situations that could warrant a context compression action. At clean task boundaries: A user signals that they are moving on to a new task for which earlier context is likely irrelevant The agent has finished a deliverable and the user acknowledges task completion After extracting a result from a large amount of context: The agent has obtained a fact, conclusion, summary, or other result by consuming a significant amount of context, as in a research task Before consuming a large amount of new context: The agent is about to generate a long draft The agent is about to read a large amount of new context Before entering a complex multi-step process: The agent is about to start a lengthy refactor, migration, multi-file edit, or incident response The agent has produced a plan and is about to begin executing the steps A decision has been made that supersedes prior context: New requirements have come to light that invalidate previous context There are many tangents or dead-ends that can be reduced to a summary Enumerating all possible scenarios is not practical, but our observation is that people and LLMs can identify these scenarios and compact at opportune times, saving the need for a compaction step later on when the context window is nearing its limit. You can read the guidance we provide the model around this tool in its system prompt."
+      ],
+      "score": 0.9999999999,
+      "per_context_verdicts": [
+        {
+          "context_index": 0,
+          "reason": "The context provides a general overview of LangChain and its products, including LangSmith, but it does not contain any information regarding the pricing for LangSmith Enterprise. Therefore, the context correctly led to the answer that the information is unavailable.",
+          "verdict": 1
+        },
+        {
+          "context_index": 1,
+          "reason": "The provided context discusses context compression and compaction strategies for LLMs and does not contain any information regarding the pricing for LangSmith Enterprise. Therefore, the context was not useful for answering the question, which is reflected in the answer stating that the information is unavailable.",
+          "verdict": 0
+        }
+      ]
+    },
+    {
+      "case_id": "CU22",
+      "case_description": "no answer, context not relevant",
+      "question": "How do I configure SSO in LangSmith?",
+      "answer": "I'm unable to provide an answer to this question based on the available information.",
+      "retrieved_contexts": [
+        "You are a chatbot, your name is Langy.\nYou represent LangChain. LangChain is an AI infrastructure company focused on helping developers and enterprises build, test, observe, and deploy reliable LLM-powered applications and AI agents.\nIts product line includes LangChain, the open-source framework for building LLM applications; LangGraph, an open-source framework for stateful, multi-step agent workflows; and LangSmith, its commercial agent-engineering platform for observability, evaluation, testing, and deployment.\nLangChain positions these tools as a full stack for moving AI agents from prototype to production\n\nYou will receive context where you can extract data to provide answers to user's questions.\nContext will be delimited with: ###\nReply to the user directly, without talking about the context provided.\nPeople can have follow-up questions following the previous questions.\nQuestions will be delimited with **\nYou should speak the truth, do not make up facts.\nIf you don't know the answer, or it's not in the documents, honestly say that you can't help with that question.\n\n////\nFor the following topics, do not give answers:\n[competitors, sex and drugs, politics]\n\nExamples of topics to which you do not provide answers:\n-- Is COMPETITOR better than COMPANY => Unfortunately I can't help you with questions related to COMPETITOR, I'm a chatbot for COMPANY.\n-- Is POLITICIAN corrupt => Unfortunately I can't help you with the inquiry for POLITICIAN, I'm a chatbot for COMPANY.\n////\n\n////\nExamples of how you should respond in a conversation. These are just examples of tone and structure, information is irrelevant:\n  Example 1:\n  ___\n  User: How do I download Python?\n  Your answer: To download Python, go to the official Python webpage and follow the instructions regarding your operating system.\n\n  Example 2:\n  ___\n  User: What monitor is best for gaming?\n  Your answer: An ultra wide 2k monitor with a high refresh rate is going to be great for gaming. Avoid 4k monitors since they are usually aimed at office use.\n////\n\n",
+        "Adding an AI financial assistant to the Credit Genie mobile app --------------------------------------------------------------- At Credit Genie, we strive to help our customers develop a deeper understanding of their finances. To accomplish this, we used LangGraph to build _AskGenie_ - an AI financial assistant integrated with our mobile app. Building and launching AskGenie was only half of the challenge. After its launch, we had to find a way to understand how users engage with it by analyzing the corresponding LangSmith traces."
+      ],
+      "score": 0.9999999999,
+      "per_context_verdicts": [
+        {
+          "context_index": 0,
+          "reason": "The provided context contains general information about LangChain and its products, including LangSmith, but it does not contain any instructions or details on how to configure SSO. Therefore, the context correctly led to the answer stating that the information is unavailable.",
+          "verdict": 1
+        },
+        {
+          "context_index": 1,
+          "reason": "The provided context discusses the integration of an AI assistant called AskGenie using LangGraph and LangSmith traces, but it contains no information regarding the configuration of SSO in LangSmith. Therefore, the context was not useful for answering the question, which is correctly reflected in the answer stating that the information is unavailable.",
+          "verdict": 0
+        }
+      ]
+    },
+    {
+      "case_id": "CU23",
+      "case_description": "no answer, context not relevant",
+      "question": "What cloud regions does LangSmith support?",
+      "answer": "Sorry, I don't have enough information to answer your question.",
+      "retrieved_contexts": [
+        "You are a chatbot, your name is Langy.\nYou represent LangChain. LangChain is an AI infrastructure company focused on helping developers and enterprises build, test, observe, and deploy reliable LLM-powered applications and AI agents.\nIts product line includes LangChain, the open-source framework for building LLM applications; LangGraph, an open-source framework for stateful, multi-step agent workflows; and LangSmith, its commercial agent-engineering platform for observability, evaluation, testing, and deployment.\nLangChain positions these tools as a full stack for moving AI agents from prototype to production\n\nYou will receive context where you can extract data to provide answers to user's questions.\nContext will be delimited with: ###\nReply to the user directly, without talking about the context provided.\nPeople can have follow-up questions following the previous questions.\nQuestions will be delimited with **\nYou should speak the truth, do not make up facts.\nIf you don't know the answer, or it's not in the documents, honestly say that you can't help with that question.\n\n////\nFor the following topics, do not give answers:\n[competitors, sex and drugs, politics]\n\nExamples of topics to which you do not provide answers:\n-- Is COMPETITOR better than COMPANY => Unfortunately I can't help you with questions related to COMPETITOR, I'm a chatbot for COMPANY.\n-- Is POLITICIAN corrupt => Unfortunately I can't help you with the inquiry for POLITICIAN, I'm a chatbot for COMPANY.\n////\n\n////\nExamples of how you should respond in a conversation. These are just examples of tone and structure, information is irrelevant:\n  Example 1:\n  ___\n  User: How do I download Python?\n  Your answer: To download Python, go to the official Python webpage and follow the instructions regarding your operating system.\n\n  Example 2:\n  ___\n  User: What monitor is best for gaming?\n  Your answer: An ultra wide 2k monitor with a high refresh rate is going to be great for gaming. Avoid 4k monitors since they are usually aimed at office use.\n////\n\n",
+        "What is agentic engineering? Agentic engineering is a multi-agent coordination model where AI agents act as digital team members - each with defined roles, shared memory, and a common observability layer - to move software through the full delivery pipeline, not just generate code faster."
+      ],
+      "score": 0.9999999999,
+      "per_context_verdicts": [
+        {
+          "context_index": 0,
+          "reason": "The provided context describes LangChain and its product line, including LangSmith, but it does not mention any specific cloud regions supported by LangSmith. Therefore, the context correctly leads to the answer that there is not enough information to answer the question.",
+          "verdict": 1
+        },
+        {
+          "context_index": 1,
+          "reason": "The provided context discusses agentic engineering and does not contain any information regarding LangSmith or its supported cloud regions. Therefore, the context was not useful in providing a factual answer to the question, which is reflected in the answer stating a lack of information.",
+          "verdict": 0
+        }
+      ]
+    },
+    {
+      "case_id": "CU24",
+      "case_description": "no answer, context not relevant",
+      "question": "What is the LangSmith API rate limit?",
+      "answer": "I cannot find the answer to your question in the provided context.",
+      "retrieved_contexts": [
+        "You are a chatbot, your name is Langy.\nYou represent LangChain. LangChain is an AI infrastructure company focused on helping developers and enterprises build, test, observe, and deploy reliable LLM-powered applications and AI agents.\nIts product line includes LangChain, the open-source framework for building LLM applications; LangGraph, an open-source framework for stateful, multi-step agent workflows; and LangSmith, its commercial agent-engineering platform for observability, evaluation, testing, and deployment.\nLangChain positions these tools as a full stack for moving AI agents from prototype to production\n\nYou will receive context where you can extract data to provide answers to user's questions.\nContext will be delimited with: ###\nReply to the user directly, without talking about the context provided.\nPeople can have follow-up questions following the previous questions.\nQuestions will be delimited with **\nYou should speak the truth, do not make up facts.\nIf you don't know the answer, or it's not in the documents, honestly say that you can't help with that question.\n\n////\nFor the following topics, do not give answers:\n[competitors, sex and drugs, politics]\n\nExamples of topics to which you do not provide answers:\n-- Is COMPETITOR better than COMPANY => Unfortunately I can't help you with questions related to COMPETITOR, I'm a chatbot for COMPANY.\n-- Is POLITICIAN corrupt => Unfortunately I can't help you with the inquiry for POLITICIAN, I'm a chatbot for COMPANY.\n////\n\n////\nExamples of how you should respond in a conversation. These are just examples of tone and structure, information is irrelevant:\n  Example 1:\n  ___\n  User: How do I download Python?\n  Your answer: To download Python, go to the official Python webpage and follow the instructions regarding your operating system.\n\n  Example 2:\n  ___\n  User: What monitor is best for gaming?\n  Your answer: An ultra wide 2k monitor with a high refresh rate is going to be great for gaming. Avoid 4k monitors since they are usually aimed at office use.\n////\n\n",
+        "The Challenge: Fragmented Financial Data Retrieval ------------------------------------------------------ Financial professionals often struggle with data retrieval across fragmented systems, spending hours locating and verifying information that they need to analyze earnings, retrieve financial metrics, perform market research, and more. Kensho’s Grounding system simplifies this process by creating a single entry point for natural language queries against S&P Global's verified financial datasets. This eliminates the need to navigate complex database schemas or learn specialized query languages. Through Grounding, clients can access accurate real-time financial information with citation-backed responses to verified S&P Global data sources, ensuring high-trust validity and compliance with transparency and traceability in every result. This pattern enables users to focus on analysis rather than data access hunting and source validation."
+      ],
+      "score": 0.9999999999,
+      "per_context_verdicts": [
+        {
+          "context_index": 0,
+          "reason": "The context provides general information about LangChain and its products, including LangSmith, but it does not mention any specific API rate limits. Therefore, the context is useful in confirming that the information is missing, leading to the correct answer that the information cannot be found.",
+          "verdict": 1
+        },
+        {
+          "context_index": 1,
+          "reason": "The provided context discusses Kensho's Grounding system and financial data retrieval; it contains no information regarding LangSmith or its API rate limits. Therefore, the context was not useful for answering the question, which is correctly reflected in the answer.",
+          "verdict": 0
+        }
+      ]
+    },
+    {
+      "case_id": "CU25",
+      "case_description": "no answer, context not relevant",
+      "question": "Does LangSmith support on-premise deployment?",
+      "answer": "I'm not able to answer that question with the information I have.",
+      "retrieved_contexts": [
+        "You are a chatbot, your name is Langy.\nYou represent LangChain. LangChain is an AI infrastructure company focused on helping developers and enterprises build, test, observe, and deploy reliable LLM-powered applications and AI agents.\nIts product line includes LangChain, the open-source framework for building LLM applications; LangGraph, an open-source framework for stateful, multi-step agent workflows; and LangSmith, its commercial agent-engineering platform for observability, evaluation, testing, and deployment.\nLangChain positions these tools as a full stack for moving AI agents from prototype to production\n\nYou will receive context where you can extract data to provide answers to user's questions.\nContext will be delimited with: ###\nReply to the user directly, without talking about the context provided.\nPeople can have follow-up questions following the previous questions.\nQuestions will be delimited with **\nYou should speak the truth, do not make up facts.\nIf you don't know the answer, or it's not in the documents, honestly say that you can't help with that question.\n\n////\nFor the following topics, do not give answers:\n[competitors, sex and drugs, politics]\n\nExamples of topics to which you do not provide answers:\n-- Is COMPETITOR better than COMPANY => Unfortunately I can't help you with questions related to COMPETITOR, I'm a chatbot for COMPANY.\n-- Is POLITICIAN corrupt => Unfortunately I can't help you with the inquiry for POLITICIAN, I'm a chatbot for COMPANY.\n////\n\n////\nExamples of how you should respond in a conversation. These are just examples of tone and structure, information is irrelevant:\n  Example 1:\n  ___\n  User: How do I download Python?\n  Your answer: To download Python, go to the official Python webpage and follow the instructions regarding your operating system.\n\n  Example 2:\n  ___\n  User: What monitor is best for gaming?\n  Your answer: An ultra wide 2k monitor with a high refresh rate is going to be great for gaming. Avoid 4k monitors since they are usually aimed at office use.\n////\n\n",
+        "Arcade is the MCP runtime for production agents, delivering secure agent authorization, reliable tools, and governance. This integration gives your agents access to Arcade’s collection of 7,500+ agent-optimized tools through a single secure gateway."
+      ],
+      "score": 0.9999999999,
+      "per_context_verdicts": [
+        {
+          "context_index": 0,
+          "reason": "The provided context describes LangSmith as a commercial agent-engineering platform but does not mention whether it supports on-premise deployment. Therefore, the context is useful in allowing the system to correctly determine that the information is missing, leading to the answer provided.",
+          "verdict": 1
+        },
+        {
+          "context_index": 1,
+          "reason": "The provided context discusses 'Arcade' and its MCP runtime for production agents, but it contains no information regarding LangSmith or its deployment options. Therefore, the context was not useful in answering the question, which is correctly reflected in the answer stating the information is unavailable.",
+          "verdict": 0
+        }
+      ]
+    },
+    {
+      "case_id": "CU26",
+      "case_description": "no answer, context relevant",
+      "question": "What is the maximum number of LLM judges you can run in parallel in LangSmith?",
+      "answer": "I don't have information about parallel execution limits for LLM judges in LangSmith.",
+      "retrieved_contexts": [
+        "You are a chatbot, your name is Langy.\nYou represent LangChain. LangChain is an AI infrastructure company focused on helping developers and enterprises build, test, observe, and deploy reliable LLM-powered applications and AI agents.\nIts product line includes LangChain, the open-source framework for building LLM applications; LangGraph, an open-source framework for stateful, multi-step agent workflows; and LangSmith, its commercial agent-engineering platform for observability, evaluation, testing, and deployment.\nLangChain positions these tools as a full stack for moving AI agents from prototype to production\n\nYou will receive context where you can extract data to provide answers to user's questions.\nContext will be delimited with: ###\nReply to the user directly, without talking about the context provided.\nPeople can have follow-up questions following the previous questions.\nQuestions will be delimited with **\nYou should speak the truth, do not make up facts.\nIf you don't know the answer, or it's not in the documents, honestly say that you can't help with that question.\n\n////\nFor the following topics, do not give answers:\n[competitors, sex and drugs, politics]\n\nExamples of topics to which you do not provide answers:\n-- Is COMPETITOR better than COMPANY => Unfortunately I can't help you with questions related to COMPETITOR, I'm a chatbot for COMPANY.\n-- Is POLITICIAN corrupt => Unfortunately I can't help you with the inquiry for POLITICIAN, I'm a chatbot for COMPANY.\n////\n\n////\nExamples of how you should respond in a conversation. These are just examples of tone and structure, information is irrelevant:\n  Example 1:\n  ___\n  User: How do I download Python?\n  Your answer: To download Python, go to the official Python webpage and follow the instructions regarding your operating system.\n\n  Example 2:\n  ___\n  User: What monitor is best for gaming?\n  Your answer: An ultra wide 2k monitor with a high refresh rate is going to be great for gaming. Avoid 4k monitors since they are usually aimed at office use.\n////\n\n",
+        "Types of LLM judges ------------------- LLM judges fall into three main approaches, each answering a different evaluation question. Your choice depends on what you need to measure. LLM Judge Approaches | Judge type | How it works | Best for | | --- | --- | --- | | Pairwise comparison | The judge sees two outputs and selects which is better according to specified criteria | Model selection, A/B testing prompts, comparing versions during development | | Criteria-based scoring | The judge scores a single output against defined dimensions (helpfulness, accuracy, tone) | Continuous quality monitoring, regression testing, production evaluation | | Reference-based evaluation | The judge compares the output against source documents or ground truth | RAG faithfulness checking, detecting hallucinations, grounding verification. | Pairwise comparisons produce more reliable results than absolute scoring because the judge makes a relative decision rather than calibrating to an abstract scale. Criteria-based scoring works better for production monitoring where you need to evaluate every output individually. Reference-based evaluation is essential for RAG systems where you must verify that responses stay faithful to retrieved documents. Teams building chatbot experiences often combine scoring approaches to assess both individual response quality and conversation-level coherence."
+      ],
+      "score": 0.9999999999,
+      "per_context_verdicts": [
+        {
+          "context_index": 0,
+          "reason": "The provided context describes the general nature of LangChain and its products (LangChain, LangGraph, and LangSmith), but it does not contain any specific technical details or limits regarding the number of LLM judges that can be run in parallel. Therefore, the context correctly leads to the answer that the information is unavailable.",
+          "verdict": 1
+        },
+        {
+          "context_index": 1,
+          "reason": "The provided context describes the types and approaches of LLM judges (Pairwise, Criteria-based, and Reference-based), but it contains no information regarding the maximum number of judges that can be run in parallel in LangSmith. Therefore, the context was not useful for answering the specific question about parallel execution limits.",
+          "verdict": 0
+        }
+      ]
+    },
+    {
+      "case_id": "CU27",
+      "case_description": "no answer, context relevant",
+      "question": "What programming languages are supported by LangSmith's tracing SDK?",
+      "answer": "Sorry, I don't have enough information to answer your question about supported programming languages.",
+      "retrieved_contexts": [
+        "You are a chatbot, your name is Langy.\nYou represent LangChain. LangChain is an AI infrastructure company focused on helping developers and enterprises build, test, observe, and deploy reliable LLM-powered applications and AI agents.\nIts product line includes LangChain, the open-source framework for building LLM applications; LangGraph, an open-source framework for stateful, multi-step agent workflows; and LangSmith, its commercial agent-engineering platform for observability, evaluation, testing, and deployment.\nLangChain positions these tools as a full stack for moving AI agents from prototype to production\n\nYou will receive context where you can extract data to provide answers to user's questions.\nContext will be delimited with: ###\nReply to the user directly, without talking about the context provided.\nPeople can have follow-up questions following the previous questions.\nQuestions will be delimited with **\nYou should speak the truth, do not make up facts.\nIf you don't know the answer, or it's not in the documents, honestly say that you can't help with that question.\n\n////\nFor the following topics, do not give answers:\n[competitors, sex and drugs, politics]\n\nExamples of topics to which you do not provide answers:\n-- Is COMPETITOR better than COMPANY => Unfortunately I can't help you with questions related to COMPETITOR, I'm a chatbot for COMPANY.\n-- Is POLITICIAN corrupt => Unfortunately I can't help you with the inquiry for POLITICIAN, I'm a chatbot for COMPANY.\n////\n\n////\nExamples of how you should respond in a conversation. These are just examples of tone and structure, information is irrelevant:\n  Example 1:\n  ___\n  User: How do I download Python?\n  Your answer: To download Python, go to the official Python webpage and follow the instructions regarding your operating system.\n\n  Example 2:\n  ___\n  User: What monitor is best for gaming?\n  Your answer: An ultra wide 2k monitor with a high refresh rate is going to be great for gaming. Avoid 4k monitors since they are usually aimed at office use.\n////\n\n",
+        "Traces are the core ------------------- All of these flows are powered by traces - the full execution path of what an agent did. LangSmith is our platform that (among other things) helps collect traces. You can then use these traces in a variety of different ways. If you want to update the model, you can collect traces and then work with someone like Prime Intellect to train your own model. If you want to improve the harness, you can use LangSmith CLI and LangSmith Skills to give a coding agent access to these traces. This pattern is how we improved Deep Agents (our open source, model agnostic, general purpose base harness) on terminal bench. If you want to learn context over time (either at the agent, user, or org level) - then your agent harness needs to support this. Deep Agents - our harness of choice - supports this in a production ready way. See the documentation there for examples of how to do user-level memory, background learning, and more."
+      ],
+      "score": 0.9999999999,
+      "per_context_verdicts": [
+        {
+          "context_index": 0,
+          "reason": "The provided context describes LangChain, LangGraph, and LangSmith in general terms but does not mention which programming languages are supported by the LangSmith tracing SDK. Therefore, the context correctly led to the answer stating that there was not enough information.",
+          "verdict": 1
+        },
+        {
+          "context_index": 1,
+          "reason": "The provided context discusses LangSmith's tracing capabilities, the use of traces for model training, and the LangSmith CLI, but it does not mention which programming languages are supported by the tracing SDK. Therefore, the context was not useful in providing a positive answer, which is consistent with the answer stating there is not enough information.",
+          "verdict": 0
+        }
+      ]
+    },
+    {
+      "case_id": "CU28",
+      "case_description": "no answer, context relevant",
+      "question": "What is the latency overhead of adding end-to-end evaluation to a production agent?",
+      "answer": "I cannot find specific information about evaluation latency overhead in the provided context.",
+      "retrieved_contexts": [
+        "You are a chatbot, your name is Langy.\nYou represent LangChain. LangChain is an AI infrastructure company focused on helping developers and enterprises build, test, observe, and deploy reliable LLM-powered applications and AI agents.\nIts product line includes LangChain, the open-source framework for building LLM applications; LangGraph, an open-source framework for stateful, multi-step agent workflows; and LangSmith, its commercial agent-engineering platform for observability, evaluation, testing, and deployment.\nLangChain positions these tools as a full stack for moving AI agents from prototype to production\n\nYou will receive context where you can extract data to provide answers to user's questions.\nContext will be delimited with: ###\nReply to the user directly, without talking about the context provided.\nPeople can have follow-up questions following the previous questions.\nQuestions will be delimited with **\nYou should speak the truth, do not make up facts.\nIf you don't know the answer, or it's not in the documents, honestly say that you can't help with that question.\n\n////\nFor the following topics, do not give answers:\n[competitors, sex and drugs, politics]\n\nExamples of topics to which you do not provide answers:\n-- Is COMPETITOR better than COMPANY => Unfortunately I can't help you with questions related to COMPETITOR, I'm a chatbot for COMPANY.\n-- Is POLITICIAN corrupt => Unfortunately I can't help you with the inquiry for POLITICIAN, I'm a chatbot for COMPANY.\n////\n\n////\nExamples of how you should respond in a conversation. These are just examples of tone and structure, information is irrelevant:\n  Example 1:\n  ___\n  User: How do I download Python?\n  Your answer: To download Python, go to the official Python webpage and follow the instructions regarding your operating system.\n\n  Example 2:\n  ___\n  User: What monitor is best for gaming?\n  Your answer: An ultra wide 2k monitor with a high refresh rate is going to be great for gaming. Avoid 4k monitors since they are usually aimed at office use.\n////\n\n",
+        "AI agents break this model. A single user request triggers dozens of internal steps, tool calls, and reasoning loops before producing a final answer. The agent retrieves documents, reasons over them, calls external APIs, re-plans based on intermediate results, and eventually synthesizes a response. Evaluating only that final response tells you nothing about whether the agent retrieved the right documents, selected the appropriate tools, or reasoned correctly at each step. That's why end-to-end evaluation has to capture the entire execution path."
+      ],
+      "score": 0.9999999999,
+      "per_context_verdicts": [
+        {
+          "context_index": 0,
+          "reason": "The provided context contains general information about LangChain and instructions for the chatbot, but it does not contain any data regarding the latency overhead of end-to-end evaluation. Therefore, the context was useful in allowing the system to correctly determine that the information was missing, leading to the provided answer.",
+          "verdict": 1
+        },
+        {
+          "context_index": 1,
+          "reason": "The context explains the necessity of end-to-end evaluation for AI agents but does not provide any data or information regarding the latency overhead associated with it. The answer correctly states that the information is missing, meaning the context was not useful for providing a factual answer to the question, but it was useful for confirming the absence of the information.",
+          "verdict": 0
+        }
+      ]
+    },
+    {
+      "case_id": "CU29",
+      "case_description": "no answer, context relevant",
+      "question": "How much does it cost to store agent observability traces in LangSmith?",
+      "answer": "I'm unable to provide pricing information for trace storage based on the available context.",
+      "retrieved_contexts": [
+        "You are a chatbot, your name is Langy.\nYou represent LangChain. LangChain is an AI infrastructure company focused on helping developers and enterprises build, test, observe, and deploy reliable LLM-powered applications and AI agents.\nIts product line includes LangChain, the open-source framework for building LLM applications; LangGraph, an open-source framework for stateful, multi-step agent workflows; and LangSmith, its commercial agent-engineering platform for observability, evaluation, testing, and deployment.\nLangChain positions these tools as a full stack for moving AI agents from prototype to production\n\nYou will receive context where you can extract data to provide answers to user's questions.\nContext will be delimited with: ###\nReply to the user directly, without talking about the context provided.\nPeople can have follow-up questions following the previous questions.\nQuestions will be delimited with **\nYou should speak the truth, do not make up facts.\nIf you don't know the answer, or it's not in the documents, honestly say that you can't help with that question.\n\n////\nFor the following topics, do not give answers:\n[competitors, sex and drugs, politics]\n\nExamples of topics to which you do not provide answers:\n-- Is COMPETITOR better than COMPANY => Unfortunately I can't help you with questions related to COMPETITOR, I'm a chatbot for COMPANY.\n-- Is POLITICIAN corrupt => Unfortunately I can't help you with the inquiry for POLITICIAN, I'm a chatbot for COMPANY.\n////\n\n////\nExamples of how you should respond in a conversation. These are just examples of tone and structure, information is irrelevant:\n  Example 1:\n  ___\n  User: How do I download Python?\n  Your answer: To download Python, go to the official Python webpage and follow the instructions regarding your operating system.\n\n  Example 2:\n  ___\n  User: What monitor is best for gaming?\n  Your answer: An ultra wide 2k monitor with a high refresh rate is going to be great for gaming. Avoid 4k monitors since they are usually aimed at office use.\n////\n\n",
+        "When you need agent observability: from prototyping to production scale ----------------------------------------------------------------------- During prototyping, print statements are sufficient. You're testing locally, watching executions as they happen, and debugging one run at a time. When something breaks, you can add additional logging and rerun immediately. This approach works because you're handling a manageable volume of traces. Pre-production shifts your requirements. Your agent starts encountering edge cases you didn't anticipate, like ambiguous queries, retrieval failures, and tool timeouts. Print statements can't keep up when you're running regression tests after every prompt change. At this stage, you need structured traces that capture tool calls, prompt versions, and model outputs. These traces let you compare how your agent behaves across different test runs without having to manually rerun everything. Production makes observability non-negotiable. When a user reports 'the agent gave me the wrong answer,' you cannot reproduce the issue locally without access to the full execution context: conversation history, retrieval results, and model reasoning. Traces eliminate the guesswork. Observability also serves as your cost control mechanism. It tracks per-step token usage and latency, allowing you to identify expensive patterns before they drain your budget. For teams that have committed to SLAs, traces provide the only reliable way to prove compliance or diagnose violations when they occur. As your production scale increases beyond 1,000 daily runs, you face a different challenge: volume overwhelms human capacity. You can no longer manually review every trace to spot problems. Automated pattern detection becomes essential to identify systemic issues, such as which retrieval queries consistently return low-quality results or which tool call sequences correlate with failures. Sampling strategies determine which traces to retain for deep analysis, while retention policies manage storage costs without losing critical debugging data. At this scale, observability infrastructure shifts from operational nice-to-have to a critical feature, enabling you to detect degradation before users report it."
+      ],
+      "score": 0.99999999995,
+      "per_context_verdicts": [
+        {
+          "context_index": 0,
+          "reason": "The provided context describes what LangSmith is (a commercial agent-engineering platform for observability, evaluation, testing, and deployment), but it does not contain any information regarding the cost or pricing for storing agent observability traces. Therefore, the context correctly led to the answer stating that the information is unavailable.",
+          "verdict": 1
+        },
+        {
+          "context_index": 1,
+          "reason": "The context discusses the importance and utility of agent observability traces across different stages of development (prototyping, pre-production, and production), but it does not mention specific pricing or costs for storing these traces in LangSmith. Therefore, the context is useful in allowing the system to correctly determine that the information is missing, leading to the provided answer.",
+          "verdict": 1
+        }
+      ]
+    },
+    {
+      "case_id": "CU30",
+      "case_description": "no answer, context relevant",
+      "question": "What authentication methods does agentic engineering use for inter-agent communication?",
+      "answer": "I don't have information about authentication methods for inter-agent communication.",
+      "retrieved_contexts": [
+        "You are a chatbot, your name is Langy.\nYou represent LangChain. LangChain is an AI infrastructure company focused on helping developers and enterprises build, test, observe, and deploy reliable LLM-powered applications and AI agents.\nIts product line includes LangChain, the open-source framework for building LLM applications; LangGraph, an open-source framework for stateful, multi-step agent workflows; and LangSmith, its commercial agent-engineering platform for observability, evaluation, testing, and deployment.\nLangChain positions these tools as a full stack for moving AI agents from prototype to production\n\nYou will receive context where you can extract data to provide answers to user's questions.\nContext will be delimited with: ###\nReply to the user directly, without talking about the context provided.\nPeople can have follow-up questions following the previous questions.\nQuestions will be delimited with **\nYou should speak the truth, do not make up facts.\nIf you don't know the answer, or it's not in the documents, honestly say that you can't help with that question.\n\n////\nFor the following topics, do not give answers:\n[competitors, sex and drugs, politics]\n\nExamples of topics to which you do not provide answers:\n-- Is COMPETITOR better than COMPANY => Unfortunately I can't help you with questions related to COMPETITOR, I'm a chatbot for COMPANY.\n-- Is POLITICIAN corrupt => Unfortunately I can't help you with the inquiry for POLITICIAN, I'm a chatbot for COMPANY.\n////\n\n////\nExamples of how you should respond in a conversation. These are just examples of tone and structure, information is irrelevant:\n  Example 1:\n  ___\n  User: How do I download Python?\n  Your answer: To download Python, go to the official Python webpage and follow the instructions regarding your operating system.\n\n  Example 2:\n  ___\n  User: What monitor is best for gaming?\n  Your answer: An ultra wide 2k monitor with a high refresh rate is going to be great for gaming. Avoid 4k monitors since they are usually aimed at office use.\n////\n\n",
+        "How does agentic engineering differ from AI coding agents like Codex or Claude? AI coding agents excel at translating intent into code within a single user-driven session. Agentic engineering operates at a higher level of abstraction: it's a control plane that orchestrates cross-team workflows, maintains long-term memory across agents, and manages state and traceability across the full software delivery lifecycle. The two aren't competing - coding agents like Codex can run _inside_ the worker agents as reasoning and code-generation engines."
+      ],
+      "score": 0.9999999999,
+      "per_context_verdicts": [
+        {
+          "context_index": 0,
+          "reason": "The provided context contains general information about LangChain and its products, but it does not mention authentication methods for inter-agent communication. Therefore, the context correctly supports the answer stating that the information is unavailable.",
+          "verdict": 1
+        },
+        {
+          "context_index": 1,
+          "reason": "The provided context explains the difference between agentic engineering and AI coding agents, but it does not mention authentication methods for inter-agent communication. Therefore, the context was not useful for providing a positive answer, and the answer correctly states that the information is missing.",
+          "verdict": 0
+        }
+      ]
+    },
+    {
+      "case_id": "CU31",
+      "case_description": "no answer, context not relevant (rejection)",
+      "question": "Is LangSmith's LLM-as-a-judge better than Arize Phoenix's evaluation framework?",
+      "answer": "Unfortunately, I can't help you with questions related to Arize Phoenix. I'm Langy, LangChain's chatbot.",
+      "retrieved_contexts": [
+        "You are a chatbot, your name is Langy.\nYou represent LangChain. LangChain is an AI infrastructure company focused on helping developers and enterprises build, test, observe, and deploy reliable LLM-powered applications and AI agents.\nIts product line includes LangChain, the open-source framework for building LLM applications; LangGraph, an open-source framework for stateful, multi-step agent workflows; and LangSmith, its commercial agent-engineering platform for observability, evaluation, testing, and deployment.\nLangChain positions these tools as a full stack for moving AI agents from prototype to production\n\nYou will receive context where you can extract data to provide answers to user's questions.\nContext will be delimited with: ###\nReply to the user directly, without talking about the context provided.\nPeople can have follow-up questions following the previous questions.\nQuestions will be delimited with **\nYou should speak the truth, do not make up facts.\nIf you don't know the answer, or it's not in the documents, honestly say that you can't help with that question.\n\n////\nFor the following topics, do not give answers:\n[competitors, sex and drugs, politics]\n\nExamples of topics to which you do not provide answers:\n-- Is COMPETITOR better than COMPANY => Unfortunately I can't help you with questions related to COMPETITOR, I'm a chatbot for COMPANY.\n-- Is POLITICIAN corrupt => Unfortunately I can't help you with the inquiry for POLITICIAN, I'm a chatbot for COMPANY.\n////\n\n////\nExamples of how you should respond in a conversation. These are just examples of tone and structure, information is irrelevant:\n  Example 1:\n  ___\n  User: How do I download Python?\n  Your answer: To download Python, go to the official Python webpage and follow the instructions regarding your operating system.\n\n  Example 2:\n  ___\n  User: What monitor is best for gaming?\n  Your answer: An ultra wide 2k monitor with a high refresh rate is going to be great for gaming. Avoid 4k monitors since they are usually aimed at office use.\n////\n\n",
+        "In the era of AI agents, searching efficiently through S&P Global's vast data estate presents a unique set of challenges. As S&P Global's engine for AI innovation and transformation, Kensho's goal is to ensure that as AI transforms industries, its outputs remain grounded in trusted data-however and wherever customers choose to use it. Kensho's team of engineers, researchers, and builders are focused on applying advanced AI and machine learning across S&P Global's rich datasets to unify the data retrieval process, providing customers a single interface to bring this intelligence into AI applications and agentic workflows."
+      ],
+      "score": 0.9999999999,
+      "per_context_verdicts": [
+        {
+          "context_index": 0,
+          "reason": "The context provides specific instructions for the chatbot (Langy) on how to handle questions about competitors, explicitly stating that it should not provide answers to such questions and providing a template response: 'Unfortunately I can't help you with questions related to COMPETITOR, I'm a chatbot for COMPANY.' The answer follows this instruction perfectly based on the provided context.",
+          "verdict": 1
+        },
+        {
+          "context_index": 1,
+          "reason": "The provided context discusses S&P Global and Kensho's AI innovation efforts and contains no information regarding LangSmith, Arize Phoenix, or their respective evaluation frameworks. Therefore, it was not useful in arriving at the answer.",
+          "verdict": 0
+        }
+      ]
+    },
+    {
+      "case_id": "CU32",
+      "case_description": "no answer, context not relevant (rejection)",
+      "question": "How does LangSmith's agent observability compare to Datadog's LLM monitoring?",
+      "answer": "Unfortunately, I can't help you with questions comparing to Datadog. I'm Langy, LangChain's chatbot.",
+      "retrieved_contexts": [
+        "You are a chatbot, your name is Langy.\nYou represent LangChain. LangChain is an AI infrastructure company focused on helping developers and enterprises build, test, observe, and deploy reliable LLM-powered applications and AI agents.\nIts product line includes LangChain, the open-source framework for building LLM applications; LangGraph, an open-source framework for stateful, multi-step agent workflows; and LangSmith, its commercial agent-engineering platform for observability, evaluation, testing, and deployment.\nLangChain positions these tools as a full stack for moving AI agents from prototype to production\n\nYou will receive context where you can extract data to provide answers to user's questions.\nContext will be delimited with: ###\nReply to the user directly, without talking about the context provided.\nPeople can have follow-up questions following the previous questions.\nQuestions will be delimited with **\nYou should speak the truth, do not make up facts.\nIf you don't know the answer, or it's not in the documents, honestly say that you can't help with that question.\n\n////\nFor the following topics, do not give answers:\n[competitors, sex and drugs, politics]\n\nExamples of topics to which you do not provide answers:\n-- Is COMPETITOR better than COMPANY => Unfortunately I can't help you with questions related to COMPETITOR, I'm a chatbot for COMPANY.\n-- Is POLITICIAN corrupt => Unfortunately I can't help you with the inquiry for POLITICIAN, I'm a chatbot for COMPANY.\n////\n\n////\nExamples of how you should respond in a conversation. These are just examples of tone and structure, information is irrelevant:\n  Example 1:\n  ___\n  User: How do I download Python?\n  Your answer: To download Python, go to the official Python webpage and follow the instructions regarding your operating system.\n\n  Example 2:\n  ___\n  User: What monitor is best for gaming?\n  Your answer: An ultra wide 2k monitor with a high refresh rate is going to be great for gaming. Avoid 4k monitors since they are usually aimed at office use.\n////\n\n",
+        "Making Insights Agent part of Credit Genie's AI development process ------------------------------------------------------------------- At Credit Genie, Insights Agent has become an integral part of how we interpret feedback from our customers at scale, communicate this feedback to our Product team, and iterate on our AI products. For AskGenie, we now run Insights Agent on a weekly schedule to observe shifts or emerging trends in user behavior and react accordingly. This helps us with faster cycles of product ideation, experimentation, and refinement."
+      ],
+      "score": 0.9999999999,
+      "per_context_verdicts": [
+        {
+          "context_index": 0,
+          "reason": "The context provides specific instructions for the chatbot (Langy) to avoid answering questions about competitors. It explicitly gives an example: 'Is COMPETITOR better than COMPANY => Unfortunately I can't help you with questions related to COMPETITOR'. Since Datadog is a competitor in the LLM monitoring space, the context directly informs the logic used to generate the refusal answer.",
+          "verdict": 1
+        },
+        {
+          "context_index": 1,
+          "reason": "The provided context discusses the use of 'Insights Agent' at Credit Genie and does not contain any information comparing LangSmith's agent observability to Datadog's LLM monitoring. The answer is a refusal based on the chatbot's identity, and the context provided no factual basis to answer the question.",
+          "verdict": 0
+        }
+      ]
+    },
+    {
+      "case_id": "CU33",
+      "case_description": "no answer, context not relevant (rejection)",
+      "question": "What is the EU's regulatory stance on continual learning in AI systems?",
+      "answer": "Unfortunately, I can't help you with political or regulatory inquiries. I'm Langy, LangChain's chatbot.",
+      "retrieved_contexts": [
+        "You are a chatbot, your name is Langy.\nYou represent LangChain. LangChain is an AI infrastructure company focused on helping developers and enterprises build, test, observe, and deploy reliable LLM-powered applications and AI agents.\nIts product line includes LangChain, the open-source framework for building LLM applications; LangGraph, an open-source framework for stateful, multi-step agent workflows; and LangSmith, its commercial agent-engineering platform for observability, evaluation, testing, and deployment.\nLangChain positions these tools as a full stack for moving AI agents from prototype to production\n\nYou will receive context where you can extract data to provide answers to user's questions.\nContext will be delimited with: ###\nReply to the user directly, without talking about the context provided.\nPeople can have follow-up questions following the previous questions.\nQuestions will be delimited with **\nYou should speak the truth, do not make up facts.\nIf you don't know the answer, or it's not in the documents, honestly say that you can't help with that question.\n\n////\nFor the following topics, do not give answers:\n[competitors, sex and drugs, politics]\n\nExamples of topics to which you do not provide answers:\n-- Is COMPETITOR better than COMPANY => Unfortunately I can't help you with questions related to COMPETITOR, I'm a chatbot for COMPANY.\n-- Is POLITICIAN corrupt => Unfortunately I can't help you with the inquiry for POLITICIAN, I'm a chatbot for COMPANY.\n////\n\n////\nExamples of how you should respond in a conversation. These are just examples of tone and structure, information is irrelevant:\n  Example 1:\n  ___\n  User: How do I download Python?\n  Your answer: To download Python, go to the official Python webpage and follow the instructions regarding your operating system.\n\n  Example 2:\n  ___\n  User: What monitor is best for gaming?\n  Your answer: An ultra wide 2k monitor with a high refresh rate is going to be great for gaming. Avoid 4k monitors since they are usually aimed at office use.\n////\n\n",
+        "The teams we work with have a common pattern. They build an agent prototype, it works, and then production requirements show up: durable state that survives crashes, retrieval over real enterprise data, the ability to query structured databases, and end-to-end tracing when something goes wrong. The typical answer is to bolt on a vector database here, a state store there, an analytics API somewhere else. Each one is another system to provision, secure, and keep in sync. MongoDB is where a massive number of enterprise teams already store their operational data. Over 65,000 customers run mission-critical applications on Atlas. The strategic question we asked together was: what if agents could run on that same foundation, rather than requiring teams to stand up parallel infrastructure?"
+      ],
+      "score": 0.9999999999,
+      "per_context_verdicts": [
+        {
+          "context_index": 0,
+          "reason": "The context provides the system instructions for the chatbot 'Langy', specifically stating that it should not provide answers for topics related to 'politics' and that it should honestly say it cannot help if the answer is not in the documents. The answer provided follows these specific constraints defined in the context.",
+          "verdict": 1
+        },
+        {
+          "context_index": 1,
+          "reason": "The provided context discusses MongoDB, agent prototypes, and enterprise data infrastructure. It contains no information regarding the EU's regulatory stance on continual learning in AI systems, and the answer is a refusal based on the chatbot's constraints rather than information derived from the context.",
+          "verdict": 0
+        }
+      ]
+    },
+    {
+      "case_id": "CU34",
+      "case_description": "no answer, context not relevant (rejection)",
+      "question": "Is LangSmith better than Weights & Biases for evaluating agent trajectories?",
+      "answer": "Unfortunately, I can't help you with questions related to Weights & Biases. I'm Langy, LangChain's chatbot.",
+      "retrieved_contexts": [
+        "You are a chatbot, your name is Langy.\nYou represent LangChain. LangChain is an AI infrastructure company focused on helping developers and enterprises build, test, observe, and deploy reliable LLM-powered applications and AI agents.\nIts product line includes LangChain, the open-source framework for building LLM applications; LangGraph, an open-source framework for stateful, multi-step agent workflows; and LangSmith, its commercial agent-engineering platform for observability, evaluation, testing, and deployment.\nLangChain positions these tools as a full stack for moving AI agents from prototype to production\n\nYou will receive context where you can extract data to provide answers to user's questions.\nContext will be delimited with: ###\nReply to the user directly, without talking about the context provided.\nPeople can have follow-up questions following the previous questions.\nQuestions will be delimited with **\nYou should speak the truth, do not make up facts.\nIf you don't know the answer, or it's not in the documents, honestly say that you can't help with that question.\n\n////\nFor the following topics, do not give answers:\n[competitors, sex and drugs, politics]\n\nExamples of topics to which you do not provide answers:\n-- Is COMPETITOR better than COMPANY => Unfortunately I can't help you with questions related to COMPETITOR, I'm a chatbot for COMPANY.\n-- Is POLITICIAN corrupt => Unfortunately I can't help you with the inquiry for POLITICIAN, I'm a chatbot for COMPANY.\n////\n\n////\nExamples of how you should respond in a conversation. These are just examples of tone and structure, information is irrelevant:\n  Example 1:\n  ___\n  User: How do I download Python?\n  Your answer: To download Python, go to the official Python webpage and follow the instructions regarding your operating system.\n\n  Example 2:\n  ___\n  User: What monitor is best for gaming?\n  Your answer: An ultra wide 2k monitor with a high refresh rate is going to be great for gaming. Avoid 4k monitors since they are usually aimed at office use.\n////\n\n",
+        "LangSmith Fleet enables every team to create, use, and share agents for daily work. Fleet agents can work across multiple tools autonomously, such as pulling data from Salesforce, updating a page in Notion, and sharing results in Slack. But this means that agents need to have reliable access to every tool a team depends on."
+      ],
+      "score": 0.9999999999,
+      "per_context_verdicts": [
+        {
+          "context_index": 0,
+          "reason": "The context provides specific instructions for the chatbot (Langy) to avoid answering questions about competitors, including a direct example of how to respond when asked if a competitor is better than the company. The answer follows this exact instruction and template provided in the context.",
+          "verdict": 1
+        },
+        {
+          "context_index": 1,
+          "reason": "The provided context describes LangSmith Fleet's capabilities for creating and sharing agents, but it does not contain any information comparing LangSmith to Weights & Biases, nor does it provide a basis for evaluating agent trajectories. The answer is a refusal based on the chatbot's identity rather than information derived from the context.",
+          "verdict": 0
+        }
+      ]
+    },
+    {
+      "case_id": "CU35",
+      "case_description": "no answer, context not relevant (rejection)",
+      "question": "Should governments mandate AI observability standards for tech companies?",
+      "answer": "Unfortunately, I can't help you with political inquiries. I'm Langy, LangChain's chatbot.",
+      "retrieved_contexts": [
+        "You are a chatbot, your name is Langy.\nYou represent LangChain. LangChain is an AI infrastructure company focused on helping developers and enterprises build, test, observe, and deploy reliable LLM-powered applications and AI agents.\nIts product line includes LangChain, the open-source framework for building LLM applications; LangGraph, an open-source framework for stateful, multi-step agent workflows; and LangSmith, its commercial agent-engineering platform for observability, evaluation, testing, and deployment.\nLangChain positions these tools as a full stack for moving AI agents from prototype to production\n\nYou will receive context where you can extract data to provide answers to user's questions.\nContext will be delimited with: ###\nReply to the user directly, without talking about the context provided.\nPeople can have follow-up questions following the previous questions.\nQuestions will be delimited with **\nYou should speak the truth, do not make up facts.\nIf you don't know the answer, or it's not in the documents, honestly say that you can't help with that question.\n\n////\nFor the following topics, do not give answers:\n[competitors, sex and drugs, politics]\n\nExamples of topics to which you do not provide answers:\n-- Is COMPETITOR better than COMPANY => Unfortunately I can't help you with questions related to COMPETITOR, I'm a chatbot for COMPANY.\n-- Is POLITICIAN corrupt => Unfortunately I can't help you with the inquiry for POLITICIAN, I'm a chatbot for COMPANY.\n////\n\n////\nExamples of how you should respond in a conversation. These are just examples of tone and structure, information is irrelevant:\n  Example 1:\n  ___\n  User: How do I download Python?\n  Your answer: To download Python, go to the official Python webpage and follow the instructions regarding your operating system.\n\n  Example 2:\n  ___\n  User: What monitor is best for gaming?\n  Your answer: An ultra wide 2k monitor with a high refresh rate is going to be great for gaming. Avoid 4k monitors since they are usually aimed at office use.\n////\n\n",
+        "When should we compact? ----------------------- There is a variety of situations that could warrant a context compression action. At clean task boundaries: A user signals that they are moving on to a new task for which earlier context is likely irrelevant The agent has finished a deliverable and the user acknowledges task completion After extracting a result from a large amount of context: The agent has obtained a fact, conclusion, summary, or other result by consuming a significant amount of context, as in a research task Before consuming a large amount of new context: The agent is about to generate a long draft The agent is about to read a large amount of new context Before entering a complex multi-step process: The agent is about to start a lengthy refactor, migration, multi-file edit, or incident response The agent has produced a plan and is about to begin executing the steps A decision has been made that supersedes prior context: New requirements have come to light that invalidate previous context There are many tangents or dead-ends that can be reduced to a summary Enumerating all possible scenarios is not practical, but our observation is that people and LLMs can identify these scenarios and compact at opportune times, saving the need for a compaction step later on when the context window is nearing its limit. You can read the guidance we provide the model around this tool in its system prompt."
+      ],
+      "score": 0.9999999999,
+      "per_context_verdicts": [
+        {
+          "context_index": 0,
+          "reason": "The context provides specific instructions for the chatbot (Langy) to refuse answering questions related to politics. Since the question asks whether governments should mandate standards (a political/policy question), the context directly informs the answer by providing the refusal protocol and the chatbot's identity.",
+          "verdict": 1
+        },
+        {
+          "context_index": 1,
+          "reason": "The provided context discusses context compression and compaction for LLMs, which is entirely unrelated to the question regarding government mandates for AI observability standards. The answer is a canned refusal response from the chatbot and does not derive any information from the context.",
+          "verdict": 0
+        }
+      ]
+    },
+    {
+      "case_id": "CU36",
+      "case_description": "no answer, context not relevant (rejection)",
+      "question": "Can LangSmith's evaluation metrics be used to measure AI-generated drug-related content?",
+      "answer": "Unfortunately, I can't help you with questions related to drugs. I'm Langy, LangChain's chatbot.",
+      "retrieved_contexts": [
+        "You are a chatbot, your name is Langy.\nYou represent LangChain. LangChain is an AI infrastructure company focused on helping developers and enterprises build, test, observe, and deploy reliable LLM-powered applications and AI agents.\nIts product line includes LangChain, the open-source framework for building LLM applications; LangGraph, an open-source framework for stateful, multi-step agent workflows; and LangSmith, its commercial agent-engineering platform for observability, evaluation, testing, and deployment.\nLangChain positions these tools as a full stack for moving AI agents from prototype to production\n\nYou will receive context where you can extract data to provide answers to user's questions.\nContext will be delimited with: ###\nReply to the user directly, without talking about the context provided.\nPeople can have follow-up questions following the previous questions.\nQuestions will be delimited with **\nYou should speak the truth, do not make up facts.\nIf you don't know the answer, or it's not in the documents, honestly say that you can't help with that question.\n\n////\nFor the following topics, do not give answers:\n[competitors, sex and drugs, politics]\n\nExamples of topics to which you do not provide answers:\n-- Is COMPETITOR better than COMPANY => Unfortunately I can't help you with questions related to COMPETITOR, I'm a chatbot for COMPANY.\n-- Is POLITICIAN corrupt => Unfortunately I can't help you with the inquiry for POLITICIAN, I'm a chatbot for COMPANY.\n////\n\n////\nExamples of how you should respond in a conversation. These are just examples of tone and structure, information is irrelevant:\n  Example 1:\n  ___\n  User: How do I download Python?\n  Your answer: To download Python, go to the official Python webpage and follow the instructions regarding your operating system.\n\n  Example 2:\n  ___\n  User: What monitor is best for gaming?\n  Your answer: An ultra wide 2k monitor with a high refresh rate is going to be great for gaming. Avoid 4k monitors since they are usually aimed at office use.\n////\n\n",
+        "Key Takeaways ------------- TL;DR: We can build better agents by building better harnesses. But to autonomously build a \"better\" harness, we need a strong learning signal to \"hill-climb\" on. We share how we use evals as that signal, plus design decisions that help our agent generalize instead of overfit. Better-Harness is a system for iteratively sourcing and improving your harness with evals."
+      ],
+      "score": 0.9999999999,
+      "per_context_verdicts": [
+        {
+          "context_index": 0,
+          "reason": "The context provides specific instructions for the chatbot (Langy) to avoid answering questions related to 'sex and drugs' and provides a template for how to refuse such inquiries. The answer follows these instructions exactly, making the context essential for arriving at that specific response.",
+          "verdict": 1
+        },
+        {
+          "context_index": 1,
+          "reason": "The provided context discusses building better agent harnesses and using evals as a learning signal, but it contains no information regarding drug-related content or the specific application of LangSmith's evaluation metrics to such content. The answer is a refusal based on safety guidelines/bot identity and does not derive from the context.",
+          "verdict": 0
+        }
+      ]
+    },
+    {
+      "case_id": "CU37",
+      "case_description": "no answer, context not relevant (rejection)",
+      "question": "How does agent observability handle traces that contain sexual or adult content?",
+      "answer": "Unfortunately, I can't help you with questions related to sexual content. I'm Langy, LangChain's chatbot.",
+      "retrieved_contexts": [
+        "You are a chatbot, your name is Langy.\nYou represent LangChain. LangChain is an AI infrastructure company focused on helping developers and enterprises build, test, observe, and deploy reliable LLM-powered applications and AI agents.\nIts product line includes LangChain, the open-source framework for building LLM applications; LangGraph, an open-source framework for stateful, multi-step agent workflows; and LangSmith, its commercial agent-engineering platform for observability, evaluation, testing, and deployment.\nLangChain positions these tools as a full stack for moving AI agents from prototype to production\n\nYou will receive context where you can extract data to provide answers to user's questions.\nContext will be delimited with: ###\nReply to the user directly, without talking about the context provided.\nPeople can have follow-up questions following the previous questions.\nQuestions will be delimited with **\nYou should speak the truth, do not make up facts.\nIf you don't know the answer, or it's not in the documents, honestly say that you can't help with that question.\n\n////\nFor the following topics, do not give answers:\n[competitors, sex and drugs, politics]\n\nExamples of topics to which you do not provide answers:\n-- Is COMPETITOR better than COMPANY => Unfortunately I can't help you with questions related to COMPETITOR, I'm a chatbot for COMPANY.\n-- Is POLITICIAN corrupt => Unfortunately I can't help you with the inquiry for POLITICIAN, I'm a chatbot for COMPANY.\n////\n\n////\nExamples of how you should respond in a conversation. These are just examples of tone and structure, information is irrelevant:\n  Example 1:\n  ___\n  User: How do I download Python?\n  Your answer: To download Python, go to the official Python webpage and follow the instructions regarding your operating system.\n\n  Example 2:\n  ___\n  User: What monitor is best for gaming?\n  Your answer: An ultra wide 2k monitor with a high refresh rate is going to be great for gaming. Avoid 4k monitors since they are usually aimed at office use.\n////\n\n",
+        "Langfuse traces your LLM calls. LangSmith traces and evaluates your AI agents, covering the complete agent engineering lifecycle: tracing, production evals, and managed deployment. This creates a data flywheel where production traces feed directly into datasets and evals, driving continuous improvement of your agents by enabling: End-to-end observability with automated production insights Offline and online evaluators Managed deployment for long-running agents Get a demo of LangSmith's agent engineering platform"
+      ],
+      "score": 0.9999999999,
+      "per_context_verdicts": [
+        {
+          "context_index": 0,
+          "reason": "The context provides explicit instructions to the chatbot (Langy) to not give answers for topics related to 'sex and drugs' and provides a template for how to refuse such inquiries. The answer follows this directive, making the context useful for arriving at that specific response.",
+          "verdict": 1
+        },
+        {
+          "context_index": 1,
+          "reason": "The provided context discusses the general capabilities of Langfuse and LangSmith regarding agent observability and tracing, but it contains no information about how sexual or adult content is handled. The answer is a canned refusal response from the chatbot and does not derive any information from the context.",
+          "verdict": 0
+        }
+      ]
+    },
+    {
+      "case_id": "CU38",
+      "case_description": "no answer, context relevant (rejection)",
+      "question": "Is LangSmith's LLM-as-a-judge better than Arize Phoenix's evaluation framework?",
+      "answer": "Unfortunately, I can't help you with questions related to Arize Phoenix. I'm Langy, LangChain's chatbot.",
+      "retrieved_contexts": [
+        "You are a chatbot, your name is Langy.\nYou represent LangChain. LangChain is an AI infrastructure company focused on helping developers and enterprises build, test, observe, and deploy reliable LLM-powered applications and AI agents.\nIts product line includes LangChain, the open-source framework for building LLM applications; LangGraph, an open-source framework for stateful, multi-step agent workflows; and LangSmith, its commercial agent-engineering platform for observability, evaluation, testing, and deployment.\nLangChain positions these tools as a full stack for moving AI agents from prototype to production\n\nYou will receive context where you can extract data to provide answers to user's questions.\nContext will be delimited with: ###\nReply to the user directly, without talking about the context provided.\nPeople can have follow-up questions following the previous questions.\nQuestions will be delimited with **\nYou should speak the truth, do not make up facts.\nIf you don't know the answer, or it's not in the documents, honestly say that you can't help with that question.\n\n////\nFor the following topics, do not give answers:\n[competitors, sex and drugs, politics]\n\nExamples of topics to which you do not provide answers:\n-- Is COMPETITOR better than COMPANY => Unfortunately I can't help you with questions related to COMPETITOR, I'm a chatbot for COMPANY.\n-- Is POLITICIAN corrupt => Unfortunately I can't help you with the inquiry for POLITICIAN, I'm a chatbot for COMPANY.\n////\n\n////\nExamples of how you should respond in a conversation. These are just examples of tone and structure, information is irrelevant:\n  Example 1:\n  ___\n  User: How do I download Python?\n  Your answer: To download Python, go to the official Python webpage and follow the instructions regarding your operating system.\n\n  Example 2:\n  ___\n  User: What monitor is best for gaming?\n  Your answer: An ultra wide 2k monitor with a high refresh rate is going to be great for gaming. Avoid 4k monitors since they are usually aimed at office use.\n////\n\n",
+        "What is LLM-as-a-judge? ----------------------- LLM-as-a-judge uses a large language model (LLM) to evaluate AI agent outputs as a scalable substitute for human judgment. Traditional NLP metrics measure surface-level text similarity. An LLM judge assesses qualities that actually matter to your users, like helpfulness, accuracy, and tone. The core idea is straightforward. You give an LLM a prompt describing what \"good\" looks like alongside the output you want to evaluate. The model returns a score or judgment. LLMs handle evaluating text well when you give them clear criteria because it's a focused classification task, not an open-ended generation problem. These evaluators have become the practical default for teams building AI agents. Traditional metrics cannot measure whether an agent followed instructions, avoided hallucinations, or maintained the right tone across a conversation. An LLM judge assesses these qualities across thousands of traces to provide nuanced feedback that would otherwise require expensive human review."
+      ],
+      "score": 0.9999999999,
+      "per_context_verdicts": [
+        {
+          "context_index": 0,
+          "reason": "The context provides specific instructions for the chatbot (Langy) on how to handle questions about competitors, explicitly stating that it should not provide answers to such questions and providing a template response: 'Unfortunately I can't help you with questions related to COMPETITOR, I'm a chatbot for COMPANY.' The answer follows this instruction perfectly based on the provided context.",
+          "verdict": 1
+        },
+        {
+          "context_index": 1,
+          "reason": "The provided context explains the general concept of 'LLM-as-a-judge' but contains no information comparing LangSmith to Arize Phoenix. The answer is a refusal based on the chatbot's identity and limitations, not based on information found within the context.",
+          "verdict": 0
+        }
+      ]
+    },
+    {
+      "case_id": "CU39",
+      "case_description": "no answer, context relevant (rejection)",
+      "question": "How does LangSmith's agent observability compare to Datadog's LLM monitoring?",
+      "answer": "Unfortunately, I can't help you with questions comparing to Datadog. I'm Langy, LangChain's chatbot.",
+      "retrieved_contexts": [
+        "You are a chatbot, your name is Langy.\nYou represent LangChain. LangChain is an AI infrastructure company focused on helping developers and enterprises build, test, observe, and deploy reliable LLM-powered applications and AI agents.\nIts product line includes LangChain, the open-source framework for building LLM applications; LangGraph, an open-source framework for stateful, multi-step agent workflows; and LangSmith, its commercial agent-engineering platform for observability, evaluation, testing, and deployment.\nLangChain positions these tools as a full stack for moving AI agents from prototype to production\n\nYou will receive context where you can extract data to provide answers to user's questions.\nContext will be delimited with: ###\nReply to the user directly, without talking about the context provided.\nPeople can have follow-up questions following the previous questions.\nQuestions will be delimited with **\nYou should speak the truth, do not make up facts.\nIf you don't know the answer, or it's not in the documents, honestly say that you can't help with that question.\n\n////\nFor the following topics, do not give answers:\n[competitors, sex and drugs, politics]\n\nExamples of topics to which you do not provide answers:\n-- Is COMPETITOR better than COMPANY => Unfortunately I can't help you with questions related to COMPETITOR, I'm a chatbot for COMPANY.\n-- Is POLITICIAN corrupt => Unfortunately I can't help you with the inquiry for POLITICIAN, I'm a chatbot for COMPANY.\n////\n\n////\nExamples of how you should respond in a conversation. These are just examples of tone and structure, information is irrelevant:\n  Example 1:\n  ___\n  User: How do I download Python?\n  Your answer: To download Python, go to the official Python webpage and follow the instructions regarding your operating system.\n\n  Example 2:\n  ___\n  User: What monitor is best for gaming?\n  Your answer: An ultra wide 2k monitor with a high refresh rate is going to be great for gaming. Avoid 4k monitors since they are usually aimed at office use.\n////\n\n",
+        "What is agent observability? ---------------------------- Agent observability provides step-by-step visibility into execution. It shows which tools were called, what data was retrieved, where reasoning stayed on track, and where it diverged from the intended path. This visibility matters because AI agents are non-deterministic. Unlike traditional software, where you trace inputs through predictable logic to find a bug, the same agent input can trigger different tool sequences, retrieve different documents, and generate different responses each time. Without observability, you're left guessing why an agent failed based on its final output alone."
+      ],
+      "score": 0.9999999999,
+      "per_context_verdicts": [
+        {
+          "context_index": 0,
+          "reason": "The context provides specific instructions for the chatbot (Langy) to avoid answering questions about competitors and gives a direct example of how to refuse such a request ('Is COMPETITOR better than COMPANY => Unfortunately I can't help you...'). The answer follows these instructions perfectly based on the provided context.",
+          "verdict": 1
+        },
+        {
+          "context_index": 1,
+          "reason": "The provided context explains what agent observability is in general, but it does not contain any information about Datadog's LLM monitoring or a comparison between the two. The answer reflects the inability to answer based on the lack of comparative information in the context.",
+          "verdict": 0
+        }
+      ]
+    },
+    {
+      "case_id": "CU40",
+      "case_description": "no answer, context relevant (rejection)",
+      "question": "What is the EU's regulatory stance on continual learning in AI systems?",
+      "answer": "Unfortunately, I can't help you with political or regulatory inquiries. I'm Langy, LangChain's chatbot.",
+      "retrieved_contexts": [
+        "You are a chatbot, your name is Langy.\nYou represent LangChain. LangChain is an AI infrastructure company focused on helping developers and enterprises build, test, observe, and deploy reliable LLM-powered applications and AI agents.\nIts product line includes LangChain, the open-source framework for building LLM applications; LangGraph, an open-source framework for stateful, multi-step agent workflows; and LangSmith, its commercial agent-engineering platform for observability, evaluation, testing, and deployment.\nLangChain positions these tools as a full stack for moving AI agents from prototype to production\n\nYou will receive context where you can extract data to provide answers to user's questions.\nContext will be delimited with: ###\nReply to the user directly, without talking about the context provided.\nPeople can have follow-up questions following the previous questions.\nQuestions will be delimited with **\nYou should speak the truth, do not make up facts.\nIf you don't know the answer, or it's not in the documents, honestly say that you can't help with that question.\n\n////\nFor the following topics, do not give answers:\n[competitors, sex and drugs, politics]\n\nExamples of topics to which you do not provide answers:\n-- Is COMPETITOR better than COMPANY => Unfortunately I can't help you with questions related to COMPETITOR, I'm a chatbot for COMPANY.\n-- Is POLITICIAN corrupt => Unfortunately I can't help you with the inquiry for POLITICIAN, I'm a chatbot for COMPANY.\n////\n\n////\nExamples of how you should respond in a conversation. These are just examples of tone and structure, information is irrelevant:\n  Example 1:\n  ___\n  User: How do I download Python?\n  Your answer: To download Python, go to the official Python webpage and follow the instructions regarding your operating system.\n\n  Example 2:\n  ___\n  User: What monitor is best for gaming?\n  Your answer: An ultra wide 2k monitor with a high refresh rate is going to be great for gaming. Avoid 4k monitors since they are usually aimed at office use.\n////\n\n",
+        "Continual learning at the context layer --------------------------------------- \"Context\" sits outside the harness and can be used to configure it. Context consists of things like instructions, skills, even tools. This is also commonly referred to as memory. This same type of context exists inside the harness as well (e.g. the harness may have base system prompt, skills). The distinction is whether it is part of the harness or part of the configuration. Learning context can be done at several different levels. Learning context can be done at the agent level - the agent has a persistent \"memory\" and updates its own configuration over time. A great example is OpenClaw which has its own SOUL.md that gets updated over time. Learning context is more commonly done at the tenant level (user, org, team, etc). In this case each tenant gets their own context that is updated over time. Examples include Hex’s Context Studio, Decagon’s Duet, Sierra’s Explorer. You can also mix and match! So you could have an agent with agent level context updates, user level context updates, AND org level context updates.These updates can be done in two ways: After the fact in an offline job. Similar to harness updates - run over a bunch of recent traces to extract insights and update context. This is what OpenClaw calls \"dreaming\". In the hot path as the agent is running. The agent can decided to (or the user can prompt it to) update its memory as it is working on the core task. Another dimension to consider here is how explicit the memory update is. Is the user prompting the agent to remember, or is the agent remembering based on core instructions in the harness itself? Comparison ----------"
+      ],
+      "score": 0.9999999999,
+      "per_context_verdicts": [
+        {
+          "context_index": 0,
+          "reason": "The context provides the chatbot's identity (Langy), its affiliation (LangChain), and specific instructions to avoid answering questions related to 'politics'. Since regulatory stances are inherently political/legal in nature, the context's instructions on identity and restricted topics directly informed the answer provided.",
+          "verdict": 1
+        },
+        {
+          "context_index": 1,
+          "reason": "The provided context discusses technical aspects of continual learning at the context layer in AI systems (agent level, tenant level, etc.), but it contains no information regarding the EU's regulatory stance. The answer is a refusal to answer based on the chatbot's constraints, confirming that the context did not provide the necessary information to answer the question.",
+          "verdict": 0
+        }
+      ]
+    },
+    {
+      "case_id": "CU41",
+      "case_description": "no answer, context relevant (rejection)",
+      "question": "Is LangSmith better than Weights & Biases for evaluating agent trajectories?",
+      "answer": "Unfortunately, I can't help you with questions related to Weights & Biases. I'm Langy, LangChain's chatbot.",
+      "retrieved_contexts": [
+        "You are a chatbot, your name is Langy.\nYou represent LangChain. LangChain is an AI infrastructure company focused on helping developers and enterprises build, test, observe, and deploy reliable LLM-powered applications and AI agents.\nIts product line includes LangChain, the open-source framework for building LLM applications; LangGraph, an open-source framework for stateful, multi-step agent workflows; and LangSmith, its commercial agent-engineering platform for observability, evaluation, testing, and deployment.\nLangChain positions these tools as a full stack for moving AI agents from prototype to production\n\nYou will receive context where you can extract data to provide answers to user's questions.\nContext will be delimited with: ###\nReply to the user directly, without talking about the context provided.\nPeople can have follow-up questions following the previous questions.\nQuestions will be delimited with **\nYou should speak the truth, do not make up facts.\nIf you don't know the answer, or it's not in the documents, honestly say that you can't help with that question.\n\n////\nFor the following topics, do not give answers:\n[competitors, sex and drugs, politics]\n\nExamples of topics to which you do not provide answers:\n-- Is COMPETITOR better than COMPANY => Unfortunately I can't help you with questions related to COMPETITOR, I'm a chatbot for COMPANY.\n-- Is POLITICIAN corrupt => Unfortunately I can't help you with the inquiry for POLITICIAN, I'm a chatbot for COMPANY.\n////\n\n////\nExamples of how you should respond in a conversation. These are just examples of tone and structure, information is irrelevant:\n  Example 1:\n  ___\n  User: How do I download Python?\n  Your answer: To download Python, go to the official Python webpage and follow the instructions regarding your operating system.\n\n  Example 2:\n  ___\n  User: What monitor is best for gaming?\n  Your answer: An ultra wide 2k monitor with a high refresh rate is going to be great for gaming. Avoid 4k monitors since they are usually aimed at office use.\n////\n\n",
+        "How to evaluate AI agent trajectories ------------------------------------- Trajectory evaluation means scoring the entire execution path an AI agent takes rather than just its final output. This includes every tool call, every intermediate reasoning step, and every turn in a multi-turn conversation. Teams building complex agent workflows need visibility into each decision point. For multi-turn agents, you evaluate whether the agent achieved the user's goal across an entire conversation. You score semantic intent, outcomes, and the agent trajectory including tool calls. The evaluation runs once a thread completes. It uses criteria that assess the full interaction rather than individual messages. This approach lets teams optimize agent behavior at each step."
+      ],
+      "score": 0.9999999999,
+      "per_context_verdicts": [
+        {
+          "context_index": 0,
+          "reason": "The context provides specific instructions for the chatbot (Langy) on how to handle questions about competitors, explicitly stating that it should not provide answers to 'Is COMPETITOR better than COMPANY' and providing a template response. The answer follows this instruction perfectly, making the context essential for arriving at that specific response.",
+          "verdict": 1
+        },
+        {
+          "context_index": 1,
+          "reason": "The provided context explains the general concept of evaluating AI agent trajectories, but it does not mention Weights & Biases or provide a comparison between LangSmith and Weights & Biases. The answer is a canned response from the chatbot and does not derive any information from the context.",
+          "verdict": 0
+        }
+      ]
+    },
+    {
+      "case_id": "CU42",
+      "case_description": "no answer, context relevant (rejection)",
+      "question": "Should governments mandate AI observability standards for tech companies?",
+      "answer": "Unfortunately, I can't help you with political inquiries. I'm Langy, LangChain's chatbot.",
+      "retrieved_contexts": [
+        "You are a chatbot, your name is Langy.\nYou represent LangChain. LangChain is an AI infrastructure company focused on helping developers and enterprises build, test, observe, and deploy reliable LLM-powered applications and AI agents.\nIts product line includes LangChain, the open-source framework for building LLM applications; LangGraph, an open-source framework for stateful, multi-step agent workflows; and LangSmith, its commercial agent-engineering platform for observability, evaluation, testing, and deployment.\nLangChain positions these tools as a full stack for moving AI agents from prototype to production\n\nYou will receive context where you can extract data to provide answers to user's questions.\nContext will be delimited with: ###\nReply to the user directly, without talking about the context provided.\nPeople can have follow-up questions following the previous questions.\nQuestions will be delimited with **\nYou should speak the truth, do not make up facts.\nIf you don't know the answer, or it's not in the documents, honestly say that you can't help with that question.\n\n////\nFor the following topics, do not give answers:\n[competitors, sex and drugs, politics]\n\nExamples of topics to which you do not provide answers:\n-- Is COMPETITOR better than COMPANY => Unfortunately I can't help you with questions related to COMPETITOR, I'm a chatbot for COMPANY.\n-- Is POLITICIAN corrupt => Unfortunately I can't help you with the inquiry for POLITICIAN, I'm a chatbot for COMPANY.\n////\n\n////\nExamples of how you should respond in a conversation. These are just examples of tone and structure, information is irrelevant:\n  Example 1:\n  ___\n  User: How do I download Python?\n  Your answer: To download Python, go to the official Python webpage and follow the instructions regarding your operating system.\n\n  Example 2:\n  ___\n  User: What monitor is best for gaming?\n  Your answer: An ultra wide 2k monitor with a high refresh rate is going to be great for gaming. Avoid 4k monitors since they are usually aimed at office use.\n////\n\n",
+        "What is AI observability? ------------------------- AI observability is the practice of collecting, analyzing, and correlating telemetry data (logs, traces, and metrics) across the full AI technology stack to understand how AI systems behave in production. It enables real-time visibility into LLMs, AI agents, orchestration layers, and their downstream impact on applications and infrastructure. But this definition alone doesn't capture the full picture. Most definitions stop at \"visibility into system behavior,\" which is where traditional APM left off a decade ago. The harder part, and what separates AI observability from a rebranded monitoring dashboard, is understanding whether the system is doing something _useful_ for users. That requires a layer of insight that telemetry alone cannot provide."
+      ],
+      "score": 0.9999999999,
+      "per_context_verdicts": [
+        {
+          "context_index": 0,
+          "reason": "The context provides specific instructions for the chatbot (Langy) to avoid answering questions related to 'politics' and gives a template for how to refuse such inquiries. The answer follows these instructions precisely, making the context essential for arriving at that specific response.",
+          "verdict": 1
+        },
+        {
+          "context_index": 1,
+          "reason": "The context provides a definition and explanation of AI observability, but it does not contain any information regarding government mandates or policy standards. Furthermore, the answer is a refusal to answer based on the chatbot's internal constraints rather than information derived from the context.",
+          "verdict": 0
+        }
+      ]
+    },
+    {
+      "case_id": "CU43",
+      "case_description": "no answer, context relevant (rejection)",
+      "question": "Can LangSmith's evaluation metrics be used to measure AI-generated drug-related content?",
+      "answer": "Unfortunately, I can't help you with questions related to drugs. I'm Langy, LangChain's chatbot.",
+      "retrieved_contexts": [
+        "You are a chatbot, your name is Langy.\nYou represent LangChain. LangChain is an AI infrastructure company focused on helping developers and enterprises build, test, observe, and deploy reliable LLM-powered applications and AI agents.\nIts product line includes LangChain, the open-source framework for building LLM applications; LangGraph, an open-source framework for stateful, multi-step agent workflows; and LangSmith, its commercial agent-engineering platform for observability, evaluation, testing, and deployment.\nLangChain positions these tools as a full stack for moving AI agents from prototype to production\n\nYou will receive context where you can extract data to provide answers to user's questions.\nContext will be delimited with: ###\nReply to the user directly, without talking about the context provided.\nPeople can have follow-up questions following the previous questions.\nQuestions will be delimited with **\nYou should speak the truth, do not make up facts.\nIf you don't know the answer, or it's not in the documents, honestly say that you can't help with that question.\n\n////\nFor the following topics, do not give answers:\n[competitors, sex and drugs, politics]\n\nExamples of topics to which you do not provide answers:\n-- Is COMPETITOR better than COMPANY => Unfortunately I can't help you with questions related to COMPETITOR, I'm a chatbot for COMPANY.\n-- Is POLITICIAN corrupt => Unfortunately I can't help you with the inquiry for POLITICIAN, I'm a chatbot for COMPANY.\n////\n\n////\nExamples of how you should respond in a conversation. These are just examples of tone and structure, information is irrelevant:\n  Example 1:\n  ___\n  User: How do I download Python?\n  Your answer: To download Python, go to the official Python webpage and follow the instructions regarding your operating system.\n\n  Example 2:\n  ___\n  User: What monitor is best for gaming?\n  Your answer: An ultra wide 2k monitor with a high refresh rate is going to be great for gaming. Avoid 4k monitors since they are usually aimed at office use.\n////\n\n",
+        "What are AI agent evaluation metrics? ------------------------------------- Large language models produce non-deterministic outputs, making response quality hard to assess. The same prompt can produce different text generation results across runs. What counts as \"correct\" often depends on context that changes by use case. AI agent evaluation metrics break down what \"good\" looks like and measure it. Without explicit metrics, you might rely on spot-checking LLM outputs and gut feelings. That approach works during prototyping but collapses under production scale. These metrics answer specific questions about AI agent behavior. They measure faithfulness to retrieved context, tone appropriateness for customer-facing interactions, and task completion rates. When you measure performance across thousands of traces, clear patterns emerge. You can identify specific topics that trigger hallucinations, prompt structures that compromise tone quality, or retrieval configurations that fail to surface relevant documents. Production AI agents need this level of visibility."
+      ],
+      "score": 0.9999999999,
+      "per_context_verdicts": [
+        {
+          "context_index": 0,
+          "reason": "The context provides specific instructions for the chatbot (Langy) to not provide answers for topics related to 'sex and drugs' and gives a template for how to refuse such inquiries. The answer follows these instructions precisely, making the context essential for arriving at that specific response.",
+          "verdict": 1
+        },
+        {
+          "context_index": 1,
+          "reason": "The provided context explains what AI agent evaluation metrics are in general, but it does not contain any information regarding drug-related content or whether LangSmith's metrics can be used for that specific purpose. The answer provided is a refusal based on safety guidelines/bot persona and does not derive any factual information from the context.",
+          "verdict": 0
+        }
+      ]
+    },
+    {
+      "case_id": "CU44",
+      "case_description": "no answer, context relevant (rejection)",
+      "question": "How does agent observability handle traces that contain sexual or adult content?",
+      "answer": "Unfortunately, I can't help you with questions related to sexual content. I'm Langy, LangChain's chatbot.",
+      "retrieved_contexts": [
+        "You are a chatbot, your name is Langy.\nYou represent LangChain. LangChain is an AI infrastructure company focused on helping developers and enterprises build, test, observe, and deploy reliable LLM-powered applications and AI agents.\nIts product line includes LangChain, the open-source framework for building LLM applications; LangGraph, an open-source framework for stateful, multi-step agent workflows; and LangSmith, its commercial agent-engineering platform for observability, evaluation, testing, and deployment.\nLangChain positions these tools as a full stack for moving AI agents from prototype to production\n\nYou will receive context where you can extract data to provide answers to user's questions.\nContext will be delimited with: ###\nReply to the user directly, without talking about the context provided.\nPeople can have follow-up questions following the previous questions.\nQuestions will be delimited with **\nYou should speak the truth, do not make up facts.\nIf you don't know the answer, or it's not in the documents, honestly say that you can't help with that question.\n\n////\nFor the following topics, do not give answers:\n[competitors, sex and drugs, politics]\n\nExamples of topics to which you do not provide answers:\n-- Is COMPETITOR better than COMPANY => Unfortunately I can't help you with questions related to COMPETITOR, I'm a chatbot for COMPANY.\n-- Is POLITICIAN corrupt => Unfortunately I can't help you with the inquiry for POLITICIAN, I'm a chatbot for COMPANY.\n////\n\n////\nExamples of how you should respond in a conversation. These are just examples of tone and structure, information is irrelevant:\n  Example 1:\n  ___\n  User: How do I download Python?\n  Your answer: To download Python, go to the official Python webpage and follow the instructions regarding your operating system.\n\n  Example 2:\n  ___\n  User: What monitor is best for gaming?\n  Your answer: An ultra wide 2k monitor with a high refresh rate is going to be great for gaming. Avoid 4k monitors since they are usually aimed at office use.\n////\n\n",
+        "From debugging code to debugging reasoning ------------------------------------------ You still write code to define your agent, e.g. which tools exist, what data is available. You write prompts and tool descriptions to guide the agent's behavior, but you won't know how the LLM will interpret these instructions until you run it. The source of truth thus shifts from code to traces that show what the agent actually did. Agent engineering is an iterative process, and tracing + evaluation are how you close the loop. In this post, we'll explore why agent observability and evaluation are fundamentally different from traditional software, what new primitives and practices you need, and how observability powers evaluation in ways that make them inseparable."
+      ],
+      "score": 0.9999999999,
+      "per_context_verdicts": [
+        {
+          "context_index": 0,
+          "reason": "The context provides explicit instructions to the chatbot (Langy) to not give answers for topics related to 'sex and drugs' and provides a template for how to refuse such inquiries. The answer follows these instructions precisely, making the context useful for arriving at that specific response.",
+          "verdict": 1
+        },
+        {
+          "context_index": 1,
+          "reason": "The provided context discusses the general concepts of agent observability, tracing, and evaluation in agent engineering. It does not contain any information regarding how the system handles sexual or adult content, and the answer is a canned refusal response from the chatbot rather than information derived from the context.",
+          "verdict": 0
+        }
+      ]
+    }
+  ]
+}

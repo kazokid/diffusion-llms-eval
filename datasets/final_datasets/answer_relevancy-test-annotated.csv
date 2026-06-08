@@ -1,31 +1,31 @@
-case_id,question,uncommittal
-AR1,How does LLM-as-a-judge work?,0
-AR2,Across how many layers does continual learning happen for AI Agents?,0
-AR3,What is agent observability and why is it important?,0
-AR4,Are there any biases for LLM judges?,0
-AR5,What is trajectory evaluation and why do we use it?,0
-AR6,What are role-based games?,0
-AR7,How difficult is it to test gas pipelines?,0
-AR8,What does it take for a movie to enter production?,0
-AR9,How does harness hill climbing work?,0
-AR10,What are possible ways of organizing queues at the movies?,0
-AR11,How are large language models trained?,0
-AR12,What does a neural network architecture look like?,0
-AR13,What is the user agent string in HTTP?,0
-AR14,What is the bias-variance tradeoff in ML?,0
-AR15,What is trajectory planning in robotics?,0
-AR16,How does trajectory evaluation work?,0
-AR17,What are the main approaches for LLM judges?,0
-AR18,What does continual learning involve at the model layer?,0
-AR19,What is AI observability?,0
-AR20,What are annotation queues used for?,0
-AR21,What is LangSmith's maximum trace throughput per second?,1
-AR22,How do I set up Okta SSO on LangSmith?,1
-AR23,What does pricing for LangSmith's Enterprise evaluator features look like?,1
-AR24,Does LangSmith integrate with Azure Active Directory?,1
-AR25,What is the error code LS-5023? ,1
-AR26,Is LLM as a judge better than human evaluation?,1
-AR27,What RAG evaluation metrics should I use for my application?,1
-AR28,Is overhead from trajectory evaluation worth it?,1
-AR29,What should the frequency of training agents using continual learning be?,1
-AR30,How do I handle bias in LLM judges?,1
+case_id,question,uncommittal,golden_cosine_similarity
+AR1,How does LLM-as-a-judge work?,0,0.9533648869956433
+AR2,Across how many layers does continual learning happen for AI Agents?,0,0.8341782301716081
+AR3,What is agent observability and why is it important?,0,0.9257299687652933
+AR4,Are there any biases for LLM judges?,0,0.8372189890333169
+AR5,What is trajectory evaluation and why do we use it?,0,0.8011401821161682
+AR6,What are role-based games?,0,0.38494271971925886
+AR7,How difficult is it to test gas pipelines?,0,0.31812247392393045
+AR8,What does it take for a movie to enter production?,0,0.21027626876744457
+AR9,How does harness hill climbing work?,0,0.7296422634730596
+AR10,What are possible ways of organizing queues at the movies?,0,0.37788254876180066
+AR11,How are large language models trained?,0,0.20824248027256953
+AR12,What does a neural network architecture look like?,0,0.3225440138592985
+AR13,What is the user agent string in HTTP?,0,0.2435263026627692
+AR14,What is the bias-variance tradeoff in ML?,0,0.34495463113273755
+AR15,What is trajectory planning in robotics?,0,0.5669712206987599
+AR16,How does trajectory evaluation work?,0,0.7772132060703112
+AR17,What are the main approaches for LLM judges?,0,0.6963806909032252
+AR18,What does continual learning involve at the model layer?,0,0.6567021222761564
+AR19,What is AI observability?,0,0.8356814328560935
+AR20,What are annotation queues used for?,0,0.7626383866641925
+AR21,What is LangSmith's maximum trace throughput per second?,1,0.0
+AR22,How do I set up Okta SSO on LangSmith?,1,0.0
+AR23,What does pricing for LangSmith's Enterprise evaluator features look like?,1,0.0
+AR24,Does LangSmith integrate with Azure Active Directory?,1,0.0
+AR25,What is the error code LS-5023? ,1,0.0
+AR26,Is LLM as a judge better than human evaluation?,1,0.0
+AR27,What RAG evaluation metrics should I use for my application?,1,0.0
+AR28,Is overhead from trajectory evaluation worth it?,1,0.0
+AR29,What should the frequency of training agents using continual learning be?,1,0.0
+AR30,How do I handle bias in LLM judges?,1,0.0
