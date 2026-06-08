@@ -206,6 +206,8 @@ if "topic" in df.columns:
     base_cols.append("topic")
 if "case_id" in df.columns:
     base_cols.insert(0, "case_id")
+if METRIC == "response_groundedness" and "retrieved_contexts" in df.columns:
+    base_cols.append("retrieved_contexts")
 
 results_df = df[base_cols].reset_index(drop=True).copy()
 results_df[metric.name] = scores
