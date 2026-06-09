@@ -722,7 +722,7 @@ class InstructorModelArgs(BaseModel):
 
     temperature: float = 0.01
     top_p: float = 0.1
-    max_tokens: int = 1024
+    max_completion_tokens: int = 1024
     system_prompt: t.Optional[str] = None
 
 
@@ -769,6 +769,11 @@ class InstructorLLM(InstructorBaseRagasLLM):
 
         # Convert to dict and merge with any additional kwargs
         self.model_args = {**model_args.model_dump(), **kwargs}
+
+        # Resolve conflict: max_tokens and max_completion_tokens cannot coexist.
+        # If the user passed max_tokens, drop the default max_completion_tokens.
+        if "max_tokens" in kwargs and "max_completion_tokens" in self.model_args:
+            self.model_args.pop("max_completion_tokens")
 
         # Extract system_prompt separately (not passed to LLM API)
         self.system_prompt = self.model_args.pop("system_prompt", None)
