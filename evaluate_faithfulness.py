@@ -21,14 +21,19 @@ import json
 import pandas as pd
 
 from clients import no_ssl_client
-from config import LLM_MODEL, EMBEDDINGS_MODEL, INPUT_CSV, OUTPUT_DIR
+from config import LLM_MODEL, EMBEDDINGS_MODEL, INPUT_CSV, OUTPUT_DIR, llm_extra_kwargs
 from latency_tracker import LatencyTrackingLLM
 from ragas.llms import llm_factory
 
 from ragas.metrics.collections import Faithfulness
 
 
-evaluator_llm = llm_factory(model=LLM_MODEL, client=no_ssl_client, max_completion_tokens=16384)
+evaluator_llm = llm_factory(
+    model=LLM_MODEL,
+    client=no_ssl_client,
+    max_completion_tokens=16384,
+    **llm_extra_kwargs(),
+)
 tracked_llm = LatencyTrackingLLM(evaluator_llm)
 
 faithfulness = Faithfulness(llm=tracked_llm)

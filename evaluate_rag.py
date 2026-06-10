@@ -12,6 +12,7 @@ from config import (
     OUTPUT_DIR,
     METRIC,
     ANNOTATED_CSV,
+    llm_extra_kwargs,
 )
 from latency_tracker import LatencyTrackingLLM
 from ragas.llms import llm_factory
@@ -25,7 +26,12 @@ from ragas.metrics.collections import (
 from custom_embeddings import CustomEmbeddings
 
 
-evaluator_llm = llm_factory(model=LLM_MODEL, client=no_ssl_client, max_completion_tokens=8096)
+evaluator_llm = llm_factory(
+    model=LLM_MODEL,
+    client=no_ssl_client,
+    max_completion_tokens=8096,
+    **llm_extra_kwargs(),
+)
 tracked_evaluator_llm = LatencyTrackingLLM(evaluator_llm)
 
 embeddings = CustomEmbeddings(

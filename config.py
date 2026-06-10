@@ -29,3 +29,11 @@ METRIC = "context_utilization"
 
 # ANNOTATED_CSV = Path(__file__).parent / "datasets/final_datasets/answer_relevancy-test-annotated.csv"
 ANNOTATED_CSV = None
+
+QWEN_ENABLE_THINKING = os.environ.get("QWEN_ENABLE_THINKING", False)
+
+
+def llm_extra_kwargs() -> dict:
+    if QWEN_ENABLE_THINKING and LLM_MODEL and "qwen" in LLM_MODEL.lower():
+        return {"chat_template_kwargs": {"enable_thinking": True}}
+    return {}
