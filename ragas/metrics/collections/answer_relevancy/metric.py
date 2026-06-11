@@ -224,7 +224,9 @@ class AnswerRelevancy(BaseMetric):
             np.dot(gen_question_vec, question_vec.T).reshape(-1,) / norm
         )
 
-        score = cosine_sim.mean() * int(not all_noncommittal)
+        # score = cosine_sim.mean() * int(not all_noncommittal)
+        # separate committal flag from cosine - so we can analyse both separately
+        score = cosine_sim.mean()
 
         trace = {
             "generated_questions": generated_questions,
