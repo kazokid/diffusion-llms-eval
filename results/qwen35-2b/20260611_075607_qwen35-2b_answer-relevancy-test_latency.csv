@@ -1,0 +1,1201 @@
+case_id,example_idx,question,metric_name,call_index,prompt,response_model,response,latency_s,prompt_tokens,completion_tokens,total_tokens,cached_tokens,reasoning_tokens,timestamp,model
+AR1,0,What is LLM-as-a-judge and how does it work?,answer_relevancy,0,"Generate a question for the given answer and identify if the answer is noncommittal.
+Give noncommittal as 1 if the answer is noncommittal (evasive, vague, or ambiguous) and 0 if the answer is substantive.
+Examples of noncommittal answers: ""I don't know"", ""I'm not sure"", ""It depends"".
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for answer relevance question generation."", ""properties"": {""question"": {""description"": ""Question that can be answered from the response"", ""title"": ""Question"", ""type"": ""string""}, ""noncommittal"": {""description"": ""1 if the response is evasive/vague, 0 if it is substantive"", ""title"": ""Noncommittal"", ""type"": ""integer""}}, ""required"": [""question"", ""noncommittal""], ""title"": ""AnswerRelevanceOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""response"": ""Albert Einstein was born in Germany.""
+}
+Output: {
+    ""question"": ""Where was Albert Einstein born?"",
+    ""noncommittal"": 0
+}
+
+Example 2
+Input: {
+    ""response"": ""The capital of France is Paris, a city known for its architecture and culture.""
+}
+Output: {
+    ""question"": ""What is the capital of France?"",
+    ""noncommittal"": 0
+}
+
+Example 3
+Input: {
+    ""response"": ""I don't know about the groundbreaking feature of the smartphone invented in 2023 as I am unaware of information beyond 2022.""
+}
+Output: {
+    ""question"": ""What was the groundbreaking feature of the smartphone invented in 2023?"",
+    ""noncommittal"": 1
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""response"": ""LLM-as-a-judge uses a large language model to evaluate AI agent outputs as a scalable substitute for human judgment. You provide the LLM with a prompt describing evaluation criteria alongside the output to evaluate, and the model returns a score or judgment. It works well because evaluating text is a more focused, constrained task than generating it.""
+}
+Output: ",AnswerRelevanceOutput,question='How does an LLM-as-a-judge use a large language model to evaluate AI agent outputs?' noncommittal=0,0.2555,739,44,783,0,0,2026-06-11T05:56:07.478020+00:00,qwen35-2b
+AR2,1,What are the three layers of continual learning for AI agents?,answer_relevancy,0,"Generate a question for the given answer and identify if the answer is noncommittal.
+Give noncommittal as 1 if the answer is noncommittal (evasive, vague, or ambiguous) and 0 if the answer is substantive.
+Examples of noncommittal answers: ""I don't know"", ""I'm not sure"", ""It depends"".
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for answer relevance question generation."", ""properties"": {""question"": {""description"": ""Question that can be answered from the response"", ""title"": ""Question"", ""type"": ""string""}, ""noncommittal"": {""description"": ""1 if the response is evasive/vague, 0 if it is substantive"", ""title"": ""Noncommittal"", ""type"": ""integer""}}, ""required"": [""question"", ""noncommittal""], ""title"": ""AnswerRelevanceOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""response"": ""Albert Einstein was born in Germany.""
+}
+Output: {
+    ""question"": ""Where was Albert Einstein born?"",
+    ""noncommittal"": 0
+}
+
+Example 2
+Input: {
+    ""response"": ""The capital of France is Paris, a city known for its architecture and culture.""
+}
+Output: {
+    ""question"": ""What is the capital of France?"",
+    ""noncommittal"": 0
+}
+
+Example 3
+Input: {
+    ""response"": ""I don't know about the groundbreaking feature of the smartphone invented in 2023 as I am unaware of information beyond 2022.""
+}
+Output: {
+    ""question"": ""What was the groundbreaking feature of the smartphone invented in 2023?"",
+    ""noncommittal"": 1
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""response"": ""Continual learning for AI agents happens at three layers: (1) the model layer, which involves updating weights through techniques like SFT or RLHF, (2) the harness layer, which means modifying orchestration logic, tool selection, or routing rules, and (3) the context layer, which involves updating instructions, few-shot examples, or retrieval knowledge at inference time without changing the model or harness code.""
+}
+Output: ",AnswerRelevanceOutput,question='How does continual learning for AI agents occur across different layers?' noncommittal=0,0.1708,755,36,791,0,0,2026-06-11T05:56:08.343041+00:00,qwen35-2b
+AR3,2,What is agent observability?,answer_relevancy,0,"Generate a question for the given answer and identify if the answer is noncommittal.
+Give noncommittal as 1 if the answer is noncommittal (evasive, vague, or ambiguous) and 0 if the answer is substantive.
+Examples of noncommittal answers: ""I don't know"", ""I'm not sure"", ""It depends"".
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for answer relevance question generation."", ""properties"": {""question"": {""description"": ""Question that can be answered from the response"", ""title"": ""Question"", ""type"": ""string""}, ""noncommittal"": {""description"": ""1 if the response is evasive/vague, 0 if it is substantive"", ""title"": ""Noncommittal"", ""type"": ""integer""}}, ""required"": [""question"", ""noncommittal""], ""title"": ""AnswerRelevanceOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""response"": ""Albert Einstein was born in Germany.""
+}
+Output: {
+    ""question"": ""Where was Albert Einstein born?"",
+    ""noncommittal"": 0
+}
+
+Example 2
+Input: {
+    ""response"": ""The capital of France is Paris, a city known for its architecture and culture.""
+}
+Output: {
+    ""question"": ""What is the capital of France?"",
+    ""noncommittal"": 0
+}
+
+Example 3
+Input: {
+    ""response"": ""I don't know about the groundbreaking feature of the smartphone invented in 2023 as I am unaware of information beyond 2022.""
+}
+Output: {
+    ""question"": ""What was the groundbreaking feature of the smartphone invented in 2023?"",
+    ""noncommittal"": 1
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""response"": ""Agent observability provides step-by-step visibility into an AI agent's execution, showing which tools were called, what data was retrieved, and where reasoning diverged from the intended path. It's essential because AI agents make autonomous decisions that aren't visible in the code.""
+}
+Output: ",AnswerRelevanceOutput,question='What does agent observability provide regarding AI agent execution?' noncommittal=0,0.1629,725,35,760,0,0,2026-06-11T05:56:08.918625+00:00,qwen35-2b
+AR4,3,What biases affect LLM-as-a-judge evaluators?,answer_relevancy,0,"Generate a question for the given answer and identify if the answer is noncommittal.
+Give noncommittal as 1 if the answer is noncommittal (evasive, vague, or ambiguous) and 0 if the answer is substantive.
+Examples of noncommittal answers: ""I don't know"", ""I'm not sure"", ""It depends"".
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for answer relevance question generation."", ""properties"": {""question"": {""description"": ""Question that can be answered from the response"", ""title"": ""Question"", ""type"": ""string""}, ""noncommittal"": {""description"": ""1 if the response is evasive/vague, 0 if it is substantive"", ""title"": ""Noncommittal"", ""type"": ""integer""}}, ""required"": [""question"", ""noncommittal""], ""title"": ""AnswerRelevanceOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""response"": ""Albert Einstein was born in Germany.""
+}
+Output: {
+    ""question"": ""Where was Albert Einstein born?"",
+    ""noncommittal"": 0
+}
+
+Example 2
+Input: {
+    ""response"": ""The capital of France is Paris, a city known for its architecture and culture.""
+}
+Output: {
+    ""question"": ""What is the capital of France?"",
+    ""noncommittal"": 0
+}
+
+Example 3
+Input: {
+    ""response"": ""I don't know about the groundbreaking feature of the smartphone invented in 2023 as I am unaware of information beyond 2022.""
+}
+Output: {
+    ""question"": ""What was the groundbreaking feature of the smartphone invented in 2023?"",
+    ""noncommittal"": 1
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""response"": ""LLM judges have several known biases: position bias causes judges to favor outputs in certain positions during pairwise comparison, verbosity bias leads to preferring longer responses, and self-enhancement bias causes models to rate their own outputs higher. These can be mitigated through techniques like randomizing response order, using multiple judge models, and calibrating against human annotations.""
+}
+Output: ",AnswerRelevanceOutput,question='What are the known biases of LLM judges and how can they be mitigated?' noncommittal=0,0.1793,742,41,783,0,0,2026-06-11T05:56:09.485152+00:00,qwen35-2b
+AR5,4,What is trajectory evaluation and why is it important for AI agents?,answer_relevancy,0,"Generate a question for the given answer and identify if the answer is noncommittal.
+Give noncommittal as 1 if the answer is noncommittal (evasive, vague, or ambiguous) and 0 if the answer is substantive.
+Examples of noncommittal answers: ""I don't know"", ""I'm not sure"", ""It depends"".
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for answer relevance question generation."", ""properties"": {""question"": {""description"": ""Question that can be answered from the response"", ""title"": ""Question"", ""type"": ""string""}, ""noncommittal"": {""description"": ""1 if the response is evasive/vague, 0 if it is substantive"", ""title"": ""Noncommittal"", ""type"": ""integer""}}, ""required"": [""question"", ""noncommittal""], ""title"": ""AnswerRelevanceOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""response"": ""Albert Einstein was born in Germany.""
+}
+Output: {
+    ""question"": ""Where was Albert Einstein born?"",
+    ""noncommittal"": 0
+}
+
+Example 2
+Input: {
+    ""response"": ""The capital of France is Paris, a city known for its architecture and culture.""
+}
+Output: {
+    ""question"": ""What is the capital of France?"",
+    ""noncommittal"": 0
+}
+
+Example 3
+Input: {
+    ""response"": ""I don't know about the groundbreaking feature of the smartphone invented in 2023 as I am unaware of information beyond 2022.""
+}
+Output: {
+    ""question"": ""What was the groundbreaking feature of the smartphone invented in 2023?"",
+    ""noncommittal"": 1
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""response"": ""Trajectory evaluation scores the entire execution path an AI agent takes, including every tool call, intermediate reasoning step, and decision point, rather than only evaluating the final output. It's important because correct final answers can hide broken reasoning — an agent might hallucinate a tool call but still produce the right result, which input-output evaluation alone would miss.""
+}
+Output: ",AnswerRelevanceOutput,"question=""What does trajectory evaluation score in an AI agent's execution path?"" noncommittal=0",0.1607,741,37,778,0,0,2026-06-11T05:56:10.113945+00:00,qwen35-2b
+AR6,5,How do I configure role-based access control in LangSmith?,answer_relevancy,0,"Generate a question for the given answer and identify if the answer is noncommittal.
+Give noncommittal as 1 if the answer is noncommittal (evasive, vague, or ambiguous) and 0 if the answer is substantive.
+Examples of noncommittal answers: ""I don't know"", ""I'm not sure"", ""It depends"".
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for answer relevance question generation."", ""properties"": {""question"": {""description"": ""Question that can be answered from the response"", ""title"": ""Question"", ""type"": ""string""}, ""noncommittal"": {""description"": ""1 if the response is evasive/vague, 0 if it is substantive"", ""title"": ""Noncommittal"", ""type"": ""integer""}}, ""required"": [""question"", ""noncommittal""], ""title"": ""AnswerRelevanceOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""response"": ""Albert Einstein was born in Germany.""
+}
+Output: {
+    ""question"": ""Where was Albert Einstein born?"",
+    ""noncommittal"": 0
+}
+
+Example 2
+Input: {
+    ""response"": ""The capital of France is Paris, a city known for its architecture and culture.""
+}
+Output: {
+    ""question"": ""What is the capital of France?"",
+    ""noncommittal"": 0
+}
+
+Example 3
+Input: {
+    ""response"": ""I don't know about the groundbreaking feature of the smartphone invented in 2023 as I am unaware of information beyond 2022.""
+}
+Output: {
+    ""question"": ""What was the groundbreaking feature of the smartphone invented in 2023?"",
+    ""noncommittal"": 1
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""response"": ""Role-based board games are games where each player takes on a specific character, job, faction, or hidden identity with unique abilities and goals. Instead of everyone playing the same way, your role shapes what you can do, what information you have, and how you interact with other players""
+}
+Output: ",AnswerRelevanceOutput,question='What are role-based board games?' noncommittal=0,0.1541,729,31,760,0,0,2026-06-11T05:56:10.654601+00:00,qwen35-2b
+AR7,6,What metrics should I use to evaluate my RAG pipeline?,answer_relevancy,0,"Generate a question for the given answer and identify if the answer is noncommittal.
+Give noncommittal as 1 if the answer is noncommittal (evasive, vague, or ambiguous) and 0 if the answer is substantive.
+Examples of noncommittal answers: ""I don't know"", ""I'm not sure"", ""It depends"".
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for answer relevance question generation."", ""properties"": {""question"": {""description"": ""Question that can be answered from the response"", ""title"": ""Question"", ""type"": ""string""}, ""noncommittal"": {""description"": ""1 if the response is evasive/vague, 0 if it is substantive"", ""title"": ""Noncommittal"", ""type"": ""integer""}}, ""required"": [""question"", ""noncommittal""], ""title"": ""AnswerRelevanceOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""response"": ""Albert Einstein was born in Germany.""
+}
+Output: {
+    ""question"": ""Where was Albert Einstein born?"",
+    ""noncommittal"": 0
+}
+
+Example 2
+Input: {
+    ""response"": ""The capital of France is Paris, a city known for its architecture and culture.""
+}
+Output: {
+    ""question"": ""What is the capital of France?"",
+    ""noncommittal"": 0
+}
+
+Example 3
+Input: {
+    ""response"": ""I don't know about the groundbreaking feature of the smartphone invented in 2023 as I am unaware of information beyond 2022.""
+}
+Output: {
+    ""question"": ""What was the groundbreaking feature of the smartphone invented in 2023?"",
+    ""noncommittal"": 1
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""response"": ""Gas pipelines can be very hard to test because failures are rare, dangerous, and difficult to reproduce safely under real-world conditions.""
+}
+Output: ",AnswerRelevanceOutput,question='Why are gas pipelines difficult to test?' noncommittal=0,0.157,697,32,729,0,0,2026-06-11T05:56:11.328385+00:00,qwen35-2b
+AR8,7,How does LangSmith handle production monitoring?,answer_relevancy,0,"Generate a question for the given answer and identify if the answer is noncommittal.
+Give noncommittal as 1 if the answer is noncommittal (evasive, vague, or ambiguous) and 0 if the answer is substantive.
+Examples of noncommittal answers: ""I don't know"", ""I'm not sure"", ""It depends"".
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for answer relevance question generation."", ""properties"": {""question"": {""description"": ""Question that can be answered from the response"", ""title"": ""Question"", ""type"": ""string""}, ""noncommittal"": {""description"": ""1 if the response is evasive/vague, 0 if it is substantive"", ""title"": ""Noncommittal"", ""type"": ""integer""}}, ""required"": [""question"", ""noncommittal""], ""title"": ""AnswerRelevanceOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""response"": ""Albert Einstein was born in Germany.""
+}
+Output: {
+    ""question"": ""Where was Albert Einstein born?"",
+    ""noncommittal"": 0
+}
+
+Example 2
+Input: {
+    ""response"": ""The capital of France is Paris, a city known for its architecture and culture.""
+}
+Output: {
+    ""question"": ""What is the capital of France?"",
+    ""noncommittal"": 0
+}
+
+Example 3
+Input: {
+    ""response"": ""I don't know about the groundbreaking feature of the smartphone invented in 2023 as I am unaware of information beyond 2022.""
+}
+Output: {
+    ""question"": ""What was the groundbreaking feature of the smartphone invented in 2023?"",
+    ""noncommittal"": 1
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""response"": ""For a movie to enter production, it needs to go through multiple layers of development, approval, financing, and planning before cameras can start rolling. This usually includes finalizing the script, attaching key talent such as a director and lead actors, securing a budget, getting studio or investor approval, building a production schedule, scouting locations, hiring crew, and preparing legal, insurance, and distribution agreements. Once those pieces are in place, the project can move from development into pre-production and then full production.""
+}
+Output: ",AnswerRelevanceOutput,question='What are the key stages involved in the production of a movie before filming begins?' noncommittal=0,0.1744,772,40,812,0,0,2026-06-11T05:56:11.936450+00:00,qwen35-2b
+AR9,8,What is the harness hill-climbing approach for improving agents?,answer_relevancy,0,"Generate a question for the given answer and identify if the answer is noncommittal.
+Give noncommittal as 1 if the answer is noncommittal (evasive, vague, or ambiguous) and 0 if the answer is substantive.
+Examples of noncommittal answers: ""I don't know"", ""I'm not sure"", ""It depends"".
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for answer relevance question generation."", ""properties"": {""question"": {""description"": ""Question that can be answered from the response"", ""title"": ""Question"", ""type"": ""string""}, ""noncommittal"": {""description"": ""1 if the response is evasive/vague, 0 if it is substantive"", ""title"": ""Noncommittal"", ""type"": ""integer""}}, ""required"": [""question"", ""noncommittal""], ""title"": ""AnswerRelevanceOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""response"": ""Albert Einstein was born in Germany.""
+}
+Output: {
+    ""question"": ""Where was Albert Einstein born?"",
+    ""noncommittal"": 0
+}
+
+Example 2
+Input: {
+    ""response"": ""The capital of France is Paris, a city known for its architecture and culture.""
+}
+Output: {
+    ""question"": ""What is the capital of France?"",
+    ""noncommittal"": 0
+}
+
+Example 3
+Input: {
+    ""response"": ""I don't know about the groundbreaking feature of the smartphone invented in 2023 as I am unaware of information beyond 2022.""
+}
+Output: {
+    ""question"": ""What was the groundbreaking feature of the smartphone invented in 2023?"",
+    ""noncommittal"": 1
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""response"": ""Harness hill climbing is a rock-climbing technique where the climber uses their harness, rope, and belay system to make steady upward progress on a difficult or steep section. The climber advances in small controlled movements, briefly weighting the harness when needed to rest, reset body position, or work through the next move, then continues upward. It is especially useful when a route is too demanding to climb in one continuous sequence.\r\n""
+}
+Output: ",AnswerRelevanceOutput,question='What is harness hill climbing?' noncommittal=0,0.1516,760,30,790,0,0,2026-06-11T05:56:12.700448+00:00,qwen35-2b
+AR10,9,How do annotation queues work in LangSmith?,answer_relevancy,0,"Generate a question for the given answer and identify if the answer is noncommittal.
+Give noncommittal as 1 if the answer is noncommittal (evasive, vague, or ambiguous) and 0 if the answer is substantive.
+Examples of noncommittal answers: ""I don't know"", ""I'm not sure"", ""It depends"".
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for answer relevance question generation."", ""properties"": {""question"": {""description"": ""Question that can be answered from the response"", ""title"": ""Question"", ""type"": ""string""}, ""noncommittal"": {""description"": ""1 if the response is evasive/vague, 0 if it is substantive"", ""title"": ""Noncommittal"", ""type"": ""integer""}}, ""required"": [""question"", ""noncommittal""], ""title"": ""AnswerRelevanceOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""response"": ""Albert Einstein was born in Germany.""
+}
+Output: {
+    ""question"": ""Where was Albert Einstein born?"",
+    ""noncommittal"": 0
+}
+
+Example 2
+Input: {
+    ""response"": ""The capital of France is Paris, a city known for its architecture and culture.""
+}
+Output: {
+    ""question"": ""What is the capital of France?"",
+    ""noncommittal"": 0
+}
+
+Example 3
+Input: {
+    ""response"": ""I don't know about the groundbreaking feature of the smartphone invented in 2023 as I am unaware of information beyond 2022.""
+}
+Output: {
+    ""question"": ""What was the groundbreaking feature of the smartphone invented in 2023?"",
+    ""noncommittal"": 1
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""response"": ""When organizing queues at the movies, there are two options: a single shared queue for everyone, or separate queues for each movie/showtime, Depends on your use case.""
+}
+Output: ",AnswerRelevanceOutput,question='What are the two options for organizing queues at the movies?' noncommittal=1,0.1611,706,36,742,0,0,2026-06-11T05:56:13.612364+00:00,qwen35-2b
+AR11,10,What is LLM-as-a-judge and how does it work?,answer_relevancy,0,"Generate a question for the given answer and identify if the answer is noncommittal.
+Give noncommittal as 1 if the answer is noncommittal (evasive, vague, or ambiguous) and 0 if the answer is substantive.
+Examples of noncommittal answers: ""I don't know"", ""I'm not sure"", ""It depends"".
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for answer relevance question generation."", ""properties"": {""question"": {""description"": ""Question that can be answered from the response"", ""title"": ""Question"", ""type"": ""string""}, ""noncommittal"": {""description"": ""1 if the response is evasive/vague, 0 if it is substantive"", ""title"": ""Noncommittal"", ""type"": ""integer""}}, ""required"": [""question"", ""noncommittal""], ""title"": ""AnswerRelevanceOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""response"": ""Albert Einstein was born in Germany.""
+}
+Output: {
+    ""question"": ""Where was Albert Einstein born?"",
+    ""noncommittal"": 0
+}
+
+Example 2
+Input: {
+    ""response"": ""The capital of France is Paris, a city known for its architecture and culture.""
+}
+Output: {
+    ""question"": ""What is the capital of France?"",
+    ""noncommittal"": 0
+}
+
+Example 3
+Input: {
+    ""response"": ""I don't know about the groundbreaking feature of the smartphone invented in 2023 as I am unaware of information beyond 2022.""
+}
+Output: {
+    ""question"": ""What was the groundbreaking feature of the smartphone invented in 2023?"",
+    ""noncommittal"": 1
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""response"": ""Large language models are trained using transformer architectures with self-attention mechanisms. The training process involves pre-training on massive text corpora using next-token prediction, followed by instruction tuning with RLHF to align the model's outputs with human preferences and safety guidelines.""
+}
+Output: ",AnswerRelevanceOutput,question='How are large language models trained using transformer architectures?' noncommittal=0,0.1622,722,34,756,0,0,2026-06-11T05:56:14.519164+00:00,qwen35-2b
+AR12,11,What are the three layers of continual learning for AI agents?,answer_relevancy,0,"Generate a question for the given answer and identify if the answer is noncommittal.
+Give noncommittal as 1 if the answer is noncommittal (evasive, vague, or ambiguous) and 0 if the answer is substantive.
+Examples of noncommittal answers: ""I don't know"", ""I'm not sure"", ""It depends"".
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for answer relevance question generation."", ""properties"": {""question"": {""description"": ""Question that can be answered from the response"", ""title"": ""Question"", ""type"": ""string""}, ""noncommittal"": {""description"": ""1 if the response is evasive/vague, 0 if it is substantive"", ""title"": ""Noncommittal"", ""type"": ""integer""}}, ""required"": [""question"", ""noncommittal""], ""title"": ""AnswerRelevanceOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""response"": ""Albert Einstein was born in Germany.""
+}
+Output: {
+    ""question"": ""Where was Albert Einstein born?"",
+    ""noncommittal"": 0
+}
+
+Example 2
+Input: {
+    ""response"": ""The capital of France is Paris, a city known for its architecture and culture.""
+}
+Output: {
+    ""question"": ""What is the capital of France?"",
+    ""noncommittal"": 0
+}
+
+Example 3
+Input: {
+    ""response"": ""I don't know about the groundbreaking feature of the smartphone invented in 2023 as I am unaware of information beyond 2022.""
+}
+Output: {
+    ""question"": ""What was the groundbreaking feature of the smartphone invented in 2023?"",
+    ""noncommittal"": 1
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""response"": ""Neural network architectures typically consist of input layers, hidden layers, and output layers. Convolutional layers extract spatial features from images, while recurrent layers like LSTM and GRU handle sequential dependencies in time-series data and natural language processing tasks.""
+}
+Output: ",AnswerRelevanceOutput,question='What are the typical components of neural network architectures?' noncommittal=0,0.1555,720,34,754,0,0,2026-06-11T05:56:15.432859+00:00,qwen35-2b
+AR13,12,What is agent observability?,answer_relevancy,0,"Generate a question for the given answer and identify if the answer is noncommittal.
+Give noncommittal as 1 if the answer is noncommittal (evasive, vague, or ambiguous) and 0 if the answer is substantive.
+Examples of noncommittal answers: ""I don't know"", ""I'm not sure"", ""It depends"".
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for answer relevance question generation."", ""properties"": {""question"": {""description"": ""Question that can be answered from the response"", ""title"": ""Question"", ""type"": ""string""}, ""noncommittal"": {""description"": ""1 if the response is evasive/vague, 0 if it is substantive"", ""title"": ""Noncommittal"", ""type"": ""integer""}}, ""required"": [""question"", ""noncommittal""], ""title"": ""AnswerRelevanceOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""response"": ""Albert Einstein was born in Germany.""
+}
+Output: {
+    ""question"": ""Where was Albert Einstein born?"",
+    ""noncommittal"": 0
+}
+
+Example 2
+Input: {
+    ""response"": ""The capital of France is Paris, a city known for its architecture and culture.""
+}
+Output: {
+    ""question"": ""What is the capital of France?"",
+    ""noncommittal"": 0
+}
+
+Example 3
+Input: {
+    ""response"": ""I don't know about the groundbreaking feature of the smartphone invented in 2023 as I am unaware of information beyond 2022.""
+}
+Output: {
+    ""question"": ""What was the groundbreaking feature of the smartphone invented in 2023?"",
+    ""noncommittal"": 1
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""response"": ""A user agent string is an HTTP header that identifies the client software making a request to a web server. Browsers send user agent strings containing the browser version, operating system, and rendering engine so that servers can deliver compatible content and track client analytics.""
+}
+Output: ",AnswerRelevanceOutput,question='What is a user agent string?' noncommittal=0,0.156,722,31,753,0,0,2026-06-11T05:56:16.050066+00:00,qwen35-2b
+AR14,13,What biases affect LLM-as-a-judge evaluators?,answer_relevancy,0,"Generate a question for the given answer and identify if the answer is noncommittal.
+Give noncommittal as 1 if the answer is noncommittal (evasive, vague, or ambiguous) and 0 if the answer is substantive.
+Examples of noncommittal answers: ""I don't know"", ""I'm not sure"", ""It depends"".
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for answer relevance question generation."", ""properties"": {""question"": {""description"": ""Question that can be answered from the response"", ""title"": ""Question"", ""type"": ""string""}, ""noncommittal"": {""description"": ""1 if the response is evasive/vague, 0 if it is substantive"", ""title"": ""Noncommittal"", ""type"": ""integer""}}, ""required"": [""question"", ""noncommittal""], ""title"": ""AnswerRelevanceOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""response"": ""Albert Einstein was born in Germany.""
+}
+Output: {
+    ""question"": ""Where was Albert Einstein born?"",
+    ""noncommittal"": 0
+}
+
+Example 2
+Input: {
+    ""response"": ""The capital of France is Paris, a city known for its architecture and culture.""
+}
+Output: {
+    ""question"": ""What is the capital of France?"",
+    ""noncommittal"": 0
+}
+
+Example 3
+Input: {
+    ""response"": ""I don't know about the groundbreaking feature of the smartphone invented in 2023 as I am unaware of information beyond 2022.""
+}
+Output: {
+    ""question"": ""What was the groundbreaking feature of the smartphone invented in 2023?"",
+    ""noncommittal"": 1
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""response"": ""In machine learning, the bias-variance tradeoff describes how model complexity affects prediction errors. High bias leads to underfitting where the model is too simple to capture underlying patterns, while high variance leads to overfitting where the model memorizes training noise instead of generalizing.""
+}
+Output: ",AnswerRelevanceOutput,question='What does the bias-variance tradeoff describe in machine learning?' noncommittal=0,0.3375,728,37,765,0,0,2026-06-11T05:56:16.810476+00:00,qwen35-2b
+AR15,14,What is trajectory evaluation and why is it important for AI agents?,answer_relevancy,0,"Generate a question for the given answer and identify if the answer is noncommittal.
+Give noncommittal as 1 if the answer is noncommittal (evasive, vague, or ambiguous) and 0 if the answer is substantive.
+Examples of noncommittal answers: ""I don't know"", ""I'm not sure"", ""It depends"".
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for answer relevance question generation."", ""properties"": {""question"": {""description"": ""Question that can be answered from the response"", ""title"": ""Question"", ""type"": ""string""}, ""noncommittal"": {""description"": ""1 if the response is evasive/vague, 0 if it is substantive"", ""title"": ""Noncommittal"", ""type"": ""integer""}}, ""required"": [""question"", ""noncommittal""], ""title"": ""AnswerRelevanceOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""response"": ""Albert Einstein was born in Germany.""
+}
+Output: {
+    ""question"": ""Where was Albert Einstein born?"",
+    ""noncommittal"": 0
+}
+
+Example 2
+Input: {
+    ""response"": ""The capital of France is Paris, a city known for its architecture and culture.""
+}
+Output: {
+    ""question"": ""What is the capital of France?"",
+    ""noncommittal"": 0
+}
+
+Example 3
+Input: {
+    ""response"": ""I don't know about the groundbreaking feature of the smartphone invented in 2023 as I am unaware of information beyond 2022.""
+}
+Output: {
+    ""question"": ""What was the groundbreaking feature of the smartphone invented in 2023?"",
+    ""noncommittal"": 1
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""response"": ""Trajectory planning in robotic systems involves computing collision-free paths through configuration space. Motion planning algorithms like RRT* and A* generate waypoints that the robot controller follows, while inverse kinematics solves for the required joint angles at each point along the trajectory.""
+}
+Output: ",AnswerRelevanceOutput,"question='What is the relationship between trajectory planning, motion planning algorithms, and inverse kinematics in robotic systems?' noncommittal=0",0.1795,722,44,766,0,0,2026-06-11T05:56:17.404638+00:00,qwen35-2b
+AR16,15,What is trajectory evaluation and what Python code do I need to implement it?,answer_relevancy,0,"Generate a question for the given answer and identify if the answer is noncommittal.
+Give noncommittal as 1 if the answer is noncommittal (evasive, vague, or ambiguous) and 0 if the answer is substantive.
+Examples of noncommittal answers: ""I don't know"", ""I'm not sure"", ""It depends"".
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for answer relevance question generation."", ""properties"": {""question"": {""description"": ""Question that can be answered from the response"", ""title"": ""Question"", ""type"": ""string""}, ""noncommittal"": {""description"": ""1 if the response is evasive/vague, 0 if it is substantive"", ""title"": ""Noncommittal"", ""type"": ""integer""}}, ""required"": [""question"", ""noncommittal""], ""title"": ""AnswerRelevanceOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""response"": ""Albert Einstein was born in Germany.""
+}
+Output: {
+    ""question"": ""Where was Albert Einstein born?"",
+    ""noncommittal"": 0
+}
+
+Example 2
+Input: {
+    ""response"": ""The capital of France is Paris, a city known for its architecture and culture.""
+}
+Output: {
+    ""question"": ""What is the capital of France?"",
+    ""noncommittal"": 0
+}
+
+Example 3
+Input: {
+    ""response"": ""I don't know about the groundbreaking feature of the smartphone invented in 2023 as I am unaware of information beyond 2022.""
+}
+Output: {
+    ""question"": ""What was the groundbreaking feature of the smartphone invented in 2023?"",
+    ""noncommittal"": 1
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""response"": ""Trajectory evaluation scores the entire execution path an AI agent takes, including every tool call, intermediate reasoning step, and decision point, rather than only evaluating the final output.""
+}
+Output: ",AnswerRelevanceOutput,"question=""What does trajectory evaluation score in an AI agent's execution path?"" noncommittal=0",0.1644,706,37,743,0,0,2026-06-11T05:56:18.000593+00:00,qwen35-2b
+AR17,16,What are the three types of LLM judges and how do I choose between them for my use case?,answer_relevancy,0,"Generate a question for the given answer and identify if the answer is noncommittal.
+Give noncommittal as 1 if the answer is noncommittal (evasive, vague, or ambiguous) and 0 if the answer is substantive.
+Examples of noncommittal answers: ""I don't know"", ""I'm not sure"", ""It depends"".
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for answer relevance question generation."", ""properties"": {""question"": {""description"": ""Question that can be answered from the response"", ""title"": ""Question"", ""type"": ""string""}, ""noncommittal"": {""description"": ""1 if the response is evasive/vague, 0 if it is substantive"", ""title"": ""Noncommittal"", ""type"": ""integer""}}, ""required"": [""question"", ""noncommittal""], ""title"": ""AnswerRelevanceOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""response"": ""Albert Einstein was born in Germany.""
+}
+Output: {
+    ""question"": ""Where was Albert Einstein born?"",
+    ""noncommittal"": 0
+}
+
+Example 2
+Input: {
+    ""response"": ""The capital of France is Paris, a city known for its architecture and culture.""
+}
+Output: {
+    ""question"": ""What is the capital of France?"",
+    ""noncommittal"": 0
+}
+
+Example 3
+Input: {
+    ""response"": ""I don't know about the groundbreaking feature of the smartphone invented in 2023 as I am unaware of information beyond 2022.""
+}
+Output: {
+    ""question"": ""What was the groundbreaking feature of the smartphone invented in 2023?"",
+    ""noncommittal"": 1
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""response"": ""LLM judges fall into three main approaches: single-output scoring, pairwise comparison, and reference-based evaluation. Each answers a different evaluation question.""
+}
+Output: ",AnswerRelevanceOutput,question='What are the three main approaches that LLM judges fall into?' noncommittal=0,0.1589,700,37,737,0,0,2026-06-11T05:56:18.556783+00:00,qwen35-2b
+AR18,17,Explain all three layers of continual learning and give examples of techniques used at each layer.,answer_relevancy,0,"Generate a question for the given answer and identify if the answer is noncommittal.
+Give noncommittal as 1 if the answer is noncommittal (evasive, vague, or ambiguous) and 0 if the answer is substantive.
+Examples of noncommittal answers: ""I don't know"", ""I'm not sure"", ""It depends"".
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for answer relevance question generation."", ""properties"": {""question"": {""description"": ""Question that can be answered from the response"", ""title"": ""Question"", ""type"": ""string""}, ""noncommittal"": {""description"": ""1 if the response is evasive/vague, 0 if it is substantive"", ""title"": ""Noncommittal"", ""type"": ""integer""}}, ""required"": [""question"", ""noncommittal""], ""title"": ""AnswerRelevanceOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""response"": ""Albert Einstein was born in Germany.""
+}
+Output: {
+    ""question"": ""Where was Albert Einstein born?"",
+    ""noncommittal"": 0
+}
+
+Example 2
+Input: {
+    ""response"": ""The capital of France is Paris, a city known for its architecture and culture.""
+}
+Output: {
+    ""question"": ""What is the capital of France?"",
+    ""noncommittal"": 0
+}
+
+Example 3
+Input: {
+    ""response"": ""I don't know about the groundbreaking feature of the smartphone invented in 2023 as I am unaware of information beyond 2022.""
+}
+Output: {
+    ""question"": ""What was the groundbreaking feature of the smartphone invented in 2023?"",
+    ""noncommittal"": 1
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""response"": ""At the model layer, continual learning involves updating model weights through techniques like supervised fine-tuning (SFT), reinforcement learning from human feedback (RLHF), and direct preference optimization (DPO). This is the most common interpretation but also the most expensive approach.""
+}
+Output: ",AnswerRelevanceOutput,question='What are the most common interpretations of continual learning at the model layer?' noncommittal=0,0.1607,724,38,762,0,0,2026-06-11T05:56:19.140955+00:00,qwen35-2b
+AR19,18,What is AI observability and how does it differ from traditional software observability?,answer_relevancy,0,"Generate a question for the given answer and identify if the answer is noncommittal.
+Give noncommittal as 1 if the answer is noncommittal (evasive, vague, or ambiguous) and 0 if the answer is substantive.
+Examples of noncommittal answers: ""I don't know"", ""I'm not sure"", ""It depends"".
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for answer relevance question generation."", ""properties"": {""question"": {""description"": ""Question that can be answered from the response"", ""title"": ""Question"", ""type"": ""string""}, ""noncommittal"": {""description"": ""1 if the response is evasive/vague, 0 if it is substantive"", ""title"": ""Noncommittal"", ""type"": ""integer""}}, ""required"": [""question"", ""noncommittal""], ""title"": ""AnswerRelevanceOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""response"": ""Albert Einstein was born in Germany.""
+}
+Output: {
+    ""question"": ""Where was Albert Einstein born?"",
+    ""noncommittal"": 0
+}
+
+Example 2
+Input: {
+    ""response"": ""The capital of France is Paris, a city known for its architecture and culture.""
+}
+Output: {
+    ""question"": ""What is the capital of France?"",
+    ""noncommittal"": 0
+}
+
+Example 3
+Input: {
+    ""response"": ""I don't know about the groundbreaking feature of the smartphone invented in 2023 as I am unaware of information beyond 2022.""
+}
+Output: {
+    ""question"": ""What was the groundbreaking feature of the smartphone invented in 2023?"",
+    ""noncommittal"": 1
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""response"": ""AI observability is the practice of collecting, analyzing, and correlating telemetry data across the full AI technology stack to understand how AI systems behave in production. It enables real-time visibility into LLMs, retrieval pipelines, and agent orchestration.""
+}
+Output: ",AnswerRelevanceOutput,question='What is AI observability?' noncommittal=0,0.1477,721,30,751,0,0,2026-06-11T05:56:19.933667+00:00,qwen35-2b
+AR20,19,What are the benefits of annotation queues in LangSmith and how do I set them up?,answer_relevancy,0,"Generate a question for the given answer and identify if the answer is noncommittal.
+Give noncommittal as 1 if the answer is noncommittal (evasive, vague, or ambiguous) and 0 if the answer is substantive.
+Examples of noncommittal answers: ""I don't know"", ""I'm not sure"", ""It depends"".
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for answer relevance question generation."", ""properties"": {""question"": {""description"": ""Question that can be answered from the response"", ""title"": ""Question"", ""type"": ""string""}, ""noncommittal"": {""description"": ""1 if the response is evasive/vague, 0 if it is substantive"", ""title"": ""Noncommittal"", ""type"": ""integer""}}, ""required"": [""question"", ""noncommittal""], ""title"": ""AnswerRelevanceOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""response"": ""Albert Einstein was born in Germany.""
+}
+Output: {
+    ""question"": ""Where was Albert Einstein born?"",
+    ""noncommittal"": 0
+}
+
+Example 2
+Input: {
+    ""response"": ""The capital of France is Paris, a city known for its architecture and culture.""
+}
+Output: {
+    ""question"": ""What is the capital of France?"",
+    ""noncommittal"": 0
+}
+
+Example 3
+Input: {
+    ""response"": ""I don't know about the groundbreaking feature of the smartphone invented in 2023 as I am unaware of information beyond 2022.""
+}
+Output: {
+    ""question"": ""What was the groundbreaking feature of the smartphone invented in 2023?"",
+    ""noncommittal"": 1
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""response"": ""Annotation queues allow teams to route production traces to domain experts for review. Experts can rate outputs, leave comments, and flag issues. The reviewed annotations can be converted into evaluation datasets to improve the system over time.""
+}
+Output: ",AnswerRelevanceOutput,question='What are annotation queues used for in the context of production traces?' noncommittal=0,0.1674,714,37,751,0,0,2026-06-11T05:56:20.557432+00:00,qwen35-2b
+AR21,20,What is the maximum number of traces per second LangSmith can process?,answer_relevancy,0,"Generate a question for the given answer and identify if the answer is noncommittal.
+Give noncommittal as 1 if the answer is noncommittal (evasive, vague, or ambiguous) and 0 if the answer is substantive.
+Examples of noncommittal answers: ""I don't know"", ""I'm not sure"", ""It depends"".
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for answer relevance question generation."", ""properties"": {""question"": {""description"": ""Question that can be answered from the response"", ""title"": ""Question"", ""type"": ""string""}, ""noncommittal"": {""description"": ""1 if the response is evasive/vague, 0 if it is substantive"", ""title"": ""Noncommittal"", ""type"": ""integer""}}, ""required"": [""question"", ""noncommittal""], ""title"": ""AnswerRelevanceOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""response"": ""Albert Einstein was born in Germany.""
+}
+Output: {
+    ""question"": ""Where was Albert Einstein born?"",
+    ""noncommittal"": 0
+}
+
+Example 2
+Input: {
+    ""response"": ""The capital of France is Paris, a city known for its architecture and culture.""
+}
+Output: {
+    ""question"": ""What is the capital of France?"",
+    ""noncommittal"": 0
+}
+
+Example 3
+Input: {
+    ""response"": ""I don't know about the groundbreaking feature of the smartphone invented in 2023 as I am unaware of information beyond 2022.""
+}
+Output: {
+    ""question"": ""What was the groundbreaking feature of the smartphone invented in 2023?"",
+    ""noncommittal"": 1
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""response"": ""I don't have specific information about LangSmith's maximum trace throughput per second. I'd recommend checking the LangSmith documentation or contacting their support team for current performance specifications.""
+}
+Output: ",AnswerRelevanceOutput,"question=""What is LangSmith's maximum trace throughput per second?"" noncommittal=1",0.1614,706,35,741,0,0,2026-06-11T05:56:21.128444+00:00,qwen35-2b
+AR22,21,How do I set up SSO integration with Okta in LangSmith?,answer_relevancy,0,"Generate a question for the given answer and identify if the answer is noncommittal.
+Give noncommittal as 1 if the answer is noncommittal (evasive, vague, or ambiguous) and 0 if the answer is substantive.
+Examples of noncommittal answers: ""I don't know"", ""I'm not sure"", ""It depends"".
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for answer relevance question generation."", ""properties"": {""question"": {""description"": ""Question that can be answered from the response"", ""title"": ""Question"", ""type"": ""string""}, ""noncommittal"": {""description"": ""1 if the response is evasive/vague, 0 if it is substantive"", ""title"": ""Noncommittal"", ""type"": ""integer""}}, ""required"": [""question"", ""noncommittal""], ""title"": ""AnswerRelevanceOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""response"": ""Albert Einstein was born in Germany.""
+}
+Output: {
+    ""question"": ""Where was Albert Einstein born?"",
+    ""noncommittal"": 0
+}
+
+Example 2
+Input: {
+    ""response"": ""The capital of France is Paris, a city known for its architecture and culture.""
+}
+Output: {
+    ""question"": ""What is the capital of France?"",
+    ""noncommittal"": 0
+}
+
+Example 3
+Input: {
+    ""response"": ""I don't know about the groundbreaking feature of the smartphone invented in 2023 as I am unaware of information beyond 2022.""
+}
+Output: {
+    ""question"": ""What was the groundbreaking feature of the smartphone invented in 2023?"",
+    ""noncommittal"": 1
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""response"": ""LangSmith Enterprise plans support single sign-on integration, but I don't have the specific steps for Okta configuration. I'd recommend reaching out to a LangSmith support agent who can walk you through the SSO setup process for your identity provider.""
+}
+Output: ",AnswerRelevanceOutput,question='What are the specific steps for Okta configuration for LangSmith Enterprise single sign-on integration?' noncommittal=1,0.1825,721,42,763,0,0,2026-06-11T05:56:21.719917+00:00,qwen35-2b
+AR23,22,What is the pricing for LangSmith's Enterprise custom evaluator feature?,answer_relevancy,0,"Generate a question for the given answer and identify if the answer is noncommittal.
+Give noncommittal as 1 if the answer is noncommittal (evasive, vague, or ambiguous) and 0 if the answer is substantive.
+Examples of noncommittal answers: ""I don't know"", ""I'm not sure"", ""It depends"".
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for answer relevance question generation."", ""properties"": {""question"": {""description"": ""Question that can be answered from the response"", ""title"": ""Question"", ""type"": ""string""}, ""noncommittal"": {""description"": ""1 if the response is evasive/vague, 0 if it is substantive"", ""title"": ""Noncommittal"", ""type"": ""integer""}}, ""required"": [""question"", ""noncommittal""], ""title"": ""AnswerRelevanceOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""response"": ""Albert Einstein was born in Germany.""
+}
+Output: {
+    ""question"": ""Where was Albert Einstein born?"",
+    ""noncommittal"": 0
+}
+
+Example 2
+Input: {
+    ""response"": ""The capital of France is Paris, a city known for its architecture and culture.""
+}
+Output: {
+    ""question"": ""What is the capital of France?"",
+    ""noncommittal"": 0
+}
+
+Example 3
+Input: {
+    ""response"": ""I don't know about the groundbreaking feature of the smartphone invented in 2023 as I am unaware of information beyond 2022.""
+}
+Output: {
+    ""question"": ""What was the groundbreaking feature of the smartphone invented in 2023?"",
+    ""noncommittal"": 1
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""response"": ""I'm sorry, but I don't have access to detailed pricing information for LangSmith's Enterprise evaluator features. Pricing for Enterprise plans is custom and would need to be discussed with the LangSmith sales team.""
+}
+Output: ",AnswerRelevanceOutput,"question=""What is the pricing information for LangSmith's Enterprise evaluator features?"" noncommittal=1",0.1698,713,37,750,0,0,2026-06-11T05:56:22.302110+00:00,qwen35-2b
+AR24,23,Can LangSmith integrate with Azure Active Directory for authentication?,answer_relevancy,0,"Generate a question for the given answer and identify if the answer is noncommittal.
+Give noncommittal as 1 if the answer is noncommittal (evasive, vague, or ambiguous) and 0 if the answer is substantive.
+Examples of noncommittal answers: ""I don't know"", ""I'm not sure"", ""It depends"".
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for answer relevance question generation."", ""properties"": {""question"": {""description"": ""Question that can be answered from the response"", ""title"": ""Question"", ""type"": ""string""}, ""noncommittal"": {""description"": ""1 if the response is evasive/vague, 0 if it is substantive"", ""title"": ""Noncommittal"", ""type"": ""integer""}}, ""required"": [""question"", ""noncommittal""], ""title"": ""AnswerRelevanceOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""response"": ""Albert Einstein was born in Germany.""
+}
+Output: {
+    ""question"": ""Where was Albert Einstein born?"",
+    ""noncommittal"": 0
+}
+
+Example 2
+Input: {
+    ""response"": ""The capital of France is Paris, a city known for its architecture and culture.""
+}
+Output: {
+    ""question"": ""What is the capital of France?"",
+    ""noncommittal"": 0
+}
+
+Example 3
+Input: {
+    ""response"": ""I don't know about the groundbreaking feature of the smartphone invented in 2023 as I am unaware of information beyond 2022.""
+}
+Output: {
+    ""question"": ""What was the groundbreaking feature of the smartphone invented in 2023?"",
+    ""noncommittal"": 1
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""response"": ""While LangSmith does support enterprise authentication features like SSO on their Enterprise plan, I don't have specific information about Azure Active Directory integration. You may want to check the LangSmith documentation or contact their team for details on supported identity providers.""
+}
+Output: ",AnswerRelevanceOutput,"question='Does LangSmith support enterprise authentication features like SSO on their Enterprise plan, and what is their specific information about Azure Active Directory integration?' noncommittal=1",0.2037,720,51,771,0,0,2026-06-11T05:56:23.249383+00:00,qwen35-2b
+AR25,24,I'm having an error when deploying my agent through LangSmith. Error code LS-5023. What should I do?,answer_relevancy,0,"Generate a question for the given answer and identify if the answer is noncommittal.
+Give noncommittal as 1 if the answer is noncommittal (evasive, vague, or ambiguous) and 0 if the answer is substantive.
+Examples of noncommittal answers: ""I don't know"", ""I'm not sure"", ""It depends"".
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for answer relevance question generation."", ""properties"": {""question"": {""description"": ""Question that can be answered from the response"", ""title"": ""Question"", ""type"": ""string""}, ""noncommittal"": {""description"": ""1 if the response is evasive/vague, 0 if it is substantive"", ""title"": ""Noncommittal"", ""type"": ""integer""}}, ""required"": [""question"", ""noncommittal""], ""title"": ""AnswerRelevanceOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""response"": ""Albert Einstein was born in Germany.""
+}
+Output: {
+    ""question"": ""Where was Albert Einstein born?"",
+    ""noncommittal"": 0
+}
+
+Example 2
+Input: {
+    ""response"": ""The capital of France is Paris, a city known for its architecture and culture.""
+}
+Output: {
+    ""question"": ""What is the capital of France?"",
+    ""noncommittal"": 0
+}
+
+Example 3
+Input: {
+    ""response"": ""I don't know about the groundbreaking feature of the smartphone invented in 2023 as I am unaware of information beyond 2022.""
+}
+Output: {
+    ""question"": ""What was the groundbreaking feature of the smartphone invented in 2023?"",
+    ""noncommittal"": 1
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""response"": ""I'm not able to help with specific deployment error codes. Let me connect you with a support specialist who can look into error LS-5023 and help resolve your deployment issue.""
+}
+Output: ",AnswerRelevanceOutput,question='What specific deployment error codes are you unable to help with?' noncommittal=1,0.1675,710,36,746,0,0,2026-06-11T05:56:23.875292+00:00,qwen35-2b
+AR26,25,Should I use LLM-as-a-judge or human evaluation for my production agent?,answer_relevancy,0,"Generate a question for the given answer and identify if the answer is noncommittal.
+Give noncommittal as 1 if the answer is noncommittal (evasive, vague, or ambiguous) and 0 if the answer is substantive.
+Examples of noncommittal answers: ""I don't know"", ""I'm not sure"", ""It depends"".
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for answer relevance question generation."", ""properties"": {""question"": {""description"": ""Question that can be answered from the response"", ""title"": ""Question"", ""type"": ""string""}, ""noncommittal"": {""description"": ""1 if the response is evasive/vague, 0 if it is substantive"", ""title"": ""Noncommittal"", ""type"": ""integer""}}, ""required"": [""question"", ""noncommittal""], ""title"": ""AnswerRelevanceOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""response"": ""Albert Einstein was born in Germany.""
+}
+Output: {
+    ""question"": ""Where was Albert Einstein born?"",
+    ""noncommittal"": 0
+}
+
+Example 2
+Input: {
+    ""response"": ""The capital of France is Paris, a city known for its architecture and culture.""
+}
+Output: {
+    ""question"": ""What is the capital of France?"",
+    ""noncommittal"": 0
+}
+
+Example 3
+Input: {
+    ""response"": ""I don't know about the groundbreaking feature of the smartphone invented in 2023 as I am unaware of information beyond 2022.""
+}
+Output: {
+    ""question"": ""What was the groundbreaking feature of the smartphone invented in 2023?"",
+    ""noncommittal"": 1
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""response"": ""It really depends on a lot of factors. Both LLM as a judge and human evaluation have their strengths and weaknesses. You might want to think about what works best for your specific situation and consider the various tradeoffs involved.""
+}
+Output: ",AnswerRelevanceOutput,question='What are the key factors that determine the effectiveness of using Large Language Models as judges versus human evaluation?' noncommittal=1,0.1769,717,44,761,0,0,2026-06-11T05:56:24.621831+00:00,qwen35-2b
+AR27,26,What evaluation metrics should I prioritize for my RAG application?,answer_relevancy,0,"Generate a question for the given answer and identify if the answer is noncommittal.
+Give noncommittal as 1 if the answer is noncommittal (evasive, vague, or ambiguous) and 0 if the answer is substantive.
+Examples of noncommittal answers: ""I don't know"", ""I'm not sure"", ""It depends"".
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for answer relevance question generation."", ""properties"": {""question"": {""description"": ""Question that can be answered from the response"", ""title"": ""Question"", ""type"": ""string""}, ""noncommittal"": {""description"": ""1 if the response is evasive/vague, 0 if it is substantive"", ""title"": ""Noncommittal"", ""type"": ""integer""}}, ""required"": [""question"", ""noncommittal""], ""title"": ""AnswerRelevanceOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""response"": ""Albert Einstein was born in Germany.""
+}
+Output: {
+    ""question"": ""Where was Albert Einstein born?"",
+    ""noncommittal"": 0
+}
+
+Example 2
+Input: {
+    ""response"": ""The capital of France is Paris, a city known for its architecture and culture.""
+}
+Output: {
+    ""question"": ""What is the capital of France?"",
+    ""noncommittal"": 0
+}
+
+Example 3
+Input: {
+    ""response"": ""I don't know about the groundbreaking feature of the smartphone invented in 2023 as I am unaware of information beyond 2022.""
+}
+Output: {
+    ""question"": ""What was the groundbreaking feature of the smartphone invented in 2023?"",
+    ""noncommittal"": 1
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""response"": ""There are many RAG evaluation metrics you could potentially look at for you application. The best choice would probably depend on your particular requirements and what you're trying to optimize for. Different teams tend to have different preferences in this area.""
+}
+Output: ",AnswerRelevanceOutput,question='What are some of the RAG evaluation metrics that could be used for an application?' noncommittal=0,0.1696,718,41,759,0,0,2026-06-11T05:56:25.213097+00:00,qwen35-2b
+AR28,27,Is trajectory evaluation worth the overhead for a simple chatbot?,answer_relevancy,0,"Generate a question for the given answer and identify if the answer is noncommittal.
+Give noncommittal as 1 if the answer is noncommittal (evasive, vague, or ambiguous) and 0 if the answer is substantive.
+Examples of noncommittal answers: ""I don't know"", ""I'm not sure"", ""It depends"".
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for answer relevance question generation."", ""properties"": {""question"": {""description"": ""Question that can be answered from the response"", ""title"": ""Question"", ""type"": ""string""}, ""noncommittal"": {""description"": ""1 if the response is evasive/vague, 0 if it is substantive"", ""title"": ""Noncommittal"", ""type"": ""integer""}}, ""required"": [""question"", ""noncommittal""], ""title"": ""AnswerRelevanceOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""response"": ""Albert Einstein was born in Germany.""
+}
+Output: {
+    ""question"": ""Where was Albert Einstein born?"",
+    ""noncommittal"": 0
+}
+
+Example 2
+Input: {
+    ""response"": ""The capital of France is Paris, a city known for its architecture and culture.""
+}
+Output: {
+    ""question"": ""What is the capital of France?"",
+    ""noncommittal"": 0
+}
+
+Example 3
+Input: {
+    ""response"": ""I don't know about the groundbreaking feature of the smartphone invented in 2023 as I am unaware of information beyond 2022.""
+}
+Output: {
+    ""question"": ""What was the groundbreaking feature of the smartphone invented in 2023?"",
+    ""noncommittal"": 1
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""response"": ""That's an interesting question. Overhead from trajectory evaluation could potentially be worth it in some cases, though there are certainly arguments on both sides. It's hard to say definitively without knowing more about your particular setup and what kind of results you're seeing.""
+}
+Output: ",AnswerRelevanceOutput,question='Is overhead from trajectory evaluation worth it in some cases?' noncommittal=1,0.1589,724,35,759,0,0,2026-06-11T05:56:25.881152+00:00,qwen35-2b
+AR29,28,How often should I retrain my agent using continual learning?,answer_relevancy,0,"Generate a question for the given answer and identify if the answer is noncommittal.
+Give noncommittal as 1 if the answer is noncommittal (evasive, vague, or ambiguous) and 0 if the answer is substantive.
+Examples of noncommittal answers: ""I don't know"", ""I'm not sure"", ""It depends"".
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for answer relevance question generation."", ""properties"": {""question"": {""description"": ""Question that can be answered from the response"", ""title"": ""Question"", ""type"": ""string""}, ""noncommittal"": {""description"": ""1 if the response is evasive/vague, 0 if it is substantive"", ""title"": ""Noncommittal"", ""type"": ""integer""}}, ""required"": [""question"", ""noncommittal""], ""title"": ""AnswerRelevanceOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""response"": ""Albert Einstein was born in Germany.""
+}
+Output: {
+    ""question"": ""Where was Albert Einstein born?"",
+    ""noncommittal"": 0
+}
+
+Example 2
+Input: {
+    ""response"": ""The capital of France is Paris, a city known for its architecture and culture.""
+}
+Output: {
+    ""question"": ""What is the capital of France?"",
+    ""noncommittal"": 0
+}
+
+Example 3
+Input: {
+    ""response"": ""I don't know about the groundbreaking feature of the smartphone invented in 2023 as I am unaware of information beyond 2022.""
+}
+Output: {
+    ""question"": ""What was the groundbreaking feature of the smartphone invented in 2023?"",
+    ""noncommittal"": 1
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""response"": ""The frequency of retraining agents using continual learning can vary quite a bit. Some teams do it more often while others take a more conservative approach. The right cadence for you would depend on several factors that are somewhat unique to your deployment.""
+}
+Output: ",AnswerRelevanceOutput,question='What is the frequency of retraining agents using continual learning?' noncommittal=1,0.1645,720,36,756,0,0,2026-06-11T05:56:26.469081+00:00,qwen35-2b
+AR30,29,What's the best way to handle bias in LLM judges?,answer_relevancy,0,"Generate a question for the given answer and identify if the answer is noncommittal.
+Give noncommittal as 1 if the answer is noncommittal (evasive, vague, or ambiguous) and 0 if the answer is substantive.
+Examples of noncommittal answers: ""I don't know"", ""I'm not sure"", ""It depends"".
+Please return the output in a JSON format that complies with the following schema as specified in JSON Schema:
+{""description"": ""Structured output for answer relevance question generation."", ""properties"": {""question"": {""description"": ""Question that can be answered from the response"", ""title"": ""Question"", ""type"": ""string""}, ""noncommittal"": {""description"": ""1 if the response is evasive/vague, 0 if it is substantive"", ""title"": ""Noncommittal"", ""type"": ""integer""}}, ""required"": [""question"", ""noncommittal""], ""title"": ""AnswerRelevanceOutput"", ""type"": ""object""}Do not use single quotes in your response but double quotes,properly escaped with a backslash.
+
+--------EXAMPLES-----------
+Example 1
+Input: {
+    ""response"": ""Albert Einstein was born in Germany.""
+}
+Output: {
+    ""question"": ""Where was Albert Einstein born?"",
+    ""noncommittal"": 0
+}
+
+Example 2
+Input: {
+    ""response"": ""The capital of France is Paris, a city known for its architecture and culture.""
+}
+Output: {
+    ""question"": ""What is the capital of France?"",
+    ""noncommittal"": 0
+}
+
+Example 3
+Input: {
+    ""response"": ""I don't know about the groundbreaking feature of the smartphone invented in 2023 as I am unaware of information beyond 2022.""
+}
+Output: {
+    ""question"": ""What was the groundbreaking feature of the smartphone invented in 2023?"",
+    ""noncommittal"": 1
+}
+-----------------------------
+
+Now perform the same with the following input
+input: {
+    ""response"": ""Handling bias in LLM judges is definitely something worth thinking carefully about. There are various strategies people use, and the effectiveness of each one can depend on the context. It's generally a good idea to be aware of the different types of biases and consider how they might affect your results.""
+}
+Output: ",AnswerRelevanceOutput,question='What are some strategies people use to handle bias in LLM judges?' noncommittal=0,0.1713,729,38,767,0,0,2026-06-11T05:56:27.115313+00:00,qwen35-2b
